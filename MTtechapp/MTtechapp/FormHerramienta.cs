@@ -1,0 +1,41 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
+using tik4net;
+using tik4net.Objects;
+using tik4net.Objects.Tool;
+
+namespace MTtechapp
+{
+    public partial class FormHerramienta : MaterialForm
+    {
+        public FormHerramienta()
+        {
+            InitializeComponent();
+        }
+
+        private void materialSingleLineTextField1_Leave(object sender, EventArgs e)
+        {
+            TextBox myText = new TextBox();
+            myText.Location = new Point(50, 60);
+            this.Controls.Add(myText);
+        }
+
+        private void FormHerramienta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            using (ITikConnection connection = ConnectionFactory.CreateConnection(TikConnectionType.Api))
+            {
+                connection.Open("192.168.0.1", "admin", "yami_yonatan");
+                ITikCommand cmd = connection.CreateCommand("/system/identity/print");
+                MessageBox.Show(cmd.ExecuteScalar());                
+            }
+        }
+    }
+}
