@@ -9,14 +9,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="MTtechapp.exe.manifest" size="97882">
+    <dependentAssembly dependencyType="install" codebase="MTtechapp.exe.manifest" size="97782">
       <assemblyIdentity name="MTtechapp.exe" version="1.0.0.26" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>d87DG03nQICuUSHovVUDIuZeWKp52i1ViOt1JYKX0rk=</dsig:DigestValue>
+        <dsig:DigestValue>LZX0jkOmdxo2iwqIlGGx6WmpVDeWedD4bYQr0E9h7Q4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

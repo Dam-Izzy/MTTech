@@ -1362,14 +1362,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="15524352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="15524864">
       <assemblyIdentity name="MTtechapp" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J2bc3ecRFgcjXaUYMNhwWR1Nw3rOxg3WofWKukQfTjI=</dsig:DigestValue>
+        <dsig:DigestValue>T/7yOqKPTITx2WOEJMYRqUBoPWdy+CuVzfb+KyLvTPc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1628,8 +1628,6 @@
       <dsig:DigestValue>rLztN4VXMw69Q6b6MX/FIYxzyxMKuwcEaaz4TnqMk8A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="x64\pdfium.dll" size="13712384" />
-  <file name="x86\pdfium.dll" size="11128832" />
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- Una lista de las versiones de Windows en la que se ha probado esta aplicación y

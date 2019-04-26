@@ -148,7 +148,7 @@
               <TextRun>
                 <Value>=First(Fields!NombreCompleto.Value, "DataSet1")</Value>
                 <Style>
-                  <FontSize>5pt</FontSize>
+                  <FontSize>9pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -156,9 +156,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>2.54632cm</Top>
+        <Top>2.41887cm</Top>
         <Left>1.01342cm</Left>
-        <Height>0.31778cm</Height>
+        <Height>0.51579cm</Height>
         <Width>4.74014cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -274,7 +274,7 @@
               <TextRun>
                 <Value>=First(Now())</Value>
                 <Style>
-                  <FontSize>5pt</FontSize>
+                  <FontSize>6pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -282,10 +282,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fecha</rd:DefaultName>
-        <Top>2.10535cm</Top>
+        <Top>1.99952cm</Top>
         <Left>4.71515cm</Left>
-        <Height>0.33514cm</Height>
-        <Width>1.77681cm</Width>
+        <Height>0.41935cm</Height>
+        <Width>1.51466cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -309,7 +309,7 @@
               <TextRun>
                 <Value>=First(Fields!Sfolio.Value, "DataSet1")</Value>
                 <Style>
-                  <FontSize>5pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -339,13 +339,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.85671cm</Width>
+              <Width>1.46313cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.6464cm</Width>
+              <Width>3.05951cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.86689cm</Width>
+              <Width>1.84736cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -363,7 +363,7 @@
                             <TextRun>
                               <Value>Cantidad</Value>
                               <Style>
-                                <FontSize>6pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -395,7 +395,7 @@
                             <TextRun>
                               <Value>Descripción</Value>
                               <Style>
-                                <FontSize>6pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -427,7 +427,7 @@
                             <TextRun>
                               <Value>Importe</Value>
                               <Style>
-                                <FontSize>6pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -464,7 +464,7 @@
                             <TextRun>
                               <Value>=Fields!cantidad.Value</Value>
                               <Style>
-                                <FontSize>5pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -496,7 +496,7 @@
                             <TextRun>
                               <Value>=Fields!nombreArticulo.Value</Value>
                               <Style>
-                                <FontSize>5.5pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -528,7 +528,7 @@
                             <TextRun>
                               <Value>=Fields!precio.Value</Value>
                               <Style>
-                                <FontSize>5.5pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -629,7 +629,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!valor.Value)</Value>
                               <Style>
-                                <FontSize>5.5pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -666,7 +666,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!cantidad.Value)</Value>
                               <Style>
-                                <FontSize>5pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -732,7 +732,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!precio.Value*Fields!cantidad.Value+Fields!valor.Value)</Value>
                               <Style>
-                                <FontSize>5.5pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -805,7 +805,7 @@
                 <Value>MT</Value>
                 <Style>
                   <FontFamily>Haettenschweiler</FontFamily>
-                  <FontSize>36pt</FontSize>
+                  <FontSize>40pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -853,7 +853,7 @@
                 <Value>technologies</Value>
                 <Style>
                   <FontFamily>haettenschweiler</FontFamily>
-                  <FontSize>11pt</FontSize>
+                  <FontSize>14pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -863,7 +863,7 @@
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
         <Top>1.28832cm</Top>
         <Height>0.67592cm</Height>
-        <Width>1.76307cm</Width>
+        <Width>2.21286cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border />
@@ -877,7 +877,7 @@
     <Height>2.4897in</Height>
     <Style />
   </Body>
-  <Width>2.62195in</Width>
+  <Width>2.64525in</Width>
   <Page>
     <PageHeight>29cm</PageHeight>
     <PageWidth>21cm</PageWidth>

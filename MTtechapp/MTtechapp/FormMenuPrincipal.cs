@@ -1192,9 +1192,8 @@ namespace MTtechapp
             }
             else
             {
-                MessageBox.Show("Pronto...");
-                //FormHerramienta herramienta = new FormHerramienta();
-                //herramienta.Show();
+                FormHerramienta herramienta = new FormHerramienta();
+                herramienta.Show();
             }
         }
         private void dtpBuscaragenda_CloseUp(object sender, EventArgs e)

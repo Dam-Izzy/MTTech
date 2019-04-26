@@ -32,9 +32,10 @@ namespace MTtechapp
         {
             using (ITikConnection connection = ConnectionFactory.CreateConnection(TikConnectionType.Api))
             {
-                connection.Open("192.168.0.1", "admin", "yami_yonatan");
-                ITikCommand cmd = connection.CreateCommand("/system/identity/print");
-                MessageBox.Show(cmd.ExecuteScalar());                
+                
+                connection.Open("100.0.0.2", "admin", "macromt");
+                ITikCommand cmd = connection.CreateCommand("/ip/neighbor");
+                MessageBox.Show(cmd.ExecuteScalar());
             }
         }
     }
