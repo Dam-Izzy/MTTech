@@ -120,7 +120,7 @@ namespace MTtechapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Error en mensualidades" + ex.Message);
             }
             finally
             {
@@ -165,7 +165,7 @@ namespace MTtechapp
                     cl.IdIngreso = Convert.ToInt32(item[0].ToString());
                     cl.Tipo = item[1].ToString();
                     cl.Descripcion = item[2].ToString();
-                    cl.Lugar = item[8].ToString();
+                    cl.Lugar = item[3].ToString();
                     cl.Monto = Convert.ToInt32(item[4].ToString());
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
@@ -191,7 +191,7 @@ namespace MTtechapp
                 foreach (DataRow item in GetOtros().Rows)
                 {
                     ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[0].ToString());
+                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
                     cl.Tipo = item[1].ToString();
                     cl.Descripcion = item[2].ToString();
                     cl.Lugar = item[8].ToString();
@@ -245,12 +245,12 @@ namespace MTtechapp
                 foreach (DataRow item in GetMensualidades().Rows)
                 {
                     ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[8].ToString());
-                    cl.Tipo = item[6].ToString();
-                    cl.Descripcion = item[5].ToString();
-                    cl.Lugar = item[7].ToString();
-                    cl.Monto = Convert.ToInt32(item[0].ToString());
-                    cl.Fecha = Convert.ToDateTime(item[3]);
+                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
+                    cl.Tipo = item[1].ToString();
+                    cl.Descripcion = item[1].ToString();
+                    cl.Lugar = item[6].ToString();
+                    cl.Monto = Convert.ToInt32(item[11].ToString());
+                    cl.Fecha = Convert.ToDateTime(item[12]);
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));

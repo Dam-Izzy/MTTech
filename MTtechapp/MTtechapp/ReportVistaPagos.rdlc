@@ -82,8 +82,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.84184cm</Top>
-        <Left>25.41417cm</Left>
+        <Top>0.45351cm</Top>
+        <Left>9.14569cm</Left>
         <Height>0.6cm</Height>
         <Width>0.67438cm</Width>
         <ZIndex>2</ZIndex>
@@ -113,8 +113,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.84184cm</Top>
-        <Left>26.22967cm</Left>
+        <Top>0.45351cm</Top>
+        <Left>9.96119cm</Left>
         <Height>0.6cm</Height>
         <Width>3.227cm</Width>
         <ZIndex>3</ZIndex>
@@ -143,8 +143,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.81335cm</Top>
-        <Left>25.41417cm</Left>
+        <Top>1.42502cm</Top>
+        <Left>9.14569cm</Left>
         <Height>0.6cm</Height>
         <Width>0.67438cm</Width>
         <ZIndex>4</ZIndex>
@@ -174,8 +174,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>1.81335cm</Top>
-        <Left>26.15911cm</Left>
+        <Top>1.42502cm</Top>
+        <Left>9.89063cm</Left>
         <Height>0.6cm</Height>
         <Width>3.227cm</Width>
         <ZIndex>5</ZIndex>
@@ -204,8 +204,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.84184cm</Top>
-        <Left>29.5625cm</Left>
+        <Top>0.45351cm</Top>
+        <Left>13.29402cm</Left>
         <Height>0.6cm</Height>
         <Width>0.67438cm</Width>
         <ZIndex>6</ZIndex>
@@ -235,8 +235,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>0.84184cm</Top>
-        <Left>30.34272cm</Left>
+        <Top>0.45351cm</Top>
+        <Left>14.07424cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>7</ZIndex>
@@ -267,19 +267,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.02065cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.11893cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.59321cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.88124cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -288,37 +282,43 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.36229cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.10344cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.67408cm</Width>
+              <Width>1.44899cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.67408cm</Width>
+              <Width>1.22638cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.02486cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.67408cm</Width>
+              <Width>1.29032cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.04041cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.457cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.37343cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.07667cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.49458cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.94438cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.78563cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -928,7 +928,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!fechainstalacion.Value</Value>
+                              <Value>=Cdate(Fields!fechainstalacion.Value).ToShortDateString</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1084,10 +1084,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Enero.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Enero</rd:DefaultName>
@@ -1096,12 +1100,14 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1114,7 +1120,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Febrero.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1144,7 +1152,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Marzo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1174,7 +1184,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Abril.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1204,7 +1216,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Mayo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1234,7 +1248,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Junio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1264,7 +1280,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Julio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1294,7 +1312,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Agosto.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1324,7 +1344,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Septiembre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1354,7 +1376,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Octubre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1384,7 +1408,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Noviembre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1414,7 +1440,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Diciembre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1471,10 +1499,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>pagos</DataSetName>
-        <Top>3.27766cm</Top>
-        <Left>0.44474cm</Left>
+        <Top>3.33058cm</Top>
+        <Left>0.20662cm</Left>
         <Height>2.70812cm</Height>
-        <Width>46.61545cm</Width>
+        <Width>29.6492cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -1497,8 +1525,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>1.81335cm</Top>
-        <Left>30.34272cm</Left>
+        <Top>1.42502cm</Top>
+        <Left>14.07424cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>10</ZIndex>
@@ -1527,8 +1555,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.81335cm</Top>
-        <Left>29.5625cm</Left>
+        <Top>1.42502cm</Top>
+        <Left>13.29402cm</Left>
         <Height>0.6cm</Height>
         <Width>0.67438cm</Width>
         <ZIndex>11</ZIndex>
@@ -1544,17 +1572,33 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>9.95833in</Height>
-    <Style />
+    <Height>3.33333in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+      <TopBorder>
+        <Width>1pt</Width>
+      </TopBorder>
+      <BottomBorder>
+        <Width>1pt</Width>
+      </BottomBorder>
+      <LeftBorder>
+        <Width>1pt</Width>
+      </LeftBorder>
+      <RightBorder>
+        <Width>1pt</Width>
+      </RightBorder>
+    </Style>
   </Body>
-  <Width>18.52763in</Width>
+  <Width>11.9443in</Width>
   <Page>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageHeight>21cm</PageHeight>
+    <PageWidth>29.7cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

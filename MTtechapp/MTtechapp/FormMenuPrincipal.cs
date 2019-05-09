@@ -176,28 +176,7 @@ namespace MTtechapp
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("Select  * from getTotalMensualidad()", cnn.conn);
-                cnn.Conectar();
-                cmd.CommandType = CommandType.Text;
-                SqlDataReader dr = cmd.ExecuteReader();
-                int[] fechas;
-                fechas = new int[12];
-                while (dr.Read())
-                {
-                    fechas[0] = dr.GetInt32(3);
-                    fechas[1] = dr.GetInt32(4);
-                    fechas[2] = dr.GetInt32(5);
-                    fechas[3] = dr.GetInt32(6);
-                    fechas[4] = dr.GetInt32(7);
-                    fechas[5] = dr.GetInt32(8);
-                    fechas[6] = dr.GetInt32(9);
-                    fechas[7] = dr.GetInt32(10);
-                    fechas[8] = dr.GetInt32(11);
-                    fechas[9] = dr.GetInt32(12);
-                    fechas[10] = dr.GetInt32(13);
-                    fechas[11] = dr.GetInt32(14);                   
-                    dr.Close();
-                }        
+                
             }
             catch (Exception ex)
             {
@@ -272,7 +251,6 @@ namespace MTtechapp
 
         private void materialLabel2_Click(object sender, EventArgs e)
         {
-            getTotal();
             sumar();
         }
         public void autocompletar(TextBox text)

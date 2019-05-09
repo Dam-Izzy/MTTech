@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MTtechapp
 {
@@ -15,17 +11,6 @@ namespace MTtechapp
         public double Monto { get; set; }
         public DateTime Fecha { get; set; }
         public bool Estado { get; set; }
-        public ClassCorte(){}
-        public ClassCorte(ClassCorte Corte)
-        {
-            this.IdIngreso = Corte.IdIngreso;
-            this.Tipo = Corte.Tipo;
-            this.Descripcion = Corte.Descripcion;
-            this.Lugar = Corte.Lugar;
-            this.Monto = Corte.Monto;
-            this.Fecha = Corte.Fecha;
-            this.Estado = Corte.Estado;
-        }
-
+        public ClassCorte(){}      
     }    
 }

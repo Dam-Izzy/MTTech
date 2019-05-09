@@ -7,10 +7,10 @@ namespace MTtechapp
 {
     public class conexion
     {
-        public SqlConnection conn = new SqlConnection("Data Source=DESKTOP-3BFETIO," +
-                                                      "1433;DataBase=mt;User ID=sa; Password=32752;");
-        public OleDbConnection cn = new OleDbConnection("Data Source=DESKTOP-3BFETIO," +
-                                                       "1433;DataBase=mt;User ID=sa; Password=32752; Provider=SQLOLEDB;");
+        public SqlConnection conn = new SqlConnection("Data Source=192.168.0.60," +
+                                                      "1433;DataBase=mt;User ID=sa; Password=yami_yonatan;");
+        public OleDbConnection cn = new OleDbConnection("Data Source=192.168.0.60," +
+                                                       "1433;DataBase=mt;User ID=sa; Password=yami_yonatan; Provider=SQLOLEDB;");
         public void Conectar()
         {
             try

@@ -603,8 +603,7 @@ namespace MTtechapp
                 cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
                 cmd.Parameters.AddWithValue("@Diciembre", DateTime.Now.ToShortDateString());
                 cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
-                cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
-                    
+                cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();                    
                 cone.Conectar();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.BeginExecuteNonQuery();
@@ -649,12 +648,12 @@ namespace MTtechapp
             cmbLugar.DisplayMember = "Nombre";
             cmbLugar.ValueMember = "idMunicipio";
             cmbLugar.DataSource = Cargamunicipio();
-        }
+        }          
         public void LlenarMensualidades()
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select Ms.idMensualidad,C.idMunicipio,C.NombreCompleto,C.ClavePago, M.idMunicipio, M.Nombre,SUM(Ms.monto) as monto from Cliente C INNER JOIN municipios M on (C.idMunicipio= M.idMunicipio)inner join Mensualidad Ms on (Ms.idCliente = C.idCliente) GROUP BY M.idMunicipio, M.Nombre, C.ClavePago, C.idMunicipio, C.NombreCompleto,Ms.idMensualidad", cone.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT Ms.idMensualidad, C.idMunicipio, C.NombreCompleto, C.ClavePago, M.Nombre, Sum(Ms.monto) AS monto, Mss.idMensualidadC, Mss.idCliente, Mss.idMensualidad, C.idCliente, Ms.idCliente, M.idMunicipio FROM dbo.Cliente AS C INNER JOIN dbo.municipios AS M ON (C.idMunicipio = M.idMunicipio) INNER JOIN dbo.Mensualidad AS Ms ON (Ms.idCliente = C.idCliente) INNER JOIN dbo.Mensualidades as Mss ON Ms.idMensualidad = Mss.idMensualidadC GROUP BY M.idMunicipio, M.Nombre, C.idCliente, C.ClavePago, C.idMunicipio, C.NombreCompleto, Ms.idMensualidad, Ms.idCliente, Mss.idMensualidadC, Mss.idCliente, Mss.idMensualidad", cone.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -667,6 +666,7 @@ namespace MTtechapp
                     elementos.SubItems.Add(filas["NombreCompleto"].ToString());
                     elementos.SubItems.Add(filas["Nombre"].ToString());
                     elementos.SubItems.Add(filas["ClavePago"].ToString());
+                    elementos.SubItems.Add(filas["idMensualidadC"].ToString());
                     materialListView1.Items.Add(elementos);
                 }
             }
@@ -771,7 +771,6 @@ namespace MTtechapp
                         {
                             da.Fill(dataset);
                         }
-
                         if (dataset.Tables[0].Rows.Count > 0)
                         {
                             fag.cbCliente.DataSource = dataset.Tables[0];
@@ -798,7 +797,6 @@ namespace MTtechapp
                 cone.Desconectar();
             }
         }
-
         private void materialRaisedButton2_Click(object sender, EventArgs e){
             try
             {
@@ -809,8 +807,10 @@ namespace MTtechapp
                 else
                 {
                     string idCl = this.materialListView1.SelectedItems[0].SubItems[0].Text;
+                    string idCli = this.materialListView1.SelectedItems[0].SubItems[4].Text;
+
                     ClassMetodos metodos = new ClassMetodos();
-                    metodos.BorrarMensualidad(int.Parse(idCl));
+                    metodos.BorrarMensualidad(int.Parse(idCl), int.Parse(idCli));
                 }
             }
             catch (Exception)
