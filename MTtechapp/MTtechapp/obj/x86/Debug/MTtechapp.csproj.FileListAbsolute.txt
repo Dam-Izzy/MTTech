@@ -275,9 +275,6 @@ C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Newtonsoft.Jso
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Newtonsoft.Json.xml
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\OpenSSL.PrivateKeyDecoder.xml
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\OpenSSL.X509Certificate2.Provider.xml
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Patagames.Pdf.xml
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Patagames.Pdf.WinForms.xml
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Patagames.Pdf.Wpf.xml
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\tik4net.xml
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\tik4net.objects.xml
@@ -347,3 +344,5 @@ C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\es\Microsoft.V
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.application
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csproj.CopyComplete
+C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.cache
+C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.compiled

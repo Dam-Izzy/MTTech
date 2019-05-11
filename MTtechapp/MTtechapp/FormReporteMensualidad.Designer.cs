@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pagosfechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MunicipioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ClasedatosinformepagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pagosfechasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MunicipioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClasedatosinformepagoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // pagosfechasBindingSource
+            // 
+            this.pagosfechasBindingSource.DataSource = typeof(MTtechapp.pagosfechas);
+            // 
+            // MunicipioBindingSource
+            // 
+            this.MunicipioBindingSource.DataSource = typeof(MTtechapp.Municipio);
+            // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "mensualidad";
-            reportDataSource1.Value = this.MunicipioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MTtechapp.ReporteMensualidad.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(1, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(787, 435);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // MunicipioBindingSource
-            // 
-            this.MunicipioBindingSource.DataSource = typeof(MTtechapp.Municipio);
             // 
             // ClasedatosinformepagoBindingSource
             // 
@@ -64,7 +66,8 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormReporteMensualidad";
             this.Text = "ReporteMensualidad";
-            //this.Load += new System.EventHandler(this.FormReporteMensualidad_Load);
+            this.Load += new System.EventHandler(this.FormReporteMensualidad_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pagosfechasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MunicipioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClasedatosinformepagoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -76,5 +79,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource ClasedatosinformepagoBindingSource;
         private System.Windows.Forms.BindingSource MunicipioBindingSource;
+        private System.Windows.Forms.BindingSource pagosfechasBindingSource;
     }
 }

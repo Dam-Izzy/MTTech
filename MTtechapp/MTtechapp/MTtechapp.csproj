@@ -443,16 +443,13 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="ReportAgenda.rdlc" />
-    <EmbeddedResource Include="ReportCalendario.rdlc">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCorte.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteMensualidad.rdlc" />
     <EmbeddedResource Include="FormReporteMensualidad.resx">
       <DependentUpon>FormReporteMensualidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMensualidad.rdlc" />
     <EmbeddedResource Include="ReportVistaPagos.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -460,6 +457,7 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\Clasedatosinformepago.datasource" />
     <None Include="Properties\DataSources\ClaseInformeAgenda.datasource" />
+    <None Include="Properties\DataSources\ClaseMensualidad.datasource" />
     <None Include="Properties\DataSources\ClassCorte.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\DataSources\DatosReporte.datasource" />

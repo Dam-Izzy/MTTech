@@ -13,6 +13,11 @@ namespace MTtechapp
         {
             InitializeComponent();
         }
-        
+
+        private void FormReporteMensualidad_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

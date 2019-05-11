@@ -26,9 +26,7 @@ namespace MTtechapp
         //}
         private void FormVistaClientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DataSetCalendario.Mensualidad' Puede moverla o quitarla según sea necesario.            
-            this.reportViewer1.RefreshReport();
-            reportViewer1.LocalReport.DataSources.Clear();
+            // TODO: esta línea de código carga datos en la tabla 'DataSetCalendario.Mensualidad' 
             CargaMensualidad();
             this.reportViewer1.RefreshReport();
         }
@@ -42,14 +40,13 @@ namespace MTtechapp
                 {
                     ClaseMensualidad cl = new ClaseMensualidad();
                     cl.id = Convert.ToInt32(item[2].ToString());
-                    cl.NombreCompleto = item[5].ToString();
-                    cl.direccion = item[6].ToString();
-                    cl.Nombre = item[8].ToString();
-                    cl.fecha = Convert.ToDateTime(item[3]);
+                    cl.cliente.NombreCompleto = item[5].ToString();
+                    cl.cliente.direccion = item[6].ToString();
+                    cl.municipio.Nombre = item[8].ToString();
+                    cl.fechaMensualidad = item[3].ToString();
                     cl.monto = Convert.ToDouble(item[0].ToString());
                     cortes.Add(cl);
                 }
-
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidad", cortes));
                 reportViewer1.RefreshReport();
             }
@@ -64,8 +61,7 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("Select * from getMensualidad('" + DateTime.Now.ToShortDateString() + "'," + valor + ")", cnn.conn);
-                //cmd.Parameters.AddWithValue("@fecha",SqlDbType.DateTime).SqlValue = dtpfecha.Value.ToShortDateString();
+                SqlCommand cmd = new SqlCommand("Select * from getMensualidad('2019/05/09'," + 6 + ")", cnn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 Retornar.Load(dr);
             }
