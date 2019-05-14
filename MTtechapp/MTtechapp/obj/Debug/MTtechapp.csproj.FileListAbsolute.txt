@@ -480,3 +480,4 @@ C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.applicat
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.csproj.CopyComplete
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.exe
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.pdb
+C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.csprojAssemblyReference.cache

@@ -10,9 +10,11 @@ namespace MTtechapp
     public partial class FormCalendarioClientes : Form
     {
         int valor;
-        public FormCalendarioClientes(int valor)
+        DateTime fecha;
+        public FormCalendarioClientes(DateTime fecha, int valor)
         {
             this.valor = valor;
+            this.fecha = fecha;
             InitializeComponent();
         }
        // public static List<DataSetCalendario> data = new List<DataSetCalendario>();
@@ -39,10 +41,10 @@ namespace MTtechapp
                 foreach (DataRow item in GetMensualidad().Rows)
                 {
                     ClaseMensualidad cl = new ClaseMensualidad();
-                    cl.id = Convert.ToInt32(item[2].ToString());
-                    cl.cliente.NombreCompleto = item[5].ToString();
-                    cl.cliente.direccion = item[6].ToString();
-                    cl.municipio.Nombre = item[8].ToString();
+                    cl.id = Convert.ToInt32(item[4].ToString());
+                    cl.NombreCompleto = item[7].ToString();
+                    cl.direccion = item[8].ToString();
+                    cl.nombre = item[8].ToString();
                     cl.fechaMensualidad = item[3].ToString();
                     cl.monto = Convert.ToDouble(item[0].ToString());
                     cortes.Add(cl);
@@ -55,19 +57,20 @@ namespace MTtechapp
                 MessageBox.Show("Error ;_; " + ex.Message);
             }
         }
+        FormPagoMensualidad FormPago = new FormPagoMensualidad();
         private DataTable GetMensualidad()
         {
             DataTable Retornar = new DataTable();
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("Select * from getMensualidad('2019/05/09'," + 6 + ")", cnn.conn);
+                SqlCommand cmd = new SqlCommand("Select * from getMensualidad('"+ fecha.ToShortDateString() +"', "+ valor +")", cnn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 Retornar.Load(dr);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Error" + ex.Message);
             }
             finally
             {

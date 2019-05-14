@@ -6,10 +6,10 @@
         <Source>Embedded</Source>
         <Value>camara</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.06591cm</Top>
-        <Left>3.40811cm</Left>
-        <Height>1.02375cm</Height>
-        <Width>0.98035cm</Width>
+        <Top>0.07059cm</Top>
+        <Left>2.27614cm</Left>
+        <Height>0.9623cm</Height>
+        <Width>0.68729cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -20,10 +20,10 @@
         <Source>Embedded</Source>
         <Value>satelite</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.06591cm</Top>
-        <Left>4.56485cm</Left>
-        <Height>1.02375cm</Height>
-        <Width>1.05021cm</Width>
+        <Top>0.07059cm</Top>
+        <Left>3.13982cm</Left>
+        <Height>0.9623cm</Height>
+        <Width>0.67979cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -35,10 +35,10 @@
         <Source>Embedded</Source>
         <Value>panel</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.06591cm</Top>
-        <Left>5.68561cm</Left>
-        <Height>1.02375cm</Height>
-        <Width>1.07667cm</Width>
+        <Top>0.07059cm</Top>
+        <Left>3.85489cm</Left>
+        <Height>0.9623cm</Height>
+        <Width>0.83986cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -50,10 +50,10 @@
         <Source>Embedded</Source>
         <Value>antena</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.06591cm</Top>
-        <Left>6.83283cm</Left>
-        <Height>1.02375cm</Height>
-        <Width>1.10312cm</Width>
+        <Top>0.07059cm</Top>
+        <Left>4.69475cm</Left>
+        <Height>0.9623cm</Height>
+        <Width>0.89958cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -65,10 +65,10 @@
         <Source>Embedded</Source>
         <Value>control</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>2.26604cm</Top>
-        <Left>3.44339cm</Left>
-        <Height>0.97042cm</Height>
-        <Width>0.94507cm</Width>
+        <Top>1.03289cm</Top>
+        <Left>3.08754cm</Left>
+        <Height>0.61763cm</Height>
+        <Width>0.69812cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -80,10 +80,10 @@
         <Source>Embedded</Source>
         <Value>pc</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>2.23077cm</Top>
-        <Left>4.49429cm</Left>
-        <Height>1.00569cm</Height>
-        <Width>1.12076cm</Width>
+        <Top>0.86503cm</Top>
+        <Left>3.89149cm</Left>
+        <Height>0.75874cm</Height>
+        <Width>0.78563cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -95,10 +95,10 @@
         <Source>Embedded</Source>
         <Value>walkie</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>2.26604cm</Top>
-        <Left>5.79145cm</Left>
-        <Height>0.97042cm</Height>
-        <Width>0.97083cm</Width>
+        <Top>1.03289cm</Top>
+        <Left>4.65948cm</Left>
+        <Height>0.65291cm</Height>
+        <Width>0.93485cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -115,7 +115,7 @@
               <TextRun>
                 <Value>Internet | Energia solar | Radio comunicaciones | Cámaras</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>6pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -127,7 +127,7 @@
               <TextRun>
                 <Value>Torres | Control de acceso | administradores de red</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>6pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -138,10 +138,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.06591cm</Top>
-        <Left>8.00651cm</Left>
-        <Height>1.02375cm</Height>
-        <Width>8.58542cm</Width>
+        <Top>1.69433cm</Top>
+        <Left>0.18808cm</Left>
+        <Height>0.65262cm</Height>
+        <Width>6.14483cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -162,7 +162,7 @@
               <TextRun>
                 <Value>Horario:</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>8.5pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -176,7 +176,7 @@
               <TextRun>
                 <Value>Lunes a viernes de 9 am a 6 pm</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontSize>8.5pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -190,7 +190,7 @@
               <TextRun>
                 <Value>Sabádos: 9 am a 4 pm</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontSize>8.5pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -204,7 +204,7 @@
               <TextRun>
                 <Value>Teléfono de oficina</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontSize>8.5pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -218,7 +218,7 @@
               <TextRun>
                 <Value>43-6-2081</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontSize>8.5pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -229,10 +229,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>2.23077cm</Top>
-        <Left>6.93867cm</Left>
-        <Height>1.57937cm</Height>
-        <Width>3.30063cm</Width>
+        <Top>2.48806cm</Top>
+        <Left>0.36392cm</Left>
+        <Height>2.29375cm</Height>
+        <Width>3.5564cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -244,20 +244,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image3">
-        <Source>Embedded</Source>
-        <Value>MT</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>0.92115cm</Top>
-        <Height>3.23771cm</Height>
-        <Width>3.58703cm</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
       <Textbox Name="Textbox14">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -273,11 +259,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>2.26604cm</Top>
-        <Left>10.3804cm</Left>
+        <Top>4.92292cm</Top>
+        <Left>0.40412cm</Left>
         <Height>0.6cm</Height>
         <Width>1.31875cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -303,81 +289,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>4.30953cm</Top>
-        <Left>3.44339cm</Left>
+        <Top>6.7506cm</Top>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>11</ZIndex>
+        <Width>1.4814cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox7">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>4.30953cm</Top>
-        <Left>5.94339cm</Left>
-        <Height>0.6cm</Height>
-        <Width>9.59083cm</Width>
-        <ZIndex>12</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BottomBorder>
-            <Style>Solid</Style>
-          </BottomBorder>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>5.24302cm</Top>
-        <Left>3.40811cm</Left>
-        <Height>0.6cm</Height>
-        <Width>8.66479cm</Width>
-        <ZIndex>13</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BottomBorder>
-            <Style>Solid</Style>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -399,50 +318,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>5.24302cm</Top>
-        <Left>0.90811cm</Left>
+        <Top>7.68409cm</Top>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>1.77626cm</Width>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="fecha2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>fecha</rd:DefaultName>
-        <Top>3.21042cm</Top>
-        <Left>12.16929cm</Left>
-        <Height>0.59972cm</Height>
-        <Width>4.42264cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BottomBorder>
-            <Style>Solid</Style>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -457,20 +340,17 @@
             <TextRuns>
               <TextRun>
                 <Value>Municipio:</Value>
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>3.21014cm</Top>
-        <Left>10.42559cm</Left>
+        <Top>8.61013cm</Top>
         <Height>0.6cm</Height>
-        <Width>1.56732cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>1.77626cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -481,22 +361,505 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="NombreCompleto">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!NombreCompleto.Value, "mensualidad")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NombreCompleto</rd:DefaultName>
+        <Top>6.7506cm</Top>
+        <Left>1.81154cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.22698cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="direccion">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!direccion.Value, "mensualidad")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>direccion</rd:DefaultName>
+        <Top>7.68409cm</Top>
+        <Left>1.95265cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.08587cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="idMensualidades">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!id.Value, "mensualidad")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>idMensualidades</rd:DefaultName>
+        <Top>3.26444cm</Top>
+        <Left>4.17823cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.98017cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="nombre">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!nombre.Value, "mensualidad")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>nombre</rd:DefaultName>
+        <Top>8.61013cm</Top>
+        <Left>1.81154cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.22698cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Folio:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>2.48806cm</Top>
+        <Left>4.32897cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.31875cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=now()</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>4.85237cm</Top>
+        <Left>1.72287cm</Left>
+        <Height>0.67056cm</Height>
+        <Width>4.0875cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>MT</Value>
+                <Style>
+                  <FontFamily>Haettenschweiler</FontFamily>
+                  <FontSize>42pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Haettenschweiler</FontFamily>
+                  <FontSize>26pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.07059cm</Top>
+        <Left>0.31053cm</Left>
+        <Height>1.57993cm</Height>
+        <Width>1.60042cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="fechaMensualidad">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!fechaMensualidad.Value, "mensualidad")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>fechaMensualidad</rd:DefaultName>
+        <Top>10.1413cm</Top>
+        <Left>3.53871cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.68789cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mensualidad correspondiente a:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox8</rd:DefaultName>
+        <Top>9.77088cm</Top>
+        <Left>0.26947cm</Left>
+        <Height>1.36729cm</Height>
+        <Width>3.17424cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Siguente pago:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox8</rd:DefaultName>
+        <Top>11.89563cm</Top>
+        <Left>0.26947cm</Left>
+        <Height>0.57354cm</Height>
+        <Width>2.81555cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="fechaMensualidad2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=dateAdd("m",1,Fields!fechaMensualidad.Value)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>fechaMensualidad</rd:DefaultName>
+        <Top>11.89563cm</Top>
+        <Left>3.26141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.96519cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NombreCompleto3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>technologies</Value>
+                <Style>
+                  <FontFamily>haettenschweiler</FontFamily>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NombreCompleto</rd:DefaultName>
+        <Top>1.10345cm</Top>
+        <Left>0.14788cm</Left>
+        <Height>0.67592cm</Height>
+        <Width>2.44577cm</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NombreCompleto4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Datos:</Value>
+                <Style>
+                  <FontFamily>haettenschweiler</FontFamily>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NombreCompleto</rd:DefaultName>
+        <Top>5.59349cm</Top>
+        <Left>1.72287cm</Left>
+        <Height>0.67592cm</Height>
+        <Width>2.07337cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.07292in</Height>
+    <Height>5.10466in</Height>
     <Style />
   </Body>
-  <Width>6.95934in</Width>
+  <Width>2.56059in</Width>
   <Page>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageHeight>17cm</PageHeight>
+    <PageWidth>8cm</PageWidth>
+    <InteractiveHeight>10cm</InteractiveHeight>
+    <InteractiveWidth>10cm</InteractiveWidth>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="MTtechapp">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a47879ac-7f09-4d69-995a-63dd06df55cd</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="mensualidad">
+      <Query>
+        <DataSourceName>MTtechapp</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="direccion">
+          <DataField>direccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fechaMensualidad">
+          <DataField>fechaMensualidad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idMensualidades">
+          <DataField>idMensualidades</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="monto">
+          <DataField>monto</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>MTtechapp</rd:DataSetName>
+        <rd:TableName>ClaseMensualidad</rd:TableName>
+        <rd:ObjectDataSourceType>MTtechapp.ClaseMensualidad, MTtechapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="camara">
       <MIMEType>image/png</MIMEType>

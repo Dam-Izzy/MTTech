@@ -31,7 +31,7 @@ namespace MTtechapp
         {
             try
             {
-                if (String.IsNullOrEmpty(txtrouter.Text) || String.IsNullOrEmpty(txtIp.Text) || String.IsNullOrEmpty(txtCometarioip.Text))
+                if (String.IsNullOrEmpty(txtrouter.Text) || String.IsNullOrEmpty(txtIp.Text))
                 {
                     MessageBox.Show("Completa los campos");
                 }
@@ -54,6 +54,8 @@ namespace MTtechapp
                     cmd.ExecuteNonQuery();                    
                     MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
+                    cmd.Dispose();
+                    cmd2.Dispose();
                 }
             }
             catch (Exception ex)
@@ -133,6 +135,7 @@ namespace MTtechapp
                     if (i >= 0 && ig>=0)
                     {
                         MessageBox.Show("Usuario eliminado correctamente!", "MTtech");
+                        limpiar();
                     }
                     else
                     {
@@ -150,8 +153,11 @@ namespace MTtechapp
             }
             finally
             {
-                conn.Desconectar();
-                
+                if (conn.conn.State == ConnectionState.Open)
+                {
+                    conn.Desconectar();
+                }
+
             }            
         }
         

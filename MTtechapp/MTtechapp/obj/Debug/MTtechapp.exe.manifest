@@ -1302,14 +1302,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13273088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13285376">
       <assemblyIdentity name="MTtechapp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>z3y4Z5Ra4R/CrEKLd6g425rDfNzB13TMgBP9T6FTIpU=</dsig:DigestValue>
+        <dsig:DigestValue>vdSaFa/tqYM0P9BUYTbvvfkLYF30rN75P8Afwl8JI2w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

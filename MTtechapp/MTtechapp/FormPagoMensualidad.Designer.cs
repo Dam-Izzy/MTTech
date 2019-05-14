@@ -49,9 +49,9 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -286,6 +286,10 @@
             this.columnHeader3.Text = "Pagado";
             this.columnHeader3.Width = 258;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "idPagos";
+            // 
             // materialRaisedButton2
             // 
             this.materialRaisedButton2.AutoSize = true;
@@ -312,10 +316,6 @@
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "idPagos";
             // 
             // FormPagoMensualidad
             // 
@@ -366,7 +366,6 @@
         private System.Windows.Forms.ComboBox cmbLugar;
         private MaterialSkin.Controls.MaterialFlatButton btnImprimir;
         public System.Windows.Forms.ComboBox cbCliente;
-        private System.Windows.Forms.DateTimePicker dtpmensualidad;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.Label label2;
@@ -378,5 +377,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        public System.Windows.Forms.DateTimePicker dtpmensualidad;
     }
 }

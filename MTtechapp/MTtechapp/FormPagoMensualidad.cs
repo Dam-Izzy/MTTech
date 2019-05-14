@@ -708,8 +708,7 @@ namespace MTtechapp
             if (cbCliente.SelectedValue!=null)
             {
                 int idSeleccionado = Convert.ToInt32(cbCliente.SelectedValue);
-                MessageBox.Show(idSeleccionado.ToString());
-                FormDialogo imprimir = new FormDialogo(idSeleccionado);
+                FormDialogo imprimir = new FormDialogo(dtpmensualidad.Value, idSeleccionado);
                 imprimir.Show();
             }
             else
