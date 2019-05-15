@@ -27,5 +27,10 @@ namespace MTtechapp
             //FormReporteMensualidad formReporte = new FormReporteMensualidad(valor);
             //formReporte.ShowDialog();
         }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

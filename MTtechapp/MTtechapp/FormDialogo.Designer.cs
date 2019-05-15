@@ -54,6 +54,7 @@
             this.btnreporte.AutoSize = true;
             this.btnreporte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnreporte.Depth = 0;
+            this.btnreporte.Enabled = false;
             this.btnreporte.Icon = null;
             this.btnreporte.Location = new System.Drawing.Point(59, 158);
             this.btnreporte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -81,6 +82,7 @@
             this.btncancelar.TabIndex = 2;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btncalendario
             // 
@@ -93,9 +95,9 @@
             this.btncalendario.MouseState = MaterialSkin.MouseState.HOVER;
             this.btncalendario.Name = "btncalendario";
             this.btncalendario.Primary = false;
-            this.btncalendario.Size = new System.Drawing.Size(169, 36);
+            this.btncalendario.Size = new System.Drawing.Size(187, 36);
             this.btncalendario.TabIndex = 3;
-            this.btncalendario.Text = "Imprimir calendario";
+            this.btncalendario.Text = "Imprimir comprobante";
             this.btncalendario.UseVisualStyleBackColor = true;
             this.btncalendario.Click += new System.EventHandler(this.btncalendario_Click);
             // 
