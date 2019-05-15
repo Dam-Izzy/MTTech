@@ -48,10 +48,12 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,19 +251,21 @@
             this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader3});
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(453, 135);
+            this.materialListView1.Location = new System.Drawing.Point(439, 122);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(618, 378);
+            this.materialListView1.Size = new System.Drawing.Size(662, 378);
             this.materialListView1.TabIndex = 27;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -270,21 +274,17 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "id";
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Cliente";
-            this.columnHeader1.Width = 226;
+            this.columnHeader1.Width = 300;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Lugar";
-            this.columnHeader2.Width = 130;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Pagado";
-            this.columnHeader3.Width = 258;
+            this.columnHeader2.Width = 452;
             // 
             // columnHeader5
             // 
@@ -316,6 +316,19 @@
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "idMensualidades";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "idmeses";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "idCliente";
             // 
             // FormPagoMensualidad
             // 
@@ -372,11 +385,13 @@
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         public System.Windows.Forms.DateTimePicker dtpmensualidad;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

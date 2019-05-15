@@ -17,15 +17,8 @@ namespace MTtechapp
             this.fecha = fecha;
             InitializeComponent();
         }
-       // public static List<DataSetCalendario> data = new List<DataSetCalendario>();
-        //public void calendario()
-        //{
-        //    foreach (var item in data)
-        //    {
-        //        DateTime valor =DateTime.Now;
-        //        item.Mensualidad.fechacalendarioColumn.DefaultValue = valor.AddMonths(1);
-        //    }
-        //}
+        List<ClaseMensualidad> cortes = new List<ClaseMensualidad>();
+        ClaseMensualidad cl = new ClaseMensualidad();
         private void FormVistaClientes_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'DataSetCalendario.Mensualidad' 
@@ -37,16 +30,15 @@ namespace MTtechapp
         {
             try
             {
-                List<ClaseMensualidad> cortes = new List<ClaseMensualidad>();
                 foreach (DataRow item in GetMensualidad().Rows)
                 {
-                    ClaseMensualidad cl = new ClaseMensualidad();
                     cl.id = Convert.ToInt32(item[4].ToString());
                     cl.NombreCompleto = item[7].ToString();
                     cl.direccion = item[8].ToString();
-                    cl.nombre = item[8].ToString();
-                    cl.fechaMensualidad = item[3].ToString();
+                    cl.nombre = item[10].ToString();
+                    cl.fechaMensualidad = Convert.ToDateTime(item[3].ToString());
                     cl.monto = Convert.ToDouble(item[0].ToString());
+                    cl.mesprox = Convert.ToDateTime(item[3].ToString()).AddMonths(1);
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidad", cortes));

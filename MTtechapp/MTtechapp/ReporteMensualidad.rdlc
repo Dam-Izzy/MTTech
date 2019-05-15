@@ -7,7 +7,7 @@
         <Value>camara</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.07059cm</Top>
-        <Left>2.27614cm</Left>
+        <Left>2.52878cm</Left>
         <Height>0.9623cm</Height>
         <Width>0.68729cm</Width>
         <Style>
@@ -21,7 +21,7 @@
         <Value>satelite</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.07059cm</Top>
-        <Left>3.13982cm</Left>
+        <Left>3.39246cm</Left>
         <Height>0.9623cm</Height>
         <Width>0.67979cm</Width>
         <ZIndex>1</ZIndex>
@@ -36,7 +36,7 @@
         <Value>panel</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.07059cm</Top>
-        <Left>3.85489cm</Left>
+        <Left>4.10753cm</Left>
         <Height>0.9623cm</Height>
         <Width>0.83986cm</Width>
         <ZIndex>2</ZIndex>
@@ -51,7 +51,7 @@
         <Value>antena</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.07059cm</Top>
-        <Left>4.69475cm</Left>
+        <Left>4.94739cm</Left>
         <Height>0.9623cm</Height>
         <Width>0.89958cm</Width>
         <ZIndex>3</ZIndex>
@@ -66,7 +66,7 @@
         <Value>control</Value>
         <Sizing>FitProportional</Sizing>
         <Top>1.03289cm</Top>
-        <Left>3.08754cm</Left>
+        <Left>3.34018cm</Left>
         <Height>0.61763cm</Height>
         <Width>0.69812cm</Width>
         <ZIndex>4</ZIndex>
@@ -81,7 +81,7 @@
         <Value>pc</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.86503cm</Top>
-        <Left>3.89149cm</Left>
+        <Left>4.14413cm</Left>
         <Height>0.75874cm</Height>
         <Width>0.78563cm</Width>
         <ZIndex>5</ZIndex>
@@ -96,7 +96,7 @@
         <Value>walkie</Value>
         <Sizing>FitProportional</Sizing>
         <Top>1.03289cm</Top>
-        <Left>4.65948cm</Left>
+        <Left>4.91212cm</Left>
         <Height>0.65291cm</Height>
         <Width>0.93485cm</Width>
         <ZIndex>6</ZIndex>
@@ -113,19 +113,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Internet | Energia solar | Radio comunicaciones | Cámaras</Value>
+                <Value>Internet | Energia solar | Radio Comunicaciones | Cámaras</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Torres | Control de acceso | administradores de red</Value>
+                <Value>Torres Arriostradad | Control de acceso | Administradores de red</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -138,15 +140,93 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.69433cm</Top>
-        <Left>0.18808cm</Left>
+        <Top>2.63858cm</Top>
         <Height>0.65262cm</Height>
-        <Width>6.14483cm</Width>
+        <Width>6.5039cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>MT</Value>
+                <Style>
+                  <FontFamily>Haettenschweiler</FontFamily>
+                  <FontSize>42pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Haettenschweiler</FontFamily>
+                  <FontSize>26pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.07059cm</Top>
+        <Left>0.56317cm</Left>
+        <Height>1.57993cm</Height>
+        <Width>1.60042cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NombreCompleto3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>technologies</Value>
+                <Style>
+                  <FontFamily>haettenschweiler</FontFamily>
+                  <FontSize>16pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NombreCompleto</rd:DefaultName>
+        <Top>1.10345cm</Top>
+        <Left>0.40052cm</Left>
+        <Height>0.67592cm</Height>
+        <Width>2.44577cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border />
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -227,13 +307,41 @@
               <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>WhatsApp: +52 1 243 110 9435</Value>
+                <Style>
+                  <FontSize>8.5pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Correo: administacion@mttech.com.mx</Value>
+                <Style>
+                  <FontSize>8.5pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>2.48806cm</Top>
-        <Left>0.36392cm</Left>
-        <Height>2.29375cm</Height>
-        <Width>3.5564cm</Width>
-        <ZIndex>8</ZIndex>
+        <Top>9.90695cm</Top>
+        <Left>0.17185cm</Left>
+        <Height>3.24625cm</Height>
+        <Width>5.80228cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -259,11 +367,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>4.92292cm</Top>
-        <Left>0.40412cm</Left>
+        <Top>1.89747cm</Top>
+        <Left>0.52737cm</Left>
         <Height>0.6cm</Height>
         <Width>1.31875cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -289,10 +397,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>6.7506cm</Top>
+        <Top>5.29216cm</Top>
         <Height>0.6cm</Height>
-        <Width>1.4814cm</Width>
-        <ZIndex>10</ZIndex>
+        <Width>1.77626cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -318,10 +426,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>7.68409cm</Top>
+        <Top>6.22565cm</Top>
+        <Left>0.0092cm</Left>
         <Height>0.6cm</Height>
         <Width>1.77626cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -347,10 +456,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>8.61013cm</Top>
+        <Top>7.15169cm</Top>
+        <Left>0.0092cm</Left>
         <Height>0.6cm</Height>
         <Width>1.77626cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -376,11 +486,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>6.7506cm</Top>
+        <Top>5.29216cm</Top>
         <Left>1.81154cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.22698cm</Width>
-        <ZIndex>13</ZIndex>
+        <Width>4.55368cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -409,11 +519,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>direccion</rd:DefaultName>
-        <Top>7.68409cm</Top>
-        <Left>1.95265cm</Left>
+        <Top>6.22565cm</Top>
+        <Left>1.92657cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.08587cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>4.43865cm</Width>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -438,22 +548,21 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>idMensualidades</rd:DefaultName>
-        <Top>3.26444cm</Top>
-        <Left>4.17823cm</Left>
+        <Top>3.32648cm</Top>
+        <Left>1.76932cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.98017cm</Width>
-        <ZIndex>15</ZIndex>
+        <Width>4.07765cm</Width>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BottomBorder>
-            <Style>Solid</Style>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -475,11 +584,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>nombre</rd:DefaultName>
-        <Top>8.61013cm</Top>
-        <Left>1.81154cm</Left>
+        <Top>7.15169cm</Top>
+        <Left>1.89129cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.22698cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>4.47393cm</Width>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -510,11 +619,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>2.48806cm</Top>
-        <Left>4.32897cm</Left>
+        <Top>3.29121cm</Top>
+        <Left>0.57404cm</Left>
         <Height>0.6cm</Height>
         <Width>1.31875cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -540,63 +649,15 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.85237cm</Top>
-        <Left>1.72287cm</Left>
+        <Top>1.86219cm</Top>
+        <Left>1.83131cm</Left>
         <Height>0.67056cm</Height>
         <Width>4.0875cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>MT</Value>
-                <Style>
-                  <FontFamily>Haettenschweiler</FontFamily>
-                  <FontSize>42pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Haettenschweiler</FontFamily>
-                  <FontSize>26pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.07059cm</Top>
-        <Left>0.31053cm</Left>
-        <Height>1.57993cm</Height>
-        <Width>1.60042cm</Width>
-        <ZIndex>19</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>White</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -610,9 +671,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!fechaMensualidad.Value, "mensualidad")</Value>
+                <Value>=First(Cdate(Fields!fechaMensualidad.Value).ToShortDateString, "mensualidad")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -621,11 +682,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fechaMensualidad</rd:DefaultName>
-        <Top>10.1413cm</Top>
-        <Left>3.53871cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.68789cm</Width>
-        <ZIndex>20</ZIndex>
+        <Top>7.93933cm</Top>
+        <Left>3.92817cm</Left>
+        <Height>0.94396cm</Height>
+        <Width>2.43705cm</Width>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -643,19 +704,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Mensualidad correspondiente a:</Value>
-                <Style />
+                <Value>Mes correspondiente a:</Value>
+                <Style>
+                  <FontSize>9.5pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>9.77088cm</Top>
-        <Left>0.26947cm</Left>
-        <Height>1.36729cm</Height>
-        <Width>3.17424cm</Width>
-        <ZIndex>21</ZIndex>
+        <Top>7.93933cm</Top>
+        <Left>0.17185cm</Left>
+        <Height>0.65291cm</Height>
+        <Width>3.75632cm</Width>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -673,7 +738,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Siguente pago:</Value>
+                <Value>Proximo pago:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -681,11 +746,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>11.89563cm</Top>
-        <Left>0.26947cm</Left>
+        <Top>8.95384cm</Top>
+        <Left>0.17185cm</Left>
         <Height>0.57354cm</Height>
         <Width>2.81555cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -703,7 +768,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=dateAdd("m",1,Fields!fechaMensualidad.Value)</Value>
+                <Value>=First(Cdate(Fields!mesprox.Value).ToShortDateString, "mensualidad")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -711,46 +776,15 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fechaMensualidad</rd:DefaultName>
-        <Top>11.89563cm</Top>
-        <Left>3.26141cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.96519cm</Width>
-        <ZIndex>23</ZIndex>
+        <Top>8.95384cm</Top>
+        <Left>3.16379cm</Left>
+        <Height>0.77672cm</Height>
+        <Width>3.20143cm</Width>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="NombreCompleto3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>technologies</Value>
-                <Style>
-                  <FontFamily>haettenschweiler</FontFamily>
-                  <FontSize>16pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>1.10345cm</Top>
-        <Left>0.14788cm</Left>
-        <Height>0.67592cm</Height>
-        <Width>2.44577cm</Width>
-        <ZIndex>24</ZIndex>
-        <Style>
-          <Border />
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -764,7 +798,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Datos:</Value>
+                <Value>Datos: Cliente Hogar</Value>
                 <Style>
                   <FontFamily>haettenschweiler</FontFamily>
                   <FontSize>16pt</FontSize>
@@ -777,10 +811,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>5.59349cm</Top>
-        <Left>1.72287cm</Left>
-        <Height>0.67592cm</Height>
-        <Width>2.07337cm</Width>
+        <Top>4.2087cm</Top>
+        <Left>0.57404cm</Left>
+        <Height>0.85231cm</Height>
+        <Width>3.87146cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border />
@@ -791,10 +825,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.10466in</Height>
+    <Height>5.30257in</Height>
     <Style />
   </Body>
-  <Width>2.56059in</Width>
+  <Width>2.64281in</Width>
   <Page>
     <PageHeight>17cm</PageHeight>
     <PageWidth>8cm</PageWidth>
@@ -814,7 +848,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>a47879ac-7f09-4d69-995a-63dd06df55cd</rd:DataSourceID>
+      <rd:DataSourceID>d086478c-087f-4fee-8bce-97087b1b8202</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -839,6 +873,10 @@
         <Field Name="idMensualidades">
           <DataField>idMensualidades</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="mesprox">
+          <DataField>mesprox</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="monto">
           <DataField>monto</DataField>

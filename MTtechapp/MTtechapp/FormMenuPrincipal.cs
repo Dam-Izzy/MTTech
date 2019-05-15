@@ -8,8 +8,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MTtechapp.Properties;
-using GMap.NET.WindowsForms;
-using GMap.NET.MapProviders;
+
 
 namespace MTtechapp
 {
@@ -169,8 +168,6 @@ namespace MTtechapp
                 A += double.Parse(I.SubItems[6].Text);
                 lvTotal.Text = A.ToString();
             }
-            FormIngresos ingresos = new FormIngresos();
-            ingresos.ShowDialog();
         }
         public void getTotal()
         {
@@ -1309,30 +1306,64 @@ namespace MTtechapp
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             LlenarListView();
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-        }
-
+        }        
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             metodos.llenarCortes(lvCortes, lvTotal);
-        }
-
-        private void dateTimePicker1_CloseUp(object sender, EventArgs e)
-        {
-            metodos.filtrarmesualidad(lvCortes, dateTimePicker1.Value);
-        }
-
+            Int32 hora = DateTime.Now.Hour;
+            foreach (ListViewItem I in lvCortes.Items)
+            {
+                A += double.Parse(I.SubItems[6].Text);
+                if (A<4000 && hora<16)
+                {
+                    MessageBox.Show("Superaste el monto de 4,000, deposita lo mas pronto posible");
+                }
+                lvMen.Text = A.ToString();
+            }
+        }     
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
             llenarPagos();
         }
 
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cnn.Conectar();
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago, DATEADD(m, 1, dbo.Mensualidad.fechaPago) AS corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad WHERE dbo.Mensualidad.fechaPago like '%" + txtbuscarcorte.Text + "%' or dbo.Cliente.NombreCompleto Like '%" + txtbuscarcorte.Text +"%' group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago ", cnn.cn);
+                DataSet ds = new DataSet();
+                DataTable tabla = new DataTable();
+                adaptador.Fill(ds);
+                tabla = ds.Tables[0];
+                lvCortes.Items.Clear();
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    DataRow filas = tabla.Rows[i];
+                    ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
+                    elementos.SubItems.Add(filas["NombreCompleto"].ToString());
+                    elementos.SubItems.Add(filas["Nombre"].ToString());
+                    elementos.SubItems.Add(filas["ip"].ToString());
+                    elementos.SubItems.Add(filas["fechaPago"].ToString());
+                    elementos.SubItems.Add(filas["corte"].ToString());
+                    elementos.SubItems.Add(filas["total"].ToString());
+                    lvCortes.Items.Add(elementos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salio mal " + ex);
+            }
+            finally
+            {
+                cnn.Desconectar();
+            }
+        }
+
         private void materialRaisedButton6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormIngresos ingresos = new FormIngresos();
+            ingresos.ShowDialog();
         }
     }
 }

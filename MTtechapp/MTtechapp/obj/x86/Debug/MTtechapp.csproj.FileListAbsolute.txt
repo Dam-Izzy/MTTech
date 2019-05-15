@@ -219,8 +219,6 @@ C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\MTtechapp.exe.
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\MTtechapp.application
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\MTtechapp.exe
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\MTtechapp.pdb
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\GMap.NET.Core.dll
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\GMap.NET.WindowsForms.dll
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\MaterialSkin.dll
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Microsoft.IdentityModel.Logging.dll
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\Microsoft.IdentityModel.Tokens.dll

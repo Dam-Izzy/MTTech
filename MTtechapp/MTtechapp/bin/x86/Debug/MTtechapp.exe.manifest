@@ -66,30 +66,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMap.NET.Core.dll" size="2996736">
-      <assemblyIdentity name="GMap.NET.Core" version="1.7.5.0" publicKeyToken="B85B9027B614AFEF" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WMdV/Pxlzd6lYQI9c26JkfCtadpeE3jepZ6YxduQG4Y=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GMap.NET.WindowsForms.dll" size="150528">
-      <assemblyIdentity name="GMap.NET.WindowsForms" version="1.7.5.0" publicKeyToken="B85B9027B614AFEF" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dB4ajwWGOFaiXRAb01v5fLoLY38MBOy0MsHYWnjvE2U=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialSkin.dll" size="589824">
       <assemblyIdentity name="MaterialSkin" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -1242,14 +1218,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13285888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13294592">
       <assemblyIdentity name="MTtechapp" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XK5AjpjaGZm7J3PO8IB1RlgCl5iQEFPmWcfAUIshkWs=</dsig:DigestValue>
+        <dsig:DigestValue>0UYDaghu1gwgmg6liIN4EbMqDX4qB4fOrOtm6zgY3oo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -162,7 +162,7 @@ namespace MTtechapp
                 if (MessageBox.Show("Desea borrar este registro?", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Conectar();
-                    int i, ig;
+                    int i;
                     SqlCommand cmd = new SqlCommand("delete from municipios where idMunicipio='" + Convert.ToInt32(lbid.Text.Trim()) + "'", conn.conn);
                     i = cmd.ExecuteNonQuery();
                     MessageBox.Show(i.ToString());

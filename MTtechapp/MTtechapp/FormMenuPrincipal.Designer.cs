@@ -63,6 +63,7 @@
             this.txtagregar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscar11 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btncalc = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -133,14 +134,8 @@
             this.cbLugar = new System.Windows.Forms.ComboBox();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lvCortes = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -148,25 +143,28 @@
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtbuscarcorte = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lvMen = new System.Windows.Forms.Label();
             this.PoppupMenu.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMensualidad
@@ -244,7 +242,7 @@
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1178, 527);
+            this.materialTabControl1.Size = new System.Drawing.Size(1339, 541);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -267,7 +265,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1170, 501);
+            this.tabPage1.Size = new System.Drawing.Size(1331, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
@@ -287,7 +285,7 @@
             this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvClientes.BackColor = System.Drawing.SystemColors.Control;
+            this.lvClientes.BackColor = System.Drawing.Color.White;
             this.lvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -300,8 +298,10 @@
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18});
+            this.lvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lvClientes.Depth = 0;
             this.lvClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.lvClientes.FullRowSelect = true;
             this.lvClientes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvClientes.HideSelection = false;
             this.lvClientes.HoverSelection = true;
@@ -311,7 +311,7 @@
             this.lvClientes.MultiSelect = false;
             this.lvClientes.Name = "lvClientes";
             this.lvClientes.OwnerDraw = true;
-            this.lvClientes.Size = new System.Drawing.Size(1126, 406);
+            this.lvClientes.Size = new System.Drawing.Size(1326, 406);
             this.lvClientes.TabIndex = 25;
             this.lvClientes.UseCompatibleStateImageBehavior = false;
             this.lvClientes.View = System.Windows.Forms.View.Details;
@@ -559,10 +559,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1170, 501);
+            this.tabPage2.Size = new System.Drawing.Size(1331, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagos";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(1116, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(38, 50);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 72;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click_1);
             // 
             // btncalc
             // 
@@ -707,7 +718,7 @@
             this.lvPagos.MouseState = MaterialSkin.MouseState.OUT;
             this.lvPagos.Name = "lvPagos";
             this.lvPagos.OwnerDraw = true;
-            this.lvPagos.Size = new System.Drawing.Size(1139, 379);
+            this.lvPagos.Size = new System.Drawing.Size(1300, 393);
             this.lvPagos.TabIndex = 8;
             this.lvPagos.UseCompatibleStateImageBehavior = false;
             this.lvPagos.View = System.Windows.Forms.View.Details;
@@ -794,7 +805,7 @@
             this.tabPage3.Controls.Add(this.lvUsuarios);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1170, 501);
+            this.tabPage3.Size = new System.Drawing.Size(1331, 515);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Usuarios";
             // 
@@ -967,7 +978,7 @@
             this.lvUsuarios.MouseState = MaterialSkin.MouseState.OUT;
             this.lvUsuarios.Name = "lvUsuarios";
             this.lvUsuarios.OwnerDraw = true;
-            this.lvUsuarios.Size = new System.Drawing.Size(314, 408);
+            this.lvUsuarios.Size = new System.Drawing.Size(475, 422);
             this.lvUsuarios.TabIndex = 9;
             this.lvUsuarios.UseCompatibleStateImageBehavior = false;
             this.lvUsuarios.View = System.Windows.Forms.View.Details;
@@ -1016,7 +1027,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1170, 501);
+            this.tabPage4.Size = new System.Drawing.Size(1331, 515);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Agenda";
             // 
@@ -1238,6 +1249,9 @@
             // 
             // lvAgenda
             // 
+            this.lvAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAgenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvAgenda.CheckBoxes = true;
             this.lvAgenda.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1258,7 +1272,7 @@
             this.lvAgenda.MouseState = MaterialSkin.MouseState.OUT;
             this.lvAgenda.Name = "lvAgenda";
             this.lvAgenda.OwnerDraw = true;
-            this.lvAgenda.Size = new System.Drawing.Size(804, 298);
+            this.lvAgenda.Size = new System.Drawing.Size(844, 298);
             this.lvAgenda.TabIndex = 41;
             this.lvAgenda.UseCompatibleStateImageBehavior = false;
             this.lvAgenda.View = System.Windows.Forms.View.Details;
@@ -1422,110 +1436,42 @@
             this.materialLabel4.TabIndex = 16;
             this.materialLabel4.Text = "Buscar";
             // 
-            // tabPage5
+            // materialTabSelector1
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.White;
-            this.tabPage5.Controls.Add(this.pictureBox7);
-            this.tabPage5.Controls.Add(this.materialLabel17);
-            this.tabPage5.Controls.Add(this.dateTimePicker2);
-            this.tabPage5.Controls.Add(this.materialLabel16);
-            this.tabPage5.Controls.Add(this.dateTimePicker1);
-            this.tabPage5.Controls.Add(this.materialRaisedButton5);
-            this.tabPage5.Controls.Add(this.materialSingleLineTextField1);
-            this.tabPage5.Controls.Add(this.lvCortes);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1170, 501);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Cortes";
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1356, 70);
+            this.materialTabSelector1.TabIndex = 1;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
             // 
-            // pictureBox7
+            // materialRaisedButton3
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1123, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(38, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 72;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // materialLabel17
-            // 
-            this.materialLabel17.AutoSize = true;
-            this.materialLabel17.Depth = 0;
-            this.materialLabel17.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel17.Location = new System.Drawing.Point(685, 4);
-            this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel17.Name = "materialLabel17";
-            this.materialLabel17.Size = new System.Drawing.Size(120, 19);
-            this.materialLabel17.TabIndex = 17;
-            this.materialLabel17.Text = "Buscar por corte";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(679, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 16;
-            // 
-            // materialLabel16
-            // 
-            this.materialLabel16.AutoSize = true;
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel16.Location = new System.Drawing.Point(374, 4);
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            this.materialLabel16.Size = new System.Drawing.Size(170, 19);
-            this.materialLabel16.TabIndex = 15;
-            this.materialLabel16.Text = "Buscar por mensualidad";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(374, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
-            this.dateTimePicker1.CloseUp += new System.EventHandler(this.dateTimePicker1_CloseUp);
-            // 
-            // materialRaisedButton5
-            // 
-            this.materialRaisedButton5.AutoSize = true;
-            this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton5.Depth = 0;
-            this.materialRaisedButton5.Icon = null;
-            this.materialRaisedButton5.Location = new System.Drawing.Point(234, 8);
-            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton5.Name = "materialRaisedButton5";
-            this.materialRaisedButton5.Primary = true;
-            this.materialRaisedButton5.Size = new System.Drawing.Size(74, 36);
-            this.materialRaisedButton5.TabIndex = 13;
-            this.materialRaisedButton5.Text = "Buscar";
-            this.materialRaisedButton5.UseVisualStyleBackColor = true;
-            // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "Buscar";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(6, 13);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(210, 23);
-            this.materialSingleLineTextField1.TabIndex = 12;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.materialRaisedButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.materialRaisedButton3.AutoSize = true;
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Icon = null;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(1312, 2);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(36, 36);
+            this.materialRaisedButton3.TabIndex = 2;
+            this.materialRaisedButton3.Text = "X";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
             // lvCortes
             // 
+            this.lvCortes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvCortes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvCortes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader29,
@@ -1545,7 +1491,7 @@
             this.lvCortes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvCortes.Name = "lvCortes";
             this.lvCortes.OwnerDraw = true;
-            this.lvCortes.Size = new System.Drawing.Size(1158, 429);
+            this.lvCortes.Size = new System.Drawing.Size(1319, 429);
             this.lvCortes.TabIndex = 0;
             this.lvCortes.UseCompatibleStateImageBehavior = false;
             this.lvCortes.View = System.Windows.Forms.View.Details;
@@ -1578,55 +1524,74 @@
             // columnHeader34
             // 
             this.columnHeader34.Text = "Corte";
-            this.columnHeader34.Width = 251;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1195, 70);
-            this.materialTabSelector1.TabIndex = 1;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
-            // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.AutoSize = true;
-            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(1273, 2);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(30, 36);
-            this.materialRaisedButton3.TabIndex = 2;
-            this.materialRaisedButton3.Text = "X";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1116, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(38, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 72;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click_1);
+            this.columnHeader34.Width = 179;
             // 
             // columnHeader35
             // 
             this.columnHeader35.Text = "Total";
             this.columnHeader35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader35.Width = 136;
+            this.columnHeader35.Width = 148;
+            // 
+            // txtbuscarcorte
+            // 
+            this.txtbuscarcorte.Depth = 0;
+            this.txtbuscarcorte.Hint = "Buscar";
+            this.txtbuscarcorte.Location = new System.Drawing.Point(6, 13);
+            this.txtbuscarcorte.MaxLength = 32767;
+            this.txtbuscarcorte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtbuscarcorte.Name = "txtbuscarcorte";
+            this.txtbuscarcorte.PasswordChar = '\0';
+            this.txtbuscarcorte.SelectedText = "";
+            this.txtbuscarcorte.SelectionLength = 0;
+            this.txtbuscarcorte.SelectionStart = 0;
+            this.txtbuscarcorte.Size = new System.Drawing.Size(210, 23);
+            this.txtbuscarcorte.TabIndex = 12;
+            this.txtbuscarcorte.TabStop = false;
+            this.txtbuscarcorte.UseSystemPasswordChar = false;
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.AutoSize = true;
+            this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Icon = null;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(234, 8);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(74, 36);
+            this.materialRaisedButton5.TabIndex = 13;
+            this.materialRaisedButton5.Text = "Buscar";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(1123, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(38, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 72;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.White;
+            this.tabPage5.Controls.Add(this.lvMen);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Controls.Add(this.materialRaisedButton6);
+            this.tabPage5.Controls.Add(this.pictureBox7);
+            this.tabPage5.Controls.Add(this.materialRaisedButton5);
+            this.tabPage5.Controls.Add(this.txtbuscarcorte);
+            this.tabPage5.Controls.Add(this.lvCortes);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Cortes";
             // 
             // materialRaisedButton6
             // 
@@ -1634,24 +1599,46 @@
             this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton6.Depth = 0;
             this.materialRaisedButton6.Icon = null;
-            this.materialRaisedButton6.Location = new System.Drawing.Point(1156, 2);
-            this.materialRaisedButton6.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRaisedButton6.Location = new System.Drawing.Point(346, 8);
             this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton6.Name = "materialRaisedButton6";
             this.materialRaisedButton6.Primary = true;
-            this.materialRaisedButton6.Size = new System.Drawing.Size(30, 36);
+            this.materialRaisedButton6.Size = new System.Drawing.Size(117, 36);
             this.materialRaisedButton6.TabIndex = 73;
-            this.materialRaisedButton6.Text = "X";
+            this.materialRaisedButton6.Text = "Corte del día";
             this.materialRaisedButton6.UseVisualStyleBackColor = true;
             this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(479, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(293, 33);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "Total mensualidades:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lvMen
+            // 
+            this.lvMen.AutoSize = true;
+            this.lvMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvMen.Location = new System.Drawing.Point(770, 8);
+            this.lvMen.Name = "lvMen";
+            this.lvMen.Size = new System.Drawing.Size(79, 33);
+            this.lvMen.TabIndex = 75;
+            this.lvMen.Text = "$$$$";
+            this.lvMen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 671);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1350, 685);
             this.ControlBox = false;
-            this.Controls.Add(this.materialRaisedButton6);
             this.Controls.Add(this.materialRaisedButton3);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
@@ -1666,6 +1653,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -1674,10 +1662,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1787,13 +1774,12 @@
         private MaterialRaisedButton btnPrint;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.Label lvTotal;
+        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TabPage tabPage5;
-        private MaterialLabel materialLabel17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private MaterialLabel materialLabel16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBox7;
         private MaterialRaisedButton materialRaisedButton5;
-        private MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSingleLineTextField txtbuscarcorte;
         private MaterialListView lvCortes;
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader30;
@@ -1801,10 +1787,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ColumnHeader columnHeader33;
         private System.Windows.Forms.ColumnHeader columnHeader34;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        public System.Windows.Forms.Label lvTotal;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ColumnHeader columnHeader35;
         private MaterialRaisedButton materialRaisedButton6;
+        private System.Windows.Forms.Label lvMen;
+        private System.Windows.Forms.Label label3;
     }
 }

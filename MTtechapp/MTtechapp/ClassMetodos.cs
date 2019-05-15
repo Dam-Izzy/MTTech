@@ -299,7 +299,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-        public void BorrarMensualidad(int lb, int lb2)
+        public void BorrarMensualidad(int lb, int lb2, int meses, int Cliente)
         {
             try
             {
@@ -307,12 +307,14 @@ namespace MTtechapp
                 if (MessageBox.Show("Desea borrar este registro? " + lb, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     cnn.Conectar();
-                    int i, y;
+                    int i, y, g;
                     SqlCommand cmd = new SqlCommand("delete from Mensualidad where idMensualidad='" + lb + "'", cnn.conn);
-                    SqlCommand sqlCommand = new SqlCommand("delete from Mensualidades where idMensualidadC='" + lb + "'", cnn.conn);
+                    SqlCommand sqlCommand = new SqlCommand("delete from Mensualidades where idMensualidadC='" + lb2 + "'", cnn.conn);
+                    SqlCommand sqlCommand1 = new SqlCommand("delete from meses_pagados where id_meses= " + meses + " and id_Cliente= " + Cliente +"", cnn.conn);
                     y = sqlCommand.ExecuteNonQuery();
                     i = cmd.ExecuteNonQuery();
-                    if (i > 0  && y>0)
+                    g = sqlCommand1.ExecuteNonQuery();
+                    if (i > 0  && y>0 && g>0)
                     {
                         MessageBox.Show("Pago eliminado correctamente!", "MTtech");
                     }
@@ -339,7 +341,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago,DATEADD(m, 1, dbo.Mensualidad.fechaPago) as corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago,DATEADD(m, 1, dbo.Mensualidad.fechaPago) as corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad where fechapago= CONVERT (date, SYSDATETIME()) group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -414,6 +416,7 @@ namespace MTtechapp
                     elementos.SubItems.Add(filas["ip"].ToString());
                     elementos.SubItems.Add(filas["fechaPago"].ToString());
                     elementos.SubItems.Add(filas["corte"].ToString());
+                    elementos.SubItems.Add(filas["total"].ToString());
                     lv.Items.Add(elementos);
                 }
             }
