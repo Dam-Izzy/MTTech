@@ -23,6 +23,7 @@ namespace MTtechapp
         public DateTime Noviembre { get; set; }
         public DateTime Diciembre { get; set; }
         public string nombre { get; set; }
+        public string Comentario { get; set; }
         public Cliente cliente = new Cliente();       
         public Municipio municipio = new Municipio();     
     }

@@ -1314,7 +1314,7 @@ namespace MTtechapp
             foreach (ListViewItem I in lvCortes.Items)
             {
                 A += double.Parse(I.SubItems[6].Text);
-                if (A<4000 && hora<16)
+                if (A<4000 && hora>=16)
                 {
                     MessageBox.Show("Superaste el monto de 4,000, deposita lo mas pronto posible");
                 }

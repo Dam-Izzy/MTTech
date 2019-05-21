@@ -682,11 +682,13 @@ namespace MTtechapp
                cone.Desconectar();
             }
         }
+        ClassMetodos classMetodos = new ClassMetodos();
         private void FormPagoMensualidad_Load(object sender, EventArgs e)
         {
             cargamun();
             cargaMes();
             LlenarMensualidades();
+            classMetodos.autocompletarClienteMensualidad(cbCliente);
         }
         private void cbCliente_Click(object sender, EventArgs e)
         {
@@ -831,6 +833,11 @@ namespace MTtechapp
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             LlenarMensualidades();
+        }
+
+        private void cbCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            classMetodos.autocompletarClienteMensualidad(cbCliente);
         }
     }
 }

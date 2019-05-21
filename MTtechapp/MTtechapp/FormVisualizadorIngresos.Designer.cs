@@ -36,6 +36,9 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpentrefecha = new System.Windows.Forms.DateTimePicker();
+            this.btnRevisar = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -88,11 +91,50 @@
             this.materialLabel1.TabIndex = 2;
             this.materialLabel1.Text = "Actualizar reporte:";
             // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(481, 20);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(17, 19);
+            this.materialLabel2.TabIndex = 3;
+            this.materialLabel2.Text = "a";
+            // 
+            // dtpentrefecha
+            // 
+            this.dtpentrefecha.Location = new System.Drawing.Point(504, 18);
+            this.dtpentrefecha.Name = "dtpentrefecha";
+            this.dtpentrefecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpentrefecha.TabIndex = 4;
+            // 
+            // btnRevisar
+            // 
+            this.btnRevisar.AutoSize = true;
+            this.btnRevisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRevisar.Depth = 0;
+            this.btnRevisar.Icon = null;
+            this.btnRevisar.Location = new System.Drawing.Point(741, 10);
+            this.btnRevisar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnRevisar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRevisar.Name = "btnRevisar";
+            this.btnRevisar.Primary = false;
+            this.btnRevisar.Size = new System.Drawing.Size(74, 36);
+            this.btnRevisar.TabIndex = 5;
+            this.btnRevisar.Text = "Filtrar";
+            this.btnRevisar.UseVisualStyleBackColor = true;
+            // 
             // FormVisualizadorIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 527);
+            this.Controls.Add(this.btnRevisar);
+            this.Controls.Add(this.dtpentrefecha);
+            this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.dtpfecha);
             this.Controls.Add(this.reportViewer1);
@@ -110,5 +152,8 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.DateTimePicker dtpfecha;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.DateTimePicker dtpentrefecha;
+        private MaterialSkin.Controls.MaterialFlatButton btnRevisar;
     }
 }

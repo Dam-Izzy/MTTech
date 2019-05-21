@@ -40,7 +40,6 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idsegmentacion = new MaterialSkin.Controls.MaterialLabel();
             this.txtrouter = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label2 = new System.Windows.Forms.Label();
@@ -113,11 +112,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(321, 305);
+            this.label1.Location = new System.Drawing.Point(320, 299);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 25);
+            this.label1.Size = new System.Drawing.Size(36, 37);
             this.label1.TabIndex = 5;
             this.label1.Text = "+";
             this.label1.DoubleClick += new System.EventHandler(this.label1_DoubleClick);
@@ -156,7 +155,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(66, 364);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(160, 357);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -193,22 +192,6 @@
             this.materialLabel5.Size = new System.Drawing.Size(88, 19);
             this.materialLabel5.TabIndex = 20;
             this.materialLabel5.Text = "Comentario";
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(156, 364);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(103, 36);
-            this.materialRaisedButton2.TabIndex = 27;
-            this.materialRaisedButton2.Text = "Actualizar";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // idsegmentacion
             // 
@@ -259,11 +242,11 @@
             // 
             this.lbborrar.AutoSize = true;
             this.lbborrar.BackColor = System.Drawing.Color.White;
-            this.lbborrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbborrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbborrar.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lbborrar.Location = new System.Drawing.Point(351, 300);
+            this.lbborrar.Location = new System.Drawing.Point(363, 292);
             this.lbborrar.Name = "lbborrar";
-            this.lbborrar.Size = new System.Drawing.Size(23, 31);
+            this.lbborrar.Size = new System.Drawing.Size(30, 42);
             this.lbborrar.TabIndex = 6;
             this.lbborrar.Text = "-";
             this.lbborrar.Click += new System.EventHandler(this.lbborrar_Click);
@@ -274,11 +257,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(460, 421);
+            this.ClientSize = new System.Drawing.Size(433, 410);
             this.Controls.Add(this.lbborrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.idsegmentacion);
-            this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.materialRaisedButton1);
@@ -291,6 +273,7 @@
             this.Controls.Add(this.txtIp);
             this.Controls.Add(this.txtrouter);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAgregar";
             this.Opacity = 0.95D;
             this.Sizable = false;
@@ -313,7 +296,6 @@
         private MaterialLabel materialLabel5;
         public MaterialRaisedButton materialRaisedButton1;
         public System.Windows.Forms.Label label1;
-        public MaterialRaisedButton materialRaisedButton2;
         public MaterialLabel idsegmentacion;
         public MaterialSingleLineTextField txtrouter;
         private System.Windows.Forms.Label label2;

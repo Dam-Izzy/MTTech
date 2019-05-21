@@ -53,6 +53,7 @@ namespace MTtechapp
                     cmd2.ExecuteNonQuery();
                     cmd.ExecuteNonQuery();                    
                     MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Agrega la ip en el apartado de segmentación", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     limpiar();
                     cmd.Dispose();
                     cmd2.Dispose();
@@ -80,6 +81,7 @@ namespace MTtechapp
             txtnombre.Clear();
             txtrouter.Clear();
             txtTelefono.Clear();
+            
 
         }
         public List<Municipio> Cargamunicipio()
@@ -135,6 +137,7 @@ namespace MTtechapp
                     if (i >= 0 && ig>=0)
                     {
                         MessageBox.Show("Usuario eliminado correctamente!", "MTtech");
+                        this.Close();
                         limpiar();
                     }
                     else

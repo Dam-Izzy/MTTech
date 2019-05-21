@@ -49,11 +49,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,12 +92,15 @@
             // 
             // cbCliente
             // 
+            this.cbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(18, 201);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(308, 21);
             this.cbCliente.TabIndex = 2;
             this.cbCliente.Click += new System.EventHandler(this.cbCliente_Click);
+            this.cbCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCliente_KeyPress);
             // 
             // materialLabel2
             // 
@@ -177,6 +180,8 @@
             // 
             // cmbLugar
             // 
+            this.cmbLugar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbLugar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmbLugar.FormattingEnabled = true;
             this.cmbLugar.Location = new System.Drawing.Point(18, 142);
             this.cmbLugar.Name = "cmbLugar";
@@ -227,7 +232,7 @@
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(421, 91);
+            this.materialDivider1.Location = new System.Drawing.Point(374, 91);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(2, 366);
@@ -260,12 +265,12 @@
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(439, 122);
+            this.materialListView1.Location = new System.Drawing.Point(395, 122);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(662, 378);
+            this.materialListView1.Size = new System.Drawing.Size(706, 378);
             this.materialListView1.TabIndex = 27;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -289,6 +294,19 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "idPagos";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "idMensualidades";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "idmeses";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "idCliente";
             // 
             // materialRaisedButton2
             // 
@@ -316,19 +334,6 @@
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "idMensualidades";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "idmeses";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "idCliente";
             // 
             // FormPagoMensualidad
             // 
@@ -376,7 +381,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbMes;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.ComboBox cmbLugar;
         private MaterialSkin.Controls.MaterialFlatButton btnImprimir;
         public System.Windows.Forms.ComboBox cbCliente;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -393,5 +397,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        public System.Windows.Forms.ComboBox cmbLugar;
     }
 }

@@ -429,6 +429,30 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        public void autocompletarClienteMensualidad(ComboBox text)
+        {
+            try
+            {
+                string query = "SELECT C.idCliente, C.NombreCompleto, C.idMunicipio FROM dbo.Cliente C";
+                SqlCommand cmd = new SqlCommand(query, cnn.conn);
+                SqlDataReader dr;
+                cnn.Conectar();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    text.AutoCompleteCustomSource.Add(dr["NombreCompleto"].ToString());
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; " + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                cnn.Desconectar();
+            }
+        }
 
     }
 }

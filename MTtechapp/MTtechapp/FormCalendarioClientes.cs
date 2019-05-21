@@ -39,6 +39,8 @@ namespace MTtechapp
                     cl.fechaMensualidad = Convert.ToDateTime(item[3].ToString());
                     cl.monto = Convert.ToDouble(item[0].ToString());
                     cl.mesprox = Convert.ToDateTime(item[3].ToString()).AddMonths(1);
+                    cl.Comentario = item[12].ToString();
+                    lbcomment.Text = item[12].ToString();
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidad", cortes));
@@ -70,6 +72,32 @@ namespace MTtechapp
             }
             return Retornar;
         }
-        
+
+        private void btnprox_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataRow item in GetMensualidad().Rows)
+                {
+                    cl.id = Convert.ToInt32(item[4].ToString());
+                    cl.NombreCompleto = item[7].ToString();
+                    cl.direccion = item[8].ToString();
+                    cl.nombre = item[10].ToString();
+                    cl.fechaMensualidad = Convert.ToDateTime(item[3].ToString());
+                    cl.monto = Convert.ToDouble(item[0].ToString());
+                    cl.mesprox = Dtpfecha.Value;
+                    cl.Comentario = item[12].ToString();
+                    lbcomment.Text = item[12].ToString();
+                    cortes.Add(cl);
+                }
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidad", cortes));
+                reportViewer1.RefreshReport();
+                reportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; " + ex.Message);
+            }
+        }
     }
 }

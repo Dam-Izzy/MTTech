@@ -175,7 +175,6 @@ C:\Users\No\Downloads\MTtechapp\MTtechapp\bin\x86\Debug\tik4net.objects.xml
 C:\Users\No\Downloads\MTtechapp\MTtechapp\bin\x86\Debug\GMap.NET.Core.dll
 C:\Users\No\Downloads\MTtechapp\MTtechapp\bin\x86\Debug\GMap.NET.WindowsForms.dll
 C:\Users\No\Downloads\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csprojAssemblyReference.cache
-C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csprojAssemblyReference.cache
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.exe.config
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormActualizar.resources
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormActualizarMensualidades.resources
