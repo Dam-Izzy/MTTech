@@ -101,7 +101,7 @@ namespace MTtechapp
                 conn.Conectar();
                 SqlCommand cmd = new SqlCommand("select idMunicipio,Nombre from municipios", conn.conn);
                 SqlDataReader lector = cmd.ExecuteReader();
-                if (lector.Read())
+                while (lector.Read())
                 {
                     Municipio usuarios = new Municipio();
                     usuarios.idMunicipio = lector.GetInt32(0).ToString();

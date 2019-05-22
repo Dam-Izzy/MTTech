@@ -1309,16 +1309,23 @@ namespace MTtechapp
         }        
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            metodos.llenarCortes(lvCortes, lvTotal);
-            Int32 hora = DateTime.Now.Hour;
-            foreach (ListViewItem I in lvCortes.Items)
+            try
             {
-                A += double.Parse(I.SubItems[6].Text);
-                if (A<4000 && hora>=16)
+                metodos.llenarCortes(lvCortes, lvTotal);
+                Int32 hora = DateTime.Now.Hour;
+                foreach (ListViewItem I in lvCortes.Items)
                 {
-                    MessageBox.Show("Superaste el monto de 4,000, deposita lo mas pronto posible");
+                    A += double.Parse(I.SubItems[6].Text);
+                    if (A < 4000 && hora <= 16)
+                    {
+                        MessageBox.Show("Superaste el monto de 4,000, depositar lo mas pronto posible");
+                    }
+                    lvMen.Text = A.ToString();
                 }
-                lvMen.Text = A.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error /n"+ex ); 
             }
         }     
         private void pictureBox6_Click_1(object sender, EventArgs e)

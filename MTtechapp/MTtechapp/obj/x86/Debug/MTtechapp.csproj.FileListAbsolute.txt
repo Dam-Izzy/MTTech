@@ -343,3 +343,4 @@ C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.appl
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csproj.CopyComplete
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.cache
 C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.compiled
+C:\Users\No\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csprojAssemblyReference.cache
