@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using MaterialSkin;
+using System;
 namespace MTtechapp
 {
     public partial class FormDialogo : MaterialForm

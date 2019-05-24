@@ -126,6 +126,7 @@
             this.btnRevisar.TabIndex = 5;
             this.btnRevisar.Text = "Filtrar";
             this.btnRevisar.UseVisualStyleBackColor = true;
+            this.btnRevisar.Click += new System.EventHandler(this.btnRevisar_Click);
             // 
             // FormVisualizadorIngresos
             // 

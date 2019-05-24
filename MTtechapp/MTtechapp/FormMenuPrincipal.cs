@@ -1,13 +1,13 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using MTtechapp.Properties;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
-using MTtechapp.Properties;
 
 
 namespace MTtechapp
@@ -1307,25 +1307,33 @@ namespace MTtechapp
         {
             LlenarListView();
         }        
+        /// <summary>
+        /// Esta funcio se carga los registros de cortes, además de que se 
+        /// hace el calculo de las mensualidades que se van registrando durante el dia
+        /// </summary>
+        /// <param name="sender">objeto de evento</param>
+        /// <param name="e">valor de evento</param>
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             try
             {
+                lvMen.Text = ":)";
+                A = 0;
                 metodos.llenarCortes(lvCortes, lvTotal);
                 Int32 hora = DateTime.Now.Hour;
                 foreach (ListViewItem I in lvCortes.Items)
                 {
                     A += double.Parse(I.SubItems[6].Text);
-                    if (A < 4000 && hora <= 16)
-                    {
-                        MessageBox.Show("Superaste el monto de 4,000, depositar lo mas pronto posible");
-                    }
-                    lvMen.Text = A.ToString();
                 }
+                if (A >= 4000 && hora <= 16)
+                {
+                    MessageBox.Show("Superaste el monto de 4,000, depositar lo mas pronto posible");
+                }
+                lvMen.Text = A.ToString();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error /n"+ex ); 
+                MessageBox.Show("Error \n"+ex ); 
             }
         }     
         private void pictureBox6_Click_1(object sender, EventArgs e)

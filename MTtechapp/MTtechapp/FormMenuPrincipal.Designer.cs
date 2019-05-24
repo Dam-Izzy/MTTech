@@ -185,6 +185,8 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.AutoSize = true;
             this.btnPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPrint.ContextMenuStrip = this.PoppupMenu;
@@ -271,6 +273,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(1117, 8);
             this.pictureBox3.Name = "pictureBox3";
@@ -345,30 +348,31 @@
             // columnHeader11
             // 
             this.columnHeader11.Text = "ip";
-            this.columnHeader11.Width = 86;
+            this.columnHeader11.Width = 37;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Comentario";
-            this.columnHeader15.Width = 158;
+            this.columnHeader15.Width = 178;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Activo";
-            this.columnHeader16.Width = 65;
+            this.columnHeader16.Width = 99;
             // 
             // columnHeader17
             // 
             this.columnHeader17.Text = "Fecha instalación";
-            this.columnHeader17.Width = 221;
+            this.columnHeader17.Width = 262;
             // 
             // columnHeader18
             // 
             this.columnHeader18.Text = "Clave";
-            this.columnHeader18.Width = 107;
+            this.columnHeader18.Width = 92;
             // 
             // materialCheckBox2
             // 
+            this.materialCheckBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCheckBox2.AutoSize = true;
             this.materialCheckBox2.Depth = 0;
             this.materialCheckBox2.Font = new System.Drawing.Font("Roboto", 10F);
@@ -386,6 +390,9 @@
             // 
             // materialLabel12
             // 
+            this.materialLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel12.AutoSize = true;
             this.materialLabel12.Depth = 0;
             this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
@@ -399,6 +406,7 @@
             // 
             // cbGrapic
             // 
+            this.cbGrapic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGrapic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrapic.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbGrapic.FormattingEnabled = true;
@@ -433,9 +441,7 @@
             // 
             // materialFlatButton2
             // 
-            this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialFlatButton2.AutoSize = true;
             this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
@@ -469,9 +475,7 @@
             // 
             // cbmunicipios
             // 
-            this.cbmunicipios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbmunicipios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbmunicipios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbmunicipios.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbmunicipios.FormattingEnabled = true;
@@ -581,6 +585,8 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(1116, 4);
             this.pictureBox6.Name = "pictureBox6";
@@ -592,6 +598,8 @@
             // 
             // btncalc
             // 
+            this.btncalc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btncalc.AutoSize = true;
             this.btncalc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btncalc.Depth = 0;
@@ -609,6 +617,8 @@
             // 
             // materialLabel15
             // 
+            this.materialLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel15.AutoSize = true;
             this.materialLabel15.Depth = 0;
             this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
@@ -623,6 +633,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox1.Location = new System.Drawing.Point(7, 74);
@@ -632,6 +644,8 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Location = new System.Drawing.Point(1246, 0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(38, 50);
@@ -642,6 +656,8 @@
             // 
             // DtpVentas
             // 
+            this.DtpVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DtpVentas.Location = new System.Drawing.Point(6, 29);
             this.DtpVentas.Name = "DtpVentas";
             this.DtpVentas.Size = new System.Drawing.Size(196, 20);
@@ -650,6 +666,8 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.AutoSize = true;
             this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar.Depth = 0;
@@ -666,6 +684,8 @@
             // 
             // lvTotal
             // 
+            this.lvTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvTotal.AutoSize = true;
             this.lvTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.lvTotal.Location = new System.Drawing.Point(555, 37);
@@ -676,6 +696,8 @@
             // 
             // materialLabel2
             // 
+            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
@@ -690,6 +712,8 @@
             // 
             // btnPago
             // 
+            this.btnPago.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPago.AutoSize = true;
             this.btnPago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPago.Depth = 0;
@@ -793,6 +817,8 @@
             // 
             // materialLabel1
             // 
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1048,6 +1074,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1131, 6);
             this.pictureBox1.Name = "pictureBox1";
@@ -1069,6 +1096,8 @@
             // 
             // materialRaisedButton4
             // 
+            this.materialRaisedButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton4.AutoSize = true;
             this.materialRaisedButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton4.Depth = 0;
@@ -1098,6 +1127,8 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.AutoSize = true;
             this.btnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizar.Depth = 0;
@@ -1116,6 +1147,8 @@
             // 
             // txtagen
             // 
+            this.txtagen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtagen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtagen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtagen.Location = new System.Drawing.Point(6, 33);
@@ -1135,6 +1168,8 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.AutoSize = true;
             this.btnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnImprimir.Depth = 0;
@@ -1152,6 +1187,8 @@
             // 
             // dtpAgenda
             // 
+            this.dtpAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpAgenda.Location = new System.Drawing.Point(23, 144);
             this.dtpAgenda.Name = "dtpAgenda";
             this.dtpAgenda.Size = new System.Drawing.Size(348, 20);
@@ -1159,6 +1196,8 @@
             // 
             // dtpBuscaragenda
             // 
+            this.dtpBuscaragenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpBuscaragenda.Location = new System.Drawing.Point(286, 30);
             this.dtpBuscaragenda.Name = "dtpBuscaragenda";
             this.dtpBuscaragenda.Size = new System.Drawing.Size(271, 20);
@@ -1177,6 +1216,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
@@ -1189,6 +1230,8 @@
             // 
             // materialLabel9
             // 
+            this.materialLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel9.AutoSize = true;
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1203,6 +1246,8 @@
             // 
             // txtDiag
             // 
+            this.txtDiag.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiag.Depth = 0;
             this.txtDiag.Hint = "Diagnóstico";
             this.txtDiag.Location = new System.Drawing.Point(23, 387);
@@ -1221,6 +1266,8 @@
             // 
             // materialLabel8
             // 
+            this.materialLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel8.AutoSize = true;
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1235,6 +1282,8 @@
             // 
             // cbClienteAgenda
             // 
+            this.cbClienteAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbClienteAgenda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbClienteAgenda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbClienteAgenda.FormattingEnabled = true;
@@ -1331,6 +1380,8 @@
             // 
             // materialLabel7
             // 
+            this.materialLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1344,6 +1395,8 @@
             // 
             // materialLabel6
             // 
+            this.materialLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1357,6 +1410,8 @@
             // 
             // materialLabel5
             // 
+            this.materialLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1370,6 +1425,8 @@
             // 
             // chbreparacion
             // 
+            this.chbreparacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chbreparacion.AutoSize = true;
             this.chbreparacion.Depth = 0;
             this.chbreparacion.Font = new System.Drawing.Font("Roboto", 10F);
@@ -1387,6 +1444,8 @@
             // 
             // txtdescripcion1
             // 
+            this.txtdescripcion1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtdescripcion1.Depth = 0;
             this.txtdescripcion1.Hint = "Descripción";
             this.txtdescripcion1.Location = new System.Drawing.Point(23, 284);
@@ -1404,6 +1463,8 @@
             // 
             // cbEquipo
             // 
+            this.cbEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEquipo.FormattingEnabled = true;
             this.cbEquipo.Location = new System.Drawing.Point(23, 238);
             this.cbEquipo.Name = "cbEquipo";
@@ -1413,6 +1474,8 @@
             // 
             // cbLugar
             // 
+            this.cbLugar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbLugar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbLugar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbLugar.FormattingEnabled = true;
@@ -1424,6 +1487,8 @@
             // 
             // materialRaisedButton2
             // 
+            this.materialRaisedButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton2.AutoSize = true;
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
@@ -1440,6 +1505,8 @@
             // 
             // materialLabel4
             // 
+            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
@@ -1470,6 +1537,7 @@
             // 
             // lvMen
             // 
+            this.lvMen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lvMen.AutoSize = true;
             this.lvMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvMen.Location = new System.Drawing.Point(770, 8);
@@ -1481,6 +1549,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(479, 8);
@@ -1492,6 +1561,7 @@
             // 
             // materialRaisedButton6
             // 
+            this.materialRaisedButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton6.AutoSize = true;
             this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton6.Depth = 0;
@@ -1508,8 +1578,9 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1123, 3);
+            this.pictureBox7.Location = new System.Drawing.Point(1248, 0);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(38, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1519,6 +1590,7 @@
             // 
             // materialRaisedButton5
             // 
+            this.materialRaisedButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton5.AutoSize = true;
             this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton5.Depth = 0;
@@ -1535,6 +1607,7 @@
             // 
             // txtbuscarcorte
             // 
+            this.txtbuscarcorte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbuscarcorte.Depth = 0;
             this.txtbuscarcorte.Hint = "Buscar";
             this.txtbuscarcorte.Location = new System.Drawing.Point(6, 13);
@@ -1632,7 +1705,7 @@
             // 
             // materialRaisedButton3
             // 
-            this.materialRaisedButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.materialRaisedButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialRaisedButton3.AutoSize = true;
             this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton3.Depth = 0;

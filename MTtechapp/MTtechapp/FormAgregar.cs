@@ -1,13 +1,10 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using System.Data.OleDb;
-using MaterialSkin;
 namespace MTtechapp
 {
     public partial class FormAgregar : MaterialForm

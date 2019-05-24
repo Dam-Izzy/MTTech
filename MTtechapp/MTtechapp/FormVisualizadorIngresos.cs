@@ -86,8 +86,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
             return Retornar;
-        }
-        
+        }        
         private DataTable GetGastos()
         {
             DataTable Retornar = new DataTable();
@@ -180,9 +179,7 @@ namespace MTtechapp
                 MessageBox.Show("Error ;_; " + ex.Message);
             }
 
-        }
-
-
+        }            
         public void CargaOtros()
         {
             try
@@ -210,7 +207,7 @@ namespace MTtechapp
             }
 
         }      
-       public void CargaGastos()
+        public void CargaGastos()
         {
             try
             {
@@ -263,7 +260,6 @@ namespace MTtechapp
             }
 
         }
-
         private void dtpfecha_CloseUp(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
@@ -274,5 +270,59 @@ namespace MTtechapp
             this.reportViewer1.RefreshReport();
 
         }
+        private DataTable GetMeses()
+        {
+            DataTable Retornar = new DataTable();
+            try
+            {
+                cnn.Conectar();
+                SqlCommand cmd = new SqlCommand("Select * from getbyDate('" + dtpfecha.Value + "','"+ dtpentrefecha.Value  +"')", cnn.conn);
+                //cmd.Parameters.AddWithValue("@fecha",SqlDbType.DateTime).SqlValue = dtpfecha.Value.ToShortDateString();
+                SqlDataReader dr = cmd.ExecuteReader();
+                Retornar.Load(dr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                cnn.Desconectar();
+            }
+            return Retornar;
+        }
+        public void CargaMeses()
+        {
+            try
+            {
+                List<ClassCorte> cortes = new List<ClassCorte>();
+                foreach (DataRow item in GetMeses().Rows)
+                {
+                    ClassCorte cl = new ClassCorte();
+                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
+                    cl.Tipo = item[1].ToString();
+                    cl.Descripcion = item[1].ToString();
+                    cl.Lugar = item[6].ToString();
+                    cl.Monto = Convert.ToInt32(item[11].ToString());
+                    cl.Fecha = Convert.ToDateTime(item[12]);
+                    cortes.Add(cl);
+                }
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));
+                reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error ;_; " + ex.Message);
+            }
+
+        }
+
+        private void btnRevisar_Click(object sender, EventArgs e)
+        {
+            CargaMeses();
+            CargaMensualidades();
+        }
+
     }
 }

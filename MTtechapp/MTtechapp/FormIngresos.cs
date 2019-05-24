@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
-using System.Data.SqlClient;
 using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MTtechapp
 {
@@ -226,8 +226,23 @@ namespace MTtechapp
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-            FormVisualizadorIngresos visualizadorIngresos = new FormVisualizadorIngresos();
-            visualizadorIngresos.ShowDialog();
+            try
+            {
+                FormVisualizadorIngresos visualizadorIngresos = new FormVisualizadorIngresos();
+                visualizadorIngresos.ShowDialog();
+            }
+            catch (SqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; -" + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Desconectar();
+            }            
         }
 
         private void btnfiltrar_Click(object sender, EventArgs e)

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 namespace MTtechapp
 {
     public partial class FormActualizar : MaterialForm

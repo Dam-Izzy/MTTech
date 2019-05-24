@@ -1,11 +1,8 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin;
 using tik4net;
-using tik4net.Objects;
-using tik4net.Objects.Tool;
 
 namespace MTtechapp
 {
