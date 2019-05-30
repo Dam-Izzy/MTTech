@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace MTtechapp
@@ -28,6 +29,7 @@ namespace MTtechapp
         conexion cnn = new conexion();
         public void CargaMensualidad()
         {
+            
             try
             {
                 foreach (DataRow item in GetMensualidad().Rows)

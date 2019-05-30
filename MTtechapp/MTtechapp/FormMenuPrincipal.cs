@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace MTtechapp
 {
-
     public partial class FormMenuPrincipal : MaterialForm
     {
         String usuario;

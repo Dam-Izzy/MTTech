@@ -74,7 +74,6 @@ namespace MTtechapp
                     conn.Conectar();
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
-                    //SqlCommand cmd1 = new SqlCommand("update Segmentacion set router= '" + txtrouter.Text + "',ip='" + txtIp.Text + "', comentario='" + txtCometarioip.Text + "' where idCliente="+ Convert.ToInt32(lbid.Text)+ "", conn.conn);
                     MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

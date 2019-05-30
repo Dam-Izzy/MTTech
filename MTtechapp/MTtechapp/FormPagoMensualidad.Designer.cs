@@ -187,7 +187,7 @@
             this.cmbLugar.Name = "cmbLugar";
             this.cmbLugar.Size = new System.Drawing.Size(308, 21);
             this.cmbLugar.TabIndex = 20;
-            this.cmbLugar.Click += new System.EventHandler(this.cmbLugar_Click);
+            this.cmbLugar.SelectionChangeCommitted += new System.EventHandler(this.cmbLugar_SelectionChangeCommitted);
             // 
             // btnImprimir
             // 

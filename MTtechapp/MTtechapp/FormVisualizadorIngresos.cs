@@ -22,6 +22,7 @@ namespace MTtechapp
             CargaFichas();
             CargaSocios();
             CargaGastos();
+            CargaOtros();
             CargaMensualidades();
             this.reportViewer1.RefreshReport();
         }
@@ -73,20 +74,20 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("Select * from ViewOtros", cnn.conn);
+                SqlCommand cmd = new SqlCommand("Select * from getOtros('" + dtpfecha.Value.ToShortDateString() + "')", cnn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 Retornar.Load(dr);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Error en otros" + ex.Message);
             }
             finally
             {
                 cnn.Desconectar();
             }
             return Retornar;
-        }        
+        }
         private DataTable GetGastos()
         {
             DataTable Retornar = new DataTable();
@@ -187,14 +188,16 @@ namespace MTtechapp
                 List<ClassCorte> cortes = new List<ClassCorte>();
                 foreach (DataRow item in GetOtros().Rows)
                 {
-                    ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
-                    cl.Tipo = item[1].ToString();
-                    cl.Descripcion = item[2].ToString();
-                    cl.Lugar = item[8].ToString();
-                    cl.Monto = Convert.ToInt32(item[4].ToString());
-                    cl.Fecha = Convert.ToDateTime(item[5]);
-                    cl.Estado = Convert.ToBoolean(item[6].ToString());
+                    ClassCorte cl = new ClassCorte
+                    {
+                        IdIngreso = Convert.ToInt32(item[0].ToString()),
+                        Tipo = item[1].ToString(),
+                        Descripcion = item[2].ToString(),
+                        Lugar = item[3].ToString(),
+                        Monto = Convert.ToInt32(item[4].ToString()),
+                        Fecha = Convert.ToDateTime(item[5]),
+                        Estado = Convert.ToBoolean(item[6].ToString())
+                    };
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("otros", cortes));
@@ -241,13 +244,15 @@ namespace MTtechapp
                 List<ClassCorte> cortes = new List<ClassCorte>();
                 foreach (DataRow item in GetMensualidades().Rows)
                 {
-                    ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
-                    cl.Tipo = item[1].ToString();
-                    cl.Descripcion = item[1].ToString();
-                    cl.Lugar = item[6].ToString();
-                    cl.Monto = Convert.ToInt32(item[11].ToString());
-                    cl.Fecha = Convert.ToDateTime(item[12]);
+                    ClassCorte cl = new ClassCorte
+                    {
+                        IdIngreso = Convert.ToInt32(item[9].ToString()),
+                        Tipo = item[1].ToString(),
+                        Descripcion = item[1].ToString(),
+                        Lugar = item[6].ToString(),
+                        Monto = Convert.ToInt32(item[11].ToString()),
+                        Fecha = Convert.ToDateTime(item[12])
+                    };
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));
@@ -298,13 +303,15 @@ namespace MTtechapp
                 List<ClassCorte> cortes = new List<ClassCorte>();
                 foreach (DataRow item in GetMeses().Rows)
                 {
-                    ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[9].ToString());
-                    cl.Tipo = item[1].ToString();
-                    cl.Descripcion = item[1].ToString();
-                    cl.Lugar = item[6].ToString();
-                    cl.Monto = Convert.ToInt32(item[11].ToString());
-                    cl.Fecha = Convert.ToDateTime(item[12]);
+                    ClassCorte cl = new ClassCorte
+                    {
+                        IdIngreso = Convert.ToInt32(item[9].ToString()),
+                        Tipo = item[1].ToString(),
+                        Descripcion = item[1].ToString(),
+                        Lugar = item[6].ToString(),
+                        Monto = Convert.ToInt32(item[11].ToString()),
+                        Fecha = Convert.ToDateTime(item[12])
+                    };
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));

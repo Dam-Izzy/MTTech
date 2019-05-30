@@ -722,16 +722,7 @@ namespace MTtechapp
         }
         private void cmbLugar_Click(object sender, EventArgs e)
         {
-            if (cbCliente.Items.Count == 0)
-            {
-                carga();
-            }
-            else
-            {
-                lista_Clientes.Clear();
-                cbCliente.DataSource = null;
-                cbCliente.Items.Clear();
-            }
+            
         }
 
         private void materialListView1_DoubleClick(object sender, EventArgs e)
@@ -838,6 +829,19 @@ namespace MTtechapp
         private void cbCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             classMetodos.autocompletarClienteMensualidad(cbCliente);
+        }       
+        private void cmbLugar_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbCliente.Items.Count == 0)
+            {
+                carga();
+            }
+            else
+            {
+                lista_Clientes.Clear();
+                cbCliente.DataSource = null;
+                cbCliente.Items.Clear();
+            }
         }
     }
 }

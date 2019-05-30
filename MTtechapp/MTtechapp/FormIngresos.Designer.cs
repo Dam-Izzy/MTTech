@@ -72,7 +72,8 @@
             this.cbtipo.Items.AddRange(new object[] {
             "Socios",
             "Fichas",
-            "Gastos"});
+            "Gastos",
+            "Otros"});
             this.cbtipo.Location = new System.Drawing.Point(30, 161);
             this.cbtipo.Name = "cbtipo";
             this.cbtipo.Size = new System.Drawing.Size(317, 21);
