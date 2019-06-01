@@ -52,6 +52,7 @@
             this.CheckEstado = new MaterialSkin.Controls.MaterialCheckBox();
             this.BtnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lbid = new MaterialSkin.Controls.MaterialLabel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,7 +190,7 @@
             this.BtnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnImprimir.Depth = 0;
             this.BtnImprimir.Icon = null;
-            this.BtnImprimir.Location = new System.Drawing.Point(225, 477);
+            this.BtnImprimir.Location = new System.Drawing.Point(481, 82);
             this.BtnImprimir.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Primary = true;
@@ -205,7 +206,7 @@
             this.btnAgregarIng.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAgregarIng.Depth = 0;
             this.btnAgregarIng.Icon = null;
-            this.btnAgregarIng.Location = new System.Drawing.Point(50, 477);
+            this.btnAgregarIng.Location = new System.Drawing.Point(117, 471);
             this.btnAgregarIng.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarIng.Name = "btnAgregarIng";
             this.btnAgregarIng.Primary = true;
@@ -318,7 +319,7 @@
             this.BtnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnActualizar.Depth = 0;
             this.BtnActualizar.Icon = null;
-            this.BtnActualizar.Location = new System.Drawing.Point(50, 477);
+            this.BtnActualizar.Location = new System.Drawing.Point(131, 471);
             this.BtnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Primary = true;
@@ -342,11 +343,26 @@
             this.lbid.TabIndex = 87;
             this.lbid.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(349, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 33);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "+";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 539);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbid);
             this.Controls.Add(this.BtnActualizar);
             this.Controls.Add(this.CheckEstado);
@@ -403,5 +419,6 @@
         public MaterialSkin.Controls.MaterialCheckBox CheckEstado;
         private MaterialSkin.Controls.MaterialRaisedButton BtnActualizar;
         private MaterialSkin.Controls.MaterialLabel lbid;
+        public System.Windows.Forms.Label label2;
     }
 }

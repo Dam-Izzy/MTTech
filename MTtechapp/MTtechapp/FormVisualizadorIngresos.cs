@@ -324,7 +324,6 @@ namespace MTtechapp
             }
 
         }
-
         private void btnRevisar_Click(object sender, EventArgs e)
         {
             CargaMeses();

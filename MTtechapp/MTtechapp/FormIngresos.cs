@@ -200,6 +200,8 @@ namespace MTtechapp
                     if (error>0)
                     {
                         MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnAgregarIng.Visible = true;
+                        BtnActualizar.Visible = false;
                     }
                     else
                     {
@@ -278,6 +280,12 @@ namespace MTtechapp
         private void pictureBox5_Click(object sender, EventArgs e)
         {            
             CargaRegistros();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FormMunicipio municipio = new FormMunicipio();
+            municipio.ShowDialog();
         }
     }
 }
