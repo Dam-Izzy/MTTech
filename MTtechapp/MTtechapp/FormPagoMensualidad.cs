@@ -690,8 +690,10 @@ namespace MTtechapp
             LlenarMensualidades();
             classMetodos.autocompletarClienteMensualidad(cbCliente);
         }
+        string mensualidad;
         private void cbCliente_Click(object sender, EventArgs e)
         {
+            
             if (cbCliente.Items != null)
             {
                 String query = "Select idCliente,ClavePago from Cliente where idCliente='" + cbCliente.SelectedValue + "'";
@@ -703,6 +705,7 @@ namespace MTtechapp
                 {
                     txtmonto.Enabled = false;
                     txtmonto.Text = dr[1].ToString();
+                    mensualidad= dr[1].ToString();
                 }
                 dr.Close();
             }
@@ -841,6 +844,67 @@ namespace MTtechapp
                 lista_Clientes.Clear();
                 cbCliente.DataSource = null;
                 cbCliente.Items.Clear();
+            }
+        }
+
+        private void lbsumar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double monto = Convert.ToDouble(txtmonto.Text);
+                if (String.IsNullOrEmpty(txtdescuento.Text))
+                {
+                    MessageBox.Show("El valor no debe ser cero...");
+                }
+                else if (monto == 0)
+                {
+                    MessageBox.Show("El monto no puede ser menor a cero...");
+                    txtmonto.Text = mensualidad;
+                    lbRestar.Enabled = false;
+                    lbsumar.Enabled = false;
+                }
+                else
+                {
+                    double desc = Convert.ToDouble(txtdescuento.Text);
+                    monto = monto + desc;
+                    txtmonto.Text = monto.ToString();
+                }               
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Algo salio mal " + ex);
+            }
+        }
+
+        private void lbRestar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double monto = Convert.ToDouble(txtmonto.Text);
+                double desc = Convert.ToDouble(txtdescuento.Text);
+                desc = 0;
+                if (String.IsNullOrEmpty(txtdescuento.Text) || String.IsNullOrEmpty(txtmonto.Text))
+                {
+                    MessageBox.Show("El valor no debe ser cero...");
+                }
+                else if (monto == 0)
+                {
+                    MessageBox.Show("El monto no puede ser menor a cero...");
+                    txtmonto.Text = mensualidad;
+                    lbRestar.Enabled = false;
+                    lbsumar.Enabled = false;
+                }
+                else
+                {                    
+                    monto = monto - desc;
+                    txtmonto.Text = monto.ToString();
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salio mal " + ex);
             }
         }
     }

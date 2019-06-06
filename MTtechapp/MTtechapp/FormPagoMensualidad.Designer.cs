@@ -54,6 +54,12 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtdescuento = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtComentario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lbRestar = new MaterialSkin.Controls.MaterialLabel();
+            this.lbsumar = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +77,7 @@
             this.txtmonto.SelectedText = "";
             this.txtmonto.SelectionLength = 0;
             this.txtmonto.SelectionStart = 0;
-            this.txtmonto.Size = new System.Drawing.Size(262, 23);
+            this.txtmonto.Size = new System.Drawing.Size(104, 23);
             this.txtmonto.TabIndex = 0;
             this.txtmonto.TabStop = false;
             this.txtmonto.UseSystemPasswordChar = false;
@@ -136,7 +142,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(146, 421);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(210, 477);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -195,7 +201,7 @@
             this.btnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnImprimir.Depth = 0;
             this.btnImprimir.Icon = null;
-            this.btnImprimir.Location = new System.Drawing.Point(39, 421);
+            this.btnImprimir.Location = new System.Drawing.Point(22, 477);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnImprimir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnImprimir.Name = "btnImprimir";
@@ -335,12 +341,119 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // txtdescuento
+            // 
+            this.txtdescuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtdescuento.BackColor = System.Drawing.Color.White;
+            this.txtdescuento.Depth = 0;
+            this.txtdescuento.ForeColor = System.Drawing.Color.Silver;
+            this.txtdescuento.Hint = "Descuento";
+            this.txtdescuento.Location = new System.Drawing.Point(163, 371);
+            this.txtdescuento.MaxLength = 32767;
+            this.txtdescuento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtdescuento.Name = "txtdescuento";
+            this.txtdescuento.PasswordChar = '\0';
+            this.txtdescuento.SelectedText = "";
+            this.txtdescuento.SelectionLength = 0;
+            this.txtdescuento.SelectionStart = 0;
+            this.txtdescuento.Size = new System.Drawing.Size(104, 23);
+            this.txtdescuento.TabIndex = 30;
+            this.txtdescuento.TabStop = false;
+            this.txtdescuento.UseSystemPasswordChar = false;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(159, 349);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel6.TabIndex = 31;
+            this.materialLabel6.Text = "Descuento / otro";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(18, 403);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(88, 19);
+            this.materialLabel7.TabIndex = 33;
+            this.materialLabel7.Text = "Comentario";
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComentario.BackColor = System.Drawing.Color.White;
+            this.txtComentario.Depth = 0;
+            this.txtComentario.Enabled = false;
+            this.txtComentario.ForeColor = System.Drawing.Color.Silver;
+            this.txtComentario.Hint = "Comentario";
+            this.txtComentario.Location = new System.Drawing.Point(22, 425);
+            this.txtComentario.MaxLength = 32767;
+            this.txtComentario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.PasswordChar = '\0';
+            this.txtComentario.SelectedText = "";
+            this.txtComentario.SelectionLength = 0;
+            this.txtComentario.SelectionStart = 0;
+            this.txtComentario.Size = new System.Drawing.Size(288, 23);
+            this.txtComentario.TabIndex = 32;
+            this.txtComentario.TabStop = false;
+            this.txtComentario.UseSystemPasswordChar = false;
+            // 
+            // lbRestar
+            // 
+            this.lbRestar.AutoSize = true;
+            this.lbRestar.BackColor = System.Drawing.Color.Transparent;
+            this.lbRestar.Depth = 0;
+            this.lbRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbRestar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbRestar.Location = new System.Drawing.Point(281, 376);
+            this.lbRestar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbRestar.Name = "lbRestar";
+            this.lbRestar.Size = new System.Drawing.Size(21, 29);
+            this.lbRestar.TabIndex = 34;
+            this.lbRestar.Text = "-";
+            this.lbRestar.Click += new System.EventHandler(this.lbRestar_Click);
+            // 
+            // lbsumar
+            // 
+            this.lbsumar.AutoSize = true;
+            this.lbsumar.BackColor = System.Drawing.Color.Transparent;
+            this.lbsumar.Depth = 0;
+            this.lbsumar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lbsumar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbsumar.Location = new System.Drawing.Point(281, 356);
+            this.lbsumar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbsumar.Name = "lbsumar";
+            this.lbsumar.Size = new System.Drawing.Size(25, 26);
+            this.lbsumar.TabIndex = 35;
+            this.lbsumar.Text = "+";
+            this.lbsumar.Click += new System.EventHandler(this.lbsumar_Click);
+            // 
             // FormPagoMensualidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 525);
+            this.Controls.Add(this.lbsumar);
+            this.Controls.Add(this.lbRestar);
+            this.Controls.Add(this.materialLabel7);
+            this.Controls.Add(this.txtComentario);
+            this.Controls.Add(this.materialLabel6);
+            this.Controls.Add(this.txtdescuento);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.materialListView1);
@@ -398,5 +511,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         public System.Windows.Forms.ComboBox cmbLugar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtdescuento;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtComentario;
+        private MaterialSkin.Controls.MaterialLabel lbRestar;
+        private MaterialSkin.Controls.MaterialLabel lbsumar;
     }
 }

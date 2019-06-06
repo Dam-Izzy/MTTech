@@ -272,6 +272,7 @@ namespace MTtechapp
             CargaSocios();
             CargaGastos();
             CargaMensualidades();
+            CargaOtros();
             this.reportViewer1.RefreshReport();
 
         }

@@ -40,7 +40,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto as Nombre, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente)", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto as Nombre, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) ORDER BY NombreCompleto ASC", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
