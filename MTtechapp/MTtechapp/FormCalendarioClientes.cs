@@ -28,8 +28,7 @@ namespace MTtechapp
         }
         conexion cnn = new conexion();
         public void CargaMensualidad()
-        {
-            
+        {            
             try
             {
                 foreach (DataRow item in GetMensualidad().Rows)

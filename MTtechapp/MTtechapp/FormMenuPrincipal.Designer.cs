@@ -150,7 +150,6 @@
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.PoppupMenu.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -244,7 +243,7 @@
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1339, 541);
+            this.materialTabControl1.Size = new System.Drawing.Size(1375, 541);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -267,7 +266,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage1.Size = new System.Drawing.Size(1367, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
@@ -275,9 +274,9 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1117, 8);
+            this.pictureBox3.Location = new System.Drawing.Point(1242, 20);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(38, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(74, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
@@ -285,9 +284,7 @@
             // 
             // lvClientes
             // 
-            this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvClientes.BackColor = System.Drawing.Color.White;
             this.lvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -305,16 +302,16 @@
             this.lvClientes.Depth = 0;
             this.lvClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.lvClientes.FullRowSelect = true;
-            this.lvClientes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvClientes.HideSelection = false;
             this.lvClientes.HoverSelection = true;
+            this.lvClientes.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.lvClientes.Location = new System.Drawing.Point(-4, 81);
             this.lvClientes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvClientes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvClientes.MultiSelect = false;
             this.lvClientes.Name = "lvClientes";
             this.lvClientes.OwnerDraw = true;
-            this.lvClientes.Size = new System.Drawing.Size(1326, 406);
+            this.lvClientes.Size = new System.Drawing.Size(1362, 406);
             this.lvClientes.TabIndex = 25;
             this.lvClientes.UseCompatibleStateImageBehavior = false;
             this.lvClientes.View = System.Windows.Forms.View.Details;
@@ -376,7 +373,7 @@
             this.materialCheckBox2.AutoSize = true;
             this.materialCheckBox2.Depth = 0;
             this.materialCheckBox2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox2.Location = new System.Drawing.Point(1173, 26);
+            this.materialCheckBox2.Location = new System.Drawing.Point(1107, 29);
             this.materialCheckBox2.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckBox2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckBox2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -397,7 +394,7 @@
             this.materialLabel12.Depth = 0;
             this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel12.Location = new System.Drawing.Point(826, 15);
+            this.materialLabel12.Location = new System.Drawing.Point(826, 13);
             this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel12.Name = "materialLabel12";
             this.materialLabel12.Size = new System.Drawing.Size(100, 19);
@@ -410,9 +407,9 @@
             this.cbGrapic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrapic.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbGrapic.FormattingEnabled = true;
-            this.cbGrapic.Location = new System.Drawing.Point(826, 37);
+            this.cbGrapic.Location = new System.Drawing.Point(830, 34);
             this.cbGrapic.Name = "cbGrapic";
-            this.cbGrapic.Size = new System.Drawing.Size(264, 21);
+            this.cbGrapic.Size = new System.Drawing.Size(268, 21);
             this.cbGrapic.TabIndex = 17;
             this.cbGrapic.SelectionChangeCommitted += new System.EventHandler(this.cbGrapic_MouseClick);
             // 
@@ -431,6 +428,7 @@
             // 
             // txtbuscarid
             // 
+            this.txtbuscarid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbuscarid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtbuscarid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtbuscarid.Location = new System.Drawing.Point(6, 38);
@@ -446,7 +444,7 @@
             this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
             this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(736, 20);
+            this.materialFlatButton2.Location = new System.Drawing.Point(719, 20);
             this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
@@ -481,7 +479,7 @@
             this.cbmunicipios.FormattingEnabled = true;
             this.cbmunicipios.Location = new System.Drawing.Point(465, 29);
             this.cbmunicipios.Name = "cbmunicipios";
-            this.cbmunicipios.Size = new System.Drawing.Size(264, 21);
+            this.cbmunicipios.Size = new System.Drawing.Size(247, 21);
             this.cbmunicipios.TabIndex = 11;
             this.cbmunicipios.Click += new System.EventHandler(this.cbmunicipios_Click);
             // 
@@ -533,7 +531,7 @@
             this.txtagregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.txtagregar.Depth = 0;
             this.txtagregar.Icon = null;
-            this.txtagregar.Location = new System.Drawing.Point(348, 29);
+            this.txtagregar.Location = new System.Drawing.Point(356, 29);
             this.txtagregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtagregar.Name = "txtagregar";
             this.txtagregar.Primary = true;
@@ -545,6 +543,7 @@
             // 
             // btnBuscar11
             // 
+            this.btnBuscar11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar11.AutoSize = true;
             this.btnBuscar11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar11.Depth = 0;
@@ -1698,27 +1697,10 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1356, 70);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1392, 70);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
-            // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton3.AutoSize = true;
-            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(1312, 2);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(30, 36);
-            this.materialRaisedButton3.TabIndex = 2;
-            this.materialRaisedButton3.Text = "X";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
             // FormMenuPrincipal
             // 
@@ -1726,11 +1708,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1350, 685);
-            this.ControlBox = false;
-            this.Controls.Add(this.materialRaisedButton3);
+            this.ClientSize = new System.Drawing.Size(1386, 685);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
+            this.MaximizeBox = false;
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú app";
@@ -1755,7 +1736,6 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1806,7 +1786,6 @@
         private MaterialSingleLineTextField txtDiag;
         private MaterialLabel materialLabel8;
         private System.Windows.Forms.ComboBox cbClienteAgenda;
-        private MaterialRaisedButton materialRaisedButton3;
         private System.Windows.Forms.DateTimePicker dtpAgenda;
         private System.Windows.Forms.DateTimePicker dtpBuscaragenda;
         public System.Windows.Forms.PictureBox pictureBox2;
