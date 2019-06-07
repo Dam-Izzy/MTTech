@@ -883,9 +883,7 @@ namespace MTtechapp
             try
             {
                 double monto = Convert.ToDouble(txtmonto.Text);
-                double desc = Convert.ToDouble(txtdescuento.Text);
-                desc = 0;
-                if (String.IsNullOrEmpty(txtdescuento.Text) || String.IsNullOrEmpty(txtmonto.Text))
+                if (String.IsNullOrEmpty(txtdescuento.Text))
                 {
                     MessageBox.Show("El valor no debe ser cero...");
                 }
@@ -893,17 +891,20 @@ namespace MTtechapp
                 {
                     MessageBox.Show("El monto no puede ser menor a cero...");
                     txtmonto.Text = mensualidad;
+                }
+                else
+                {
+                    double desc = Convert.ToDouble(txtdescuento.Text);
+                    monto = monto - desc;
+                    txtmonto.Text = monto.ToString();
                     lbRestar.Enabled = false;
                     lbsumar.Enabled = false;
                 }
-                else
-                {                    
-                    monto = monto - desc;
-                    txtmonto.Text = monto.ToString();
-                }                
+
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show("Algo salio mal " + ex);
             }
         }
