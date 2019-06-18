@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MTtechapp",
-    "\\MTtechapp\\MTtechapp"
+    "\\MTtechapp"
   ],
-  "SelectedNode": "\\MTtechapp\\MTtechapp\\MTtechapp.csproj",
+  "SelectedNode": "\\MTtechapp\\MTtechapp.sln",
   "PreviewInSolutionExplorer": false
 }

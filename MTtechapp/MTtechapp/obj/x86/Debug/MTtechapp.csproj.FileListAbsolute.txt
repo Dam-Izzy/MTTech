@@ -486,3 +486,5 @@ C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTte
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csproj.CopyComplete
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.exe
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.pdb
+C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.cache
+C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.compiled

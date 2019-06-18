@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace MTtechapp
@@ -22,14 +21,14 @@ namespace MTtechapp
         ClaseMensualidad cl = new ClaseMensualidad();
         private void FormVistaClientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DataSetCalendario.Mensualidad' 
-            CargaMensualidad();
             this.reportViewer1.RefreshReport();
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            // TODO: esta línea de código carga datos del reporte de comprobantes.            
+            CargaMensualidad();
         }
         conexion cnn = new conexion();
         public void CargaMensualidad()
-        {
-            
+        {            
             try
             {
                 foreach (DataRow item in GetMensualidad().Rows)

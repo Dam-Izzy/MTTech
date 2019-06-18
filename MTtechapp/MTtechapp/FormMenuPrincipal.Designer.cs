@@ -38,7 +38,6 @@
             this.tooleliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lvClientes = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +49,7 @@
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.materialCheckBox2 = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.cbGrapic = new System.Windows.Forms.ComboBox();
@@ -67,7 +67,6 @@
             this.btncalc = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.DtpVentas = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lvTotal = new System.Windows.Forms.Label();
@@ -106,7 +105,6 @@
             this.lbAgen = new MaterialSkin.Controls.MaterialLabel();
             this.btnActualizar = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtagen = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnImprimir = new MaterialSkin.Controls.MaterialFlatButton();
             this.dtpAgenda = new System.Windows.Forms.DateTimePicker();
             this.dtpBuscaragenda = new System.Windows.Forms.DateTimePicker();
@@ -156,11 +154,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -230,9 +226,7 @@
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
@@ -248,9 +242,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.lvClientes);
+            this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.materialCheckBox2);
             this.tabPage1.Controls.Add(this.materialLabel12);
             this.tabPage1.Controls.Add(this.cbGrapic);
@@ -270,21 +264,11 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1242, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 71;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
-            // 
             // lvClientes
             // 
-            this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvClientes.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.lvClientes.AllowColumnReorder = true;
+            this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lvClientes.BackColor = System.Drawing.Color.White;
             this.lvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -301,17 +285,20 @@
             this.lvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lvClientes.Depth = 0;
             this.lvClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.lvClientes.ForeColor = System.Drawing.Color.Transparent;
             this.lvClientes.FullRowSelect = true;
+            this.lvClientes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvClientes.HideSelection = false;
             this.lvClientes.HoverSelection = true;
             this.lvClientes.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.lvClientes.Location = new System.Drawing.Point(-4, 81);
+            this.lvClientes.Location = new System.Drawing.Point(10, 88);
             this.lvClientes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvClientes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvClientes.MultiSelect = false;
             this.lvClientes.Name = "lvClientes";
             this.lvClientes.OwnerDraw = true;
-            this.lvClientes.Size = new System.Drawing.Size(1362, 406);
+            this.lvClientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lvClientes.Size = new System.Drawing.Size(1362, 394);
             this.lvClientes.TabIndex = 25;
             this.lvClientes.UseCompatibleStateImageBehavior = false;
             this.lvClientes.View = System.Windows.Forms.View.Details;
@@ -320,52 +307,73 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "idCliente";
-            this.columnHeader1.Width = 83;
+            this.columnHeader1.Width = 54;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Nombre completo";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader6.Width = 307;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Teléfono";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader2.Width = 142;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Dirección";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader3.Width = 164;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Router";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader4.Width = 112;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "ip";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader11.Width = 37;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Comentario";
+            this.columnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader15.Width = 178;
             // 
             // columnHeader16
             // 
             this.columnHeader16.Text = "Activo";
+            this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader16.Width = 99;
             // 
             // columnHeader17
             // 
             this.columnHeader17.Text = "Fecha instalación";
+            this.columnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader17.Width = 262;
             // 
             // columnHeader18
             // 
             this.columnHeader18.Text = "Clave";
+            this.columnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader18.Width = 92;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1242, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 71;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
             // 
             // materialCheckBox2
             // 
@@ -387,9 +395,7 @@
             // 
             // materialLabel12
             // 
-            this.materialLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel12.AutoSize = true;
             this.materialLabel12.Depth = 0;
             this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
@@ -441,7 +447,6 @@
             // 
             this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
             this.materialFlatButton2.Icon = null;
             this.materialFlatButton2.Location = new System.Drawing.Point(719, 20);
@@ -485,13 +490,12 @@
             // 
             // RBdesacctivados
             // 
-            this.RBdesacctivados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RBdesacctivados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RBdesacctivados.AutoSize = true;
+            this.RBdesacctivados.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RBdesacctivados.Depth = 0;
             this.RBdesacctivados.Font = new System.Drawing.Font("Roboto", 10F);
-            this.RBdesacctivados.Location = new System.Drawing.Point(574, 53);
+            this.RBdesacctivados.Location = new System.Drawing.Point(574, 55);
             this.RBdesacctivados.Margin = new System.Windows.Forms.Padding(0);
             this.RBdesacctivados.MouseLocation = new System.Drawing.Point(-1, -1);
             this.RBdesacctivados.MouseState = MaterialSkin.MouseState.HOVER;
@@ -506,13 +510,11 @@
             // 
             // RBactivos
             // 
-            this.RBactivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RBactivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RBactivos.AutoSize = true;
             this.RBactivos.Depth = 0;
             this.RBactivos.Font = new System.Drawing.Font("Roboto", 10F);
-            this.RBactivos.Location = new System.Drawing.Point(465, 53);
+            this.RBactivos.Location = new System.Drawing.Point(465, 55);
             this.RBactivos.Margin = new System.Windows.Forms.Padding(0);
             this.RBactivos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.RBactivos.MouseState = MaterialSkin.MouseState.HOVER;
@@ -527,8 +529,8 @@
             // 
             // txtagregar
             // 
+            this.txtagregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtagregar.AutoSize = true;
-            this.txtagregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.txtagregar.Depth = 0;
             this.txtagregar.Icon = null;
             this.txtagregar.Location = new System.Drawing.Point(356, 29);
@@ -545,7 +547,6 @@
             // 
             this.btnBuscar11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar11.AutoSize = true;
-            this.btnBuscar11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar11.Depth = 0;
             this.btnBuscar11.Icon = null;
             this.btnBuscar11.Location = new System.Drawing.Point(268, 29);
@@ -564,7 +565,6 @@
             this.tabPage2.Controls.Add(this.btncalc);
             this.tabPage2.Controls.Add(this.materialLabel15);
             this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.btnPrint);
             this.tabPage2.Controls.Add(this.DtpVentas);
             this.tabPage2.Controls.Add(this.btnMensualidad);
@@ -574,10 +574,11 @@
             this.tabPage2.Controls.Add(this.btnPago);
             this.tabPage2.Controls.Add(this.lvPagos);
             this.tabPage2.Controls.Add(this.materialLabel1);
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage2.Size = new System.Drawing.Size(1367, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -641,18 +642,6 @@
             this.textBox1.Size = new System.Drawing.Size(344, 20);
             this.textBox1.TabIndex = 19;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Location = new System.Drawing.Point(1246, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(38, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // DtpVentas
             // 
             this.DtpVentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -687,6 +676,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvTotal.AutoSize = true;
             this.lvTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lvTotal.ForeColor = System.Drawing.Color.Black;
             this.lvTotal.Location = new System.Drawing.Point(555, 37);
             this.lvTotal.Name = "lvTotal";
             this.lvTotal.Size = new System.Drawing.Size(42, 46);
@@ -748,6 +738,7 @@
             this.lvPagos.ContextMenuStrip = this.PoppupMenu;
             this.lvPagos.Depth = 0;
             this.lvPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.lvPagos.ForeColor = System.Drawing.SystemColors.Control;
             this.lvPagos.FullRowSelect = true;
             this.lvPagos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPagos.HideSelection = false;
@@ -756,7 +747,7 @@
             this.lvPagos.MouseState = MaterialSkin.MouseState.OUT;
             this.lvPagos.Name = "lvPagos";
             this.lvPagos.OwnerDraw = true;
-            this.lvPagos.Size = new System.Drawing.Size(1300, 393);
+            this.lvPagos.Size = new System.Drawing.Size(1352, 393);
             this.lvPagos.TabIndex = 8;
             this.lvPagos.UseCompatibleStateImageBehavior = false;
             this.lvPagos.View = System.Windows.Forms.View.Details;
@@ -775,27 +766,27 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Dirección";
-            this.columnHeader8.Width = 149;
+            this.columnHeader8.Width = 211;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Teléfono";
-            this.columnHeader9.Width = 66;
+            this.columnHeader9.Width = 104;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Cantidad";
-            this.columnHeader12.Width = 121;
+            this.columnHeader12.Width = 93;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Precio";
-            this.columnHeader13.Width = 118;
+            this.columnHeader13.Width = 125;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Total";
-            this.columnHeader14.Width = 94;
+            this.columnHeader14.Width = 139;
             // 
             // columnHeader25
             // 
@@ -812,7 +803,7 @@
             // 
             this.columnHeader28.DisplayIndex = 7;
             this.columnHeader28.Text = "Fecha";
-            this.columnHeader28.Width = 153;
+            this.columnHeader28.Width = 211;
             // 
             // materialLabel1
             // 
@@ -845,7 +836,7 @@
             this.tabPage3.Controls.Add(this.lvUsuarios);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage3.Size = new System.Drawing.Size(1367, 515);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Usuarios";
             // 
@@ -1043,7 +1034,6 @@
             this.tabPage4.Controls.Add(this.lbAgen);
             this.tabPage4.Controls.Add(this.btnActualizar);
             this.tabPage4.Controls.Add(this.txtagen);
-            this.tabPage4.Controls.Add(this.pictureBox5);
             this.tabPage4.Controls.Add(this.btnImprimir);
             this.tabPage4.Controls.Add(this.dtpAgenda);
             this.tabPage4.Controls.Add(this.dtpBuscaragenda);
@@ -1064,10 +1054,11 @@
             this.tabPage4.Controls.Add(this.cbLugar);
             this.tabPage4.Controls.Add(this.materialRaisedButton2);
             this.tabPage4.Controls.Add(this.materialLabel4);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage4.Size = new System.Drawing.Size(1367, 515);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Agenda";
             // 
@@ -1075,7 +1066,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1131, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(1326, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1085,7 +1076,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(77, 74);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1154,16 +1147,6 @@
             this.txtagen.Name = "txtagen";
             this.txtagen.Size = new System.Drawing.Size(256, 20);
             this.txtagen.TabIndex = 58;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(1224, 30);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(38, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 57;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // btnImprimir
             // 
@@ -1530,7 +1513,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1331, 515);
+            this.tabPage5.Size = new System.Drawing.Size(1367, 515);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Cortes";
             // 
@@ -1539,6 +1522,7 @@
             this.lvMen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lvMen.AutoSize = true;
             this.lvMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvMen.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lvMen.Location = new System.Drawing.Point(770, 8);
             this.lvMen.Name = "lvMen";
             this.lvMen.Size = new System.Drawing.Size(79, 33);
@@ -1550,7 +1534,9 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label3.Location = new System.Drawing.Point(479, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(293, 33);
@@ -1638,10 +1624,11 @@
             this.columnHeader35});
             this.lvCortes.Depth = 0;
             this.lvCortes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.lvCortes.ForeColor = System.Drawing.Color.White;
             this.lvCortes.FullRowSelect = true;
             this.lvCortes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvCortes.HideSelection = false;
-            this.lvCortes.Location = new System.Drawing.Point(6, 59);
+            this.lvCortes.Location = new System.Drawing.Point(17, 50);
             this.lvCortes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvCortes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvCortes.Name = "lvCortes";
@@ -1707,10 +1694,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1386, 685);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.MaximizeBox = false;
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1724,13 +1712,11 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -1808,8 +1794,6 @@
         private System.Windows.Forms.ToolStripMenuItem tooleditar;
         private System.Windows.Forms.ToolStripMenuItem tooleliminar;
         public MaterialListView lvPagos;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private MaterialLabel materialLabel15;
         private System.Windows.Forms.TextBox textBox1;
         private MaterialFlatButton btncalc;

@@ -692,8 +692,7 @@ namespace MTtechapp
         }
         string mensualidad;
         private void cbCliente_Click(object sender, EventArgs e)
-        {
-            
+        {            
             if (cbCliente.Items != null)
             {
                 String query = "Select idCliente,ClavePago from Cliente where idCliente='" + cbCliente.SelectedValue + "'";
@@ -712,22 +711,19 @@ namespace MTtechapp
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (cbCliente.SelectedValue!=null)
+
+            try
             {
-                int idSeleccionado = Convert.ToInt32(cbCliente.SelectedValue);
+                string idImprimir = this.materialListView1.SelectedItems[0].SubItems[6].Text;
+                int idSeleccionado = int.Parse(idImprimir);
                 FormDialogo imprimir = new FormDialogo(dtpmensualidad.Value, idSeleccionado);
                 imprimir.Show();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Selecciona el cliente");
+                MessageBox.Show("el comporbante no pudo ser impreso por una razon misteriosa T.T \n " + ex);
             }
         }
-        private void cmbLugar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void materialListView1_DoubleClick(object sender, EventArgs e)
         {
             FormActualizarMensualidades fag = new FormActualizarMensualidades();
@@ -844,6 +840,7 @@ namespace MTtechapp
                 lista_Clientes.Clear();
                 cbCliente.DataSource = null;
                 cbCliente.Items.Clear();
+                carga();
             }
         }
 

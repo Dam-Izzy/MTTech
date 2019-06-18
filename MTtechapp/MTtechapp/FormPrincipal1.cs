@@ -49,8 +49,7 @@ namespace MTtechapp
                     {
                             materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 30, 100);
                         if (txtUsuario.Text.Equals("Barbi") || txtUsuario.Text.Equals("admin"))
-                        {
-                            MessageBox.Show("Bienvenido, " + usuario.ToString(), "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        {                            
                             if (chkRecordar.Checked == true)
                             {
                                 Settings.Default.recordar = true;
@@ -175,11 +174,6 @@ namespace MTtechapp
             }
         }
 
-        private void materialLabel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            //txtcontra.UseSystemPasswordChar = false;
-        }
-
         private void materialLabel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             timer.Start();
@@ -196,11 +190,6 @@ namespace MTtechapp
         {
             timer.Stop();
             timer.Start();
-        }
-
-        private void materialCheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

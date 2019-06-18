@@ -308,7 +308,7 @@ namespace MTtechapp
                 {
                     cnn.Conectar();
                     int i, y, g;
-                    SqlCommand cmd = new SqlCommand("delete from Mensualidad where idMensualidad='" + lb + "'", cnn.conn);
+                    SqlCommand cmd = new SqlCommand("delete from Mensualidad where idMensualidad='" + lb + "' and idCliente =" + Cliente + "", cnn.conn);
                     SqlCommand sqlCommand = new SqlCommand("delete from Mensualidades where idMensualidadC='" + lb2 + "'", cnn.conn);
                     SqlCommand sqlCommand1 = new SqlCommand("delete from meses_pagados where id_meses= " + meses + " and id_Cliente= " + Cliente +"", cnn.conn);
                     y = sqlCommand.ExecuteNonQuery();

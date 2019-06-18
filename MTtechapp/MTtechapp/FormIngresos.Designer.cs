@@ -53,6 +53,8 @@
             this.BtnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lbid = new MaterialSkin.Controls.MaterialLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btndel = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -319,7 +321,7 @@
             this.BtnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnActualizar.Depth = 0;
             this.BtnActualizar.Icon = null;
-            this.BtnActualizar.Location = new System.Drawing.Point(131, 471);
+            this.BtnActualizar.Location = new System.Drawing.Point(134, 471);
             this.BtnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Primary = true;
@@ -357,11 +359,49 @@
             this.label2.Text = "+";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // btndel
+            // 
+            this.btndel.AutoSize = true;
+            this.btndel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btndel.Depth = 0;
+            this.btndel.Icon = null;
+            this.btndel.Location = new System.Drawing.Point(734, 82);
+            this.btndel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btndel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btndel.Name = "btndel";
+            this.btndel.Primary = false;
+            this.btndel.Size = new System.Drawing.Size(74, 36);
+            this.btndel.TabIndex = 89;
+            this.btndel.Text = "Borrar";
+            this.btndel.UseVisualStyleBackColor = true;
+            this.btndel.Visible = false;
+            this.btndel.Click += new System.EventHandler(this.Btndel_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Icon = null;
+            this.btnCancelar.Location = new System.Drawing.Point(288, 471);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = false;
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
+            this.btnCancelar.TabIndex = 90;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 539);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btndel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbid);
             this.Controls.Add(this.BtnActualizar);
@@ -420,5 +460,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton BtnActualizar;
         private MaterialSkin.Controls.MaterialLabel lbid;
         public System.Windows.Forms.Label label2;
+        private MaterialSkin.Controls.MaterialFlatButton btndel;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
     }
 }
