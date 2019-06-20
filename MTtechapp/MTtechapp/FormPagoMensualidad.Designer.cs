@@ -142,7 +142,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(210, 477);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(101, 461);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -201,7 +201,7 @@
             this.btnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnImprimir.Depth = 0;
             this.btnImprimir.Icon = null;
-            this.btnImprimir.Location = new System.Drawing.Point(22, 477);
+            this.btnImprimir.Location = new System.Drawing.Point(818, 80);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnImprimir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnImprimir.Name = "btnImprimir";
@@ -238,7 +238,7 @@
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(374, 91);
+            this.materialDivider1.Location = new System.Drawing.Point(353, 91);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(2, 366);
@@ -271,12 +271,12 @@
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(395, 122);
+            this.materialListView1.Location = new System.Drawing.Point(382, 119);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(706, 378);
+            this.materialListView1.Size = new System.Drawing.Size(717, 378);
             this.materialListView1.TabIndex = 27;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -320,7 +320,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(920, 80);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(944, 80);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
@@ -417,12 +417,12 @@
             this.lbRestar.AutoSize = true;
             this.lbRestar.BackColor = System.Drawing.Color.Transparent;
             this.lbRestar.Depth = 0;
-            this.lbRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.lbRestar.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbRestar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbRestar.Location = new System.Drawing.Point(281, 376);
             this.lbRestar.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbRestar.Name = "lbRestar";
-            this.lbRestar.Size = new System.Drawing.Size(21, 29);
+            this.lbRestar.Size = new System.Drawing.Size(13, 19);
             this.lbRestar.TabIndex = 34;
             this.lbRestar.Text = "-";
             this.lbRestar.Click += new System.EventHandler(this.lbRestar_Click);
@@ -432,12 +432,12 @@
             this.lbsumar.AutoSize = true;
             this.lbsumar.BackColor = System.Drawing.Color.Transparent;
             this.lbsumar.Depth = 0;
-            this.lbsumar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lbsumar.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbsumar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbsumar.Location = new System.Drawing.Point(281, 356);
             this.lbsumar.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbsumar.Name = "lbsumar";
-            this.lbsumar.Size = new System.Drawing.Size(25, 26);
+            this.lbsumar.Size = new System.Drawing.Size(18, 19);
             this.lbsumar.TabIndex = 35;
             this.lbsumar.Text = "+";
             this.lbsumar.Click += new System.EventHandler(this.lbsumar_Click);

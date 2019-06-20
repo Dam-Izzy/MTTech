@@ -26,6 +26,12 @@ namespace MTtechapp
             materialSkinManager.AddFormToManage(this);
             this.usuario = usuario;
             this.contra = contra;
+            metodos.autocompletaragenda(txtagen);
+            metodos.autocompletarpago(textBox1);
+            metodos.autocompletarmunicipio(cbLugar);
+            metodos.autocompletarcombo(cbClienteAgenda);
+            metodos.llenarCortes(lvCortes, lvTotal);
+            autocompletar(txtbuscarid);
         }
         public FormMenuPrincipal()
         {
@@ -64,7 +70,6 @@ namespace MTtechapp
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Algo salio mal " + ex);
             }
             finally
@@ -129,25 +134,11 @@ namespace MTtechapp
             cbGrapic.DataSource = items;
         }
 
-        //public void cargadefault()
-        //{
-        //    var items = new[] {
-        //    new { Text = "N/A", Value = "1" },};
-        //    cbClienteAgenda.DisplayMember = "Text";
-        //    cbClienteAgenda.ValueMember = "Value";
-        //    cbClienteAgenda.DataSource = items;
-        //}
         ClassMetodos metodos = new ClassMetodos();
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
             FormPrincipal1 form = new FormPrincipal1();
-            form.Close();
-            metodos.autocompletaragenda(txtagen);
-            metodos.autocompletarpago(textBox1);
-            metodos.autocompletarmunicipio(cbLugar);
-            metodos.autocompletarcombo(cbClienteAgenda);
-            autocompletar(txtbuscarid);
-            metodos.llenarCortes(lvCortes, lvTotal);
+            form.Close();            
             LlenarListView();
             llenarPagos();
             cargaEquipo();
@@ -166,22 +157,6 @@ namespace MTtechapp
             {
                 A += double.Parse(I.SubItems[6].Text);
                 lvTotal.Text = A.ToString();
-            }
-        }
-        public void getTotal()
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Algo salio mal ;_; " + ex.Message);
-            }
-            finally
-            {
-                cnn.Desconectar();
             }
         }
         private void btnBuscar_Click(object sender, EventArgs e)

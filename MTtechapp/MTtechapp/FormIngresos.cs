@@ -25,7 +25,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select G.idIngreso,G.tipo,G.descripcion,G.lugar,G.monto, G.fecha,M.idMunicipio,M.Nombre from Ingreso G inner join municipios M on(M.idMunicipio= G.lugar)", conn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select G.idIngreso,G.tipo,G.descripcion,G.lugar,G.monto, G.fecha,M.idMunicipio,M.Nombre from Ingreso G inner join municipios M on(M.idMunicipio= G.lugar) where G.fecha=Getdate()", conn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -133,8 +133,10 @@ namespace MTtechapp
         {
             try
             {
+                btndel.Visible = true;
                 btnAgregarIng.Visible = false;
                 BtnActualizar.Visible = true;
+                btnCancelar.Visible = true;
                 conn.Conectar();
                 int id = Convert.ToInt32(this.materialListView1.SelectedItems[0].SubItems[0].Text);
                 string sql = "Select G.tipo,G.descripcion,G.monto,G.fecha,G.estado, M.Nombre, M.idMunicipio,G.idIngreso from ingreso G inner join municipios M on (M.idMunicipio=G.lugar) where idIngreso=" + id + "";
@@ -145,7 +147,7 @@ namespace MTtechapp
                 {
                     cbtipo.Text = dr.GetString(0);
                     txtDescrip.Text = dr[1].ToString();
-                    txtmonto.Text = dr.GetDouble(2).ToString();
+                    txtmonto.Text = dr.GetDecimal(2).ToString();
                     dtpFiltro.Text = dr[3].ToString();
                     CheckEstado.Checked = dr.GetBoolean(4);
                     lbid.Text = dr[7].ToString();
@@ -202,6 +204,7 @@ namespace MTtechapp
                         MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnAgregarIng.Visible = true;
                         BtnActualizar.Visible = false;
+                        
                     }
                     else
                     {
@@ -286,6 +289,58 @@ namespace MTtechapp
         {
             FormMunicipio municipio = new FormMunicipio();
             municipio.ShowDialog();
+        }
+
+        private void Btndel_Click(object sender, EventArgs e)
+        {
+            var ingreso = Convert.ToInt32(materialListView1.SelectedItems[0].SubItems[0].Text.ToString());
+            BorrarIngreso(ingreso);
+
+        }
+        public void BorrarIngreso(int lb)
+        {
+            try
+            {
+
+                if (MessageBox.Show("Desea borrar este registro? " + lb, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conn.Conectar();
+                    int i;
+                    SqlCommand cmd = new SqlCommand("delete from Ingreso where idIngreso='" + lb + "'", conn.conn);
+                    i = cmd.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Registro eliminado correctamente!", "MTtech");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El registro no fue eliminado por alguna razón misteriosa. ;_;");
+                    }
+                }
+            }
+            catch (SqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; -" + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Desconectar();
+                CargaRegistros();
+                txtDescrip.Clear();
+                txtmonto.Clear();
+            }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            btnCancelar.Visible = false;
+            BtnActualizar.Visible = false;
+            btndel.Visible = false;
+            btnAgregarIng.Visible = true;
         }
     }
 }
