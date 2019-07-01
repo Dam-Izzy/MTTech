@@ -429,11 +429,11 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-        public void autocompletarClienteMensualidad(ComboBox text)
+        public void autocompletarClienteMensualidad(ComboBox text, ComboBox comboBox)
         {
             try
             {
-                string query = "SELECT C.idCliente, C.NombreCompleto, C.idMunicipio FROM dbo.Cliente C";
+                string query = "SELECT C.idCliente, C.NombreCompleto, C.idMunicipio, M.idMunicipio FROM dbo.Cliente C INNER JOIN dbo.municipios M on (C.idMunicipio = M.idMunicipio) WHERE C.idMunicipio ='"+ comboBox.SelectedValue +"'";
                 SqlCommand cmd = new SqlCommand(query, cnn.conn);
                 SqlDataReader dr;
                 cnn.Conectar();

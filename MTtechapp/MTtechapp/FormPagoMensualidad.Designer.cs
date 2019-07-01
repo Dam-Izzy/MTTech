@@ -60,6 +60,7 @@
             this.txtComentario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lbRestar = new MaterialSkin.Controls.MaterialLabel();
             this.lbsumar = new MaterialSkin.Controls.MaterialLabel();
+            this.lbidid = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -442,12 +443,28 @@
             this.lbsumar.Text = "+";
             this.lbsumar.Click += new System.EventHandler(this.lbsumar_Click);
             // 
+            // lbidid
+            // 
+            this.lbidid.AutoSize = true;
+            this.lbidid.BackColor = System.Drawing.Color.Transparent;
+            this.lbidid.Depth = 0;
+            this.lbidid.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbidid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbidid.Location = new System.Drawing.Point(281, 66);
+            this.lbidid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbidid.Name = "lbidid";
+            this.lbidid.Size = new System.Drawing.Size(21, 19);
+            this.lbidid.TabIndex = 36;
+            this.lbidid.Text = "id";
+            this.lbidid.Visible = false;
+            // 
             // FormPagoMensualidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 525);
+            this.Controls.Add(this.lbidid);
             this.Controls.Add(this.lbsumar);
             this.Controls.Add(this.lbRestar);
             this.Controls.Add(this.materialLabel7);
@@ -485,14 +502,11 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtmonto;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbMes;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialFlatButton btnImprimir;
         public System.Windows.Forms.ComboBox cbCliente;
@@ -506,16 +520,19 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        public System.Windows.Forms.DateTimePicker dtpmensualidad;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        public System.Windows.Forms.ComboBox cmbLugar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtdescuento;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtComentario;
         private MaterialSkin.Controls.MaterialLabel lbRestar;
         private MaterialSkin.Controls.MaterialLabel lbsumar;
+        internal MaterialSkin.Controls.MaterialLabel lbidid;
+        internal MaterialSkin.Controls.MaterialSingleLineTextField txtmonto;
+        internal System.Windows.Forms.ComboBox cbMes;
+        internal System.Windows.Forms.DateTimePicker dtpmensualidad;
+        public System.Windows.Forms.ComboBox cmbLugar;
     }
 }

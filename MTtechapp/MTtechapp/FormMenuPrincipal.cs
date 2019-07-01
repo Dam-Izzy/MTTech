@@ -41,7 +41,7 @@ namespace MTtechapp
             FormAgregar fa = new FormAgregar();
             fa.ShowDialog();
         }
-         conexion cnn = new conexion();
+        conexion cnn = new conexion();
         public void LlenarListView()
         {
             try
@@ -138,7 +138,7 @@ namespace MTtechapp
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
             FormPrincipal1 form = new FormPrincipal1();
-            form.Close();            
+            form.Close();
             LlenarListView();
             llenarPagos();
             cargaEquipo();
@@ -316,15 +316,6 @@ namespace MTtechapp
 
 
         }
-
-        private void txtbuscarid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                btnBuscar11.PerformClick();
-            }
-        }
-
         private void RBactivos_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -648,7 +639,7 @@ namespace MTtechapp
                     materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
                     break;
             }
-        }    
+        }
         private void lbmas_Click(object sender, EventArgs e)
         {
 
@@ -725,7 +716,7 @@ namespace MTtechapp
             cbNivel.DisplayMember = "Text";
             cbNivel.ValueMember = "Value";
             cbNivel.DataSource = items;
-        }       
+        }
         private void btnActual_Click(object sender, EventArgs e)
         {
             string item = lvUsuarios.SelectedItems[0].SubItems[0].Text;
@@ -891,7 +882,7 @@ namespace MTtechapp
             //string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
             //MessageBox.Show(idCl);
 
-        }      
+        }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             llenarPagos();
@@ -1077,7 +1068,7 @@ namespace MTtechapp
             {
                 if (MessageBox.Show("Desea borrar este registro?", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (lvAgenda.SelectedItems.Count==0)
+                    if (lvAgenda.SelectedItems.Count == 0)
                     {
                         MessageBox.Show("Debes seleccionar un item de la agenda...");
                     }
@@ -1280,9 +1271,9 @@ namespace MTtechapp
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             LlenarListView();
-        }        
+        }
         /// <summary>
-        /// Esta funcio se carga los registros de cortes, además de que se 
+        /// Esta funcion se carga los registros de cortes, además de que se 
         /// hace el calculo de las mensualidades que se van registrando durante el dia
         /// </summary>
         /// <param name="sender">objeto de evento</param>
@@ -1307,9 +1298,9 @@ namespace MTtechapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error \n"+ex ); 
+                MessageBox.Show("Error \n" + ex);
             }
-        }     
+        }
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
             llenarPagos();
@@ -1320,7 +1311,7 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago, DATEADD(m, 1, dbo.Mensualidad.fechaPago) AS corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad WHERE dbo.Mensualidad.fechaPago like '%" + txtbuscarcorte.Text + "%' or dbo.Cliente.NombreCompleto Like '%" + txtbuscarcorte.Text +"%' group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago ", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago, DATEADD(m, 1, dbo.Mensualidad.fechaPago) AS corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad WHERE dbo.Mensualidad.fechaPago like '%" + txtbuscarcorte.Text + "%' or dbo.Cliente.NombreCompleto Like '%" + txtbuscarcorte.Text + "%' group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago ", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -1353,6 +1344,70 @@ namespace MTtechapp
         {
             FormIngresos ingresos = new FormIngresos();
             ingresos.ShowDialog();
+        }
+
+        private void Txtbuscarid_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnBuscar11.PerformClick();
+            }
+        }
+        FormPagoMensualidad pago = new FormPagoMensualidad();
+        private void PoppupMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
+        }
+        public void llenarComboCliente()
+        {
+            string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
+            string sql = "Select M.idMunicipio, M.Nombre,C.IdMunicipio,IdCliente from municipios M inner join Cliente C on (C.IdMunicipio= M.Idmunicipio) where idCliente=" + idCl + "";
+            try
+            {
+                if (lvClientes.SelectedIndices.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand(sql, cnn.conn);
+                    cnn.Conectar();
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        pago.lbidid.Text = dr[0].ToString();
+                        
+                        //fag.comboBox1.ValueMember = dr.GetInt32(7).ToString();
+                        //fag.comboBox1.Text = dr.GetString(8);
+                        dr.Close();
+                        pago.cmbLugar.DataSource =null;
+                        DataSet dataset = new DataSet();
+                        using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
+                        {
+                            da.Fill(dataset);
+                        }
+
+                        if (dataset.Tables[0].Rows.Count > 0)
+                        {
+                            pago.cmbLugar.DataSource = dataset.Tables[0];
+                            pago.cmbLugar.DisplayMember = "Nombre";
+                            pago.cmbLugar.ValueMember = "idMunicipio";
+                        }
+                        pago.ShowDialog();
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Algo salio mal n\""+e);
+            }
+            }
+
+        private void MensualidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
+            llenarComboCliente();
         }
     }
 }

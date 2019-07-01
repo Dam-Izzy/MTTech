@@ -36,6 +36,7 @@
             this.PoppupMenu = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.tooleditar = new System.Windows.Forms.ToolStripMenuItem();
             this.tooleliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mensualidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lvClientes = new MaterialSkin.Controls.MaterialListView();
@@ -204,25 +205,33 @@
             this.PoppupMenu.Depth = 0;
             this.PoppupMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tooleditar,
-            this.tooleliminar});
+            this.tooleliminar,
+            this.mensualidadToolStripMenuItem});
             this.PoppupMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.PoppupMenu.MouseState = MaterialSkin.MouseState.HOVER;
             this.PoppupMenu.Name = "PoppupMenu";
             this.PoppupMenu.ShowItemToolTips = false;
-            this.PoppupMenu.Size = new System.Drawing.Size(118, 48);
+            this.PoppupMenu.Size = new System.Drawing.Size(181, 92);
             // 
             // tooleditar
             // 
             this.tooleditar.Name = "tooleditar";
-            this.tooleditar.Size = new System.Drawing.Size(117, 22);
+            this.tooleditar.Size = new System.Drawing.Size(180, 22);
             this.tooleditar.Text = "Editar";
             this.tooleditar.Click += new System.EventHandler(this.tooleditar_Click);
             // 
             // tooleliminar
             // 
             this.tooleliminar.Name = "tooleliminar";
-            this.tooleliminar.Size = new System.Drawing.Size(117, 22);
+            this.tooleliminar.Size = new System.Drawing.Size(180, 22);
             this.tooleliminar.Text = "Eliminar";
+            // 
+            // mensualidadToolStripMenuItem
+            // 
+            this.mensualidadToolStripMenuItem.Name = "mensualidadToolStripMenuItem";
+            this.mensualidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mensualidadToolStripMenuItem.Text = "Mensualidad";
+            this.mensualidadToolStripMenuItem.Click += new System.EventHandler(this.MensualidadToolStripMenuItem_Click);
             // 
             // materialTabControl1
             // 
@@ -237,7 +246,7 @@
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1375, 541);
+            this.materialTabControl1.Size = new System.Drawing.Size(1344, 470);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -260,7 +269,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1367, 515);
+            this.tabPage1.Size = new System.Drawing.Size(1336, 444);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
@@ -291,14 +300,14 @@
             this.lvClientes.HideSelection = false;
             this.lvClientes.HoverSelection = true;
             this.lvClientes.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.lvClientes.Location = new System.Drawing.Point(10, 88);
+            this.lvClientes.Location = new System.Drawing.Point(6, 74);
             this.lvClientes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvClientes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvClientes.MultiSelect = false;
             this.lvClientes.Name = "lvClientes";
             this.lvClientes.OwnerDraw = true;
             this.lvClientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lvClientes.Size = new System.Drawing.Size(1362, 394);
+            this.lvClientes.Size = new System.Drawing.Size(1321, 373);
             this.lvClientes.TabIndex = 25;
             this.lvClientes.UseCompatibleStateImageBehavior = false;
             this.lvClientes.View = System.Windows.Forms.View.Details;
@@ -307,7 +316,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "idCliente";
-            this.columnHeader1.Width = 54;
+            this.columnHeader1.Width = 30;
             // 
             // columnHeader6
             // 
@@ -367,9 +376,9 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1242, 20);
+            this.pictureBox3.Location = new System.Drawing.Point(1216, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(43, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
@@ -381,7 +390,7 @@
             this.materialCheckBox2.AutoSize = true;
             this.materialCheckBox2.Depth = 0;
             this.materialCheckBox2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox2.Location = new System.Drawing.Point(1107, 29);
+            this.materialCheckBox2.Location = new System.Drawing.Point(1070, 21);
             this.materialCheckBox2.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckBox2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckBox2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -400,7 +409,7 @@
             this.materialLabel12.Depth = 0;
             this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel12.Location = new System.Drawing.Point(826, 13);
+            this.materialLabel12.Location = new System.Drawing.Point(826, 1);
             this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel12.Name = "materialLabel12";
             this.materialLabel12.Size = new System.Drawing.Size(100, 19);
@@ -413,9 +422,9 @@
             this.cbGrapic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrapic.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbGrapic.FormattingEnabled = true;
-            this.cbGrapic.Location = new System.Drawing.Point(830, 34);
+            this.cbGrapic.Location = new System.Drawing.Point(830, 23);
             this.cbGrapic.Name = "cbGrapic";
-            this.cbGrapic.Size = new System.Drawing.Size(268, 21);
+            this.cbGrapic.Size = new System.Drawing.Size(237, 21);
             this.cbGrapic.TabIndex = 17;
             this.cbGrapic.SelectionChangeCommitted += new System.EventHandler(this.cbGrapic_MouseClick);
             // 
@@ -425,7 +434,7 @@
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(6, 16);
+            this.materialLabel10.Location = new System.Drawing.Point(6, 3);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(55, 19);
@@ -437,19 +446,20 @@
             this.txtbuscarid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbuscarid.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtbuscarid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtbuscarid.Location = new System.Drawing.Point(6, 38);
+            this.txtbuscarid.Location = new System.Drawing.Point(6, 24);
             this.txtbuscarid.Name = "txtbuscarid";
-            this.txtbuscarid.Size = new System.Drawing.Size(256, 20);
+            this.txtbuscarid.Size = new System.Drawing.Size(244, 20);
             this.txtbuscarid.TabIndex = 14;
-            this.txtbuscarid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscarid_KeyPress);
+            this.txtbuscarid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtbuscarid_KeyPress_1);
             // 
             // materialFlatButton2
             // 
             this.materialFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
             this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(719, 20);
+            this.materialFlatButton2.Location = new System.Drawing.Point(710, 14);
             this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
@@ -469,7 +479,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(465, 7);
+            this.materialLabel3.Location = new System.Drawing.Point(465, 1);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(173, 19);
@@ -482,9 +492,9 @@
             this.cbmunicipios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbmunicipios.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbmunicipios.FormattingEnabled = true;
-            this.cbmunicipios.Location = new System.Drawing.Point(465, 29);
+            this.cbmunicipios.Location = new System.Drawing.Point(465, 21);
             this.cbmunicipios.Name = "cbmunicipios";
-            this.cbmunicipios.Size = new System.Drawing.Size(247, 21);
+            this.cbmunicipios.Size = new System.Drawing.Size(216, 21);
             this.cbmunicipios.TabIndex = 11;
             this.cbmunicipios.Click += new System.EventHandler(this.cbmunicipios_Click);
             // 
@@ -495,7 +505,7 @@
             this.RBdesacctivados.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RBdesacctivados.Depth = 0;
             this.RBdesacctivados.Font = new System.Drawing.Font("Roboto", 10F);
-            this.RBdesacctivados.Location = new System.Drawing.Point(574, 55);
+            this.RBdesacctivados.Location = new System.Drawing.Point(569, 41);
             this.RBdesacctivados.Margin = new System.Windows.Forms.Padding(0);
             this.RBdesacctivados.MouseLocation = new System.Drawing.Point(-1, -1);
             this.RBdesacctivados.MouseState = MaterialSkin.MouseState.HOVER;
@@ -514,7 +524,7 @@
             this.RBactivos.AutoSize = true;
             this.RBactivos.Depth = 0;
             this.RBactivos.Font = new System.Drawing.Font("Roboto", 10F);
-            this.RBactivos.Location = new System.Drawing.Point(465, 55);
+            this.RBactivos.Location = new System.Drawing.Point(465, 41);
             this.RBactivos.Margin = new System.Windows.Forms.Padding(0);
             this.RBactivos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.RBactivos.MouseState = MaterialSkin.MouseState.HOVER;
@@ -531,9 +541,10 @@
             // 
             this.txtagregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtagregar.AutoSize = true;
+            this.txtagregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.txtagregar.Depth = 0;
             this.txtagregar.Icon = null;
-            this.txtagregar.Location = new System.Drawing.Point(356, 29);
+            this.txtagregar.Location = new System.Drawing.Point(367, 11);
             this.txtagregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtagregar.Name = "txtagregar";
             this.txtagregar.Primary = true;
@@ -547,9 +558,10 @@
             // 
             this.btnBuscar11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar11.AutoSize = true;
+            this.btnBuscar11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar11.Depth = 0;
             this.btnBuscar11.Icon = null;
-            this.btnBuscar11.Location = new System.Drawing.Point(268, 29);
+            this.btnBuscar11.Location = new System.Drawing.Point(256, 11);
             this.btnBuscar11.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar11.Name = "btnBuscar11";
             this.btnBuscar11.Primary = true;
@@ -578,7 +590,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1367, 515);
+            this.tabPage2.Size = new System.Drawing.Size(1336, 444);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -747,7 +759,7 @@
             this.lvPagos.MouseState = MaterialSkin.MouseState.OUT;
             this.lvPagos.Name = "lvPagos";
             this.lvPagos.OwnerDraw = true;
-            this.lvPagos.Size = new System.Drawing.Size(1352, 393);
+            this.lvPagos.Size = new System.Drawing.Size(1352, 322);
             this.lvPagos.TabIndex = 8;
             this.lvPagos.UseCompatibleStateImageBehavior = false;
             this.lvPagos.View = System.Windows.Forms.View.Details;
@@ -836,7 +848,7 @@
             this.tabPage3.Controls.Add(this.lvUsuarios);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1367, 515);
+            this.tabPage3.Size = new System.Drawing.Size(1336, 444);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Usuarios";
             // 
@@ -1009,7 +1021,7 @@
             this.lvUsuarios.MouseState = MaterialSkin.MouseState.OUT;
             this.lvUsuarios.Name = "lvUsuarios";
             this.lvUsuarios.OwnerDraw = true;
-            this.lvUsuarios.Size = new System.Drawing.Size(475, 422);
+            this.lvUsuarios.Size = new System.Drawing.Size(475, 351);
             this.lvUsuarios.TabIndex = 9;
             this.lvUsuarios.UseCompatibleStateImageBehavior = false;
             this.lvUsuarios.View = System.Windows.Forms.View.Details;
@@ -1058,7 +1070,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1367, 515);
+            this.tabPage4.Size = new System.Drawing.Size(1336, 444);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Agenda";
             // 
@@ -1066,7 +1078,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1326, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1326, -35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1318,7 +1330,7 @@
             this.lvAgenda.MouseState = MaterialSkin.MouseState.OUT;
             this.lvAgenda.Name = "lvAgenda";
             this.lvAgenda.OwnerDraw = true;
-            this.lvAgenda.Size = new System.Drawing.Size(844, 298);
+            this.lvAgenda.Size = new System.Drawing.Size(844, 309);
             this.lvAgenda.TabIndex = 41;
             this.lvAgenda.UseCompatibleStateImageBehavior = false;
             this.lvAgenda.View = System.Windows.Forms.View.Details;
@@ -1513,7 +1525,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1367, 515);
+            this.tabPage5.Size = new System.Drawing.Size(1336, 444);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Cortes";
             // 
@@ -1633,7 +1645,7 @@
             this.lvCortes.MouseState = MaterialSkin.MouseState.OUT;
             this.lvCortes.Name = "lvCortes";
             this.lvCortes.OwnerDraw = true;
-            this.lvCortes.Size = new System.Drawing.Size(1319, 429);
+            this.lvCortes.Size = new System.Drawing.Size(1319, 459);
             this.lvCortes.TabIndex = 0;
             this.lvCortes.UseCompatibleStateImageBehavior = false;
             this.lvCortes.View = System.Windows.Forms.View.Details;
@@ -1684,7 +1696,7 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1392, 70);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1361, 70);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
@@ -1695,7 +1707,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1386, 685);
+            this.ClientSize = new System.Drawing.Size(1355, 622);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -1843,5 +1855,6 @@
         private MaterialRaisedButton materialRaisedButton6;
         private System.Windows.Forms.Label lvMen;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem mensualidadToolStripMenuItem;
     }
 }

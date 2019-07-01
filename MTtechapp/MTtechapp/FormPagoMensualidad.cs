@@ -25,7 +25,6 @@ namespace MTtechapp
         FormAgregar fm = new FormAgregar();
         public List<Cliente> CargaCombo()
         {
-
             try
             {
                 cone.Conectar();
@@ -688,7 +687,7 @@ namespace MTtechapp
             cargamun();
             cargaMes();
             LlenarMensualidades();
-            classMetodos.autocompletarClienteMensualidad(cbCliente);
+            classMetodos.autocompletarClienteMensualidad(cbCliente, cmbLugar);
         }
         string mensualidad;
         private void cbCliente_Click(object sender, EventArgs e)
@@ -827,7 +826,7 @@ namespace MTtechapp
 
         private void cbCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            classMetodos.autocompletarClienteMensualidad(cbCliente);
+            classMetodos.autocompletarClienteMensualidad(cbCliente, cmbLugar);
         }       
         private void cmbLugar_SelectionChangeCommitted(object sender, EventArgs e)
         {
