@@ -15,5 +15,6 @@ namespace MTtechapp
         public String cliente { get; set; }
         public String diagnostico { get; set; }
         public String folio { get; set; }
+        public String Domicilio { get; set; }
     }
 }

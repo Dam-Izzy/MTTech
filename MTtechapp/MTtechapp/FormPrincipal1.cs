@@ -29,7 +29,6 @@ namespace MTtechapp
                 if (String.IsNullOrEmpty(txtUsuario.Text) || String.IsNullOrEmpty(txtcontra.Text))
                 {
                     MessageBox.Show("No debes dejar campos vacios");
-                    materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 0, 100);
                 }
                 else
                 {
@@ -49,7 +48,8 @@ namespace MTtechapp
                     {
                             materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 30, 100);
                         if (txtUsuario.Text.Equals("Barbi") || txtUsuario.Text.Equals("admin"))
-                        {                            
+                        {
+                            materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 50, 100);
                             if (chkRecordar.Checked == true)
                             {
                                 Settings.Default.recordar = true;
@@ -77,17 +77,12 @@ namespace MTtechapp
                             {
                                 Settings.Default.modo = false;
                                 Settings.Default.modo = fm.materialCheckBox2.Checked;
-                            }
-                            if (materialProgressBar1.Value == 30)
-                            {
-                                materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 50, 100);
-
-                            }
+                            }                            
                              if (materialProgressBar1.Value == 50)
                             {
                                 materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 92, 100);
-
                             }
+
                             fm.Show();
                             this.Hide();
                         }
@@ -116,7 +111,6 @@ namespace MTtechapp
                                 Settings.Default.contrasena = "";
                                 Settings.Default.Save();
                             }
-                            MessageBox.Show("Hola, " + usuario.ToString(), "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             fm.ShowDialog();
                         }
                     }
@@ -133,9 +127,7 @@ namespace MTtechapp
                 MessageBox.Show("Error  " + ex.Message);
             }
         }
-
-
-
+        
         private void txtcontra_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             String usuario = txtUsuario.Text;

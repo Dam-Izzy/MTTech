@@ -164,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.Name = "FormPrincipal1";
+            this.Opacity = 0.85D;
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MT Networks.";

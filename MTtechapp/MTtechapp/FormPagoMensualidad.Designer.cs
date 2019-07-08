@@ -129,13 +129,13 @@
             this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(18, 225);
+            this.materialLabel3.ForeColor = System.Drawing.Color.Red;
+            this.materialLabel3.Location = new System.Drawing.Point(14, 236);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(132, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(142, 19);
             this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Selecciona el mes";
+            this.materialLabel3.Text = "* Selecciona el mes";
             // 
             // materialRaisedButton1
             // 

@@ -458,7 +458,6 @@ namespace MTtechapp
                     if (j > 0)
                     {
                         MessageBox.Show("Guardado", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     }
                 }
             }
@@ -496,7 +495,6 @@ namespace MTtechapp
                     if (j > 0)
                     {
                         MessageBox.Show("Guardado", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     }
                 }
             }
@@ -720,7 +718,7 @@ namespace MTtechapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("el comporbante no pudo ser impreso por una razon misteriosa T.T \n " + ex);
+                MessageBox.Show("el comporbante no pudo ser impreso por una razón misteriosa T.T \n " + ex);
             }
         }
         private void materialListView1_DoubleClick(object sender, EventArgs e)
@@ -794,7 +792,7 @@ namespace MTtechapp
             {
                 if (materialListView1.SelectedItems.Count ==0)
                 {
-                    MessageBox.Show("Error debes seleccionar un elemento de la lista");
+                    MessageBox.Show("Error, debes seleccionar un elemento de la lista.");
                 }
                 else
                 {
@@ -807,10 +805,10 @@ namespace MTtechapp
                     MessageBox.Show(idmensualidad.ToString() + "<-idmensualidad" + idmensualidades.ToString() + "<-idMensualidades " + idmeses + "<- idMes" + idCliente.ToString() + "->idCliente" );
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show("Error, por una extraña razon no se pudo eliminar el registro T.T " + ex);
             }
             finally
             {

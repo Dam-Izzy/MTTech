@@ -298,7 +298,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.56031cm</Height>
+              <Height>0.74552cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -483,7 +483,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.75094cm</Height>
+              <Height>2.28011cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -495,7 +495,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!lugar.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -589,7 +591,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Equipo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -698,7 +702,7 @@
         <DataSetName>datos</DataSetName>
         <Top>3.80683cm</Top>
         <Left>0.41312cm</Left>
-        <Height>2.31125cm</Height>
+        <Height>3.02562cm</Height>
         <Width>16.17881cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -745,8 +749,9 @@
         <Value>MT</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.24349cm</Top>
+        <Left>0.41312cm</Left>
         <Height>3.23771cm</Height>
-        <Width>3.58703cm</Width>
+        <Width>3.17391cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -755,7 +760,7 @@
         </Style>
       </Image>
     </ReportItems>
-    <Height>5.65625in</Height>
+    <Height>3.44792in</Height>
     <Style />
   </Body>
   <Width>6.74083in</Width>
@@ -804,6 +809,10 @@
         </Field>
         <Field Name="fecha">
           <DataField>fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="folio">
+          <DataField>folio</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="lugar">

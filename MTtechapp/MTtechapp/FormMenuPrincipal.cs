@@ -46,7 +46,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto as Nombre, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) ORDER BY NombreCompleto ASC", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT S.IdCliente,C.NombreCompleto AS Nombre, C.telefono, C.direccion, S.router, S.ip, S.comentario, CASE C.activo WHEN 'True' THEN 'Si' ELSE 'No' END AS activo, C.FechaInstalacion, S.IdCliente, C.ClavePago, M.idMunicipio, M.Nombre as Localidad, C.idMunicipio, C.idCliente FROM dbo.Cliente AS C INNER JOIN dbo.Segmentacion AS S ON(C.idCliente = S.IdCliente) INNER JOIN dbo.municipios M ON C.idMunicipio = M.idMunicipio ORDER BY Nombre ASC ", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -65,13 +65,19 @@ namespace MTtechapp
                     elementos.SubItems.Add(Convert.ToString(filas["activo"]));
                     elementos.SubItems.Add(Convert.ToString(filas["FechaInstalacion"]));
                     elementos.SubItems.Add(filas["ClavePago"].ToString());
+                    elementos.SubItems.Add(filas["Localidad"].ToString());
+                    elementos.SubItems.Add(filas["idMunicipio"].ToString());
                     lvClientes.Items.Add(elementos);
                 }
+            }
+            catch (SqlException sql)
+            {
+                MessageBox.Show("Ocurrio un error en la base de datos " + sql);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Algo salio mal " + ex);
-            }
+            }            
             finally
             {
                 cnn.Desconectar();
@@ -311,10 +317,7 @@ namespace MTtechapp
             finally
             {
                 cnn.Desconectar();
-
             }
-
-
         }
         private void RBactivos_CheckedChanged(object sender, EventArgs e)
         {
@@ -460,23 +463,7 @@ namespace MTtechapp
             FormPagoMensualidad mensualidad = new FormPagoMensualidad();
             mensualidad.ShowDialog();
         }
-        private void chbreparacion_Click(object sender, EventArgs e)
-        {
-            if (chbreparacion.Checked)
-            {
-                cbClienteAgenda.Visible = true;
-                materialLabel8.Visible = true;
-                materialLabel9.Visible = true;
-                txtDiag.Visible = true;
-            }
-            else
-            {
-                cbClienteAgenda.Visible = false;
-                materialLabel8.Visible = false;
-                materialLabel9.Visible = false;
-                txtDiag.Visible = false;
-            }
-        }
+        
         private void txtagenda_Click(object sender, EventArgs e)
         {
             try
@@ -489,23 +476,25 @@ namespace MTtechapp
                 }
                 else
                 {
-                    if (String.IsNullOrEmpty(txtDiag.Text) || cbClienteAgenda.SelectedIndex > 0)
+                    if (String.IsNullOrEmpty(txtDiag.Text))
                     {
                         txtDiag.Text = "N/A";
 
                     }
-                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugar.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.SelectedValue + "','" + theDate + "','" + txtdescripcion1.Text + "')", cnn.conn);
+                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugar.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.Text + "','" + theDate + "','" + txtdescripcion1.Text + "')", cnn.conn);
                     cnn.Conectar();
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FormReporteAgenda agenda = new FormReporteAgenda();
-                    ClaseInformeAgenda agendadatos = new ClaseInformeAgenda();
-                    agendadatos.descripcion = txtdescripcion1.Text;
-                    agendadatos.lugar = cbLugar.Text;
-                    agendadatos.Equipo = cbEquipo.Text;
-                    agendadatos.diagnostico = txtDiag.Text;
-                    agendadatos.cliente = cbClienteAgenda.Text;
+                    ClaseInformeAgenda agendadatos = new ClaseInformeAgenda
+                    {
+                        descripcion = txtdescripcion1.Text,
+                        lugar = cbLugar.Text,
+                        Equipo = cbEquipo.Text,
+                        diagnostico = txtDiag.Text,
+                        cliente = cbClienteAgenda.Text
+                    };
                     agenda.DatosAgenda.Add(agendadatos);
                     lista.Add(agendadatos);
 
@@ -944,11 +933,11 @@ namespace MTtechapp
         {
             try
             {
+
                 btnActualizar.Visible = true;
                 btnActual.Visible = true;
-                chbreparacion.Checked = true;
-                materialLabel8.Visible = true;
-                materialLabel9.Visible = true;
+                lbCliente.Visible = true;
+                lbdiagnostico.Visible = true;
                 cbClienteAgenda.Visible = true;
                 txtDiag.Visible = true;
                 cnn.Conectar();
@@ -962,9 +951,10 @@ namespace MTtechapp
                     lbAgen.Text = dr.GetInt32(0).ToString();
                     dtpAgenda.Text = dr[4].ToString();
                     cbLugar.Text = dr[6].ToString();
-                    //cbEquipo.Text = dr[3].ToString();
+                    cbEquipo.Text = dr[3].ToString();
                     txtdescripcion1.Text = dr[5].ToString();
                 }
+                btncancelar.Visible = true;
                 dr.Close();
 
                 DataSet dataset = new DataSet();
@@ -1235,8 +1225,6 @@ namespace MTtechapp
                         fag.txtIp.Text = dr[12].ToString();
                         fag.txtCometarioip.Text = dr[13].ToString();
                         fag.lbSeg.Text = dr[15].ToString();
-                        //fag.comboBox1.ValueMember = dr.GetInt32(7).ToString();
-                        //fag.comboBox1.Text = dr.GetString(8);
                         dr.Close();
                         DataSet dataset = new DataSet();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
@@ -1305,7 +1293,6 @@ namespace MTtechapp
         {
             llenarPagos();
         }
-
         private void materialRaisedButton5_Click(object sender, EventArgs e)
         {
             try
@@ -1345,7 +1332,6 @@ namespace MTtechapp
             FormIngresos ingresos = new FormIngresos();
             ingresos.ShowDialog();
         }
-
         private void Txtbuscarid_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -1354,14 +1340,12 @@ namespace MTtechapp
             }
         }
         FormPagoMensualidad pago = new FormPagoMensualidad();
-        private void PoppupMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
-        }
         public void llenarComboCliente()
         {
             string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
-            string sql = "Select M.idMunicipio, M.Nombre,C.IdMunicipio,IdCliente from municipios M inner join Cliente C on (C.IdMunicipio= M.Idmunicipio) where idCliente=" + idCl + "";
+            string id = this.lvClientes.SelectedItems[0].SubItems[11].Text;
+            MessageBox.Show("Esto sale: " + id.ToString());
+            string sql = "Select M.idMunicipio, M.Nombre,C.IdMunicipio,C.IdCliente,C.NombreCompleto, C.ClavePago from Cliente C inner join municipios M on (C.IdMunicipio= M.Idmunicipio) where C.idCliente=" + idCl + " and M.idMunicipio="+ id +"";
             try
             {
                 if (lvClientes.SelectedIndices.Count == 0)
@@ -1377,22 +1361,21 @@ namespace MTtechapp
                     if (dr.Read())
                     {
                         pago.lbidid.Text = dr[0].ToString();
-                        
-                        //fag.comboBox1.ValueMember = dr.GetInt32(7).ToString();
-                        //fag.comboBox1.Text = dr.GetString(8);
-                        dr.Close();
-                        pago.cmbLugar.DataSource =null;
+                        pago.txtmonto.Text = dr[5].ToString();
+                        dr.Close();                     
                         DataSet dataset = new DataSet();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
                         }
-
                         if (dataset.Tables[0].Rows.Count > 0)
                         {
                             pago.cmbLugar.DataSource = dataset.Tables[0];
                             pago.cmbLugar.DisplayMember = "Nombre";
                             pago.cmbLugar.ValueMember = "idMunicipio";
+                            pago.cbCliente.DataSource = dataset.Tables[0];
+                            pago.cbCliente.DisplayMember = "NombreCompleto";
+                            pago.cbCliente.ValueMember = "idCliente";
                         }
                         pago.ShowDialog();
                     }
@@ -1400,14 +1383,43 @@ namespace MTtechapp
             }
             catch(Exception e)
             {
-                MessageBox.Show("Algo salio mal n\""+e);
+                MessageBox.Show("Algo salio mal \n"+e);
             }
             }
 
         private void MensualidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
             llenarComboCliente();
+        }
+
+        private void Btncancelar_Click(object sender, EventArgs e)
+        {
+            cbLugar.Refresh();
+            cbEquipo.Refresh();
+            txtdescripcion1.Clear();
+            cbClienteAgenda.Refresh();
+            txtDiag.Clear();
+            btnActualizar.Visible = false;
+            cbEquipo.DataSource = null;
+            cbEquipo.Items.Clear();
+            cargaEquipo();
+            btncancelar.Visible = false;
+        }
+
+        private void ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Equals("Torre"))
+            {
+                grupoCliente.Visible = false;
+            }
+            else if (comboBox1.Text.Equals("Socio"))
+            {
+                MessageBox.Show("Elegiste Socio...");
+            }
+            else if (comboBox1.Text.Equals("Cliente"))
+            {
+                grupoCliente.Visible = true;
+            }
         }
     }
 }
