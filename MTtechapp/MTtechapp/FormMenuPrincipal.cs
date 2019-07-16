@@ -470,22 +470,57 @@ namespace MTtechapp
             {
                 string theDate = dtpAgenda.Value.ToString("yyyy-MM-dd");
 
-                if (cbEquipo.SelectedIndex.Equals(-1) || String.IsNullOrEmpty(txtdescripcion1.Text) || cbLugar.SelectedIndex.Equals(-1))
+                if (comboBox1.SelectedIndex.Equals(-1) )
                 {
                     MessageBox.Show("No debes dejar campos vacios", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else
                 {
-                    if (String.IsNullOrEmpty(txtDiag.Text))
+                    bool realizadoCliente, realizadoOtro, RealizadoTorre;
+                    if (cbrealizado.Checked== true)
                     {
-                        txtDiag.Text = "N/A";
-
+                        realizadoCliente = true;
                     }
-                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugar.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.Text + "','" + theDate + "','" + txtdescripcion1.Text + "')", cnn.conn);
+                    else
+                    {
+                        realizadoCliente = false;
+                    }
+                    if (cbotro.Checked== true)
+                    {
+                        realizadoOtro = true;
+                    }
+                    else
+                    {
+                        realizadoOtro = false;
+                    }
+                    if (chbtoo.Checked== true)
+                    {
+                        RealizadoTorre = true;
+                    }
+                    else
+                    {
+                        RealizadoTorre = false;
+                    }
+                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugar.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.Text + "','" + theDate + "','" + txtdescripcion1.Text + "', '"+ realizadoCliente +"', '"+ txtind.Text +"', '"+ cbprioriC.Text +"','"+ comboBox1.Text +"')", cnn.conn);
+                    SqlCommand torre = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('0','" + cbLugar.SelectedValue + "','" + txtdiagnostico.Text + "','N/A','" + theDate + "','" + txtproblem.Text + "','" + RealizadoTorre + "', '" + txtutilizado.Text + "', '" + cbprioriGlobal.Text + "','" + comboBox1.Text + "')", cnn.conn);
+                    SqlCommand global = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('0','0','" + txtotrodiag.Text + "','N/A','" + theDate + "','" + txtfallo.Text + "', '" + realizadoOtro + "', '" + txtotrocoment.Text + "', '" + cbprioriGlobal.Text + "','" + comboBox1.Text + "')", cnn.conn);
                     cnn.Conectar();
                     cmd.CommandType = CommandType.Text;
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    torre.CommandType = CommandType.Text;
+                    global.CommandType = CommandType.Text;
+                    if (comboBox1.Text.Equals("Cliente"))
+                    {
+                        cmd.ExecuteNonQuery(); 
+                    }
+                    else if (comboBox1.Text.Equals("Torre"))
+                    {
+                        torre.ExecuteNonQuery();
+                    }
+                    else if (comboBox1.Text.Equals("Socio")|| comboBox1.Text.Equals("Otro") || comboBox1.Text.Equals("fichas"))
+                    {
+                        global.ExecuteNonQuery();
+                    }
+
                     FormReporteAgenda agenda = new FormReporteAgenda();
                     ClaseInformeAgenda agendadatos = new ClaseInformeAgenda
                     {
@@ -503,7 +538,7 @@ namespace MTtechapp
             catch (Exception ex)
             {
 
-                MessageBox.Show("Algo salio mal ;_;" + ex, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Algo salio mal ;_; " + ex, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -933,13 +968,6 @@ namespace MTtechapp
         {
             try
             {
-
-                btnActualizar.Visible = true;
-                btnActual.Visible = true;
-                lbCliente.Visible = true;
-                lbdiagnostico.Visible = true;
-                cbClienteAgenda.Visible = true;
-                txtDiag.Visible = true;
                 cnn.Conectar();
                 int id = Convert.ToInt32(this.lvAgenda.SelectedItems[0].SubItems[6].Text);
                 string sql = "SELECT A.idagenda, A.idlugar, A.diagnostico, A.equipo, A.fecha,A.descripcion, M.Nombre, ISNULL (C.NombreCompleto, 'N/A') as NombreCompleto, A.idCliente from agenda A INNER JOIN municipios M on (A.idlugar = M.idMunicipio) INNER JOIN cliente C on (C.idCliente= A.idCliente) where A.idagenda=" + id + "";
@@ -1410,15 +1438,25 @@ namespace MTtechapp
         {
             if (comboBox1.Text.Equals("Torre"))
             {
+                gbTorre.Location = new System.Drawing.Point(25, 106);
                 grupoCliente.Visible = false;
-            }
-            else if (comboBox1.Text.Equals("Socio"))
-            {
-                MessageBox.Show("Elegiste Socio...");
+                gbTorre.Visible = true;
+                gbglobal.Visible = false;
+
             }
             else if (comboBox1.Text.Equals("Cliente"))
             {
+                grupoCliente.Location = new System.Drawing.Point(25, 106);
                 grupoCliente.Visible = true;
+                gbTorre.Visible = false;
+                gbglobal.Visible = false;
+            }
+            else if (comboBox1.Text.Equals("fichas") || comboBox1.Text.Equals("Otro")|| comboBox1.Text.Equals("Socio"))
+            {
+                gbglobal.Location = new System.Drawing.Point(25, 106);
+                grupoCliente.Visible = false;
+                gbTorre.Visible = false;
+                gbglobal.Visible = true;
             }
         }
     }
