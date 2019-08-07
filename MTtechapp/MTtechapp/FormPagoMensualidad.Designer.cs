@@ -61,6 +61,8 @@
             this.lbRestar = new MaterialSkin.Controls.MaterialLabel();
             this.lbsumar = new MaterialSkin.Controls.MaterialLabel();
             this.lbidid = new MaterialSkin.Controls.MaterialLabel();
+            this.dtpbuscar = new System.Windows.Forms.DateTimePicker();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +131,7 @@
             this.materialLabel3.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.Red;
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(14, 236);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
@@ -250,7 +252,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(702, 91);
+            this.label2.Location = new System.Drawing.Point(644, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 25);
             this.label2.TabIndex = 26;
@@ -458,12 +460,35 @@
             this.lbidid.Text = "id";
             this.lbidid.Visible = false;
             // 
+            // dtpbuscar
+            // 
+            this.dtpbuscar.Location = new System.Drawing.Point(388, 94);
+            this.dtpbuscar.Name = "dtpbuscar";
+            this.dtpbuscar.Size = new System.Drawing.Size(308, 20);
+            this.dtpbuscar.TabIndex = 37;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(384, 72);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel8.TabIndex = 38;
+            this.materialLabel8.Text = "Buscar";
+            // 
             // FormPagoMensualidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1103, 525);
+            this.Controls.Add(this.materialLabel8);
+            this.Controls.Add(this.dtpbuscar);
             this.Controls.Add(this.lbidid);
             this.Controls.Add(this.lbsumar);
             this.Controls.Add(this.lbRestar);
@@ -534,5 +559,7 @@
         internal System.Windows.Forms.ComboBox cbMes;
         internal System.Windows.Forms.DateTimePicker dtpmensualidad;
         public System.Windows.Forms.ComboBox cmbLugar;
+        internal System.Windows.Forms.DateTimePicker dtpbuscar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
     }
 }

@@ -103,6 +103,8 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.grupoCliente = new System.Windows.Forms.GroupBox();
+            this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
+            this.cbLugarCliente = new System.Windows.Forms.ComboBox();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.cbprioriC = new System.Windows.Forms.ComboBox();
             this.cbrealizado = new MaterialSkin.Controls.MaterialCheckBox();
@@ -117,7 +119,7 @@
             this.txtDiag = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lbdiagnostico = new MaterialSkin.Controls.MaterialLabel();
             this.gbglobal = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbLugarGlobla = new System.Windows.Forms.ComboBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.cbprioriGlobal = new System.Windows.Forms.ComboBox();
@@ -138,7 +140,7 @@
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.txtproblem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbLugar = new System.Windows.Forms.ComboBox();
+            this.cbLugarTorre = new System.Windows.Forms.ComboBox();
             this.lblugar = new MaterialSkin.Controls.MaterialLabel();
             this.lbFecha = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
@@ -285,7 +287,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.lvClientes);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.materialCheckBox2);
@@ -312,8 +314,7 @@
             this.lvClientes.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.lvClientes.AllowColumnReorder = true;
             this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvClientes.BackColor = System.Drawing.Color.White;
-            this.lvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvClientes.BorderStyle =  System.Windows.Forms.BorderStyle.None;
             this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
@@ -330,12 +331,9 @@
             this.lvClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lvClientes.Depth = 0;
             this.lvClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.lvClientes.ForeColor = System.Drawing.Color.Transparent;
             this.lvClientes.FullRowSelect = true;
             this.lvClientes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvClientes.HideSelection = false;
-            this.lvClientes.HoverSelection = true;
-            this.lvClientes.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.lvClientes.Location = new System.Drawing.Point(6, 74);
             this.lvClientes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvClientes.MouseState = MaterialSkin.MouseState.OUT;
@@ -778,9 +776,9 @@
             // lvPagos
             // 
             this.lvPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvPagos.BackColor = System.Drawing.SystemColors.Control;
+            //this.lvPagos.BackColor = System.Drawing.SystemColors.Window;
             this.lvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvPagos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.idCliente,
@@ -793,21 +791,20 @@
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader28});
-            this.lvPagos.ContextMenuStrip = this.PoppupMenu;
+            //this.lvPagos.ContextMenuStrip = this.PoppupMenu;
             this.lvPagos.Depth = 0;
             this.lvPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.lvPagos.ForeColor = System.Drawing.SystemColors.Control;
-            this.lvPagos.FullRowSelect = true;
+            //this.lvPagos.FullRowSelect = true;
             this.lvPagos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPagos.HideSelection = false;
             this.lvPagos.Location = new System.Drawing.Point(6, 116);
             this.lvPagos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvPagos.MouseState = MaterialSkin.MouseState.OUT;
             this.lvPagos.Name = "lvPagos";
-            this.lvPagos.OwnerDraw = true;
+            //this.lvPagos.OwnerDraw = true;
             this.lvPagos.Size = new System.Drawing.Size(1352, 322);
             this.lvPagos.TabIndex = 8;
-            this.lvPagos.UseCompatibleStateImageBehavior = false;
+            //this.lvPagos.UseCompatibleStateImageBehavior = false;
             this.lvPagos.View = System.Windows.Forms.View.Details;
             this.lvPagos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvPagos_MouseDoubleClick);
             // 
@@ -1118,6 +1115,8 @@
             // grupoCliente
             // 
             this.grupoCliente.BackColor = System.Drawing.Color.White;
+            this.grupoCliente.Controls.Add(this.materialLabel23);
+            this.grupoCliente.Controls.Add(this.cbLugarCliente);
             this.grupoCliente.Controls.Add(this.materialLabel21);
             this.grupoCliente.Controls.Add(this.cbprioriC);
             this.grupoCliente.Controls.Add(this.cbrealizado);
@@ -1132,12 +1131,40 @@
             this.grupoCliente.Controls.Add(this.txtDiag);
             this.grupoCliente.Controls.Add(this.lbdiagnostico);
             this.grupoCliente.ForeColor = System.Drawing.Color.White;
-            this.grupoCliente.Location = new System.Drawing.Point(25, 106);
+            this.grupoCliente.Location = new System.Drawing.Point(25, 114);
             this.grupoCliente.Name = "grupoCliente";
-            this.grupoCliente.Size = new System.Drawing.Size(461, 289);
+            this.grupoCliente.Size = new System.Drawing.Size(467, 289);
             this.grupoCliente.TabIndex = 79;
             this.grupoCliente.TabStop = false;
             this.grupoCliente.Text = " ";
+            // 
+            // materialLabel23
+            // 
+            this.materialLabel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel23.AutoSize = true;
+            this.materialLabel23.Depth = 0;
+            this.materialLabel23.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel23.Location = new System.Drawing.Point(139, 99);
+            this.materialLabel23.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel23.Name = "materialLabel23";
+            this.materialLabel23.Size = new System.Drawing.Size(46, 19);
+            this.materialLabel23.TabIndex = 88;
+            this.materialLabel23.Text = "Lugar";
+            // 
+            // cbLugarCliente
+            // 
+            this.cbLugarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLugarCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbLugarCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbLugarCliente.FormattingEnabled = true;
+            this.cbLugarCliente.Location = new System.Drawing.Point(140, 121);
+            this.cbLugarCliente.Name = "cbLugarCliente";
+            this.cbLugarCliente.Size = new System.Drawing.Size(247, 21);
+            this.cbLugarCliente.TabIndex = 88;
+            this.cbLugarCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarCliente_MouseClick);
             // 
             // materialLabel21
             // 
@@ -1167,7 +1194,7 @@
             "Alta"});
             this.cbprioriC.Location = new System.Drawing.Point(261, 259);
             this.cbprioriC.Name = "cbprioriC";
-            this.cbprioriC.Size = new System.Drawing.Size(120, 21);
+            this.cbprioriC.Size = new System.Drawing.Size(126, 21);
             this.cbprioriC.TabIndex = 86;
             // 
             // cbrealizado
@@ -1200,7 +1227,7 @@
             this.txtind.SelectedText = "";
             this.txtind.SelectionLength = 0;
             this.txtind.SelectionStart = 0;
-            this.txtind.Size = new System.Drawing.Size(427, 23);
+            this.txtind.Size = new System.Drawing.Size(433, 23);
             this.txtind.TabIndex = 81;
             this.txtind.TabStop = false;
             this.txtind.UseSystemPasswordChar = false;
@@ -1230,7 +1257,7 @@
             this.cbClienteAgenda.FormattingEnabled = true;
             this.cbClienteAgenda.Location = new System.Drawing.Point(0, 30);
             this.cbClienteAgenda.Name = "cbClienteAgenda";
-            this.cbClienteAgenda.Size = new System.Drawing.Size(364, 21);
+            this.cbClienteAgenda.Size = new System.Drawing.Size(370, 21);
             this.cbClienteAgenda.TabIndex = 48;
             this.cbClienteAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbClienteAgenda_MouseClick);
             // 
@@ -1279,7 +1306,7 @@
             this.txtdescripcion1.SelectedText = "";
             this.txtdescripcion1.SelectionLength = 0;
             this.txtdescripcion1.SelectionStart = 0;
-            this.txtdescripcion1.Size = new System.Drawing.Size(364, 23);
+            this.txtdescripcion1.Size = new System.Drawing.Size(370, 23);
             this.txtdescripcion1.TabIndex = 33;
             this.txtdescripcion1.TabStop = false;
             this.txtdescripcion1.UseSystemPasswordChar = false;
@@ -1291,7 +1318,7 @@
             this.cbEquipo.FormattingEnabled = true;
             this.cbEquipo.Location = new System.Drawing.Point(8, 121);
             this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(120, 21);
+            this.cbEquipo.Size = new System.Drawing.Size(126, 21);
             this.cbEquipo.TabIndex = 32;
             this.cbEquipo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbEquipo_MouseClick);
             // 
@@ -1324,7 +1351,7 @@
             this.txtDiag.SelectedText = "";
             this.txtDiag.SelectionLength = 0;
             this.txtDiag.SelectionStart = 0;
-            this.txtDiag.Size = new System.Drawing.Size(364, 23);
+            this.txtDiag.Size = new System.Drawing.Size(370, 23);
             this.txtDiag.TabIndex = 50;
             this.txtDiag.TabStop = false;
             this.txtDiag.UseSystemPasswordChar = false;
@@ -1347,7 +1374,7 @@
             // 
             // gbglobal
             // 
-            this.gbglobal.Controls.Add(this.comboBox2);
+            this.gbglobal.Controls.Add(this.cbLugarGlobla);
             this.gbglobal.Controls.Add(this.materialLabel6);
             this.gbglobal.Controls.Add(this.materialLabel20);
             this.gbglobal.Controls.Add(this.cbprioriGlobal);
@@ -1358,24 +1385,25 @@
             this.gbglobal.Controls.Add(this.txtotrodiag);
             this.gbglobal.Controls.Add(this.materialLabel16);
             this.gbglobal.Controls.Add(this.txtfallo);
-            this.gbglobal.Location = new System.Drawing.Point(569, 160);
+            this.gbglobal.Location = new System.Drawing.Point(559, 151);
             this.gbglobal.Name = "gbglobal";
             this.gbglobal.Size = new System.Drawing.Size(409, 275);
             this.gbglobal.TabIndex = 78;
             this.gbglobal.TabStop = false;
             this.gbglobal.Visible = false;
             // 
-            // comboBox2
+            // cbLugarGlobla
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbLugarGlobla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(10, 179);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(348, 21);
-            this.comboBox2.TabIndex = 86;
+            this.cbLugarGlobla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbLugarGlobla.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbLugarGlobla.FormattingEnabled = true;
+            this.cbLugarGlobla.Location = new System.Drawing.Point(10, 179);
+            this.cbLugarGlobla.Name = "cbLugarGlobla";
+            this.cbLugarGlobla.Size = new System.Drawing.Size(348, 21);
+            this.cbLugarGlobla.TabIndex = 86;
+            this.cbLugarGlobla.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarGlobla_MouseClick);
             // 
             // materialLabel6
             // 
@@ -1552,7 +1580,7 @@
             this.gbTorre.Controls.Add(this.materialLabel8);
             this.gbTorre.Controls.Add(this.txtproblem);
             this.gbTorre.Controls.Add(this.materialLabel7);
-            this.gbTorre.Controls.Add(this.cbLugar);
+            this.gbTorre.Controls.Add(this.cbLugarTorre);
             this.gbTorre.Controls.Add(this.lblugar);
             this.gbTorre.Location = new System.Drawing.Point(994, 114);
             this.gbTorre.Name = "gbTorre";
@@ -1698,18 +1726,18 @@
             this.materialLabel7.TabIndex = 38;
             this.materialLabel7.Text = "Descripción";
             // 
-            // cbLugar
+            // cbLugarTorre
             // 
-            this.cbLugar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbLugarTorre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbLugar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbLugar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbLugar.FormattingEnabled = true;
-            this.cbLugar.Location = new System.Drawing.Point(6, 37);
-            this.cbLugar.Name = "cbLugar";
-            this.cbLugar.Size = new System.Drawing.Size(348, 21);
-            this.cbLugar.TabIndex = 31;
-            this.cbLugar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbLugar_MouseClick);
+            this.cbLugarTorre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbLugarTorre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbLugarTorre.FormattingEnabled = true;
+            this.cbLugarTorre.Location = new System.Drawing.Point(6, 37);
+            this.cbLugarTorre.Name = "cbLugarTorre";
+            this.cbLugarTorre.Size = new System.Drawing.Size(348, 21);
+            this.cbLugarTorre.TabIndex = 31;
+            this.cbLugarTorre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarTorre_MouseClick);
             // 
             // lblugar
             // 
@@ -1734,7 +1762,7 @@
             this.lbFecha.Depth = 0;
             this.lbFecha.Font = new System.Drawing.Font("Roboto", 11F);
             this.lbFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbFecha.Location = new System.Drawing.Point(29, 58);
+            this.lbFecha.Location = new System.Drawing.Point(27, 69);
             this.lbFecha.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(140, 19);
@@ -1781,7 +1809,7 @@
             this.btncancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btncancelar.Depth = 0;
             this.btncancelar.Icon = null;
-            this.btncancelar.Location = new System.Drawing.Point(150, 399);
+            this.btncancelar.Location = new System.Drawing.Point(151, 402);
             this.btncancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btncancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btncancelar.Name = "btncancelar";
@@ -1810,7 +1838,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(168, -1);
+            this.label1.Location = new System.Drawing.Point(165, 6);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(207, 31);
@@ -1856,7 +1884,7 @@
             this.btnActualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizar.Depth = 0;
             this.btnActualizar.Icon = null;
-            this.btnActualizar.Location = new System.Drawing.Point(303, 399);
+            this.btnActualizar.Location = new System.Drawing.Point(298, 402);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnActualizar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizar.Name = "btnActualizar";
@@ -1902,7 +1930,7 @@
             // 
             this.dtpAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpAgenda.Location = new System.Drawing.Point(25, 80);
+            this.dtpAgenda.Location = new System.Drawing.Point(25, 91);
             this.dtpAgenda.Name = "dtpAgenda";
             this.dtpAgenda.Size = new System.Drawing.Size(344, 20);
             this.dtpAgenda.TabIndex = 55;
@@ -1937,7 +1965,7 @@
             this.txtagenda.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.txtagenda.Depth = 0;
             this.txtagenda.Icon = null;
-            this.txtagenda.Location = new System.Drawing.Point(31, 399);
+            this.txtagenda.Location = new System.Drawing.Point(34, 402);
             this.txtagenda.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtagenda.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtagenda.Name = "txtagenda";
@@ -2226,7 +2254,7 @@
             // 
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.materialTabSelector1.BackColor = System.Drawing.SystemColors.Window;
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
@@ -2241,12 +2269,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Opacity = 0.95D;
             this.ClientSize = new System.Drawing.Size(1493, 641);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
-            this.ForeColor = System.Drawing.SystemColors.Control;
             this.MaximizeBox = false;
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2316,7 +2342,7 @@
         private MaterialLabel lbdescripcion;
         private MaterialSingleLineTextField txtdescripcion1;
         private System.Windows.Forms.ComboBox cbEquipo;
-        private System.Windows.Forms.ComboBox cbLugar;
+        private System.Windows.Forms.ComboBox cbLugarTorre;
         private MaterialFlatButton txtagenda;
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
@@ -2427,7 +2453,9 @@
         private System.Windows.Forms.ComboBox cbprioriC;
         private MaterialLabel materialLabel22;
         private System.Windows.Forms.ComboBox cbtorre;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbLugarGlobla;
         private MaterialLabel materialLabel6;
+        private MaterialLabel materialLabel23;
+        private System.Windows.Forms.ComboBox cbLugarCliente;
     }
 }

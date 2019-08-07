@@ -187,9 +187,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>0.07059cm</Top>
-        <Left>0.56317cm</Left>
+        <Left>0.0376cm</Left>
         <Height>1.57993cm</Height>
-        <Width>1.60042cm</Width>
+        <Width>2.31479cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -212,7 +212,7 @@
                 <Value>technologies</Value>
                 <Style>
                   <FontFamily>haettenschweiler</FontFamily>
-                  <FontSize>16pt</FontSize>
+                  <FontSize>14pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -220,10 +220,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>1.10345cm</Top>
-        <Left>0.40052cm</Left>
+        <Top>1.15099cm</Top>
+        <Left>0.0376cm</Left>
         <Height>0.67592cm</Height>
-        <Width>2.44577cm</Width>
+        <Width>3.25716cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border />
@@ -337,8 +337,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>9.90695cm</Top>
-        <Left>0.17185cm</Left>
+        <Top>9.87167cm</Top>
+        <Left>0.40052cm</Left>
         <Height>3.24625cm</Height>
         <Width>5.80228cm</Width>
         <ZIndex>10</ZIndex>
@@ -682,7 +682,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fechaMensualidad</rd:DefaultName>
-        <Top>7.93933cm</Top>
+        <Top>7.9746cm</Top>
         <Left>3.92817cm</Left>
         <Height>0.94396cm</Height>
         <Width>2.43705cm</Width>

@@ -450,7 +450,7 @@ namespace MTtechapp
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
                     cmd.Parameters.AddWithValue("@Agosto", DateTime.Now.ToShortDateString());
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
-                    cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
+                    cmd.Parameters.AddWithValue("@fechapago", SqlDbType.SmallDateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
                     cmd.CommandType = CommandType.StoredProcedure;
                     int j;
@@ -645,12 +645,12 @@ namespace MTtechapp
             cmbLugar.DisplayMember = "Nombre";
             cmbLugar.ValueMember = "idMunicipio";
             cmbLugar.DataSource = Cargamunicipio();
-        }          
+        }        
         public void LlenarMensualidades()
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT dbo.Cliente.idCliente,dbo.Cliente.ClavePago,dbo.meses_pagados.id_meses, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago,DATEADD(m, 1, dbo.Mensualidad.fechaPago) as corte, SUM(dbo.Cliente.ClavePago) as total FROM dbo.Cliente INNER JOIN dbo.Segmentacion ON dbo.Segmentacion.IdCliente = dbo.Cliente.idCliente INNER JOIN dbo.municipios ON dbo.municipios.idMunicipio = dbo.Cliente.idMunicipio INNER JOIN dbo.Mensualidades ON dbo.Mensualidades.idCliente = dbo.Cliente.idCliente inner join dbo.meses_pagados on dbo.meses_pagados.id_Cliente=dbo.Cliente.idCliente INNER JOIN dbo.Mensualidad ON dbo.Mensualidades.idMensualidad = dbo.Mensualidad.idMensualidad where fechapago= CONVERT (date, SYSDATETIME()) group by dbo.Cliente.idCliente, dbo.Cliente.NombreCompleto, dbo.Segmentacion.IdCliente, dbo.Segmentacion.ip, dbo.Cliente.idMunicipio, dbo.municipios.idMunicipio, dbo.municipios.Nombre, dbo.Mensualidades.idMensualidadC, dbo.Mensualidades.idCliente, dbo.Mensualidades.idMensualidad, dbo.Mensualidad.idMensualidad, dbo.Mensualidad.monto, dbo.Mensualidad.idCliente, dbo.Mensualidad.anio, dbo.Mensualidad.fechaPago, dbo.Cliente.ClavePago,dbo.meses_pagados.id_meses", cone.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select * from getMensualidades('" + dtpbuscar.Value.ToShortDateString() + "')", cone.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -659,13 +659,12 @@ namespace MTtechapp
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     DataRow filas = tabla.Rows[i];
-                    ListViewItem elementos = new ListViewItem(filas["idMensualidad"].ToString());
+                    ListViewItem elementos = new ListViewItem(filas["mds"].ToString());
                     elementos.SubItems.Add(filas["NombreCompleto"].ToString());
                     elementos.SubItems.Add(filas["Nombre"].ToString());
                     elementos.SubItems.Add(filas["ClavePago"].ToString());
                     elementos.SubItems.Add(filas["idMensualidadC"].ToString());
-                    elementos.SubItems.Add(filas["id_meses"].ToString());
-                    elementos.SubItems.Add(filas["idCliente"].ToString());
+                    elementos.SubItems.Add(filas["CL"].ToString());
                     materialListView1.Items.Add(elementos);
                 }
             }
@@ -685,7 +684,8 @@ namespace MTtechapp
             cargamun();
             cargaMes();
             LlenarMensualidades();
-            classMetodos.autocompletarClienteMensualidad(cbCliente, cmbLugar);
+            classMetodos.autocompletarClienteMensualidad(cbCliente,
+                                                         cmbLugar);
         }
         string mensualidad;
         private void cbCliente_Click(object sender, EventArgs e)
@@ -798,17 +798,16 @@ namespace MTtechapp
                 {
                     string idmensualidades = this.materialListView1.SelectedItems[0].SubItems[0].Text;
                     string idmensualidad = this.materialListView1.SelectedItems[0].SubItems[4].Text;
-                    string idmeses = this.materialListView1.SelectedItems[0].SubItems[5].Text;
-                    string idCliente = this.materialListView1.SelectedItems[0].SubItems[6].Text;
+                    string idCliente = this.materialListView1.SelectedItems[0].SubItems[5].Text;
                     ClassMetodos metodos = new ClassMetodos();
-                    metodos.BorrarMensualidad(int.Parse(idmensualidades), int.Parse(idmensualidad), int.Parse(idmeses), int.Parse(idCliente));
-                    MessageBox.Show(idmensualidad.ToString() + "<-idmensualidad" + idmensualidades.ToString() + "<-idMensualidades " + idmeses + "<- idMes" + idCliente.ToString() + "->idCliente" );
+                    metodos.BorrarMensualidad(int.Parse(idmensualidades), int.Parse(idmensualidad), int.Parse(idCliente));
+                    MessageBox.Show(idmensualidad.ToString() + "<-idmensualidad" + idmensualidades.ToString() + "<-idMensualidades " + idCliente.ToString() + "->idCliente" );
                 }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error, por una extraña razon no se pudo eliminar el registro T.T " + ex);
+                MessageBox.Show("Error, por una extraña razón no se pudo eliminar el registro T.T " + ex);
             }
             finally
             {
