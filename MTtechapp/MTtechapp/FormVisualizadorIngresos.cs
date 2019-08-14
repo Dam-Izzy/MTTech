@@ -251,7 +251,7 @@ namespace MTtechapp
                         Descripcion = item[1].ToString(),
                         Lugar = item[6].ToString(),
                         Monto = Convert.ToInt32(item[11].ToString()),
-                        Fecha = Convert.ToDateTime(item[12])
+                        Fecha = Convert.ToDateTime(item[13])
                     };
                     cortes.Add(cl);
                 }

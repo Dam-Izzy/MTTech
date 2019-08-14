@@ -314,7 +314,7 @@
             this.lvClientes.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.lvClientes.AllowColumnReorder = true;
             this.lvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvClientes.BorderStyle =  System.Windows.Forms.BorderStyle.None;
+            this.lvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
@@ -350,7 +350,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "idCliente";
-            this.columnHeader1.Width = 30;
+            this.columnHeader1.Width = 43;
             // 
             // columnHeader6
             // 
@@ -776,9 +776,8 @@
             // lvPagos
             // 
             this.lvPagos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            //this.lvPagos.BackColor = System.Drawing.SystemColors.Window;
             this.lvPagos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvPagos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.idCliente,
@@ -791,20 +790,19 @@
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader28});
-            //this.lvPagos.ContextMenuStrip = this.PoppupMenu;
             this.lvPagos.Depth = 0;
             this.lvPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            //this.lvPagos.FullRowSelect = true;
+            this.lvPagos.FullRowSelect = true;
             this.lvPagos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvPagos.HideSelection = false;
             this.lvPagos.Location = new System.Drawing.Point(6, 116);
             this.lvPagos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lvPagos.MouseState = MaterialSkin.MouseState.OUT;
             this.lvPagos.Name = "lvPagos";
-            //this.lvPagos.OwnerDraw = true;
+            this.lvPagos.OwnerDraw = true;
             this.lvPagos.Size = new System.Drawing.Size(1352, 322);
             this.lvPagos.TabIndex = 8;
-            //this.lvPagos.UseCompatibleStateImageBehavior = false;
+            this.lvPagos.UseCompatibleStateImageBehavior = false;
             this.lvPagos.View = System.Windows.Forms.View.Details;
             this.lvPagos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvPagos_MouseDoubleClick);
             // 
@@ -2269,12 +2267,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Opacity = 0.95D;
             this.ClientSize = new System.Drawing.Size(1493, 641);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.MaximizeBox = false;
             this.Name = "FormMenuPrincipal";
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú app";
             this.Load += new System.EventHandler(this.FormMenuPrincipal_Load);

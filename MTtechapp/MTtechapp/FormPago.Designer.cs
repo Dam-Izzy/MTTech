@@ -180,6 +180,7 @@
             this.LvPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.LvPagos.FullRowSelect = true;
             this.LvPagos.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.LvPagos.HideSelection = false;
             this.LvPagos.Location = new System.Drawing.Point(12, 191);
             this.LvPagos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.LvPagos.MouseState = MaterialSkin.MouseState.OUT;
@@ -353,7 +354,7 @@
             this.btnActualizarpago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizarpago.Depth = 0;
             this.btnActualizarpago.Icon = null;
-            this.btnActualizarpago.Location = new System.Drawing.Point(955, 92);
+            this.btnActualizarpago.Location = new System.Drawing.Point(964, 82);
             this.btnActualizarpago.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizarpago.Name = "btnActualizarpago";
             this.btnActualizarpago.Primary = true;

@@ -75,7 +75,6 @@ namespace MTtechapp
                 cmd.Parameters.AddWithValue("@precio", double.Parse(txtPrecio.Text));
                 cmd.Parameters.AddWithValue("@fechaPago", theDate);
                 cmd.Parameters.AddWithValue("@cantidad", int.Parse(txtcantidad.Text));
-                cmd.Parameters.AddWithValue("@Fk_pagoCliente", int.Parse(cmbCliente.SelectedValue.ToString()));
                 cone.Conectar();
                 cmd.CommandType = CommandType.StoredProcedure;
                 int j;
@@ -98,7 +97,6 @@ namespace MTtechapp
                 MessageBox.Show("Algo salio mal ;_;"  + ext.Message);
             }            
         }
-
         private void FormPago_Load(object sender, EventArgs e)
         {
             
@@ -106,7 +104,7 @@ namespace MTtechapp
         }
         public void llenarpago()
         {
-            OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT P.idPago,C.NombreCompleto,P.nombreArticulo,P.fechaPago,C.comentario,P.Precio,P.cantidad,P.Fk_pagoCliente AS cliente,P.cantidad* P.Precio as total,C.idCliente,PS.idCliente AS cliente,PS.idPago, PS.idPagos FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago=PS.idPago)", cone.cn);
+            OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT P.idPago,C.NombreCompleto,P.nombreArticulo,P.fechaPago,C.comentario,P.Precio,P.cantidad,P.cantidad* P.Precio as total,C.idCliente,PS.idCliente AS cliente,PS.idPago, PS.idPagos FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago=PS.idPago)", cone.cn);
             DataSet ds = new DataSet();
             DataTable tabla = new DataTable();
 
@@ -275,13 +273,12 @@ namespace MTtechapp
 
         private void btnActualizarpago_Click(object sender, EventArgs e)
         {
-            SqlCommand sqlCommand = new SqlCommand("update pago set nombreArticulo=@nombreArticulo,Precio=@Precio,fechaPago=@fechaPago,cantidad=@cantidad, Fk_pagoCliente=@Fk_pagoCliente WHERE idPago=@idPago", cone.conn);
+            SqlCommand sqlCommand = new SqlCommand("update pago set nombreArticulo=@nombreArticulo,Precio=@Precio,fechaPago=@fechaPago,cantidad=@cantidad WHERE idPago=@idPago", cone.conn);
             SqlCommand sqlpagos = new SqlCommand("update pagos set idCliente=@idCliente,idPago=@idPago where idPago=@idPago", cone.conn);
             sqlCommand.Parameters.AddWithValue("@nombreArticulo", txtArticulo.Text);
             sqlCommand.Parameters.AddWithValue("@Precio", Convert.ToInt32(txtPrecio.Text));
             sqlCommand.Parameters.AddWithValue("@fechaPago", dtpFechaPago.Value.ToShortDateString());
             sqlCommand.Parameters.AddWithValue("@cantidad", txtcantidad.Text);
-            sqlCommand.Parameters.AddWithValue("@Fk_pagoCliente", cmbCliente.ValueMember);
             sqlCommand.Parameters.AddWithValue("@idPago", Convert.ToInt32(lbpago.Text));
             sqlpagos.Parameters.AddWithValue("@idPago", Convert.ToInt32(lbpago.Text));
             sqlpagos.Parameters.AddWithValue("@idCliente", cmbCliente.ValueMember);
@@ -364,7 +361,7 @@ namespace MTtechapp
             int selected = Convert.ToInt32(cmbCliente.SelectedValue);
             try
             {
-                OleDbDataAdapter cmd = new OleDbDataAdapter("SELECT P.idPago,C.NombreCompleto,P.nombreArticulo,P.fechaPago,P.Precio,	P.Fk_pagoCliente AS cliente,C.idCliente,PS.idCliente AS cliente,PS.idPago AS pago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago=PS.idPago) where C.idCliente=" + selected + "", cone.cn);
+                OleDbDataAdapter cmd = new OleDbDataAdapter("SELECT P.idPago,C.NombreCompleto,P.nombreArticulo,P.fechaPago,P.Precio,C.idCliente,PS.idCliente AS cliente,PS.idPago AS pago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago=PS.idPago) where C.idCliente=" + selected + "", cone.cn);
                 cone.Conectar();
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();

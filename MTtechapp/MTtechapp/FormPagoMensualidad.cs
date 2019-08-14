@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace MTtechapp
 {
@@ -197,7 +199,27 @@ namespace MTtechapp
                     {
                         MessageBox.Show("Guardado", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    }
+                        if (MessageBox.Show("¿Desea enviar un mensaje a " + cbCliente.Text+ " de acreditación de pago de mensualidad?", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            const string accountSid = "AC46161011010dec31c96b0d928901bb93";
+                            const string authToken = "ae7f70c43e47d801b79d8d447bde32b3";
+                            try
+                            {
+                                TwilioClient.Init(accountSid, authToken);
+                                var message = MessageResource.Create(
+                                body: "Pago de mensualidad correspondiente al mes de enero acreditado, cualquier duda o aclaración llame al 43 6 20 81",
+                                from: new Twilio.Types.PhoneNumber("whatsapp:+14155238886"),
+                                to: new Twilio.Types.PhoneNumber("whatsapp:+5212441046466")
+                            );
+                                Console.WriteLine(message.Sid);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error " + ex.Message);
+                            }
+                        }
+
+                        }
                 }
             }
             catch (SqlException ex)
@@ -224,7 +246,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateFebrero", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Febrero", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Febrero", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -639,7 +661,6 @@ namespace MTtechapp
             cbMes.SelectedItem = 1;
             txtmonto.Clear();
         }
-        FormCliente cliente = new FormCliente();
         public void cargamun()
         {
             cmbLugar.DisplayMember = "Nombre";
@@ -659,11 +680,11 @@ namespace MTtechapp
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     DataRow filas = tabla.Rows[i];
-                    ListViewItem elementos = new ListViewItem(filas["mds"].ToString());
+                    ListViewItem elementos = new ListViewItem(filas["idMensualidadC"].ToString());
                     elementos.SubItems.Add(filas["NombreCompleto"].ToString());
                     elementos.SubItems.Add(filas["Nombre"].ToString());
-                    elementos.SubItems.Add(filas["ClavePago"].ToString());
-                    elementos.SubItems.Add(filas["idMensualidadC"].ToString());
+                    elementos.SubItems.Add(filas["CL"].ToString());
+                    elementos.SubItems.Add(filas["md"].ToString());
                     elementos.SubItems.Add(filas["CL"].ToString());
                     materialListView1.Items.Add(elementos);
                 }
@@ -681,9 +702,8 @@ namespace MTtechapp
         ClassMetodos classMetodos = new ClassMetodos();
         private void FormPagoMensualidad_Load(object sender, EventArgs e)
         {
-            cargamun();
-            cargaMes();
             LlenarMensualidades();
+            cargaMes();
             classMetodos.autocompletarClienteMensualidad(cbCliente,
                                                          cmbLugar);
         }
@@ -711,7 +731,7 @@ namespace MTtechapp
 
             try
             {
-                string idImprimir = this.materialListView1.SelectedItems[0].SubItems[6].Text;
+                string idImprimir = this.materialListView1.SelectedItems[0].SubItems[5].Text;
                 int idSeleccionado = int.Parse(idImprimir);
                 FormDialogo imprimir = new FormDialogo(dtpmensualidad.Value, idSeleccionado);
                 imprimir.Show();
@@ -900,6 +920,14 @@ namespace MTtechapp
 
                 MessageBox.Show("Algo salio mal " + ex);
             }
+        }
+
+        private void CmbLugar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            cargamun();
+            ClassMetodos @class = new ClassMetodos();
+            @class.autocompletarmunicipio(cmbLugar);
         }
     }
 }

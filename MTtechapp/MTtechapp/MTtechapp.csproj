@@ -335,7 +335,6 @@
       <DependentUpon>FormVisualizadorpagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Municipio.cs" />
-    <Compile Include="Pagos.cs" />
     <Compile Include="pagosfechas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

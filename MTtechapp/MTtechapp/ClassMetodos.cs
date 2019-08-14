@@ -299,17 +299,17 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-        public void BorrarMensualidad(int lb, int lb2, int Cliente)
+        public void BorrarMensualidad(int mensualidades, int mensualidad, int Cliente)
         {
             try
             {
 
-                if (MessageBox.Show("Desea borrar este registro? " + lb, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Desea borrar este registro? " + mensualidad, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     cnn.Conectar();
                     int i, y;
-                    SqlCommand cmd = new SqlCommand("delete from Mensualidad where idMensualidad='" + lb + "' and idCliente =" + Cliente + "", cnn.conn);
-                    SqlCommand sqlCommand = new SqlCommand("delete from Mensualidades where idMensualidadC='" + lb2 + "'", cnn.conn);
+                    SqlCommand cmd = new SqlCommand("delete from Mensualidad where idMensualidad='" + mensualidad + "' and idCliente =" + Cliente + "", cnn.conn);
+                    SqlCommand sqlCommand = new SqlCommand("delete from Mensualidades where idMensualidadC='" + mensualidades + "'and idCliente =" + Cliente + "", cnn.conn);
                     y = sqlCommand.ExecuteNonQuery();
                     i = cmd.ExecuteNonQuery();
                     if (i > 0  && y>0)
@@ -451,6 +451,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+
 
     }
 }

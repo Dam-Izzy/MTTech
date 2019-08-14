@@ -87,7 +87,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, P.Fk_pagoCliente, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago)", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago)", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 cnn.Conectar();
@@ -171,7 +171,7 @@ namespace MTtechapp
             {
                 if (textBox1.Text != null)
                 {
-                    string sql = "SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, P.Fk_pagoCliente, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago) where C.NombreCompleto like '%" + textBox1.Text + "%'or P.nombreArticulo like '%" + textBox1.Text + "%' or P.Precio like '%" + textBox1.Text + "%' or C.telefono like '%" + textBox1.Text + "%'or C.direccion like '%" + textBox1.Text + "%' or P.cantidad like '%" + textBox1.Text + "%'or P.precio like '%" + textBox1.Text + "%'";
+                    string sql = "SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago) where C.NombreCompleto like '%" + textBox1.Text + "%'or P.nombreArticulo like '%" + textBox1.Text + "%' or P.Precio like '%" + textBox1.Text + "%' or C.telefono like '%" + textBox1.Text + "%'or C.direccion like '%" + textBox1.Text + "%' or P.cantidad like '%" + textBox1.Text + "%'or P.precio like '%" + textBox1.Text + "%'";
                     OleDbDataAdapter adaptador = new OleDbDataAdapter(sql, cnn.cn);
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
@@ -362,7 +362,6 @@ namespace MTtechapp
             }
 
         }
-
         private void RBdesacctivados_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -1073,7 +1072,7 @@ namespace MTtechapp
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            bool Cliente, global, torre;
+            bool Cliente, Global, torre;
             if (cbrealizado.Checked==true)
             {
                 Cliente = true;
@@ -1084,11 +1083,11 @@ namespace MTtechapp
             }
             if (cbotro.Checked==true)
             {
-                global = true;
+                Global = true;
             }
             else
             {
-                global = false;
+                Global = false;
             }
             if (chbtoo.Checked == true)
             {
@@ -1279,7 +1278,7 @@ namespace MTtechapp
             {
                 if (DtpVentas.Value != null)
                 {
-                    string sql = "SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, P.Fk_pagoCliente, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago) where fechaPago='" + DtpVentas.Value.ToShortDateString() + "'";
+                    string sql = "SELECT P.idPago, C.NombreCompleto, P.nombreArticulo, P.Precio, C.idCliente, PS.idCliente AS cliente, PS.idPago AS pago, C.telefono, C.direccion, P.cantidad, (P.cantidad* P.Precio) as total, PS.idPagos,P.fechaPago FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago = PS.idPago) where fechaPago='" + DtpVentas.Value.ToShortDateString() + "'";
                     OleDbDataAdapter adaptador = new OleDbDataAdapter(sql, cnn.cn);
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
@@ -1509,10 +1508,12 @@ namespace MTtechapp
                 MessageBox.Show("Algo salio mal \n"+e);
             }
             }
+        public bool test = false;
 
         private void MensualidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             llenarComboCliente();
+            test = true;
         }
 
         private void Btncancelar_Click(object sender, EventArgs e)

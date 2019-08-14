@@ -220,7 +220,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
-        <Top>1.15099cm</Top>
+        <Top>1.10345cm</Top>
         <Left>0.0376cm</Left>
         <Height>0.67592cm</Height>
         <Width>3.25716cm</Width>
@@ -337,7 +337,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>9.87167cm</Top>
+        <Top>11.45917cm</Top>
         <Left>0.40052cm</Left>
         <Height>3.24625cm</Height>
         <Width>5.80228cm</Width>
@@ -671,7 +671,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Cdate(Fields!fechaMensualidad.Value).ToShortDateString, "mensualidad")</Value>
+                <Value>=First(Cdate(Fields!fechaMensualidad.Value).ToLongDateString, "mensualidad")</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -682,10 +682,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fechaMensualidad</rd:DefaultName>
-        <Top>7.9746cm</Top>
-        <Left>3.92817cm</Left>
-        <Height>0.94396cm</Height>
-        <Width>2.43705cm</Width>
+        <Top>8.6628cm</Top>
+        <Left>0.17185cm</Left>
+        <Height>0.69674cm</Height>
+        <Width>6.19337cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -746,10 +746,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>8.95384cm</Top>
-        <Left>0.17185cm</Left>
-        <Height>0.57354cm</Height>
-        <Width>2.81555cm</Width>
+        <Top>9.46537cm</Top>
+        <Left>1.2567cm</Left>
+        <Height>0.6441cm</Height>
+        <Width>2.67147cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -768,18 +768,20 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Cdate(Fields!mesprox.Value).ToShortDateString, "mensualidad")</Value>
-                <Style />
+                <Value>=First(Cdate(Fields!mesprox.Value).ToLongDateString, "mensualidad")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>fechaMensualidad</rd:DefaultName>
-        <Top>8.95384cm</Top>
-        <Left>3.16379cm</Left>
+        <Top>10.28585cm</Top>
+        <Left>0.17185cm</Left>
         <Height>0.77672cm</Height>
-        <Width>3.20143cm</Width>
+        <Width>6.19337cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -825,7 +827,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.30257in</Height>
+    <Height>5.92757in</Height>
     <Style />
   </Body>
   <Width>2.64281in</Width>

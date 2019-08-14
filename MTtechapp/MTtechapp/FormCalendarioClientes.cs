@@ -52,7 +52,6 @@ namespace MTtechapp
                 MessageBox.Show("Error ;_; " + ex.Message);
             }
         }
-        FormPagoMensualidad FormPago = new FormPagoMensualidad();
         private DataTable GetMensualidad()
         {
             DataTable Retornar = new DataTable();
