@@ -304,7 +304,7 @@ namespace MTtechapp
             try
             {
 
-                if (MessageBox.Show("Desea borrar este registro? " + mensualidad, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Borrará todos los pagos de este cliente... \n ¿Desea continuar? " + mensualidad, "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     cnn.Conectar();
                     int i, y;

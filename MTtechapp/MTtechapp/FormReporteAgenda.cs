@@ -18,7 +18,7 @@ namespace MTtechapp
             {
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.Refresh();
-                this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("datos", FormMenuPrincipal.lista));
+                this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("datosagenda", FormMenuPrincipal.lista));
             }
             catch (Exception ex)
             {

@@ -47,7 +47,7 @@ namespace MTtechapp
                     else
                         equipo = true;
                     SqlCommand cmd = new SqlCommand("update Segmentacion set router='" + txtrouter.Text + "',ip='" + txtIp.Text + "',comentario='" + txtCometarioip.Text + "',idCliente='" + Convert.ToInt32(lbid.Text) + "' where idSegmentacion=" + Convert.ToInt32(lbSeg.Text) + "", conn.conn);
-                    SqlCommand cmd2 = new SqlCommand("update Cliente set NombreCompleto='" + txtnombre.Text + "',telefono='" + txtTelefono.Text + "',direccion='" + txtdireccion.Text + "',comentario='" + txtcomentario.Text + "',activo='"+ activo +"',idMunicipio='"+ comboBox1.SelectedValue +"',FechaInstalacion='"+ dtpInstalacion.Value.ToShortDateString() +"', equipo='" + equipo + "' where idCliente=" + Convert.ToInt32(lbid.Text) + "", conn.conn);
+                    SqlCommand cmd2 = new SqlCommand("update Cliente set NombreCompleto='" + txtnombre.Text + "',telefono='" + txtTelefono.Text + "',direccion='" + txtdireccion.Text + "',comentario='" + txtcomentario.Text + "',activo='"+ activo +"',idMunicipio='"+ comboBox1.SelectedValue +"',FechaInstalacion='"+ dtpInstalacion.Value.ToLongDateString() +"', equipo='" + equipo + "' where idCliente=" + Convert.ToInt32(lbid.Text) + "", conn.conn);
                     conn.Conectar();
                     cmd.CommandType = CommandType.Text;
                     cmd2.ExecuteNonQuery();

@@ -196,7 +196,7 @@
             this.cmbLugar.Size = new System.Drawing.Size(308, 21);
             this.cmbLugar.TabIndex = 20;
             this.cmbLugar.SelectionChangeCommitted += new System.EventHandler(this.cmbLugar_SelectionChangeCommitted);
-            this.cmbLugar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CmbLugar_KeyPress);
+            this.cmbLugar.Enter += new System.EventHandler(this.CmbLugar_Enter);
             // 
             // btnImprimir
             // 
@@ -513,7 +513,8 @@
             this.MinimizeBox = false;
             this.Name = "FormPagoMensualidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mensualidad";
+            this.Text = "                                                                                 " +
+    "                        ";
             this.Load += new System.EventHandler(this.FormPagoMensualidad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);

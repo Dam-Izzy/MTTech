@@ -183,6 +183,7 @@
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PoppupMenu.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -540,6 +541,7 @@
             this.cbmunicipios.Name = "cbmunicipios";
             this.cbmunicipios.Size = new System.Drawing.Size(193, 21);
             this.cbmunicipios.TabIndex = 11;
+            this.cbmunicipios.SelectionChangeCommitted += new System.EventHandler(this.Cbmunicipios_SelectionChangeCommitted);
             this.cbmunicipios.Click += new System.EventHandler(this.cbmunicipios_Click);
             // 
             // RBdesacctivados
@@ -1162,7 +1164,6 @@
             this.cbLugarCliente.Name = "cbLugarCliente";
             this.cbLugarCliente.Size = new System.Drawing.Size(247, 21);
             this.cbLugarCliente.TabIndex = 88;
-            this.cbLugarCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarCliente_MouseClick);
             // 
             // materialLabel21
             // 
@@ -1253,11 +1254,12 @@
             this.cbClienteAgenda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbClienteAgenda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbClienteAgenda.FormattingEnabled = true;
-            this.cbClienteAgenda.Location = new System.Drawing.Point(0, 30);
+            this.cbClienteAgenda.Location = new System.Drawing.Point(0, 31);
             this.cbClienteAgenda.Name = "cbClienteAgenda";
             this.cbClienteAgenda.Size = new System.Drawing.Size(370, 21);
             this.cbClienteAgenda.TabIndex = 48;
-            this.cbClienteAgenda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbClienteAgenda_MouseClick);
+            this.cbClienteAgenda.SelectionChangeCommitted += new System.EventHandler(this.CbClienteAgenda_SelectionChangeCommitted);
+            this.cbClienteAgenda.Click += new System.EventHandler(this.CbClienteAgenda_Click);
             // 
             // lbCliente
             // 
@@ -1401,7 +1403,6 @@
             this.cbLugarGlobla.Name = "cbLugarGlobla";
             this.cbLugarGlobla.Size = new System.Drawing.Size(348, 21);
             this.cbLugarGlobla.TabIndex = 86;
-            this.cbLugarGlobla.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarGlobla_MouseClick);
             // 
             // materialLabel6
             // 
@@ -1786,8 +1787,8 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Cliente",
@@ -1988,7 +1989,8 @@
             this.columnHeader22,
             this.columnHeader23,
             this.columnHeader24,
-            this.columnHeader27});
+            this.columnHeader27,
+            this.columnHeader38});
             this.lvAgenda.Depth = 0;
             this.lvAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.lvAgenda.FullRowSelect = true;
@@ -2263,6 +2265,10 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
             // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Width = 0;
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2334,7 +2340,6 @@
         private MaterialLabel materialLabel1;
         private MaterialRaisedButton materialRaisedButton2;
         private MaterialLabel materialLabel4;
-        private MaterialListView lvAgenda;
         private MaterialLabel lbEquipo;
         private MaterialLabel lblugar;
         private MaterialLabel lbdescripcion;
@@ -2455,5 +2460,7 @@
         private MaterialLabel materialLabel6;
         private MaterialLabel materialLabel23;
         private System.Windows.Forms.ComboBox cbLugarCliente;
+        public MaterialListView lvAgenda;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
     }
 }

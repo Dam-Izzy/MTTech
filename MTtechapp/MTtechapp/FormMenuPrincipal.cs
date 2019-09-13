@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -153,7 +154,6 @@ namespace MTtechapp
             cargaHerramientas();
             this.ContextMenuStrip = PoppupMenu;
             materialTabControl1.TabPages.Remove(tabPage3);
-            carga();
             Settings.Default.recordar = materialCheckBox2.Checked;
         }
         public static double A = 0;
@@ -287,7 +287,7 @@ namespace MTtechapp
                 else
                 {
                     cnn.Conectar();
-                    OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) where C.NombreCompleto like '%" + txtbuscarid.Text + "%' or C.telefono like '%" + txtbuscarid.Text + "%' or C.direccion like'%" + txtbuscarid.Text + "%' or S.router like'%" + txtbuscarid.Text + "%' or S.ip like'%" + txtbuscarid.Text + "%' or S.comentario like'%" + txtbuscarid.Text + "%'", cnn.cn);
+                    OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT S.IdCliente,C.NombreCompleto AS Nombre, C.telefono, C.direccion, S.router, S.ip, S.comentario, CASE C.activo WHEN 'True' THEN 'Si' ELSE 'No' END AS activo, C.FechaInstalacion, S.IdCliente, C.ClavePago, M.idMunicipio, M.Nombre as Localidad, C.idMunicipio, C.idCliente FROM dbo.Cliente AS C INNER JOIN dbo.Segmentacion AS S ON(C.idCliente = S.IdCliente) INNER JOIN dbo.municipios M ON C.idMunicipio = M.idMunicipio where C.NombreCompleto like '%" + txtbuscarid.Text + "%' or C.telefono like '%" + txtbuscarid.Text + "%' or C.direccion like'%" + txtbuscarid.Text + "%' or S.router like'%" + txtbuscarid.Text + "%' or S.ip like'%" + txtbuscarid.Text + "%' or S.comentario like'%" + txtbuscarid.Text + "%'", cnn.cn);
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adaptador.Fill(ds);
@@ -296,15 +296,17 @@ namespace MTtechapp
                     {
                         DataRow filas = tabla.Rows[i];
                         ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
-                        elementos.SubItems.Add(filas["NombreCompleto"].ToString());
+                        elementos.SubItems.Add(filas["Nombre"].ToString());
                         elementos.SubItems.Add(filas["telefono"].ToString());
                         elementos.SubItems.Add(filas["direccion"].ToString());
                         elementos.SubItems.Add(filas["router"].ToString());
                         elementos.SubItems.Add(filas["ip"].ToString());
                         elementos.SubItems.Add(filas["comentario"].ToString());
-                        elementos.SubItems.Add(filas["activo"].ToString());
-                        elementos.SubItems.Add(filas["FechaInstalacion"].ToString());
+                        elementos.SubItems.Add(Convert.ToString(filas["activo"]));
+                        elementos.SubItems.Add(Convert.ToString(filas["FechaInstalacion"]));
                         elementos.SubItems.Add(filas["ClavePago"].ToString());
+                        elementos.SubItems.Add(filas["Localidad"].ToString());
+                        elementos.SubItems.Add(filas["idMunicipio"].ToString());
                         lvClientes.Items.Add(elementos);
                     }
                 }
@@ -327,7 +329,7 @@ namespace MTtechapp
                 {
                     cnn.Conectar();
                     this.lvClientes.Items.Clear();
-                    OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) where C.activo = 'true'", cnn.cn);
+                    OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT S.IdCliente,C.NombreCompleto AS Nombre, C.telefono, C.direccion, S.router, S.ip, S.comentario, CASE C.activo WHEN 'True' THEN 'Si' ELSE 'No' END AS activo, C.FechaInstalacion, S.IdCliente, C.ClavePago, M.idMunicipio, M.Nombre as Localidad, C.idMunicipio, C.idCliente FROM dbo.Cliente AS C INNER JOIN dbo.Segmentacion AS S ON(C.idCliente = S.IdCliente) INNER JOIN dbo.municipios M ON C.idMunicipio = M.idMunicipio where C.activo = 'true' and M.idMunicipio = '" + cbmunicipios.SelectedValue + "'", cnn.cn);
                     DataSet ds = new DataSet();
                     DataTable tabla = new DataTable();
                     adaptador.Fill(ds);
@@ -336,7 +338,7 @@ namespace MTtechapp
                     {
                         DataRow filas = tabla.Rows[i];
                         ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
-                        elementos.SubItems.Add(filas["NombreCompleto"].ToString());
+                        elementos.SubItems.Add(filas["Nombre"].ToString());
                         elementos.SubItems.Add(filas["telefono"].ToString());
                         elementos.SubItems.Add(filas["direccion"].ToString());
                         elementos.SubItems.Add(filas["router"].ToString());
@@ -368,7 +370,7 @@ namespace MTtechapp
             {
                 cnn.Conectar();
                 this.lvClientes.Items.Clear();
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select S.IdCliente, C.NombreCompleto, C.telefono, C.direccion, S.router, S.ip,S.comentario,CASE C.activo when 'True' then 'Si' ELSE 'No' end as activo, C.FechaInstalacion, S.IdCliente,C.ClavePago from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) where C.activo = 'false'", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT S.IdCliente,C.NombreCompleto AS Nombre, C.telefono, C.direccion, S.router, S.ip, S.comentario, CASE C.activo WHEN 'True' THEN 'Si' ELSE 'No' END AS activo, C.FechaInstalacion, S.IdCliente, C.ClavePago, M.idMunicipio, M.Nombre as Localidad, C.idMunicipio, C.idCliente FROM dbo.Cliente AS C INNER JOIN dbo.Segmentacion AS S ON(C.idCliente = S.IdCliente) INNER JOIN dbo.municipios M ON C.idMunicipio = M.idMunicipio where C.activo = 'false' and M.idMunicipio = '" + cbmunicipios.SelectedValue + "'", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -377,7 +379,7 @@ namespace MTtechapp
                 {
                     DataRow filas = tabla.Rows[i];
                     ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
-                    elementos.SubItems.Add(filas["NombreCompleto"].ToString());
+                    elementos.SubItems.Add(filas["Nombre"].ToString());
                     elementos.SubItems.Add(filas["telefono"].ToString());
                     elementos.SubItems.Add(filas["direccion"].ToString());
                     elementos.SubItems.Add(filas["router"].ToString());
@@ -482,7 +484,7 @@ namespace MTtechapp
                     }
                     else
                     {
-                        realizadoCliente = false;
+                        realizadoCliente = false;   
                     }
                     if (cbotro.Checked== true)
                     {
@@ -500,7 +502,7 @@ namespace MTtechapp
                     {
                         RealizadoTorre = false;
                     }
-                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugarTorre.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.Text + "','" + theDate + "','" + txtdescripcion1.Text + "', '"+ realizadoCliente +"', '"+ txtind.Text +"', '"+ cbprioriC.Text +"','"+ comboBox1.Text +"')", cnn.conn);
+                    SqlCommand cmd = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('" + cbClienteAgenda.SelectedValue + "','" + cbLugarCliente.SelectedValue + "','" + txtDiag.Text + "','" + cbEquipo.Text + "','" + theDate + "','" + txtdescripcion1.Text + "', '"+ realizadoCliente +"', '"+ txtind.Text +"', '"+ cbprioriC.Text +"','"+ comboBox1.Text +"')", cnn.conn);
                     SqlCommand torre = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('1','" + cbLugarTorre.SelectedValue + "','" + txtdiagnostico.Text + "','N/A','" + theDate + "','" + txtproblem.Text + "','" + RealizadoTorre + "', '" + txtutilizado.Text + "', '" + cbprioriGlobal.Text + "','" + comboBox1.Text + "')", cnn.conn);
                     SqlCommand global = new SqlCommand("insert into agenda(idCliente,idlugar,diagnostico,equipo,fecha,descripcion, estado, indicaciones,  prioridad, tipo) values('1','"+cbLugarGlobla.SelectedValue  +"','" + txtotrodiag.Text + "','N/A','" + theDate + "','" + txtfallo.Text + "', '" + realizadoOtro + "', '" + txtotrocoment.Text + "', '" + cbprioriGlobal.Text + "','" + comboBox1.Text + "')", cnn.conn);
                     cnn.Conectar();
@@ -551,7 +553,9 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("select * from Cliente", cnn.conn);
+                string command = "select c.idCliente, c.NombreCompleto, c.telefono,c.comentario, c.idMunicipio as MC, m.idMunicipio as MM, m.Nombre from Cliente c inner join municipios m on (c.idmunicipio= m.idMunicipio)";
+                SqlCommand cmd = new SqlCommand(command, cnn.conn);
+                cmd.CommandType = CommandType.Text;
                 SqlDataReader lector = cmd.ExecuteReader();
                 while (lector.Read())
                 {
@@ -563,6 +567,7 @@ namespace MTtechapp
                     usuarios.comentario = lector[4].ToString();
                     lista_Clientes.Add(usuarios);
                 }
+                
             }
             catch (SqlException ex)
             {
@@ -576,6 +581,39 @@ namespace MTtechapp
             }
             finally { cnn.Desconectar(); }
             return lista_Clientes;
+        }
+        public List<Municipio> Cargafiltro()
+        {
+
+            try
+            {
+                cnn.Conectar();
+                string command = "Select M.idMunicipio, M.Nombre,C.IdMunicipio,C.IdCliente from Cliente C inner join municipios M on (C.IdMunicipio= M.Idmunicipio) where c.idCliente='" + cbClienteAgenda.SelectedValue +"'";
+                SqlCommand cmd = new SqlCommand(command, cnn.conn);
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader lector = cmd.ExecuteReader();
+                while (lector.Read())
+                {
+                    Municipio usuarios = new Municipio();
+                    usuarios.idMunicipio = lector[0].ToString();
+                    usuarios.Nombre = lector[1].ToString();
+                    municipios.Add(usuarios);
+                }
+                lector.Close();
+                
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally { cnn.Desconectar(); }
+            return municipios;
         }
 
 
@@ -614,6 +652,14 @@ namespace MTtechapp
             cbClienteAgenda.DisplayMember = "NombreCompleto";
             cbClienteAgenda.ValueMember = "idCliente";
             cbClienteAgenda.DataSource = CargaCombo();
+        }
+        public void cargafiltro()
+        {
+            municipios.Clear();
+            cbLugarCliente.DataSource = null;
+            cbLugarCliente.DisplayMember = "Nombre";
+            cbLugarCliente.ValueMember = "idMunicipio";
+            cbLugarCliente.DataSource = Cargafiltro();
         }
 
         public void cargaMuni()
@@ -799,6 +845,7 @@ namespace MTtechapp
                     elementos.SubItems.Add(filas["equipo"].ToString());
                     elementos.SubItems.Add(filas["fecha"].ToString());
                     elementos.SubItems.Add(filas["idagenda"].ToString());
+                    elementos.SubItems.Add(filas["idCliente"].ToString());
                     lvAgenda.Items.Add(elementos);
                 }
             }
@@ -814,6 +861,7 @@ namespace MTtechapp
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            CrearDoc();
             lista.Clear();
             CargarSeleccionados();
             FormReporteAgenda formReporte = new FormReporteAgenda();
@@ -823,12 +871,6 @@ namespace MTtechapp
         private void cbLugar_MouseClick(object sender, MouseEventArgs e)
         {
             cargaMuni();
-        }
-
-        private void cbClienteAgenda_MouseClick(object sender, MouseEventArgs e)
-        {
-            cbClienteAgenda.DataSource = null;
-            carga();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -876,15 +918,76 @@ namespace MTtechapp
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
             {
                 ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
+                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago from Cliente where idCliente= " + item.SubItems[7].Text.ToString() + "";
+                SqlCommand sql = new SqlCommand(Consulta, cnn.conn);
+                cnn.Conectar();
+                SqlDataReader dr = sql.ExecuteReader();
                 informeAgenda.cliente = item.SubItems[0].Text.ToString();
                 informeAgenda.lugar = item.SubItems[1].Text.ToString();
                 informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
                 informeAgenda.descripcion = item.SubItems[3].Text.ToString();
                 informeAgenda.Equipo = item.SubItems[4].Text.ToString();
                 informeAgenda.fecha = item.SubItems[5].Text.ToString();
+                if (item.SubItems[0].Text.Contains("N/A"))
+                {
+                    //
+                }
+                else
+                {
+                    while (dr.Read())
+                    {
+                        informeAgenda.domicilio = dr.GetString(1);
+                        informeAgenda.Tel = dr.GetString(2);
+                    }
+                }
+                
+                dr.Close();
+
                 lista.Add(informeAgenda);
             }
             return lista;
+        }
+        private void CrearDoc()
+        {
+            try
+            {
+                string texto = "";
+                foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
+                {
+                    ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
+                    informeAgenda.cliente = item.SubItems[0].Text.ToString();
+                    informeAgenda.lugar = item.SubItems[1].Text.ToString();
+                    informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
+                    informeAgenda.descripcion = item.SubItems[3].Text.ToString();
+                    informeAgenda.Equipo = item.SubItems[4].Text.ToString();
+                    informeAgenda.fecha = item.SubItems[5].Text.ToString();
+                    informeAgenda.tipo = item.SubItems[6].Text.ToString();
+                  
+                        texto = "Agenda del dia " + DateTime.Now.ToLongDateString() + " \n" +
+                   "" +
+                   "----------------------------------------------\n"+
+                        "Revisar  " + item.SubItems[0].Text.ToString() + "\n";
+                    lista.Add(informeAgenda);
+                }
+                string rutaCompleta = @" C:\Users\MT Network's\Desktop\Agenda.txt";
+               
+
+                using (StreamWriter mylogs = File.AppendText(rutaCompleta))         //se crea el archivo
+                {
+
+                    mylogs.WriteLine(texto);
+
+                    mylogs.Close();
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         private void cbEquipo_MouseClick(object sender, MouseEventArgs e)
@@ -906,15 +1009,7 @@ namespace MTtechapp
             //MessageBox.Show(idCl);
 
         }
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            llenarPagos();
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            llenarAgenda();
-        }
+      
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             metodos.BuscarUsuario(materialSingleLineTextField2.Text, lvUsuarios);
@@ -962,49 +1057,99 @@ namespace MTtechapp
                 MessageBox.Show("Error, " + ex.Message);
             }
         }
+        private void LimpiarTorre()
+        {
+            lbAgen.ResetText();
+            dtpAgenda.Refresh();
+            cbLugarTorre.Refresh();
+            txtutilizado.Clear();
+            txtproblem.Clear();
+            txtdiagnostico.Clear();
+            chbtoo.Checked = false;
+            cbtorre.Refresh();
+        }
+        private void LimpiarCliente()
+        {
+            lbAgen.ResetText();
+            dtpAgenda.Refresh();
+            cbLugarCliente.Refresh();
+            txtind.Clear();
+            txtdescripcion1.Clear();
+            txtDiag.Clear();
+            cbrealizado.Checked = false;
+            cbprioriC.Refresh();
+        }
+        private void LimpiarOtro()
+        {
+            lbAgen.ResetText();
+            dtpAgenda.Refresh();
+            cbLugarGlobla.Refresh();
+            txtotrocoment.Clear();
+            txtfallo.Clear();
+            txtotrodiag.Clear();
+            cbotro.Checked = false;
+            cbprioriGlobal.Refresh();
+
+        }
 
         private void lvAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            int id = Convert.ToInt32(lvAgenda.SelectedItems[0].SubItems[6].Text);
             try
             {
                 cnn.Conectar();
-                int id = Convert.ToInt32(this.lvAgenda.SelectedItems[0].SubItems[6].Text);
                 string sql = "SELECT A.idagenda, A.idlugar, A.diagnostico, A.equipo, A.fecha, A.descripcion, M.Nombre, ISNULL( C.NombreCompleto, 'N/A' ) AS NombreCompleto, A.idCliente, A.estado, A.indicaciones, A.prioridad, A.tipo, M.idMunicipio, C.idCliente, C.NombreCompleto, C.telefono, C.direccion, C.ClavePago FROM dbo.agenda AS A INNER JOIN dbo.municipios AS M ON (A.idlugar = M.idMunicipio) INNER JOIN dbo.Cliente AS C ON (C.idCliente = A.idCliente) where A.idagenda=" + id + "";
                 SqlCommand cmd = new SqlCommand(sql, cnn.conn);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader dr = cmd.ExecuteReader();
-                /*
-                 cero es el identificador
-                 uno es la fecha
-                 dos es el lugar
-                 tres 
-                 */
+                DataSet dataset = new DataSet();
                 if (dr.Read())
                 {
                     if (dr.GetString(12).Equals("Torre"))
                     {
+                        LimpiarCliente();
+                        LimpiarOtro();
                         gbTorre.Location = new System.Drawing.Point(25, 112);
                         grupoCliente.Visible = false;
                         gbTorre.Visible = true;
                         gbglobal.Visible = false;
-                        comboBox1.Text = dr.GetString(12);
-                        lbAgen.Text = dr.GetInt32(0).ToString();
-                        dtpAgenda.Text = dr[4].ToString();
+                        btnActualizar.Visible = true;
+                        txtagenda.Visible = false;
+                        btncancelar.Visible = true;
+                        comboBox1.Text = dr.GetString(12);//combo tipo
+                        lbAgen.Text = dr.GetInt32(0).ToString(); //ID ID
+                        dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarTorre.SelectedValue = dr[6].ToString();
                         txtutilizado.Text = dr[10].ToString();//indicaciones
                         txtproblem.Text = dr[5].ToString();//descipción
                         txtdiagnostico.Text = dr[2].ToString();//diagnostico
                         chbtoo.Checked = dr.GetBoolean(9);
                         cbtorre.Text = dr.GetString(11);
-
+                        dr.Close();
+                        using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
+                        {
+                            da.Fill(dataset);
+                        }
+                        if (dataset.Tables[0].Rows.Count > 0)
+                        {
+                            cbLugarTorre.DataSource = dataset.Tables[0];
+                            cbLugarTorre.DisplayMember = "Nombre";
+                            cbLugarTorre.ValueMember = "idMunicipio";
+                        }
                     }
                     else if (dr.GetString(12).Equals("Cliente"))
                     {
+                        LimpiarOtro();
+                        LimpiarTorre();
                         grupoCliente.Location = new System.Drawing.Point(25, 113);
                         grupoCliente.Visible = true;
                         gbTorre.Visible = false;
                         gbglobal.Visible = false;
-                        comboBox1.Text = dr.GetString(12);//combo tipo
+                        btnActualizar.Visible = true;
+                        txtagenda.Visible = false;
+                        btncancelar.Visible = true;
+                        comboBox1.Text = dr.GetString(12);
+                        cbEquipo.Text = dr.GetString(3);//combo tipo
                         lbAgen.Text = dr.GetInt32(0).ToString();//ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar
@@ -1013,29 +1158,54 @@ namespace MTtechapp
                         txtDiag.Text = dr[2].ToString();//diagnostico
                         cbrealizado.Checked = dr.GetBoolean(9);//check realizado
                         cbprioriC.Text = dr.GetString(11);//combo nivel
+                        dr.Close();
+                        using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
+                        {
+                            da.Fill(dataset);
+                        }
+                        if (dataset.Tables[0].Rows.Count > 0)
+                        {
+                            cbLugarCliente.DataSource = dataset.Tables[0];
+                            cbLugarCliente.DisplayMember = "Nombre";
+                            cbLugarCliente.ValueMember = "idMunicipio";
+                        }
 
                     }
                     else if (dr.GetString(12).Equals("otro")|| dr.GetString(12).Equals("fichas")|| dr.GetString(12).Equals("Socio"))
                     {
+                        LimpiarTorre();
+                        LimpiarCliente();
                         gbglobal.Location = new System.Drawing.Point(25, 112);
                         grupoCliente.Visible = false;
                         gbTorre.Visible = false;
                         gbglobal.Visible = true;
+                        btnActualizar.Visible = true;
+                        txtagenda.Visible = false;
+                        btncancelar.Visible = true;
                         comboBox1.Text = dr.GetString(12);//combo tipo
                         lbAgen.Text = dr.GetInt32(0).ToString();//ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarGlobla.SelectedValue = dr[6].ToString();//combo lugar
                         txtotrocoment.Text = dr[10].ToString();//indicaciones
                         txtfallo.Text = dr[5].ToString();//descipción
-                        txtotrodiag.Text = dr[2].ToString();//diagnostico
+                        txtotrodiag.Text = dr[2].ToString();//diagnostico 
                         cbotro.Checked = dr.GetBoolean(9);//check realizado
                         cbprioriGlobal.Text = dr.GetString(11);//combo nivel
+                        dr.Close();
+                        using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
+                        {
+                            da.Fill(dataset);
+                        }
+                        if (dataset.Tables[0].Rows.Count > 0)
+                        {
+                            cbLugarGlobla.DataSource = dataset.Tables[0];
+                            cbLugarGlobla.DisplayMember = "Nombre";
+                            cbLugarGlobla.ValueMember = "idMunicipio";
+                        }
                     }
                 }
-                btncancelar.Visible = true;
                 dr.Close();
 
-                DataSet dataset = new DataSet();
                 using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                 {
                     da.Fill(dataset);
@@ -1068,10 +1238,11 @@ namespace MTtechapp
             {
                 MessageBox.Show("Error, " + ex.Message);
             }
-        }//actualizar agenda
+        }//Carga actualizar agenda------
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(lvAgenda.SelectedItems[0].SubItems[6].Text);
             bool Cliente, Global, torre;
             if (cbrealizado.Checked==true)
             {
@@ -1097,20 +1268,56 @@ namespace MTtechapp
             {
                 torre = false;
             }
-            SqlCommand sqlCommand = new SqlCommand("update agenda set idCliente=@idCliente,idlugar=@idlugar,diagnostico=@diagnostico,equipo=@equipo,fecha=@fecha,descripcion=@descripcion, estado=@estado,indicaciones=@indicaciones,prioridad= @prioridad,tipo=@tipo where idagenda=@idagenda", cnn.conn);
-            sqlCommand.Parameters.AddWithValue("@idCliente", cbClienteAgenda.SelectedValue);
-            sqlCommand.Parameters.AddWithValue("@idlugar", cbLugarTorre.SelectedValue);
-            sqlCommand.Parameters.AddWithValue("@diagnostico", txtDiag.Text);
-            sqlCommand.Parameters.AddWithValue("@equipo", cbEquipo.Text);
-            sqlCommand.Parameters.AddWithValue("@fecha", dtpAgenda.Value.ToShortDateString().ToString());
-            sqlCommand.Parameters.AddWithValue("@descripcion", txtdescripcion1.Text);
-            sqlCommand.Parameters.AddWithValue("@idagenda", lbAgen.Text);
-            sqlCommand.Parameters.AddWithValue("@indicaciones", txtind.Text);
-            sqlCommand.Parameters.AddWithValue("@prioridad", cbprioriC.Text);
-            sqlCommand.Parameters.AddWithValue("@tipo", comboBox1.Text);
-            sqlCommand.Parameters.AddWithValue("@estado", Cliente);
+            //Comando de actualización de un cliente
+            SqlCommand sqlCommand = new SqlCommand("update agenda set idCliente=@idCliente1,idlugar=@idlugar1,diagnostico=@diagnostico1,equipo=@equipo1,fecha=@fecha1,descripcion=@descripcion1, estado=@estado1,indicaciones=@indicaciones1,prioridad= @prioridad1,tipo=@tipo1 where idagenda=" + id + "", cnn.conn);
+            sqlCommand.Parameters.AddWithValue("@idCliente1", cbClienteAgenda.SelectedValue);
+            sqlCommand.Parameters.AddWithValue("@idlugar1", cbLugarCliente.SelectedValue);
+            sqlCommand.Parameters.AddWithValue("@diagnostico1", txtDiag.Text);
+            sqlCommand.Parameters.AddWithValue("@equipo1", cbEquipo.Text);
+            sqlCommand.Parameters.AddWithValue("@fecha1", dtpAgenda.Value.ToShortDateString());
+            sqlCommand.Parameters.AddWithValue("@descripcion1", txtdescripcion1.Text);
+            sqlCommand.Parameters.AddWithValue("@idagenda1", lbAgen.Text);
+            sqlCommand.Parameters.AddWithValue("@indicaciones1", txtind.Text);
+            sqlCommand.Parameters.AddWithValue("@prioridad1", cbprioriC.Text);
+            sqlCommand.Parameters.AddWithValue("@tipo1", comboBox1.Text);
+            sqlCommand.Parameters.AddWithValue("@estado1", Cliente);
+            //Fin
+            //Torre
+            SqlCommand sqlTorre = new SqlCommand("update agenda set idlugar=@idlugar2,diagnostico=@diagnostico2,fecha=@fecha2,descripcion=@descripcion2, estado=@estado2,indicaciones=@indicaciones2,prioridad= @prioridad2,tipo=@tipo2 where idagenda=" + id + "", cnn.conn);
+            sqlTorre.Parameters.AddWithValue("@idlugar2", cbLugarCliente.SelectedValue);
+            sqlTorre.Parameters.AddWithValue("@diagnostico2", txtdiagnostico.Text);
+            //sqlCommand.Parameters.AddWithValue("@equipo", cbEquipo.Text);
+            sqlTorre.Parameters.AddWithValue("@fecha2", dtpAgenda.Value.ToShortDateString().ToString());
+            sqlTorre.Parameters.AddWithValue("@descripcion2", txtproblem.Text);
+            sqlTorre.Parameters.AddWithValue("@idagenda2", lbAgen.Text);
+            sqlTorre.Parameters.AddWithValue("@indicaciones2", txtutilizado.Text);
+            sqlTorre.Parameters.AddWithValue("@prioridad2", chbtoo.Text);
+            sqlTorre.Parameters.AddWithValue("@tipo2", comboBox1.Text);
+            sqlTorre.Parameters.AddWithValue("@estado2", torre);
+            //Otro
+            SqlCommand sqlOtro = new SqlCommand("update agenda set idCliente=@idCliente,idlugar=@idlugar,diagnostico=@diagnostico,equipo=@equipo,fecha=@fecha,descripcion=@descripcion, estado=@estado,indicaciones=@indicaciones,prioridad= @prioridad,tipo=@tipo where idagenda=" + id + "", cnn.conn);
+            sqlOtro.Parameters.AddWithValue("@idCliente", cbClienteAgenda.SelectedValue);
+            sqlOtro.Parameters.AddWithValue("@idlugar", cbLugarGlobla.SelectedValue);
+            sqlOtro.Parameters.AddWithValue("@diagnostico", txtotrodiag.Text);
+            //sqlCommand.Parameters.AddWithValue("@equipo", cbEquipo.Text);
+            sqlOtro.Parameters.AddWithValue("@fecha", dtpAgenda.Value.ToShortDateString().ToString());
+            sqlOtro.Parameters.AddWithValue("@descripcion", txtfallo.Text);
+            sqlOtro.Parameters.AddWithValue("@idagenda", lbAgen.Text);
+            sqlOtro.Parameters.AddWithValue("@indicaciones", txtotrocoment.Text);
+            sqlOtro.Parameters.AddWithValue("@prioridad", cbprioriC.Text);
+            sqlOtro.Parameters.AddWithValue("@tipo", comboBox1.Text);
+            sqlOtro.Parameters.AddWithValue("@estado", Global);
+            /*
+             Si este objeto pertenece a tal
+                guardar valores
+
+                Mientras cambien a tal
+                guardar valores
+                    commit
+                    Ejecutar update
+             */
             /*Si este registro pertenece a tal categoria se debe tratar como tal, pero al cambiar el tipo de registro cambia los objetos de registro
-             * se debe de guardar temporalmente los datos registrados, e intentar cargarlos en un nuevo formulario, despues se debe de guardar y limpiar los campos para evitar posibles duplicaciones
+             * se debe de guardar temporalmente los datos registrados, e intentar cargarlos en un nuevo formulario, despues se guarda y limpia los campos para evitar posibles duplicaciones
              *--orden--
              * ID ID Agenda---- AUTO
              * ID ID Cliente -------0
@@ -1124,7 +1331,6 @@ namespace MTtechapp
              * prioridad------------8
              * tipo-----------------9       
             */
-
             try
             {
                 if (String.IsNullOrEmpty(cbLugarTorre.Text) || String.IsNullOrEmpty(cbEquipo.Text) || String.IsNullOrEmpty(txtdescripcion1.Text))
@@ -1134,10 +1340,30 @@ namespace MTtechapp
                 else
                 {
                     cnn.Conectar();
-                    sqlCommand.CommandType = CommandType.Text;
-                    int i = sqlCommand.ExecuteNonQuery();
-                    
-                    if (i > 0)
+                    sqlOtro.CommandType = CommandType.Text;
+                    sqlTorre.CommandType = CommandType.Text;
+                    int i=0;
+                    int j=0;
+                    int k=0;
+                    if (comboBox1.Text.Equals("Cliente"))
+                    {
+                        
+                        i = sqlCommand.ExecuteNonQuery();
+
+                    }
+                    else if (comboBox1.Text.Equals("Torre"))
+                    {
+                         j = sqlTorre.ExecuteNonQuery();
+
+                    }
+                    else if (comboBox1.Text.Equals("otro") || comboBox1.Text.Equals("fichas") || comboBox1.Text.Equals("Socio"))
+                    {
+
+                        k = sqlOtro.ExecuteNonQuery();
+
+                    }
+
+                    if (i > 0|| k>0 || j>0)
                     {
                         MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarAgenda();
@@ -1320,8 +1546,7 @@ namespace MTtechapp
         {
             FormActualizar fag = new FormActualizar();
             string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
-            string sql = "SELECT C.idCliente, C.NombreCompleto, C.telefono, C.direccion, C.comentario, C.activo, C.equipo, C.idMunicipio, M.Nombre, C.FechaInstalacion, C.ClavePago, S.router, S.ip, S.comentario, S.IdCliente,S.idSegmentacion,M.idMunicipio FROM Cliente C INNER JOIN Segmentacion S ON(C.idCliente = S.IdCliente)INNER JOIN municipios M ON(C.idMunicipio = M.idMunicipio) where C.idCliente=" + idCl + "";
-            try
+            string sql = "SELECT C.idCliente, C.NombreCompleto, C.telefono, C.direccion, C.comentario, C.activo, C.equipo, C.idMunicipio, M.Nombre, C.FechaInstalacion, C.ClavePago, S.router, S.ip, S.comentario, S.IdCliente,S.idSegmentacion,M.idMunicipio FROM Cliente C INNER JOIN Segmentacion S ON(C.idCliente = S.IdCliente)INNER JOIN municipios M ON(C.idMunicipio = M.idMunicipio) where C.idCliente=" + idCl + "";            try
             {
                 if (lvClientes.SelectedIndices.Count == 0)
                 {
@@ -1495,9 +1720,6 @@ namespace MTtechapp
                             pago.cmbLugar.DataSource = dataset.Tables[0];
                             pago.cmbLugar.DisplayMember = "Nombre";
                             pago.cmbLugar.ValueMember = "idMunicipio";
-                            pago.cbCliente.DataSource = dataset.Tables[0];
-                            pago.cbCliente.DisplayMember = "NombreCompleto";
-                            pago.cbCliente.ValueMember = "idCliente";
                         }
                         pago.ShowDialog();
                     }
@@ -1528,33 +1750,11 @@ namespace MTtechapp
             cbEquipo.Items.Clear();
             cargaEquipo();
             btncancelar.Visible = false;
+            txtagenda.Visible = true;
+            txtind.Clear();
         }
 
-        private void ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (comboBox1.Text.Equals("Torre"))
-            {
-                gbTorre.Location = new System.Drawing.Point(25, 106);
-                grupoCliente.Visible = false;
-                gbTorre.Visible = true;
-                gbglobal.Visible = false;
-
-            }
-            else if (comboBox1.Text.Equals("Cliente"))
-            {
-                grupoCliente.Location = new System.Drawing.Point(25, 106);
-                grupoCliente.Visible = true;
-                gbTorre.Visible = false;
-                gbglobal.Visible = false;
-            }
-            else if (comboBox1.Text.Equals("fichas") || comboBox1.Text.Equals("Otro")|| comboBox1.Text.Equals("Socio"))
-            {
-                gbglobal.Location = new System.Drawing.Point(25, 106);
-                grupoCliente.Visible = false;
-                gbTorre.Visible = false;
-                gbglobal.Visible = true;
-            }
-        }
+       
         private void CbLugarTorre_MouseClick(object sender, MouseEventArgs e)
         {
             cargaMuni();
@@ -1566,6 +1766,77 @@ namespace MTtechapp
         private void CbLugarCliente_MouseClick(object sender, MouseEventArgs e)
         {
             cargaMuni();
+        }
+
+        private void Cbmunicipios_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cnn.Conectar();
+            this.lvClientes.Items.Clear();
+            OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT S.IdCliente,C.NombreCompleto AS Nombre, C.telefono, C.direccion, S.router, S.ip, S.comentario, CASE C.activo WHEN 'True' THEN 'Si' ELSE 'No' END AS activo, C.FechaInstalacion, S.IdCliente, C.ClavePago, M.idMunicipio, M.Nombre as Localidad, C.idMunicipio, C.idCliente FROM dbo.Cliente AS C INNER JOIN dbo.Segmentacion AS S ON(C.idCliente = S.IdCliente) INNER JOIN dbo.municipios M ON C.idMunicipio = M.idMunicipio where M.idMunicipio = '" + cbmunicipios.SelectedValue + "' ORDER BY Nombre ASC ", cnn.cn);
+            DataSet ds = new DataSet();
+            DataTable tabla = new DataTable();
+            adaptador.Fill(ds);
+            tabla = ds.Tables[0];
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                DataRow filas = tabla.Rows[i];
+                ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
+                elementos.SubItems.Add(filas["Nombre"].ToString());
+                elementos.SubItems.Add(filas["telefono"].ToString());
+                elementos.SubItems.Add(filas["direccion"].ToString());
+                elementos.SubItems.Add(filas["router"].ToString());
+                elementos.SubItems.Add(filas["ip"].ToString());
+                elementos.SubItems.Add(filas["comentario"].ToString());
+                elementos.SubItems.Add(filas["activo"].ToString());
+                elementos.SubItems.Add(filas["FechaInstalacion"].ToString());
+                elementos.SubItems.Add(filas["ClavePago"].ToString());
+                lvClientes.Items.Add(elementos);
+            }
+        }
+        private void CbClienteAgenda_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbLugarCliente.Items.Count == 0)
+            {
+                cargafiltro();
+            }
+            else
+            {
+                municipios.Clear();
+                cbLugarCliente.DataSource = null;
+                cbLugarCliente.Items.Clear();
+                cargafiltro();
+            }
+        }
+
+        private void CbClienteAgenda_Click(object sender, EventArgs e)
+        {
+            carga();
+        }   
+
+        private void ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Equals("Torre"))
+            {
+                grupoCliente.Visible = false;
+                gbTorre.Visible = true;
+                gbglobal.Visible = false;
+                gbTorre.Location = new System.Drawing.Point(25, 106);
+
+            }
+            else if (comboBox1.Text.Equals("Cliente"))
+            {
+                grupoCliente.Visible = true;
+                gbTorre.Visible = false;
+                gbglobal.Visible = false;
+                grupoCliente.Location = new System.Drawing.Point(25, 106);
+            }
+            else if (comboBox1.Text.Equals("fichas") || comboBox1.Text.Equals("Otro") || comboBox1.Text.Equals("Socio"))
+            {
+                grupoCliente.Visible = false;
+                gbTorre.Visible = false;
+                gbglobal.Visible = true;
+                gbglobal.Location = new System.Drawing.Point(25, 106);
+            }
         }
     }
 }

@@ -189,7 +189,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateEnero", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Enero", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Enero", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue= DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -283,7 +283,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateMarzo", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Marzo", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Marzo", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -318,7 +318,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateAbril", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Abril", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Abril", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -356,7 +356,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateMayo", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Mayo", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Mayo", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString(); 
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -394,7 +394,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateJunio", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Junio", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Junio", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -432,7 +432,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateJulio", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Julio", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Julio", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -470,7 +470,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateAgosto", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Agosto", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Agosto", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.SmallDateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -507,7 +507,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateSeptiembre", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Septiembre", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Septiembre", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -544,7 +544,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateOctubre", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Octubre", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Octubre", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -582,7 +582,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("dbo.spProcedureUpdateNoviembre", cone.conn);
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                    cmd.Parameters.AddWithValue("@Noviembre", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@Noviembre", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cone.Conectar();
@@ -620,7 +620,7 @@ namespace MTtechapp
                 cmd = new SqlCommand("dbo.spProcedureUpdateDiciembre", cone.conn);
                 cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                 cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
-                cmd.Parameters.AddWithValue("@Diciembre", DateTime.Now.ToShortDateString());
+                cmd.Parameters.AddWithValue("@Diciembre", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                 cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                 cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();                    
                 cone.Conectar();
@@ -728,7 +728,6 @@ namespace MTtechapp
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string idImprimir = this.materialListView1.SelectedItems[0].SubItems[5].Text;
@@ -744,7 +743,7 @@ namespace MTtechapp
         private void materialListView1_DoubleClick(object sender, EventArgs e)
         {
             FormActualizarMensualidades fag = new FormActualizarMensualidades();
-            string idCl = this.materialListView1.SelectedItems[0].SubItems[0].Text;
+            string idCl = this.materialListView1.SelectedItems[0].SubItems[4].Text;
             string sql = "SELECT M.idCliente, M.Enero, M.Febrero, M.Marzo, M.Abril, M.Mayo, M.Junio, M.Julio, M.Agosto, M.Septiembre, M.Octubre, M.Noviembre, M.Diciembre, Mu.Nombre, C.FechaInstalacion, C.ClavePago, Mu.idMunicipio,C.NombreCompleto,C.idCliente, idMensualidad FROM Cliente C INNER JOIN municipios Mu ON(C.idMunicipio = Mu.idMunicipio) inner join Mensualidad M on(M.idCliente= C.idCliente)  where idMensualidad=" + idCl + "";
             try
             {
@@ -855,8 +854,9 @@ namespace MTtechapp
             {
                 lista_Clientes.Clear();
                 cbCliente.DataSource = null;
-                cbCliente.Items.Clear();
+                cbCliente.Items.Clear();                
                 carga();
+                cbCliente.Refresh();
             }
         }
 
@@ -922,9 +922,8 @@ namespace MTtechapp
             }
         }
 
-        private void CmbLugar_KeyPress(object sender, KeyPressEventArgs e)
+        private void CmbLugar_Enter(object sender, EventArgs e)
         {
-            
             cargamun();
             ClassMetodos @class = new ClassMetodos();
             @class.autocompletarmunicipio(cmbLugar);

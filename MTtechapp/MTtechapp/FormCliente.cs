@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using tik4net;
 
 namespace MTtechapp
 {
@@ -118,13 +119,15 @@ namespace MTtechapp
                 }
                 else
                 {
-                    string sql = "insert into Cliente(NombreCompleto, telefono, direccion, comentario, activo, idMunicipio, FechaInstalacion, ClavePago, equipo) values('" + txtnombre.Text + "','" + txtTelefono.Text + "','" + txtdireccion.Text + "','" + txtcomentario.Text + "','" + activo + "','" + comboBox1.SelectedValue + "','" + dtpInstalacion.Text + "','" + txtcodigo.Text + "','" + equipo + "')";
+                    string sql = "insert into Cliente(NombreCompleto, telefono, direccion, comentario, activo, idMunicipio, FechaInstalacion, ClavePago, equipo) values('" + txtnombre.Text + "','" + txtTelefono.Text + "','" + txtdireccion.Text + "','" + txtcomentario.Text + "','" + activo + "','" + comboBox1.SelectedValue + "','" + dtpInstalacion.Value.ToLongDateString() + "','" + txtcodigo.Text + "','" + equipo + "')";
+                   
                     SqlCommand cmd = new SqlCommand(sql, cx.conn);
                     cx.Conectar();
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
+
                 }
             }
             catch (Exception ex)
@@ -137,7 +140,13 @@ namespace MTtechapp
                 cx.Desconectar();
             }
 
-
+            //using (ITikConnection connection = ConnectionFactory.CreateConnection(TikConnectionType.Api))
+            //{
+            //    connection.Open("100.0.0.2", "admin", "macromt");
+            //    //ppp secret add name = hildaisidoro password = enlacemt service = pppoe profile = profclientescasa390
+            //    ITikCommand cmd = connection.CreateCommand("ppp/secret/add/name=test/passwod=enlacemt/service=pppoe/profile=profclientescasa390");
+            //    MessageBox.Show(cmd.ExecuteScalar());
+            //}
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)

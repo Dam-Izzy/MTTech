@@ -26,7 +26,7 @@ namespace MTtechapp
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", lbid.Text);
                     cmd.Parameters.AddWithValue("@Enero", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
-                    cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
+                    cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.CommandType = CommandType.StoredProcedure;
                     i = cmd.ExecuteNonQuery();

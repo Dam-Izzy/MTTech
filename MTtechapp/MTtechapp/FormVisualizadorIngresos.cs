@@ -33,8 +33,7 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("Select * from getFichas('"+ dtpfecha.Value.ToShortDateString() + "')", cnn.conn);
-                //cmd.Parameters.AddWithValue("@fecha",SqlDbType.DateTime).SqlValue = dtpfecha.Value.ToShortDateString();
+                SqlCommand cmd = new SqlCommand("Select * from getFichas('" + dtpfecha.Value.ToShortDateString() + "')", cnn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 Retornar.Load(dr);
             }
@@ -114,9 +113,12 @@ namespace MTtechapp
             try
             {
                 cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("Select * from getMensualidades('" + dtpfecha.Value.ToShortDateString() + "')", cnn.conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                Retornar.Load(dr);
+                using (SqlCommand cmd = new SqlCommand("Select * from getMensualidades('" + dtpfecha.Value.ToShortDateString() + "')", cnn.conn))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    Retornar.Load(dr);
+
+                }
             }
             catch (Exception ex)
             {
@@ -193,7 +195,7 @@ namespace MTtechapp
                         IdIngreso = Convert.ToInt32(item[0].ToString()),
                         Tipo = item[1].ToString(),
                         Descripcion = item[2].ToString(),
-                        Lugar = item[3].ToString(),
+                        Lugar = item[8].ToString(),
                         Monto = Convert.ToInt32(item[4].ToString()),
                         Fecha = Convert.ToDateTime(item[5]),
                         Estado = Convert.ToBoolean(item[6].ToString())
@@ -249,7 +251,7 @@ namespace MTtechapp
                         IdIngreso = Convert.ToInt32(item[9].ToString()),
                         Tipo = item[1].ToString(),
                         Descripcion = item[1].ToString(),
-                        Lugar = item[6].ToString(),
+                        Lugar = item[7].ToString(),
                         Monto = Convert.ToInt32(item[11].ToString()),
                         Fecha = Convert.ToDateTime(item[13])
                     };
