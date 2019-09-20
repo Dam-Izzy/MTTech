@@ -708,24 +708,6 @@ namespace MTtechapp
                                                          cmbLugar);
         }
         string mensualidad;
-        private void cbCliente_Click(object sender, EventArgs e)
-        {            
-            if (cbCliente.Items != null)
-            {
-                String query = "Select idCliente,ClavePago from Cliente where idCliente='" + cbCliente.SelectedValue + "'";
-                SqlCommand cmd = new SqlCommand(query, cone.conn);
-                SqlDataReader dr;
-                cone.Conectar();
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    txtmonto.Enabled = false;
-                    txtmonto.Text = dr[1].ToString();
-                    mensualidad= dr[1].ToString();
-                }
-                dr.Close();
-            }
-        }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             try
@@ -843,6 +825,24 @@ namespace MTtechapp
         private void cbCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             classMetodos.autocompletarClienteMensualidad(cbCliente, cmbLugar);
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (cbCliente.Items != null)
+                {
+                    String query = "Select idCliente,ClavePago from Cliente where idCliente='" + cbCliente.SelectedValue + "'";
+                    SqlCommand cmd = new SqlCommand(query, cone.conn);
+                    SqlDataReader dr;
+                    cone.Conectar();
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        txtmonto.Enabled = false;
+                        txtmonto.Text = dr[1].ToString();
+                        mensualidad = dr[1].ToString();
+                    }
+                    dr.Close();
+                }
+            }
         }       
         private void cmbLugar_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -927,6 +927,25 @@ namespace MTtechapp
             cargamun();
             ClassMetodos @class = new ClassMetodos();
             @class.autocompletarmunicipio(cmbLugar);
+        }
+
+        private void CbCliente_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbCliente.Items != null)
+            {
+                String query = "Select idCliente,ClavePago from Cliente where idCliente='" + cbCliente.SelectedValue + "'";
+                SqlCommand cmd = new SqlCommand(query, cone.conn);
+                SqlDataReader dr;
+                cone.Conectar();
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    txtmonto.Enabled = false;
+                    txtmonto.Text = dr[1].ToString();
+                    mensualidad = dr[1].ToString();
+                }
+                dr.Close();
+            }
         }
     }
 }

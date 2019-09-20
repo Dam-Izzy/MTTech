@@ -2220,7 +2220,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>1.60555cm</Top>
+        <Top>2.20555cm</Top>
         <Left>12.11225cm</Left>
         <Height>0.6cm</Height>
         <Width>2.01649cm</Width>
@@ -2251,7 +2251,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>2.20555cm</Top>
+        <Top>1.50881cm</Top>
         <Left>12.11225cm</Left>
         <Height>0.6cm</Height>
         <Width>2.01649cm</Width>
@@ -2316,7 +2316,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>1.60555cm</Top>
+        <Top>2.20555cm</Top>
         <Left>14.12874cm</Left>
         <Height>0.6cm</Height>
         <Width>3.40114cm</Width>
@@ -2350,7 +2350,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>2.20555cm</Top>
+        <Top>1.50881cm</Top>
         <Left>14.12874cm</Left>
         <Height>0.6cm</Height>
         <Width>3.40114cm</Width>
@@ -3044,8 +3044,8 @@
     <PageWidth>28cm</PageWidth>
     <InteractiveHeight>25.7cm</InteractiveHeight>
     <InteractiveWidth>28cm</InteractiveWidth>
-    <LeftMargin>4cm</LeftMargin>
-    <RightMargin>3cm</RightMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>
     <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>

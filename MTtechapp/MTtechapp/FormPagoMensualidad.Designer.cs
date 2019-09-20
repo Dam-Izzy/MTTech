@@ -107,7 +107,7 @@
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(308, 21);
             this.cbCliente.TabIndex = 2;
-            this.cbCliente.Click += new System.EventHandler(this.cbCliente_Click);
+            this.cbCliente.SelectionChangeCommitted += new System.EventHandler(this.CbCliente_SelectionChangeCommitted);
             this.cbCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCliente_KeyPress);
             // 
             // materialLabel2

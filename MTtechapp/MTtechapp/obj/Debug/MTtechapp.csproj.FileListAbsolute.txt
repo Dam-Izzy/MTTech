@@ -592,7 +592,6 @@ C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechap
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormActualizar.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormActualizarMensualidades.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormAgregar.resources
-C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormCalcular.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormCambiar.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormCliente.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\Debug\MTtechapp.FormDialogo.resources

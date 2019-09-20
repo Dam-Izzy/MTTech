@@ -464,7 +464,8 @@ namespace MTtechapp
             FormPagoMensualidad mensualidad = new FormPagoMensualidad();
             mensualidad.ShowDialog();
         }
-        
+        public static List<ClaseInformeAgenda> lista = new List<ClaseInformeAgenda>();
+
         private void txtagenda_Click(object sender, EventArgs e)
         {
             try
@@ -546,7 +547,7 @@ namespace MTtechapp
                 cnn.Desconectar();
                 llenarAgenda();
             }
-        }
+        }//insertar agenda
         public List<Cliente> CargaCombo()
         {
 
@@ -645,7 +646,7 @@ namespace MTtechapp
             finally { cnn.Desconectar(); }
             return municipios;
         }
-        public void carga()
+        public void cargaCliente()
         {
             lista_Clientes.Clear();
             cbClienteAgenda.DataSource = null;
@@ -829,7 +830,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT A.idagenda, A.idlugar, A.diagnostico, A.equipo, A.fecha,A.descripcion, M.Nombre, ISNULL (C.NombreCompleto, 'N/A') as NombreCompleto, A.idCliente from agenda A INNER JOIN municipios M on (A.idlugar = M.idMunicipio) INNER JOIN cliente C on (C.idCliente= A.idCliente)", cnn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT A.idagenda, A.idlugar, A.diagnostico, A.equipo, A.fecha,A.descripcion, A.tipo, M.Nombre, ISNULL (C.NombreCompleto, 'N/A') as NombreCompleto, A.idCliente from agenda A INNER JOIN municipios M on (A.idlugar = M.idMunicipio) INNER JOIN cliente C on (C.idCliente= A.idCliente)", cnn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);
@@ -838,13 +839,15 @@ namespace MTtechapp
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     DataRow filas = tabla.Rows[i];
+
                     ListViewItem elementos = new ListViewItem(filas["NombreCompleto"].ToString());
+                    elementos.SubItems.Add(filas["tipo"].ToString());
                     elementos.SubItems.Add(filas["Nombre"].ToString());
                     elementos.SubItems.Add(filas["diagnostico"].ToString());
                     elementos.SubItems.Add(filas["descripcion"].ToString());
                     elementos.SubItems.Add(filas["equipo"].ToString());
-                    elementos.SubItems.Add(filas["fecha"].ToString());
                     elementos.SubItems.Add(filas["idagenda"].ToString());
+                    elementos.SubItems.Add(filas["fecha"].ToString());
                     elementos.SubItems.Add(filas["idCliente"].ToString());
                     lvAgenda.Items.Add(elementos);
                 }
@@ -858,7 +861,7 @@ namespace MTtechapp
             {
                 cnn.Desconectar();
             }
-        }
+        }//llenar agenda
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             CrearDoc();
@@ -912,7 +915,41 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-        public static List<ClaseInformeAgenda> lista = new List<ClaseInformeAgenda>();
+        public static List<ClaseInformeAgenda> Instalaciones = new List<ClaseInformeAgenda>();
+        public List<ClaseInformeAgenda> CargarSeleccionadosIns()
+        {
+            foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
+            {
+                ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
+                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago, tipo from Cliente where idCliente= " + item.SubItems[7].Text.ToString() + " and tipo= '"+ item.SubItems[6].Text.ToString() + "'";
+                SqlCommand sql = new SqlCommand(Consulta, cnn.conn);
+                cnn.Conectar();
+                SqlDataReader dr = sql.ExecuteReader();
+                informeAgenda.cliente = item.SubItems[0].Text.ToString();
+                informeAgenda.lugar = item.SubItems[1].Text.ToString();
+                informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
+                informeAgenda.descripcion = item.SubItems[3].Text.ToString();
+                informeAgenda.Equipo = item.SubItems[4].Text.ToString();
+                informeAgenda.fecha = item.SubItems[5].Text.ToString();
+                if (item.SubItems[0].Text.Contains("N/A"))
+                {
+                    //
+                }
+                else
+                {
+                    while (dr.Read())
+                    {
+                        informeAgenda.domicilio = dr.GetString(1);
+                        informeAgenda.Tel = dr.GetString(2);
+                    }
+                }
+
+                dr.Close();
+
+                Instalaciones.Add(informeAgenda);
+            }
+            return Instalaciones;
+        }
         public List<ClaseInformeAgenda> CargarSeleccionados()
         {
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
@@ -1030,7 +1067,7 @@ namespace MTtechapp
             metodos.clickpagos(lvPagos);
         }
 
-        private void lvUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)//mostrar!!!!!!!!!!!!!!!!
+        private void lvUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
             {
@@ -1059,7 +1096,7 @@ namespace MTtechapp
         }
         private void LimpiarTorre()
         {
-            lbAgen.ResetText();
+            txtid.ResetText();
             dtpAgenda.Refresh();
             cbLugarTorre.Refresh();
             txtutilizado.Clear();
@@ -1070,7 +1107,7 @@ namespace MTtechapp
         }
         private void LimpiarCliente()
         {
-            lbAgen.ResetText();
+            txtid.ResetText();
             dtpAgenda.Refresh();
             cbLugarCliente.Refresh();
             txtind.Clear();
@@ -1081,7 +1118,7 @@ namespace MTtechapp
         }
         private void LimpiarOtro()
         {
-            lbAgen.ResetText();
+            txtid.ResetText();
             dtpAgenda.Refresh();
             cbLugarGlobla.Refresh();
             txtotrocoment.Clear();
@@ -1095,6 +1132,7 @@ namespace MTtechapp
         private void lvAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int id = Convert.ToInt32(lvAgenda.SelectedItems[0].SubItems[6].Text);
+            MessageBox.Show("Esto sale-> " + id);
             try
             {
                 cnn.Conectar();
@@ -1117,7 +1155,7 @@ namespace MTtechapp
                         txtagenda.Visible = false;
                         btncancelar.Visible = true;
                         comboBox1.Text = dr.GetString(12);//combo tipo
-                        lbAgen.Text = dr.GetInt32(0).ToString(); //ID ID
+                        txtid.Text = dr.GetInt32(0).ToString(); //ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarTorre.SelectedValue = dr[6].ToString();
                         txtutilizado.Text = dr[10].ToString();//indicaciones
@@ -1125,7 +1163,6 @@ namespace MTtechapp
                         txtdiagnostico.Text = dr[2].ToString();//diagnostico
                         chbtoo.Checked = dr.GetBoolean(9);
                         cbtorre.Text = dr.GetString(11);
-                        dr.Close();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
@@ -1136,6 +1173,8 @@ namespace MTtechapp
                             cbLugarTorre.DisplayMember = "Nombre";
                             cbLugarTorre.ValueMember = "idMunicipio";
                         }
+                        dr.Close();
+
                     }
                     else if (dr.GetString(12).Equals("Cliente"))
                     {
@@ -1150,7 +1189,7 @@ namespace MTtechapp
                         btncancelar.Visible = true;
                         comboBox1.Text = dr.GetString(12);
                         cbEquipo.Text = dr.GetString(3);//combo tipo
-                        lbAgen.Text = dr.GetInt32(0).ToString();//ID ID
+                        txtid.Text = dr.GetInt32(0).ToString();//ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar
                         txtind.Text = dr[10].ToString();//indicaciones
@@ -1168,9 +1207,12 @@ namespace MTtechapp
                             cbLugarCliente.DataSource = dataset.Tables[0];
                             cbLugarCliente.DisplayMember = "Nombre";
                             cbLugarCliente.ValueMember = "idMunicipio";
+                            cbClienteAgenda.DataSource = dataset.Tables[0];
+                            cbClienteAgenda.DisplayMember = "NombreCompleto";
+                            cbClienteAgenda.ValueMember = "idCliente";
                         }
-
                     }
+
                     else if (dr.GetString(12).Equals("otro")|| dr.GetString(12).Equals("fichas")|| dr.GetString(12).Equals("Socio"))
                     {
                         LimpiarTorre();
@@ -1183,7 +1225,7 @@ namespace MTtechapp
                         txtagenda.Visible = false;
                         btncancelar.Visible = true;
                         comboBox1.Text = dr.GetString(12);//combo tipo
-                        lbAgen.Text = dr.GetInt32(0).ToString();//ID ID
+                        txtid.Text = dr.GetInt32(0).ToString();//ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
                         cbLugarGlobla.SelectedValue = dr[6].ToString();//combo lugar
                         txtotrocoment.Text = dr[10].ToString();//indicaciones
@@ -1191,44 +1233,42 @@ namespace MTtechapp
                         txtotrodiag.Text = dr[2].ToString();//diagnostico 
                         cbotro.Checked = dr.GetBoolean(9);//check realizado
                         cbprioriGlobal.Text = dr.GetString(11);//combo nivel
-                        dr.Close();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
                         }
                         if (dataset.Tables[0].Rows.Count > 0)
-                        {
+                        {                            
                             cbLugarGlobla.DataSource = dataset.Tables[0];
                             cbLugarGlobla.DisplayMember = "Nombre";
                             cbLugarGlobla.ValueMember = "idMunicipio";
                         }
+                        dr.Close();
                     }
                 }
-                dr.Close();
+                //using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
+                //{
+                //    da.Fill(dataset);
+                //}
 
-                using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
-                {
-                    da.Fill(dataset);
-                }
-
-                if (dataset.Tables[0].Rows.Count > 0)
-                {
-                    cbClienteAgenda.DataSource = dataset.Tables[0];
-                    cbClienteAgenda.DisplayMember = "NombreCompleto";
-                    cbClienteAgenda.ValueMember = "idCliente";
-                }
-                if (dataset.Tables[0].Rows.Count > 0)
-                {
-                    cbEquipo.DataSource = dataset.Tables[0];
-                    cbEquipo.DisplayMember = "equipo";
-                    cbEquipo.ValueMember = "equipo";
-                }
-                if (dataset.Tables[0].Rows.Count > 0)
-                {
-                    cbLugarTorre.DataSource = dataset.Tables[0];
-                    cbLugarTorre.DisplayMember = "Nombre";
-                    cbLugarTorre.ValueMember = "idlugar";
-                }
+                //if (dataset.Tables[0].Rows.Count > 0)
+                //{
+                //    cbClienteAgenda.DataSource = dataset.Tables[0];
+                //    cbClienteAgenda.DisplayMember = "NombreCompleto";
+                //    cbClienteAgenda.ValueMember = "idCliente";
+                //}
+                //if (dataset.Tables[0].Rows.Count > 0)
+                //{
+                //    cbEquipo.DataSource = dataset.Tables[0];
+                //    cbEquipo.DisplayMember = "equipo";
+                //    cbEquipo.ValueMember = "equipo";
+                //}
+                //if (dataset.Tables[0].Rows.Count > 0)
+                //{
+                //    cbLugarTorre.DataSource = dataset.Tables[0];
+                //    cbLugarTorre.DisplayMember = "Nombre";
+                //    cbLugarTorre.ValueMember = "idlugar";
+                //}
             }
             catch (SqlException sql)
             {
@@ -1238,11 +1278,11 @@ namespace MTtechapp
             {
                 MessageBox.Show("Error, " + ex.Message);
             }
-        }//Carga actualizar agenda------
+        }//Carga agenda------
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(lvAgenda.SelectedItems[0].SubItems[6].Text);
+            int id = Convert.ToInt32(txtid.Text);
             bool Cliente, Global, torre;
             if (cbrealizado.Checked==true)
             {
@@ -1276,7 +1316,7 @@ namespace MTtechapp
             sqlCommand.Parameters.AddWithValue("@equipo1", cbEquipo.Text);
             sqlCommand.Parameters.AddWithValue("@fecha1", dtpAgenda.Value.ToShortDateString());
             sqlCommand.Parameters.AddWithValue("@descripcion1", txtdescripcion1.Text);
-            sqlCommand.Parameters.AddWithValue("@idagenda1", lbAgen.Text);
+            sqlCommand.Parameters.AddWithValue("@idagenda1", txtid.Text);
             sqlCommand.Parameters.AddWithValue("@indicaciones1", txtind.Text);
             sqlCommand.Parameters.AddWithValue("@prioridad1", cbprioriC.Text);
             sqlCommand.Parameters.AddWithValue("@tipo1", comboBox1.Text);
@@ -1289,7 +1329,7 @@ namespace MTtechapp
             //sqlCommand.Parameters.AddWithValue("@equipo", cbEquipo.Text);
             sqlTorre.Parameters.AddWithValue("@fecha2", dtpAgenda.Value.ToShortDateString().ToString());
             sqlTorre.Parameters.AddWithValue("@descripcion2", txtproblem.Text);
-            sqlTorre.Parameters.AddWithValue("@idagenda2", lbAgen.Text);
+            sqlTorre.Parameters.AddWithValue("@idagenda2", txtid.Text);
             sqlTorre.Parameters.AddWithValue("@indicaciones2", txtutilizado.Text);
             sqlTorre.Parameters.AddWithValue("@prioridad2", chbtoo.Text);
             sqlTorre.Parameters.AddWithValue("@tipo2", comboBox1.Text);
@@ -1302,7 +1342,7 @@ namespace MTtechapp
             //sqlCommand.Parameters.AddWithValue("@equipo", cbEquipo.Text);
             sqlOtro.Parameters.AddWithValue("@fecha", dtpAgenda.Value.ToShortDateString().ToString());
             sqlOtro.Parameters.AddWithValue("@descripcion", txtfallo.Text);
-            sqlOtro.Parameters.AddWithValue("@idagenda", lbAgen.Text);
+            sqlOtro.Parameters.AddWithValue("@idagenda", txtid.Text);
             sqlOtro.Parameters.AddWithValue("@indicaciones", txtotrocoment.Text);
             sqlOtro.Parameters.AddWithValue("@prioridad", cbprioriC.Text);
             sqlOtro.Parameters.AddWithValue("@tipo", comboBox1.Text);
@@ -1333,7 +1373,7 @@ namespace MTtechapp
             */
             try
             {
-                if (String.IsNullOrEmpty(cbLugarTorre.Text) || String.IsNullOrEmpty(cbEquipo.Text) || String.IsNullOrEmpty(txtdescripcion1.Text))
+                if (String.IsNullOrEmpty(txtDiag.Text))
                 {
                     MessageBox.Show("Completa los campos");
                 }
@@ -1345,7 +1385,7 @@ namespace MTtechapp
                     int i=0;
                     int j=0;
                     int k=0;
-                    if (comboBox1.Text.Equals("Cliente"))
+                    if (comboBox1.Text.Equals("Cliente")||(comboBox1.Text.Equals("Instalacion")))
                     {
                         
                         i = sqlCommand.ExecuteNonQuery();
@@ -1367,6 +1407,8 @@ namespace MTtechapp
                     {
                         MessageBox.Show("Datos actualizados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiarAgenda();
+                        LimpiarOtro();
+                        LimpiarCliente();
                         btnActualizar.Visible = false;
                     }
                     else
@@ -1717,6 +1759,9 @@ namespace MTtechapp
                         }
                         if (dataset.Tables[0].Rows.Count > 0)
                         {
+                            pago.cbCliente.DataSource = dataset.Tables[0];
+                            pago.cbCliente.DisplayMember = "NombreCompleto";
+                            pago.cbCliente.ValueMember = "idCliente";
                             pago.cmbLugar.DataSource = dataset.Tables[0];
                             pago.cmbLugar.DisplayMember = "Nombre";
                             pago.cmbLugar.ValueMember = "idMunicipio";
@@ -1810,7 +1855,7 @@ namespace MTtechapp
 
         private void CbClienteAgenda_Click(object sender, EventArgs e)
         {
-            carga();
+            cargaCliente();
         }   
 
         private void ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1823,7 +1868,7 @@ namespace MTtechapp
                 gbTorre.Location = new System.Drawing.Point(25, 106);
 
             }
-            else if (comboBox1.Text.Equals("Cliente"))
+            else if (comboBox1.Text.Equals("Cliente")|| comboBox1.Text.Equals("Instalacion"))
             {
                 grupoCliente.Visible = true;
                 gbTorre.Visible = false;
@@ -1836,6 +1881,19 @@ namespace MTtechapp
                 gbTorre.Visible = false;
                 gbglobal.Visible = true;
                 gbglobal.Location = new System.Drawing.Point(25, 106);
+            }
+        }
+
+        private void Cbrealizado_CheckStateChanged(object sender, EventArgs e)
+        {
+            try
+            {
+              
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error algo salio mal ;_;" + ex.Message);
             }
         }
     }

@@ -149,7 +149,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lbAgen = new MaterialSkin.Controls.MaterialLabel();
             this.btnActualizar = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtagen = new System.Windows.Forms.TextBox();
             this.btnImprimir = new MaterialSkin.Controls.MaterialFlatButton();
@@ -159,12 +158,14 @@
             this.txtagenda = new MaterialSkin.Controls.MaterialFlatButton();
             this.lvAgenda = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -183,7 +184,7 @@
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtid = new MaterialSkin.Controls.MaterialLabel();
             this.PoppupMenu.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1093,7 +1094,6 @@
             this.tabPage4.Controls.Add(this.pictureBox1);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.materialRaisedButton4);
-            this.tabPage4.Controls.Add(this.lbAgen);
             this.tabPage4.Controls.Add(this.btnActualizar);
             this.tabPage4.Controls.Add(this.txtagen);
             this.tabPage4.Controls.Add(this.btnImprimir);
@@ -1115,6 +1115,7 @@
             // grupoCliente
             // 
             this.grupoCliente.BackColor = System.Drawing.Color.White;
+            this.grupoCliente.Controls.Add(this.txtid);
             this.grupoCliente.Controls.Add(this.materialLabel23);
             this.grupoCliente.Controls.Add(this.cbLugarCliente);
             this.grupoCliente.Controls.Add(this.materialLabel21);
@@ -1211,6 +1212,7 @@
             this.cbrealizado.TabIndex = 83;
             this.cbrealizado.Text = "¿Realizado?";
             this.cbrealizado.UseVisualStyleBackColor = true;
+            this.cbrealizado.CheckStateChanged += new System.EventHandler(this.Cbrealizado_CheckStateChanged);
             // 
             // txtind
             // 
@@ -1795,7 +1797,8 @@
             "Torre",
             "fichas",
             "Socio",
-            "Otro"});
+            "Otro",
+            "Instalacion"});
             this.comboBox1.Location = new System.Drawing.Point(25, 40);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(364, 21);
@@ -1861,19 +1864,6 @@
             this.materialRaisedButton4.Text = "Eliminar";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
             this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
-            // 
-            // lbAgen
-            // 
-            this.lbAgen.AutoSize = true;
-            this.lbAgen.Depth = 0;
-            this.lbAgen.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lbAgen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbAgen.Location = new System.Drawing.Point(184, 53);
-            this.lbAgen.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbAgen.Name = "lbAgen";
-            this.lbAgen.Size = new System.Drawing.Size(0, 19);
-            this.lbAgen.TabIndex = 60;
-            this.lbAgen.Visible = false;
             // 
             // btnActualizar
             // 
@@ -1984,12 +1974,13 @@
             this.lvAgenda.CheckBoxes = true;
             this.lvAgenda.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader19,
+            this.columnHeader39,
             this.columnHeader20,
             this.columnHeader21,
             this.columnHeader22,
             this.columnHeader23,
-            this.columnHeader24,
             this.columnHeader27,
+            this.columnHeader24,
             this.columnHeader38});
             this.lvAgenda.Depth = 0;
             this.lvAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
@@ -2012,6 +2003,10 @@
             this.columnHeader19.Text = "Nombre";
             this.columnHeader19.Width = 292;
             // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "Tipo";
+            // 
             // columnHeader20
             // 
             this.columnHeader20.Text = "Lugar";
@@ -2032,16 +2027,20 @@
             this.columnHeader23.Text = "Equipo";
             this.columnHeader23.Width = 100;
             // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "Fecha";
-            this.columnHeader24.Width = 96;
-            // 
             // columnHeader27
             // 
             this.columnHeader27.Text = "id";
             this.columnHeader27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader27.Width = 0;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Fecha";
+            this.columnHeader24.Width = 96;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Width = 0;
             // 
             // materialRaisedButton2
             // 
@@ -2265,9 +2264,20 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
             // 
-            // columnHeader38
+            // txtid
             // 
-            this.columnHeader38.Width = 0;
+            this.txtid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtid.AutoSize = true;
+            this.txtid.Depth = 0;
+            this.txtid.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtid.Location = new System.Drawing.Point(405, 8);
+            this.txtid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(17, 19);
+            this.txtid.TabIndex = 89;
+            this.txtid.Text = "0";
             // 
             // FormMenuPrincipal
             // 
@@ -2385,7 +2395,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.ColumnHeader columnHeader27;
         public MaterialFlatButton btnActualizar;
-        private MaterialLabel lbAgen;
         private MaterialRaisedButton materialRaisedButton4;
         public MaterialCheckBox materialCheckBox2;
         private System.Windows.Forms.Label label1;
@@ -2462,5 +2471,7 @@
         private System.Windows.Forms.ComboBox cbLugarCliente;
         public MaterialListView lvAgenda;
         private System.Windows.Forms.ColumnHeader columnHeader38;
+        private System.Windows.Forms.ColumnHeader columnHeader39;
+        private MaterialLabel txtid;
     }
 }

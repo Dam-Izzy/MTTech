@@ -18,6 +18,8 @@ namespace MTtechapp
             {
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.Refresh();
+                //El reporte se llena con una lista statica que esta en el formulario principal
+                //para llenar las demás tablas se debe de generar pero se debe de filtrar por tipo
                 this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("datosagenda", FormMenuPrincipal.lista));
             }
             catch (Exception ex)

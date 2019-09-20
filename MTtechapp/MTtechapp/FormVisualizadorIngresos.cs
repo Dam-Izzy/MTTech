@@ -13,7 +13,7 @@ namespace MTtechapp
         {
             InitializeComponent();
         }
-
+        double Socios, Otros,Gastos,Mensualidades,Fichas = 0;
         private void FormVisualizadorIngresos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'mtDataSet1.ViewMensualidades' Puede moverla o quitarla según sea necesario.
@@ -24,8 +24,10 @@ namespace MTtechapp
             CargaGastos();
             CargaOtros();
             CargaMensualidades();
+            Mensaje();
             this.reportViewer1.RefreshReport();
         }
+
         conexion cnn = new conexion();
         private DataTable GetFichas()
         {
@@ -146,6 +148,7 @@ namespace MTtechapp
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
                     cortes.Add(cl);
+                    Fichas = Convert.ToInt32(item[4].ToString());
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("fichas", cortes));
                 reportViewer1.RefreshReport();
@@ -171,6 +174,7 @@ namespace MTtechapp
                     cl.Monto = Convert.ToInt32(item[4].ToString());
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
+                    Socios = Convert.ToInt32(item[4].ToString());
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("socios", cortes));
@@ -197,11 +201,13 @@ namespace MTtechapp
                         Descripcion = item[2].ToString(),
                         Lugar = item[8].ToString(),
                         Monto = Convert.ToInt32(item[4].ToString()),
-                        Fecha = Convert.ToDateTime(item[5]),
+                    Fecha = Convert.ToDateTime(item[5]),
                         Estado = Convert.ToBoolean(item[6].ToString())
                     };
+                    Otros = Convert.ToInt32(item[4].ToString());
                     cortes.Add(cl);
                 }
+
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("otros", cortes));
                 reportViewer1.RefreshReport();
             }
@@ -228,6 +234,7 @@ namespace MTtechapp
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
                     cortes.Add(cl);
+                    Gastos = Otros = Convert.ToInt32(item[4].ToString());
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("gastos", cortes));
                 reportViewer1.RefreshReport();
@@ -255,6 +262,7 @@ namespace MTtechapp
                         Monto = Convert.ToInt32(item[11].ToString()),
                         Fecha = Convert.ToDateTime(item[13])
                     };
+                    Mensualidades = Otros = Convert.ToInt32(item[4].ToString());
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));
@@ -332,6 +340,14 @@ namespace MTtechapp
             CargaMeses();
             CargaMensualidades();
         }
-
+        public void Mensaje()
+        {
+            double total = Socios + Otros + Fichas + Mensualidades - Gastos;
+            MessageBox.Show("Socios "+  Socios.ToString() +" \n"+
+                "Otros " +Otros.ToString() + " \n" +
+                "Fichas "+Fichas.ToString()+ " \n" +
+               "Mensualidades"+ Mensualidades.ToString()+ " \n" +
+                total.ToString());
+        }
     }
 }
