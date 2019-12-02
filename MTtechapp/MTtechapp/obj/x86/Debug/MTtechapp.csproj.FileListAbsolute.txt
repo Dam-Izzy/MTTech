@@ -451,11 +451,9 @@ C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\pt\M
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\bin\x86\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csprojAssemblyReference.cache
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormActualizar.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormActualizarMensualidades.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormAgregar.resources
-C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormCalcular.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormCambiar.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormCliente.resources
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.FormDialogo.resources
@@ -488,3 +486,4 @@ C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTte
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.pdb
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.cache
 C:\Users\MT Network's\Source\Repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\RdlCompile.compiled
+C:\Users\MT Network's\source\repos\MTTech\MTtechapp\MTtechapp\obj\x86\Debug\MTtechapp.csprojAssemblyReference.cache

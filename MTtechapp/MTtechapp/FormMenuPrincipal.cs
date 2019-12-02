@@ -921,7 +921,7 @@ namespace MTtechapp
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
             {
                 ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
-                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago, tipo from Cliente where idCliente= " + item.SubItems[7].Text.ToString() + " and tipo= '"+ item.SubItems[6].Text.ToString() + "'";
+                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago, tipo from Cliente where idCliente= " + item.SubItems[8].Text.ToString() + " and tipo= '"+ item.SubItems[1].Text.ToString() + "'";
                 SqlCommand sql = new SqlCommand(Consulta, cnn.conn);
                 cnn.Conectar();
                 SqlDataReader dr = sql.ExecuteReader();
@@ -955,16 +955,10 @@ namespace MTtechapp
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
             {
                 ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
-                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago from Cliente where idCliente= " + item.SubItems[7].Text.ToString() + "";
+                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago from Cliente where idCliente= " + item.SubItems[6].Text.ToString() + "";
                 SqlCommand sql = new SqlCommand(Consulta, cnn.conn);
                 cnn.Conectar();
                 SqlDataReader dr = sql.ExecuteReader();
-                informeAgenda.cliente = item.SubItems[0].Text.ToString();
-                informeAgenda.lugar = item.SubItems[1].Text.ToString();
-                informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
-                informeAgenda.descripcion = item.SubItems[3].Text.ToString();
-                informeAgenda.Equipo = item.SubItems[4].Text.ToString();
-                informeAgenda.fecha = item.SubItems[5].Text.ToString();
                 if (item.SubItems[0].Text.Contains("N/A"))
                 {
                     //
@@ -972,14 +966,19 @@ namespace MTtechapp
                 else
                 {
                     while (dr.Read())
-                    {
+                {
                         informeAgenda.domicilio = dr.GetString(1);
                         informeAgenda.Tel = dr.GetString(2);
+                        informeAgenda.pago = dr.GetFloat(3);
                     }
                 }
-                
+                informeAgenda.cliente = item.SubItems[0].Text.ToString();
+                informeAgenda.lugar = item.SubItems[1].Text.ToString();
+                informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
+                informeAgenda.descripcion = item.SubItems[3].Text.ToString();
+                informeAgenda.Equipo = item.SubItems[4].Text.ToString();
+                informeAgenda.fecha = item.SubItems[5].Text.ToString();
                 dr.Close();
-
                 lista.Add(informeAgenda);
             }
             return lista;
@@ -1432,7 +1431,7 @@ namespace MTtechapp
                 cnn.Desconectar();
                 llenarAgenda();
             }
-        }
+        }//Actulizar agenda
 
         private void limpiarAgenda()
         {

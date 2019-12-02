@@ -127,10 +127,10 @@
         <Source>Embedded</Source>
         <Value>MT</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.097cm</Top>
-        <Left>17.52988cm</Left>
-        <Height>2.53216cm</Height>
-        <Width>2.67959cm</Width>
+        <Top>0.06172cm</Top>
+        <Left>17.3535cm</Left>
+        <Height>2.08209cm</Height>
+        <Width>2.85597cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -154,7 +154,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>2.24055cm</Top>
-        <Left>3.92839cm</Left>
+        <Left>3.61089cm</Left>
         <Height>0.6cm</Height>
         <Width>1.31875cm</Width>
         <ZIndex>7</ZIndex>
@@ -186,7 +186,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>2.20555cm</Top>
-        <Left>5.38825cm</Left>
+        <Left>5.07075cm</Left>
         <Height>0.6cm</Height>
         <Width>6.51234cm</Width>
         <ZIndex>8</ZIndex>
@@ -1280,9 +1280,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
-                      <Visibility>
-                        <Hidden>=Fields!IdIngreso.Value=""</Hidden>
-                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2220,8 +2217,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>2.20555cm</Top>
-        <Left>12.11225cm</Left>
+        <Top>2.24055cm</Top>
+        <Left>11.75948cm</Left>
         <Height>0.6cm</Height>
         <Width>2.01649cm</Width>
         <ZIndex>16</ZIndex>
@@ -2251,8 +2248,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox60</rd:DefaultName>
-        <Top>1.50881cm</Top>
-        <Left>12.11225cm</Left>
+        <Top>1.54381cm</Top>
+        <Left>11.75948cm</Left>
         <Height>0.6cm</Height>
         <Width>2.01649cm</Width>
         <ZIndex>17</ZIndex>
@@ -2282,8 +2279,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox62</rd:DefaultName>
-        <Top>2.80555cm</Top>
-        <Left>12.07698cm</Left>
+        <Top>2.84055cm</Top>
+        <Left>11.72421cm</Left>
         <Height>0.6cm</Height>
         <Width>2.05176cm</Width>
         <ZIndex>18</ZIndex>
@@ -2316,8 +2313,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>2.20555cm</Top>
-        <Left>14.12874cm</Left>
+        <Top>2.24055cm</Top>
+        <Left>13.77597cm</Left>
         <Height>0.6cm</Height>
         <Width>3.40114cm</Width>
         <ZIndex>19</ZIndex>
@@ -2350,8 +2347,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>1.50881cm</Top>
-        <Left>14.12874cm</Left>
+        <Top>1.54381cm</Top>
+        <Left>13.77597cm</Left>
         <Height>0.6cm</Height>
         <Width>3.40114cm</Width>
         <ZIndex>20</ZIndex>
@@ -2384,8 +2381,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox63</rd:DefaultName>
-        <Top>2.80555cm</Top>
-        <Left>14.12874cm</Left>
+        <Top>2.84055cm</Top>
+        <Left>13.77597cm</Left>
         <Height>0.63528cm</Height>
         <Width>3.40114cm</Width>
         <ZIndex>21</ZIndex>
@@ -3030,8 +3027,148 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!idcierre.Value, "cierre")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>3.01694cm</Top>
+        <Left>17.31822cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.85597cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox56">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!hash.Value, "cierre")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>3.01694cm</Top>
+        <Left>7.4281cm</Left>
+        <Height>0.7465cm</Height>
+        <Width>3.7755cm</Width>
+        <ZIndex>28</ZIndex>
+        <Visibility>
+          <Hidden>=First(Fields!Descripcion.Value, "mensualidades") = ""</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox57">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sello:</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>3.05222cm</Top>
+        <Left>5.62361cm</Left>
+        <Height>0.64067cm</Height>
+        <Width>1.76921cm</Width>
+        <ZIndex>29</ZIndex>
+        <Visibility>
+          <Hidden>=First(Fields!Descripcion.Value, "mensualidades") = ""</Hidden>
+        </Visibility>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox58">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Folio</Value>
+                <Style>
+                  <Color>Maroon</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>2.41694cm</Top>
+        <Left>17.3535cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.31875cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>5.74055in</Height>
+    <Height>5.60513in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -3265,6 +3402,31 @@
         <rd:DataSetName>MTtechapp</rd:DataSetName>
         <rd:TableName>ClassCorte</rd:TableName>
         <rd:ObjectDataSourceType>MTtechapp.ClassCorte, MTtechapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="cierre">
+      <Query>
+        <DataSourceName>MTtechapp</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hash">
+          <DataField>hash</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="idcierre">
+          <DataField>idcierre</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>MTtechapp</rd:DataSetName>
+        <rd:TableName>ClaseCierre</rd:TableName>
+        <rd:ObjectDataSourceType>MTtechapp.ClaseCierre, MTtechapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

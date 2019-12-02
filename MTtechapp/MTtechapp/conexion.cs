@@ -7,9 +7,9 @@ namespace MTtechapp
 {
     public class conexion
     {
-        public SqlConnection conn = new SqlConnection("Data Source=MTNETWORKS," +
+        public SqlConnection conn = new SqlConnection("Data Source=DESKTOP-B8TQ2OC," +
                                                       "1433;DataBase=mt;User ID=sa; Password=yami_yonatan;");
-        public OleDbConnection cn = new OleDbConnection("Data Source=MTNETWORKS," +
+        public OleDbConnection cn = new OleDbConnection("Data Source=DESKTOP-B8TQ2OC," +
                                                        "1433;DataBase=mt;User ID=sa; Password=yami_yonatan; Provider=SQLOLEDB;");
         public void Conectar()
         {

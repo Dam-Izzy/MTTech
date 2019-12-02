@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpentrefecha = new System.Windows.Forms.DateTimePicker();
             this.btnRevisar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ClassCorteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClaseCierreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ClassCorteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClaseCierreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -47,21 +53,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.AutoSize = true;
-            reportDataSource1.Name = "mensualidades";
-            reportDataSource1.Value = null;
+            reportDataSource1.Name = "fichas";
+            reportDataSource1.Value = this.ClassCorteBindingSource;
             reportDataSource2.Name = "socios";
-            reportDataSource2.Value = null;
-            reportDataSource3.Name = "otros";
-            reportDataSource3.Value = null;
-            reportDataSource4.Name = "fichas";
-            reportDataSource4.Value = null;
-            reportDataSource5.Name = "gastos";
-            reportDataSource5.Value = null;
+            reportDataSource2.Value = this.ClassCorteBindingSource;
+            reportDataSource3.Name = "gastos";
+            reportDataSource3.Value = this.ClassCorteBindingSource;
+            reportDataSource4.Name = "mensualidades";
+            reportDataSource4.Value = this.ClassCorteBindingSource;
+            reportDataSource5.Name = "otros";
+            reportDataSource5.Value = this.ClassCorteBindingSource;
+            reportDataSource6.Name = "cierre";
+            reportDataSource6.Value = this.ClaseCierreBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MTtechapp.ReporteCorte.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 50);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(1);
@@ -69,6 +78,7 @@
             this.reportViewer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.reportViewer1.Size = new System.Drawing.Size(951, 474);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.ReportViewer1_Load);
             // 
             // dtpfecha
             // 
@@ -128,6 +138,14 @@
             this.btnRevisar.UseVisualStyleBackColor = true;
             this.btnRevisar.Click += new System.EventHandler(this.btnRevisar_Click);
             // 
+            // ClassCorteBindingSource
+            // 
+            this.ClassCorteBindingSource.DataSource = typeof(MTtechapp.ClassCorte);
+            // 
+            // ClaseCierreBindingSource
+            // 
+            this.ClaseCierreBindingSource.DataSource = typeof(MTtechapp.ClaseCierre);
+            // 
             // FormVisualizadorIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +161,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVisualizadorIngresos";
             this.Load += new System.EventHandler(this.FormVisualizadorIngresos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClassCorteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClaseCierreBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +176,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.DateTimePicker dtpentrefecha;
         private MaterialSkin.Controls.MaterialFlatButton btnRevisar;
+        private System.Windows.Forms.BindingSource ClassCorteBindingSource;
+        private System.Windows.Forms.BindingSource ClaseCierreBindingSource;
     }
 }

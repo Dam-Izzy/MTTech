@@ -685,7 +685,7 @@ namespace MTtechapp
                     elementos.SubItems.Add(filas["Nombre"].ToString());
                     elementos.SubItems.Add(filas["CL"].ToString());
                     elementos.SubItems.Add(filas["md"].ToString());
-                    elementos.SubItems.Add(filas["CL"].ToString());
+                    elementos.SubItems.Add(filas["mc"].ToString());
                     materialListView1.Items.Add(elementos);
                 }
             }
@@ -714,7 +714,7 @@ namespace MTtechapp
             {
                 string idImprimir = this.materialListView1.SelectedItems[0].SubItems[5].Text;
                 int idSeleccionado = int.Parse(idImprimir);
-                FormDialogo imprimir = new FormDialogo(dtpmensualidad.Value, idSeleccionado);
+                FormDialogo imprimir = new FormDialogo(dtpbuscar.Value, idSeleccionado);
                 imprimir.Show();
             }
             catch (Exception ex)

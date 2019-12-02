@@ -147,7 +147,7 @@ namespace MTtechapp
                 {
                     cbtipo.Text = dr.GetString(0);
                     txtDescrip.Text = dr[1].ToString();
-                    txtmonto.Text = dr.GetDecimal(2).ToString();
+                    txtmonto.Text = dr.GetDouble(2).ToString();
                     dtpFiltro.Text = dr[3].ToString();
                     CheckEstado.Checked = dr.GetBoolean(4);
                     lbid.Text = dr[7].ToString();

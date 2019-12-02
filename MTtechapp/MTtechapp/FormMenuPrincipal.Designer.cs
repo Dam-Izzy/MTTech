@@ -103,6 +103,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.grupoCliente = new System.Windows.Forms.GroupBox();
+            this.txtid = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.cbLugarCliente = new System.Windows.Forms.ComboBox();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
@@ -184,7 +185,6 @@
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.txtid = new MaterialSkin.Controls.MaterialLabel();
             this.PoppupMenu.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1139,6 +1139,21 @@
             this.grupoCliente.TabStop = false;
             this.grupoCliente.Text = " ";
             // 
+            // txtid
+            // 
+            this.txtid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtid.AutoSize = true;
+            this.txtid.Depth = 0;
+            this.txtid.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtid.Location = new System.Drawing.Point(405, 8);
+            this.txtid.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(17, 19);
+            this.txtid.TabIndex = 89;
+            this.txtid.Text = "0";
+            // 
             // materialLabel23
             // 
             this.materialLabel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2001,7 +2016,7 @@
             // columnHeader19
             // 
             this.columnHeader19.Text = "Nombre";
-            this.columnHeader19.Width = 292;
+            this.columnHeader19.Width = 290;
             // 
             // columnHeader39
             // 
@@ -2263,21 +2278,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
-            // 
-            // txtid
-            // 
-            this.txtid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtid.AutoSize = true;
-            this.txtid.Depth = 0;
-            this.txtid.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtid.Location = new System.Drawing.Point(405, 8);
-            this.txtid.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(17, 19);
-            this.txtid.TabIndex = 89;
-            this.txtid.Text = "0";
             // 
             // FormMenuPrincipal
             // 

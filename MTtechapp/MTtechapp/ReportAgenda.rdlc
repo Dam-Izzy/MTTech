@@ -697,14 +697,18 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox21">
+                    <Textbox Name="pago">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Pago: [pago]</Value>
+                              <Value>Mensualidad: </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!pago.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -713,7 +717,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <rd:DefaultName>pago</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2782,6 +2786,10 @@
         </Field>
         <Field Name="lugar">
           <DataField>lugar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="pago">
+          <DataField>pago</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="prioridad">

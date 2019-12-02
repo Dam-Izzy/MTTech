@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MTtechapp
@@ -24,7 +25,7 @@ namespace MTtechapp
             CargaGastos();
             CargaOtros();
             CargaMensualidades();
-            Mensaje();
+            CargaCierre();
             this.reportViewer1.RefreshReport();
         }
 
@@ -36,6 +37,26 @@ namespace MTtechapp
             {
                 cnn.Conectar();
                 SqlCommand cmd = new SqlCommand("Select * from getFichas('" + dtpfecha.Value.ToShortDateString() + "')", cnn.conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                Retornar.Load(dr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                cnn.Desconectar();
+            }
+            return Retornar;
+        }
+        private DataTable GetCierre()
+        {
+            DataTable Retornar = new DataTable();
+            try
+            {
+                cnn.Conectar();
+                SqlCommand cmd = new SqlCommand("Select * from getCierre('" + DateTime.Now.ToShortDateString() + "')", cnn.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 Retornar.Load(dr);
             }
@@ -119,7 +140,6 @@ namespace MTtechapp
                 {
                     SqlDataReader dr = cmd.ExecuteReader();
                     Retornar.Load(dr);
-
                 }
             }
             catch (Exception ex)
@@ -131,6 +151,28 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
             return Retornar;
+        }
+        public void CargaCierre()
+        {
+            try
+            {
+                List<ClaseCierre> cortes = new List<ClaseCierre>();
+                foreach (DataRow item in GetCierre().Rows)
+                {
+                    ClaseCierre cl = new ClaseCierre();
+                    cl.idcierre = Convert.ToInt32(item[0].ToString());
+                    cl.hash = item[1].ToString();
+                    cl.fecha = item[2].ToString();                    
+                    cortes.Add(cl);
+                }
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("cierre", cortes));
+                reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; " + ex.Message);
+            }
+
         }
         public void CargaFichas()
         {
@@ -148,7 +190,6 @@ namespace MTtechapp
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
                     cortes.Add(cl);
-                    Fichas = Convert.ToInt32(item[4].ToString());
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("fichas", cortes));
                 reportViewer1.RefreshReport();
@@ -174,7 +215,6 @@ namespace MTtechapp
                     cl.Monto = Convert.ToInt32(item[4].ToString());
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());
-                    Socios = Convert.ToInt32(item[4].ToString());
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("socios", cortes));
@@ -204,8 +244,8 @@ namespace MTtechapp
                     Fecha = Convert.ToDateTime(item[5]),
                         Estado = Convert.ToBoolean(item[6].ToString())
                     };
-                    Otros = Convert.ToInt32(item[4].ToString());
                     cortes.Add(cl);
+                    Otros = Convert.ToInt32(item[4].ToString());
                 }
 
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("otros", cortes));
@@ -225,14 +265,16 @@ namespace MTtechapp
                 List<ClassCorte> cortes = new List<ClassCorte>();
                 foreach (DataRow item in GetGastos().Rows)
                 {
-                    ClassCorte cl = new ClassCorte();
-                    cl.IdIngreso = Convert.ToInt32(item[0].ToString());
-                    cl.Tipo = item[1].ToString();
-                    cl.Descripcion = item[2].ToString();
-                    cl.Lugar = item[8].ToString();
-                    cl.Monto = Convert.ToInt32(item[4].ToString());
-                    cl.Fecha = Convert.ToDateTime(item[5]);
-                    cl.Estado = Convert.ToBoolean(item[6].ToString());
+                    ClassCorte cl = new ClassCorte
+                    {
+                        IdIngreso = Convert.ToInt32(item[0].ToString()),
+                        Tipo = item[1].ToString(),
+                        Descripcion = item[2].ToString(),
+                        Lugar = item[8].ToString(),
+                        Monto = Convert.ToInt32(item[4].ToString()),
+                        Fecha = Convert.ToDateTime(item[5]),
+                        Estado = Convert.ToBoolean(item[6].ToString())
+                    };
                     cortes.Add(cl);
                     Gastos = Otros = Convert.ToInt32(item[4].ToString());
                 }
@@ -255,14 +297,14 @@ namespace MTtechapp
                 {
                     ClassCorte cl = new ClassCorte
                     {
-                        IdIngreso = Convert.ToInt32(item[9].ToString()),
-                        Tipo = item[1].ToString(),
-                        Descripcion = item[1].ToString(),
-                        Lugar = item[7].ToString(),
-                        Monto = Convert.ToInt32(item[11].ToString()),
-                        Fecha = Convert.ToDateTime(item[13])
+                        IdIngreso = Convert.ToInt32(item[1].ToString()),
+                        Tipo = item[6].ToString(),
+                        Descripcion = item[6].ToString(),
+                        Lugar = item[8].ToString(),
+                        Monto = Convert.ToDouble(item[0].ToString()),
+                        Fecha = Convert.ToDateTime(item[4])
                     };
-                    Mensualidades = Otros = Convert.ToInt32(item[4].ToString());
+                    Mensualidades = Otros = Convert.ToInt32(item[0].ToString());
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidades", cortes));
@@ -271,10 +313,52 @@ namespace MTtechapp
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error ;_; " + ex.Message);
+                MessageBox.Show("Error al cargar las mensualidades ;_;  " + ex.Message);
             }
 
         }
+        public static string GetRandomString()
+        {
+            string path = Path.GetRandomFileName();
+            path = path.Replace(".", ""); // Remove periodo.
+            return path;
+        }
+        private void ReportViewer1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (MessageBox.Show("¿Desea realizar el corte? ", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    cnn.Conectar();
+                    int o;
+                    SqlCommand cmd = new SqlCommand("insert into cierre(hash, fecha) values('" + GetRandomString() + "','" + DateTime.Now.ToShortDateString() + "')", cnn.conn);
+                    o = cmd.ExecuteNonQuery();
+                    MessageBox.Show(o.ToString());
+                    if (o > 0)
+                    {
+                        MessageBox.Show("Cierre realizado correctamente!", "MTtech");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El cierre no fue realizado por alguna razón misteriosa. ;_;");
+                    }
+                }
+            }
+            catch (SqlException sql)
+            {
+                MessageBox.Show(sql.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ;_; -" + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                cnn.Desconectar();
+            }
+        }
+
         private void dtpfecha_CloseUp(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
@@ -283,6 +367,7 @@ namespace MTtechapp
             CargaGastos();
             CargaMensualidades();
             CargaOtros();
+            CargaCierre();
             this.reportViewer1.RefreshReport();
 
         }
@@ -339,15 +424,6 @@ namespace MTtechapp
         {
             CargaMeses();
             CargaMensualidades();
-        }
-        public void Mensaje()
-        {
-            double total = Socios + Otros + Fichas + Mensualidades - Gastos;
-            MessageBox.Show("Socios "+  Socios.ToString() +" \n"+
-                "Otros " +Otros.ToString() + " \n" +
-                "Fichas "+Fichas.ToString()+ " \n" +
-               "Mensualidades"+ Mensualidades.ToString()+ " \n" +
-                total.ToString());
         }
     }
 }

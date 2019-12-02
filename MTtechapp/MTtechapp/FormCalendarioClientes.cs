@@ -40,8 +40,8 @@ namespace MTtechapp
                     cl.fechaMensualidad = Convert.ToDateTime(item[3].ToString());
                     cl.monto = Convert.ToDouble(item[0].ToString());
                     cl.mesprox = Convert.ToDateTime(item[3].ToString()).AddMonths(1);
-                    cl.Comentario = item[12].ToString();
-                    lbcomment.Text = item[12].ToString();
+                    cl.Comentario = item[11].ToString();
+                    lbcomment.Text = item[11].ToString();
                     cortes.Add(cl);
                 }
                 reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("mensualidad", cortes));
@@ -72,7 +72,6 @@ namespace MTtechapp
             }
             return Retornar;
         }
-
         private void btnprox_Click(object sender, EventArgs e)
         {
             try
