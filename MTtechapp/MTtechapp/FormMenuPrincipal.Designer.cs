@@ -382,7 +382,7 @@
             // 
             this.columnHeader11.Text = "ip";
             this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader11.Width = 37;
+            this.columnHeader11.Width = 83;
             // 
             // columnHeader15
             // 

@@ -71,7 +71,7 @@ namespace MTtechapp
         {
             
             FormCliente fc = new FormCliente();
-            fc.ShowDialog();
+            fc.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)

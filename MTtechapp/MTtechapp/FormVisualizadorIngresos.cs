@@ -327,14 +327,13 @@ namespace MTtechapp
         {
             try
             {
-
+                
                 if (MessageBox.Show("¿Desea realizar el corte? ", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     cnn.Conectar();
                     int o;
                     SqlCommand cmd = new SqlCommand("insert into cierre(hash, fecha) values('" + GetRandomString() + "','" + DateTime.Now.ToShortDateString() + "')", cnn.conn);
                     o = cmd.ExecuteNonQuery();
-                    MessageBox.Show(o.ToString());
                     if (o > 0)
                     {
                         MessageBox.Show("Cierre realizado correctamente!", "MTtech");

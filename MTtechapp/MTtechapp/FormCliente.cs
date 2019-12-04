@@ -53,7 +53,7 @@ namespace MTtechapp
             return ListaMun;
         }
         public void cargamun()
-        {
+        { 
             comboBox1.DisplayMember = "Nombre";
             comboBox1.ValueMember = "idMunicipio";
             comboBox1.DataSource = Cargamun();
@@ -185,6 +185,15 @@ namespace MTtechapp
             {
                 cx.Desconectar();
             }
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            ListaMun.Clear();
+            comboBox1.DataSource = null;
+            comboBox1.Items.Clear();
+            cargamun();
+            comboBox1.Refresh();
         }
     }
 }

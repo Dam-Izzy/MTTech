@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
@@ -48,6 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbcliente = new MaterialSkin.Controls.MaterialLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // materialFlatButton1
@@ -113,6 +116,7 @@
             this.txtcodigo.SelectionStart = 0;
             this.txtcodigo.Size = new System.Drawing.Size(295, 23);
             this.txtcodigo.TabIndex = 9;
+            this.txtcodigo.TabStop = false;
             this.txtcodigo.UseSystemPasswordChar = false;
             // 
             // materialLabel13
@@ -358,9 +362,22 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Agregar cliente";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(636, 177);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 72;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
+            // 
             // FormCliente
             // 
             this.ClientSize = new System.Drawing.Size(709, 399);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbcliente);
             this.Controls.Add(this.label1);
@@ -387,6 +404,7 @@
             this.Name = "FormCliente";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +430,6 @@
         public MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         public MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

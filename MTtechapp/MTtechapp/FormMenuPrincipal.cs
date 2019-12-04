@@ -40,7 +40,7 @@ namespace MTtechapp
         private void txtagregar_Click(object sender, EventArgs e)
         {
             FormAgregar fa = new FormAgregar();
-            fa.ShowDialog();
+            fa.Show();
         }
         conexion cnn = new conexion();
         public void LlenarListView()
@@ -1187,16 +1187,15 @@ namespace MTtechapp
                         txtagenda.Visible = false;
                         btncancelar.Visible = true;
                         comboBox1.Text = dr.GetString(12);
-                        cbEquipo.Text = dr.GetString(3);//combo tipo
-                        txtid.Text = dr.GetInt32(0).ToString();//ID ID
-                        dtpAgenda.Text = dr[4].ToString();//Fecha agenda
-                        cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar
-                        txtind.Text = dr[10].ToString();//indicaciones
-                        txtdescripcion1.Text = dr[5].ToString();//descipción
-                        txtDiag.Text = dr[2].ToString();//diagnostico
-                        cbrealizado.Checked = dr.GetBoolean(9);//check realizado
-                        cbprioriC.Text = dr.GetString(11);//combo nivel
-                        dr.Close();
+                        cbEquipo.Text = dr.GetString(3);//combo tipo                   1
+                        txtdescripcion1.Text = dr.GetString(5);//Descri                2
+                        dtpAgenda.Text = dr[4].ToString();//Fecha agenda               3
+                        cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar  4
+                        txtind.Text = dr[10].ToString();//indicaciones                 5
+                        txtid.Text = dr.GetInt32(0).ToString();//ID ID                 6
+                        txtDiag.Text = dr[2].ToString();//diagnostico                  7
+                        cbrealizado.Checked = dr.GetBoolean(9);//check realizado       8
+                        cbprioriC.Text = dr.GetString(11);//combo nivel                9
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
@@ -1210,6 +1209,7 @@ namespace MTtechapp
                             cbClienteAgenda.DisplayMember = "NombreCompleto";
                             cbClienteAgenda.ValueMember = "idCliente";
                         }
+                        dr.Close();
                     }
 
                     else if (dr.GetString(12).Equals("otro")|| dr.GetString(12).Equals("fichas")|| dr.GetString(12).Equals("Socio"))
@@ -1372,7 +1372,7 @@ namespace MTtechapp
             */
             try
             {
-                if (String.IsNullOrEmpty(txtDiag.Text))
+                if (comboBox1.Items==null)
                 {
                     MessageBox.Show("Completa los campos");
                 }
