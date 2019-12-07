@@ -9,9 +9,10 @@ namespace MTtechapp
 {
     public partial class FormCambiar : MaterialForm
     {
-        String usuario;
-        String contra;
-        private readonly MaterialSkinManager materialSkinManager;
+        String usuario;//var usuario a cambiar
+        String contra;//var contrasena a cambiar
+        private readonly MaterialSkinManager materialSkinManager;//instancia de msm
+        //incializacion de componentes del formulario
         public FormCambiar(String usuario, String contra)
         {
             InitializeComponent();
@@ -20,8 +21,12 @@ namespace MTtechapp
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
         }
-        SqlDataReader lector;
-        conexion conn = new conexion();
+        SqlDataReader lector;//lector de datos
+        conexion conn = new conexion();// Conexion a base de datos
+        /// <summary>
+        /// en esta funcion se valida el usuario y la contraseña del usuario, si son correctas 
+        /// </summary>
+        
         private void btncambiar_Click(object sender, EventArgs e)
         {
             FormMenuPrincipal formMenu = new FormMenuPrincipal();
@@ -62,7 +67,7 @@ namespace MTtechapp
                 conn.Desconectar();
             }
         }
-
+        //Actualiza los datos del usuario tales como la contraseña y el usuario
         private void Actualizar()
         {
             lector.Close();
@@ -73,6 +78,7 @@ namespace MTtechapp
             MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
             limpiar();
         }
+        //limpia campos
         private void limpiar()
         {
             txtnueva.Clear();

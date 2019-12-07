@@ -9,6 +9,11 @@ namespace MTtechapp
     public class ClassMetodos
     {
         conexion cnn = new conexion();
+        /// <summary>
+        /// Busca un usuario
+        /// </summary>
+        /// <param name="cadena">cadena de busqueda</param>
+        /// <param name="lv">listview de salida</param>
         public void BuscarUsuario(String cadena, ListView lv)
         {
             lv.Items.Clear();
@@ -27,6 +32,11 @@ namespace MTtechapp
 
             }
         }
+        /// <summary>
+        /// Buscar item en agenda
+        /// </summary>
+        /// <param name="cadena">cadena a buscar</param>
+        /// <param name="lv">listvew que muestra datos</param>
         public void BuscarAgenda(String cadena, ListView lv)
         {
             lv.Items.Clear();
@@ -49,6 +59,13 @@ namespace MTtechapp
 
             }
         }
+
+        /// <summary>
+        /// busca un pago
+        /// </summary>
+        /// <param name="lv">listview de salida</param>
+        /// <param name="dtp">fecha de entrada</param>
+        /// <param name="valor">cadena de busqueda</param>
         public void buscarpago(ListView lv, DateTimePicker dtp, String valor)
         {
             string theDate = dtp.Value.ToString("yyyy-MM");
@@ -84,6 +101,10 @@ namespace MTtechapp
             }
 
         }
+        /// <summary>
+        /// lee datos de la base de datos
+        /// </summary>
+        /// <param name="text">listview de de entrada</param>
         public void autocompletarpago(TextBox text)
         {
             try
@@ -112,6 +133,10 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// carga un pago
+        /// </summary>
+        /// <param name="lv">listview de carga de datos</param>
         public void clickpagos(ListView lv)
         {
             string item = lv.SelectedItems[0].SubItems[8].Text;
@@ -158,6 +183,10 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// lee datos de la base de datos
+        /// </summary>
+        /// <param name="text">listview de de entrada</param>
         public void autocompletaragenda(TextBox text)
         {
             try
@@ -185,6 +214,10 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// lee datos de la base de datos
+        /// </summary>
+        /// <param name="lv">listview de de entrada</param>
         public void ActualizarAgenda(ListView lv)
         {
             FormPago formPago = new FormPago();
@@ -204,22 +237,24 @@ namespace MTtechapp
                     cnn.Conectar();
                     cmd.CommandType = CommandType.Text;
                     SqlDataReader dr = cmd.ExecuteReader();
-                    FormPago fag = new FormPago();
-                    fag.btnActualizarpago.Visible = true;
-                    if (dr.Read())
+                    using (FormPago fag = new FormPago())
                     {
-                        fag.cmbCliente.Text = dr[4].ToString();
-                        fag.txtArticulo.Text = dr[1].ToString();
-                        fag.txtPrecio.Text = dr[2].ToString();
-                        fag.dtpFechaPago.Text = dr[3].ToString();
-                        fag.lvtel.Text = dr[6].ToString();
-                        fag.lvDireccion.Text = dr[7].ToString();
-                        fag.lvcomment.Text = dr[8].ToString();
-                        fag.txtcantidad.Text = dr[9].ToString();
-                        fag.lbpago.Text = dr[11].ToString();
-                        dr.Close();
+                        fag.btnActualizarpago.Visible = true;
+                        if (dr.Read())
+                        {
+                            fag.cmbCliente.Text = dr[4].ToString();
+                            fag.txtArticulo.Text = dr[1].ToString();
+                            fag.txtPrecio.Text = dr[2].ToString();
+                            fag.dtpFechaPago.Text = dr[3].ToString();
+                            fag.lvtel.Text = dr[6].ToString();
+                            fag.lvDireccion.Text = dr[7].ToString();
+                            fag.lvcomment.Text = dr[8].ToString();
+                            fag.txtcantidad.Text = dr[9].ToString();
+                            fag.lbpago.Text = dr[11].ToString();
+                            dr.Close();
+                        }
+                        fag.ShowDialog();
                     }
-                    fag.ShowDialog();
 
                 }
             }
@@ -234,6 +269,11 @@ namespace MTtechapp
             }
 
         }
+        /// <summary>
+        /// borra un pago realizado
+        /// </summary>
+        /// <param name="lb">idpago de entrada</param>
+        /// <param name="lb2">id pagos de entrada</param>
         public void BorrarPago(int lb, int lb2)
         {
             try
@@ -246,9 +286,7 @@ namespace MTtechapp
                     SqlCommand cmd = new SqlCommand("delete from pago where idPago='" + lb + "'", cnn.conn);
                     SqlCommand cmd1 = new SqlCommand("delete from Pagos where idPagos='" + lb2 + "'", cnn.conn);
                     o = cmd1.ExecuteNonQuery();
-                    i = cmd.ExecuteNonQuery();
-                    MessageBox.Show(i.ToString());
-                    MessageBox.Show(i.ToString());
+                    i = cmd.ExecuteNonQuery();                    
                     if (i > 0 && o > 0)
                     {
                         MessageBox.Show("Pago eliminado correctamente!", "MTtech");
@@ -272,6 +310,10 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// funcion para autocompletar escritura de un combobox
+        /// </summary>
+        /// <param name="text">texto de entrada</param>
         public void autocompletarcombo(ComboBox text)
         {
             try
@@ -299,6 +341,12 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// Borra una mensualidad
+        /// </summary>
+        /// <param name="mensualidades">id de mensualidades</param>
+        /// <param name="mensualidad">id de mensualidad</param>
+        /// <param name="Cliente">id de cliente</param>
         public void BorrarMensualidad(int mensualidades, int mensualidad, int Cliente)
         {
             try
@@ -335,6 +383,11 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// Muestra datos de cortes en el menu principal y los guarda
+        /// </summary>
+        /// <param name="lv">list view de salida</param>
+        /// <param name="lb">label de entrada</param>
         public void llenarCortes(ListView lv, Label lb)
         {
             try
@@ -356,6 +409,34 @@ namespace MTtechapp
                     elementos.SubItems.Add(filas["corte"].ToString());
                     elementos.SubItems.Add(filas["total"].ToString());
                     lb.Text = filas["total"].ToString();
+                    if (MessageBox.Show("¿Desea realizar agregar los cortes? ", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        String idCliente = filas["idCliente"].ToString();
+                        String NombreCompleto = filas["NombreCompleto"].ToString();
+                        String Nombre = filas["Nombre"].ToString();
+                        String ip = filas["ip"].ToString();
+                        DateTime fechapago = Convert.ToDateTime(filas["fechaPago"]);
+                        DateTime corte = Convert.ToDateTime(filas["corte"].ToString());
+                        String total = filas["total"].ToString();
+                        SqlCommand cmd = new SqlCommand("dbo.spProcedureAgregarCorte", cnn.conn);
+                        cmd.Parameters.AddWithValue("@cliente", NombreCompleto);
+                        cmd.Parameters.AddWithValue("@lugar", Nombre);
+                        cmd.Parameters.AddWithValue("@ip", ip);
+                        cmd.Parameters.AddWithValue("@mensualidad", fechapago);
+                        cmd.Parameters.AddWithValue("@total", total);
+                        cmd.Parameters.AddWithValue("@corte", corte);
+                        cnn.Conectar();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        int j;
+                        j = cmd.ExecuteNonQuery();
+                        if (j > 0)
+                        {
+                            MessageBox.Show("Datos guardados correctamente", "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cmd.Dispose();
+                        }
+                       
+                    }
+                    
                     lv.Items.Add(elementos);
                 }
             }
@@ -368,6 +449,10 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// autocompleta texto en un combobox
+        /// </summary>
+        /// <param name="text"> texto de consulta de busqueda</param>
         public void autocompletarmunicipio(ComboBox text)
         {
             try
@@ -395,6 +480,11 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// filtra mensualidades
+        /// </summary>
+        /// <param name="lv">listview de salida</param>
+        /// <param name="date">fecha de entrada y lectura de datos</param>
         public void filtrarmesualidad(ListView lv, DateTime date)
         {
             try
@@ -427,6 +517,11 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        /// <summary>
+        /// autocompleta clientes 
+        /// </summary>
+        /// <param name="text">texto de entrada</param>
+        /// <param name="comboBox">texto de salida</param>
         public void autocompletarClienteMensualidad(ComboBox text, ComboBox comboBox)
         {
             try

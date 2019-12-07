@@ -8,11 +8,18 @@ namespace MTtechapp
 {
     public partial class FormActualizarMensualidades : MaterialForm
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public FormActualizarMensualidades()
         {
             InitializeComponent();
         }
-        conexion cnn = new conexion();
+        conexion cnn = new conexion();// objeto de conexión a base de datos
+        /// <summary>
+        /// Practicamente cada funcion ejecuta una funcion que se encuentra en la base de datos 
+        /// </summary>
+        #region region de actualización de meses de mensualidades
         private void btnEnero_Click(object sender, EventArgs e)
         {
             try
@@ -55,23 +62,26 @@ namespace MTtechapp
             }
         }
 
+  
         private void btnFebrero_Click(object sender, EventArgs e)
         {
             try
             {
-                if (MessageBox.Show("Desea editar este registro? ", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Desea editar este registro? ", "MTtech", MessageBoxButtons.YesNo) == DialogResult.Yes)//modal de pregunta
                 {
-                    cnn.Conectar();
-                    int i;
-                    SqlCommand cmd = new SqlCommand("dbo.spProcedureActualizarFebrero", cnn.conn);
+                    cnn.Conectar(); //conexión a base de datos
+                    int i; //var
+                    SqlCommand cmd = new SqlCommand("dbo.spProcedureActualizarFebrero", cnn.conn); //llamada a funcion del esquema dbo
+                    //inician parametros
                     cmd.Parameters.AddWithValue("@Monto", txtmonto.Text);
                     cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
                     cmd.Parameters.AddWithValue("@Febrero", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
                     cmd.Parameters.AddWithValue("@anio", SqlDbType.DateTime).SqlValue = DateTime.Now.ToShortDateString();
                     cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    i = cmd.ExecuteNonQuery();
-                    if (i > 0)
+                    //terminan parametros
+                    cmd.CommandType = CommandType.StoredProcedure;//tipo de comando procedimiento almacenado
+                    i = cmd.ExecuteNonQuery();//ejecución 
+                    if (i > 0)//Si la ejecución devuel un numero mayor a cero muestra un mensaje de exito, si no arroja un error
                     {
                         MessageBox.Show("Pago editado correctamente!", "MTtech");
                     }
@@ -81,7 +91,7 @@ namespace MTtechapp
                     }
                 }
             }
-            catch (SqlException sql)
+            catch (SqlException sql)// exepción sql, si ocurre algo anomalo con la conexion a la base de datos mostrara mensaje 
             {
                 MessageBox.Show(sql.Message);
             }
@@ -91,7 +101,7 @@ namespace MTtechapp
             }
             finally
             {
-                cnn.Desconectar();
+                cnn.Desconectar();//cerrar instancia de bd
             }
         }
 
@@ -513,5 +523,6 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-    }
+    } 
+    #endregion
 }

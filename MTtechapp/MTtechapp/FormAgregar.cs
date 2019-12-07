@@ -9,15 +9,18 @@ namespace MTtechapp
 {
     public partial class FormAgregar : MaterialForm
     {
+        //instancia de msm
         private readonly MaterialSkinManager materialSkinManager;
-
+        /// <summary>
+        /// inicialización de componentes del form y carga de msm
+        /// </summary>
         public FormAgregar()
         {
             InitializeComponent();
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);           
         }
-        
+        //limpiar limpiar tho
         private void limpiar()
         {
             txtrouter.Clear();
@@ -25,8 +28,12 @@ namespace MTtechapp
             txtCometarioip.Clear();
             txtrouter.Focus();
         }
-        public List<Cliente> lista_Cliente = new List<Cliente>();
-        conexion cx = new conexion();
+        public List<Cliente> lista_Cliente = new List<Cliente>(); //Lista de clientes
+        conexion cx = new conexion(); //Conexion a la base
+        /// <summary>
+        /// Carga lista de clientes con una consulta sql
+        /// </summary>
+        /// <returns></returns>
         private List<Cliente> CargaCombo()
         {
 
@@ -59,7 +66,9 @@ namespace MTtechapp
             finally { cx.Desconectar(); }
             return lista_Cliente;
         }
-
+        /// <summary>
+        /// Carga de combobox cliente
+        /// </summary>
         private void carga()
         {
             lista_Cliente.Clear();
@@ -95,11 +104,16 @@ namespace MTtechapp
                 }
                 else
                 {
-                    SqlCommand cmd = new SqlCommand("insert into Segmentacion values('" + txtrouter.Text + "','" + txtIp.Text + "','" + txtCometarioip.Text + "','" + cbCliente.SelectedValue + "')", cx.conn);
+                    SqlCommand cmd = new SqlCommand("dbo.spProcedureAgregarCliente", cx.conn);
+                    cmd.Parameters.AddWithValue("@router", txtrouter.Text);
+                    cmd.Parameters.AddWithValue("@ip",txtIp.Text);
+                    cmd.Parameters.AddWithValue("@cometario", txtCometarioip.Text);
+                    cmd.Parameters.AddWithValue("@idCliente", cbCliente.SelectedValue);
                     cx.Conectar();
-                    cmd.CommandType = CommandType.Text;
-                    int i = cmd.ExecuteNonQuery();
-                    if (i > 0)
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    int j;
+                    j = cmd.ExecuteNonQuery();                    
+                    if (j > 0)
                     {
                         MessageBox.Show("Datos guardados correctamente" , "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtrouter.Clear();
@@ -108,19 +122,20 @@ namespace MTtechapp
                         cbCliente.Refresh();
                         cmd.Dispose();
                     }
+                    else
+                    {
+                        MessageBox.Show("El registro ya existe");
+                    }
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Algo salio mal..." + ex);
             }
             finally
-            {
-                if (cx.conn.State == ConnectionState.Open)
-                {
+            {  
                     cx.Desconectar();
-                }
+
             }
 
         }        

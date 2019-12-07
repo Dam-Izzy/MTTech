@@ -15,7 +15,7 @@ namespace MTtechapp
 {
     public partial class FormMenuPrincipal : MaterialForm
     {
-        String usuario;
+        String usuario;// variable para usuario
         String contra;
         private readonly MaterialSkinManager materialSkinManager;
         public List<Cliente> lista_Clientes = new List<Cliente>();

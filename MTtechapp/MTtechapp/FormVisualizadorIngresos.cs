@@ -270,7 +270,7 @@ namespace MTtechapp
                         IdIngreso = Convert.ToInt32(item[0].ToString()),
                         Tipo = item[1].ToString(),
                         Descripcion = item[2].ToString(),
-                        Lugar = item[8].ToString(),
+                        Lugar = item[3].ToString(),
                         Monto = Convert.ToInt32(item[4].ToString()),
                         Fecha = Convert.ToDateTime(item[5]),
                         Estado = Convert.ToBoolean(item[6].ToString())
@@ -332,6 +332,7 @@ namespace MTtechapp
                 {
                     cnn.Conectar();
                     int o;
+                    SqlCommand consulta = new SqlCommand("SELECT hash, fecha from cierre WHERE fecha = '"+ DateTime.Now.ToShortDateString() + "' and hash = hash");
                     SqlCommand cmd = new SqlCommand("insert into cierre(hash, fecha) values('" + GetRandomString() + "','" + DateTime.Now.ToShortDateString() + "')", cnn.conn);
                     o = cmd.ExecuteNonQuery();
                     if (o > 0)

@@ -25,7 +25,7 @@ namespace MTtechapp
         {
             try
             {
-                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select G.idIngreso,G.tipo,G.descripcion,G.lugar,G.monto, G.fecha,M.idMunicipio,M.Nombre from Ingreso G inner join municipios M on(M.idMunicipio= G.lugar) where G.fecha=Getdate()", conn.cn);
+                OleDbDataAdapter adaptador = new OleDbDataAdapter("Select G.idIngreso,G.tipo,G.descripcion,G.lugar,G.monto, G.fecha,M.idMunicipio,M.Nombre from Ingreso G inner join municipios M on(M.idMunicipio= G.lugar) where G.fecha='"+ DateTime.Now.ToShortDateString() +"'", conn.cn);
                 DataSet ds = new DataSet();
                 DataTable tabla = new DataTable();
                 adaptador.Fill(ds);

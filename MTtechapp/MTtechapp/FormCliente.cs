@@ -12,7 +12,7 @@ namespace MTtechapp
     public partial class FormCliente : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-
+        //inicialización de componentes de d
         public FormCliente()
         {
             InitializeComponent();

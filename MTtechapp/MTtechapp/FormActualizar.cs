@@ -17,6 +17,11 @@ namespace MTtechapp
             materialSkinManager.AddFormToManage(this);            
         }
 
+        /// <summary>
+        /// carga de formulario
+        /// </summary>
+        /// <param name="sender">objeto de evento</param>
+        /// <param name="e">parametro de evento</param>
         private void FormActualizar_Load(object sender, EventArgs e)
         {
             //comboBox1.Items.Clear();
@@ -26,7 +31,10 @@ namespace MTtechapp
             ClassMetodos @class = new ClassMetodos();
             @class.autocompletarmunicipio(comboBox1);
         }
-        conexion conn = new conexion();
+        conexion conn = new conexion(); //objeto de base de datos
+        /// <summary>
+        /// actualización de datos de segmentación y cliente
+        /// </summary>
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             try
@@ -69,7 +77,9 @@ namespace MTtechapp
                 conn.Desconectar();
             }
         }
-
+        /// <summary>
+        /// Limpiar
+        /// </summary>
         private void limpiar()
         {
             txtnombre.Clear();
@@ -84,6 +94,10 @@ namespace MTtechapp
             
 
         }
+        /// <summary>
+        /// carga una lista estatica con una consulta
+        /// </summary>
+        /// <returns>retorna una lista</returns>
         public List<Municipio> Cargamunicipio()
         {
             try
@@ -112,6 +126,9 @@ namespace MTtechapp
             finally { conn.Desconectar(); }
             return FormMenuPrincipal.municipios;
         }
+        /// <summary>
+        /// carga un combobox
+        /// </summary>
         public void cargaMuni()
         {
             comboBox1.DataSource = null;
@@ -119,6 +136,9 @@ namespace MTtechapp
             comboBox1.ValueMember = "idMunicipio";
             comboBox1.DataSource = Cargamunicipio();
         }
+        /// <summary>
+        /// elimina un cliente con su segmentacion
+        /// </summary>
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             try
@@ -162,9 +182,10 @@ namespace MTtechapp
                 }
 
             }            
-        }
-        
-        
+        }        
+        /// <summary>
+        ///  abre un formulario y llama a una funcion
+        /// </summary>
         private void label1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             FormMenuPrincipal.municipios.Clear();

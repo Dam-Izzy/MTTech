@@ -2231,7 +2231,7 @@
             // columnHeader29
             // 
             this.columnHeader29.Text = "ID";
-            this.columnHeader29.Width = 42;
+            this.columnHeader29.Width = 57;
             // 
             // columnHeader30
             // 
