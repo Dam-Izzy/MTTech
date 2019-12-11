@@ -16,10 +16,13 @@ namespace MTtechapp
     public partial class FormMenuPrincipal : MaterialForm
     {
         String usuario;// variable para usuario
-        String contra;
+        String contra;// variable para
         private readonly MaterialSkinManager materialSkinManager;
+        //lista publica de clientes
         public List<Cliente> lista_Clientes = new List<Cliente>();
+        //lista estatica para municipios
         public static List<Municipio> municipios = new List<Municipio>();
+        //Constructor que inicializa funciones que se deben cargarse al iniciar sesión
         public FormMenuPrincipal(String usuario, String contra)
         {
             InitializeComponent();
@@ -34,15 +37,18 @@ namespace MTtechapp
             metodos.llenarCortes(lvCortes, lvTotal);
             autocompletar(txtbuscarid);
         }
+        //constructor vacio
         public FormMenuPrincipal()
         {
         }
+        //muestra formulario para agregar cliente
         private void txtagregar_Click(object sender, EventArgs e)
         {
             FormAgregar fa = new FormAgregar();
             fa.Show();
         }
-        conexion cnn = new conexion();
+        conexion cnn = new conexion();// se abre la conexión a la bd
+        //carga el listview de clientes que estan agregados y se muestran
         public void LlenarListView()
         {
             try
@@ -84,6 +90,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        //llenamos el listview de pagos que estan agregados y se muestran
         public void llenarPagos()
         {
             try
@@ -121,6 +128,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        //cargar el combobox con items en un arreglo con los equipos para agenda
         public void cargaEquipo()
         {
             var items = new[] {
@@ -130,6 +138,7 @@ namespace MTtechapp
             cbEquipo.ValueMember = "Value";
             cbEquipo.DataSource = items;
         }
+        //cargar el combobox con items en un arreglo para mostrar grafica y herramientas 
         public void cargaHerramientas()
         {
             var items = new[] {
@@ -141,7 +150,8 @@ namespace MTtechapp
             cbGrapic.DataSource = items;
         }
 
-        ClassMetodos metodos = new ClassMetodos();
+        ClassMetodos metodos = new ClassMetodos();//instancia de la clase de metodos
+        //metodo de carga de inicio de funciones que se deben de ejecutar al iniciar sesión
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
             FormPrincipal1 form = new FormPrincipal1();
@@ -156,7 +166,8 @@ namespace MTtechapp
             materialTabControl1.TabPages.Remove(tabPage3);
             Settings.Default.recordar = materialCheckBox2.Checked;
         }
-        public static double A = 0;
+        public static double A = 0; // variable decimal, para calculo de pagos
+        //funcion que itera los pagos en el listvew y muestra el total
         public void sumar()
         {
             foreach (ListViewItem I in lvPagos.Items)
@@ -165,6 +176,7 @@ namespace MTtechapp
                 lvTotal.Text = A.ToString();
             }
         }
+        //boton para buscar datos relacionados con un pago registrado
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -218,18 +230,19 @@ namespace MTtechapp
             }
 
         }
-
+        //boton que carga clientes en un combobox y muestra el formulario de pagos
         private void btnPago_Click(object sender, EventArgs e)
         {
             FormPago fp = new FormPago();
             fp.carga();
             fp.ShowDialog();
         }
-
+        //evento que llama a la funcion de sumar()
         private void materialLabel2_Click(object sender, EventArgs e)
         {
             sumar();
         }
+        //funcion que recive un textbox y muestra sugerencias de elecciones en el textbox
         public void autocompletar(TextBox text)
         {
             try
@@ -259,6 +272,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        //boton que tras escribir da sugerencias de clientes, o ejecutar en el programa un cierre, o cambiar comtraseña, o cerrar sesión
         private void btnBuscar11_Click(object sender, EventArgs e)
         {
             try
@@ -321,6 +335,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        //filtra clientes activos y por municipio
         private void RBactivos_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -364,6 +379,7 @@ namespace MTtechapp
             }
 
         }
+        //filtra clientes desactivados y por municipio
         private void RBdesacctivados_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -393,51 +409,12 @@ namespace MTtechapp
             }
             catch (Exception)
             {
-
                 throw;
             }
 
             cnn.Desconectar();
         }
-
-        private void cbmunicipios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.lvClientes.Items.Clear();
-            int selected = Convert.ToInt32(cbmunicipios.SelectedValue);
-            try
-            {
-                OleDbDataAdapter cmd = new OleDbDataAdapter("Select C.idCliente, C.NombreCompleto, C.telefono, C.direccion, S.router, S.ip,C.activo,S.comentario,M.Nombre,M.idMunicipio, S.idSegmentacion from Cliente C inner join Segmentacion S on(C.idCliente=S.IdCliente) inner join  municipios M on(M.idMunicipio=C.idMunicipio) where M.idMunicipio=" + selected + "", cnn.cn);
-                cnn.Conectar();
-                DataSet ds = new DataSet();
-                DataTable tabla = new DataTable();
-                cmd.Fill(ds);
-                tabla = ds.Tables[0];
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    DataRow filas = tabla.Rows[i];
-                    ListViewItem elementos = new ListViewItem(filas["idCliente"].ToString());
-                    elementos.SubItems.Add(filas["NombreCompleto"].ToString());
-                    elementos.SubItems.Add(filas["telefono"].ToString());
-                    elementos.SubItems.Add(filas["direccion"].ToString());
-                    elementos.SubItems.Add(filas["router"].ToString());
-                    elementos.SubItems.Add(filas["ip"].ToString());
-                    elementos.SubItems.Add(filas["comentario"].ToString());
-                    elementos.SubItems.Add(filas["activo"].ToString());
-                    elementos.SubItems.Add(filas["Nombre"].ToString());
-                    lvClientes.Items.Add(elementos);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Algo salio mal :(" + ex.Message);
-            }
-            finally
-            {
-                cnn.Desconectar();
-            }
-        }
-
+        //Muestra las mensualidades realizadas de clientes en un visualizador
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             try
@@ -458,14 +435,16 @@ namespace MTtechapp
 
             }
         }
-
+        // muestra el formulario de mensualidades
         private void btnMensualidad_Click(object sender, EventArgs e)
         {
             FormPagoMensualidad mensualidad = new FormPagoMensualidad();
             mensualidad.ShowDialog();
         }
-        public static List<ClaseInformeAgenda> lista = new List<ClaseInformeAgenda>();
 
+        //lista para informe de agenda
+        public static List<ClaseInformeAgenda> lista = new List<ClaseInformeAgenda>();
+        // funcion que agrega registros para agendar, dependiendo que tipo de agenda
         private void txtagenda_Click(object sender, EventArgs e)
         {
             try
@@ -548,6 +527,7 @@ namespace MTtechapp
                 llenarAgenda();
             }
         }//insertar agenda
+        // se encarga de obtener el nombre de clientes 
         public List<Cliente> CargaCombo()
         {
 
@@ -583,6 +563,7 @@ namespace MTtechapp
             finally { cnn.Desconectar(); }
             return lista_Clientes;
         }
+        // carga de municipio filtrado por el cliente
         public List<Municipio> Cargafiltro()
         {
 
@@ -616,8 +597,7 @@ namespace MTtechapp
             finally { cnn.Desconectar(); }
             return municipios;
         }
-
-
+        //carga municipios a una lista
         public List<Municipio> Cargamunicipio()
         {
             try
@@ -646,6 +626,7 @@ namespace MTtechapp
             finally { cnn.Desconectar(); }
             return municipios;
         }
+        //Carga clientes para un combobox 
         public void cargaCliente()
         {
             lista_Clientes.Clear();
@@ -654,6 +635,7 @@ namespace MTtechapp
             cbClienteAgenda.ValueMember = "idCliente";
             cbClienteAgenda.DataSource = CargaCombo();
         }
+        //carga combobox de municipio con el id del cliente
         public void cargafiltro()
         {
             municipios.Clear();
@@ -662,7 +644,7 @@ namespace MTtechapp
             cbLugarCliente.ValueMember = "idMunicipio";
             cbLugarCliente.DataSource = Cargafiltro();
         }
-
+        //metodo que carga municipios en un combobox
         public void cargaMuni()
         {
             municipios.Clear();
@@ -671,11 +653,7 @@ namespace MTtechapp
             cbLugarTorre.ValueMember = "idMunicipio";
             cbLugarTorre.DataSource = Cargamunicipio();
         }
-        private void cbLugar_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            municipios.Clear();
-            cargaMuni();
-        }
+        //evento que carga municipios en un combobox
         private void cbmunicipios_Click(object sender, EventArgs e)
         {
             municipios.Clear();
@@ -683,15 +661,9 @@ namespace MTtechapp
             cbmunicipios.ValueMember = "idmunicipio";
             cbmunicipios.DataSource = Cargamunicipio();
         }
-        private void materialRaisedButton3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void materialFlatButton1_Click(object sender, EventArgs e)
-        {
-
-        }
+        //entero que guarda el esquema del index
         private int colorSchemeIndex;
+        //cambia el esquema de colores de todos los controles
         private void materialTabSelector1_DoubleClick(object sender, EventArgs e)
         {
             colorSchemeIndex++;
@@ -710,15 +682,13 @@ namespace MTtechapp
                     break;
             }
         }
-        private void lbmas_Click(object sender, EventArgs e)
-        {
-
-        }
+        //limpia el campo usuario y contraseña del formulario de cambio de contraseña
         public void limpiard()
         {
             txtUsuario.Clear();
             txtpasss.Clear();
         }
+        //inserta usuarios en la base de datos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -749,7 +719,7 @@ namespace MTtechapp
                 Llenarlv();
             }
         }
-
+       //llena el listview de usuarios 
         public void Llenarlv()
         {
             try
@@ -778,6 +748,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
+        //carga el nivel de acceso en un combobox para los usuarios que se crearan
         public void carganivel()
         {
             var items = new[] {
@@ -787,6 +758,7 @@ namespace MTtechapp
             cbNivel.ValueMember = "Value";
             cbNivel.DataSource = items;
         }
+        //boton que actualiza datos de un usuario, y actualiza la lista
         private void btnActual_Click(object sender, EventArgs e)
         {
             string item = lvUsuarios.SelectedItems[0].SubItems[0].Text;
@@ -821,11 +793,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-        private void limpiar()
-        {
-            txtUsuario.Clear();
-            txtpasss.Clear();
-        }
+        //llena un listview con los datos de agenda, con una consulta
         private void llenarAgenda()
         {
             try
@@ -862,6 +830,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }//llenar agenda
+        //boton que se encarga de llamar al reporte, con los items seleccionados 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             CrearDoc();
@@ -870,52 +839,15 @@ namespace MTtechapp
             FormReporteAgenda formReporte = new FormReporteAgenda();
             formReporte.ShowDialog();
         }
-
-        private void cbLugar_MouseClick(object sender, MouseEventArgs e)
-        {
-            cargaMuni();
-        }
-
+        //label que muestra el formulario de municipios
         private void label2_Click(object sender, EventArgs e)
         {
             FormMunicipio municipio = new FormMunicipio();
             municipio.ShowDialog();
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            FormMunicipio usuarios = new FormMunicipio();
-            usuarios.btnActualizar.Visible = true;
-            usuarios.btnAgregar.Visible = false;
-            try
-            {
-                cnn.Conectar();
-                SqlCommand cmd = new SqlCommand("select idMunicipio, Nombre from municipios where idMunicipio= '" + cbLugarTorre.SelectedValue + "'", cnn.conn);
-                SqlDataReader lector = cmd.ExecuteReader();
-                while (lector.Read())
-                {
-                    usuarios.txtmunicipios.Text = lector[1].ToString();
-                    usuarios.lbid.Text = lector[0].ToString();
-                    usuarios.ShowDialog();
-                }
-                lector.Close();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            finally
-            {
-                cnn.Desconectar();
-            }
-        }
+        //lista estatica de la clase del informe de agenda
         public static List<ClaseInformeAgenda> Instalaciones = new List<ClaseInformeAgenda>();
+        //prueba de carga de seleccionados de instalaciones
         public List<ClaseInformeAgenda> CargarSeleccionadosIns()
         {
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
@@ -950,6 +882,7 @@ namespace MTtechapp
             }
             return Instalaciones;
         }
+        //funcion que carga los elementos seleccionados de un listview y los guarda en una lista
         public List<ClaseInformeAgenda> CargarSeleccionados()
         {
             foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
@@ -983,6 +916,7 @@ namespace MTtechapp
             }
             return lista;
         }
+        //Crea un txt con los elementos seleccionados en el listview de agenda
         private void CrearDoc()
         {
             try
@@ -1025,19 +959,19 @@ namespace MTtechapp
             }
 
         }
-
+        //prueba de carga para el combobox equipo
         private void cbEquipo_MouseClick(object sender, MouseEventArgs e)
         {
             //cargadefault();
         }
-
+        //boton que abre el modal de impresión de tickets
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Formticked t = new Formticked(lvPagos);
             t.ShowDialog();
 
         }
-
+        //prueba de tool
         private void tooleditar_Click(object sender, EventArgs e)
         {
             //FormAgregar fag = new FormAgregar();
@@ -1045,27 +979,29 @@ namespace MTtechapp
             //MessageBox.Show(idCl);
 
         }
-      
+        //boton que busca a un usuario, llamando a un metodo que recibe por parametro un textbox y un listview
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             metodos.BuscarUsuario(materialSingleLineTextField2.Text, lvUsuarios);
         }
-
+        //boton que envia parametros para la busqueda de un elemento de agenda
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             metodos.BuscarAgenda(txtagen.Text, lvAgenda);
         }
+        //boton que muestra el formulario de mensajes
         private void btncalc_Click(object sender, EventArgs e)
         {
             FormMensaje cal = new FormMensaje();
             cal.ShowDialog();
         }
+        //evento que consulta un pago y obtiene los datos
         private void lvPagos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ClassMetodos metodos = new ClassMetodos();
             metodos.clickpagos(lvPagos);
         }
-
+        //evento que carga los datos del item seleccionado para mostrarlos
         private void lvUsuarios_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -1093,6 +1029,7 @@ namespace MTtechapp
                 MessageBox.Show("Error, " + ex.Message);
             }
         }
+        //limpia campos correspondientes a agenda/torre
         private void LimpiarTorre()
         {
             txtid.ResetText();
@@ -1104,6 +1041,7 @@ namespace MTtechapp
             chbtoo.Checked = false;
             cbtorre.Refresh();
         }
+        //limpia campos correspondientes a agenda/cliente
         private void LimpiarCliente()
         {
             txtid.ResetText();
@@ -1115,6 +1053,7 @@ namespace MTtechapp
             cbrealizado.Checked = false;
             cbprioriC.Refresh();
         }
+        //limpia campos correspondientes a agenda/otro
         private void LimpiarOtro()
         {
             txtid.ResetText();
@@ -1127,11 +1066,12 @@ namespace MTtechapp
             cbprioriGlobal.Refresh();
 
         }
-
+        /*Evento doble click que carga dependiendo de que tipo de registro (torre, cliente, fichas, socio, otro) que este
+         *seleccionado y lo carga dependiendo que campos el registro tenga 
+        */
         private void lvAgenda_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int id = Convert.ToInt32(lvAgenda.SelectedItems[0].SubItems[6].Text);
-            MessageBox.Show("Esto sale-> " + id);
             try
             {
                 cnn.Conectar();
@@ -1278,7 +1218,7 @@ namespace MTtechapp
                 MessageBox.Show("Error, " + ex.Message);
             }
         }//Carga agenda------
-
+        //actualización de agenda
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtid.Text);
@@ -1352,7 +1292,7 @@ namespace MTtechapp
 
                 Mientras cambien a tal
                 guardar valores
-                    commit
+                    chequeo
                     Ejecutar update
              */
             /*Si este registro pertenece a tal categoria se debe tratar como tal, pero al cambiar el tipo de registro cambia los objetos de registro
@@ -1432,7 +1372,7 @@ namespace MTtechapp
                 llenarAgenda();
             }
         }//Actulizar agenda
-
+        //limpia campos del formulario de agenda
         private void limpiarAgenda()
         {
             txtdescripcion1.Clear();
@@ -1442,7 +1382,7 @@ namespace MTtechapp
             cargaEquipo();
             txtDiag.Clear();
         }
-
+        //evento que elimina un registro de agenda
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
             try
@@ -1485,6 +1425,7 @@ namespace MTtechapp
                 llenarAgenda();
             }
         }
+        //cambia el esquema de colores de los controles a modo obscuro
         private void materialCheckBox2_CheckedChanged_1(object sender, EventArgs e)
         {
             if (materialCheckBox2.Checked == true)
@@ -1502,7 +1443,7 @@ namespace MTtechapp
                 Settings.Default.Upgrade();
             }
         }
-
+        //evento de seleccion de elementos del combobox para mostrar o la grafica o el formulario de herramienta
         private void cbGrapic_MouseClick(object sender, EventArgs e)
         {
             if (cbGrapic.SelectedValue.Equals("1"))
@@ -1516,6 +1457,7 @@ namespace MTtechapp
                 herramienta.Show();
             }
         }
+        //evento para buscar por fecha un registro en agenda
         private void dtpBuscaragenda_CloseUp(object sender, EventArgs e)
         {
             lvAgenda.Items.Clear();
@@ -1538,7 +1480,7 @@ namespace MTtechapp
 
             }
         }
-
+        //evento para buscar por fecha un registro en pagos
         private void DtpVentas_CloseUp(object sender, EventArgs e)
         {
             try
@@ -1582,7 +1524,7 @@ namespace MTtechapp
                 MessageBox.Show("Error");
             }
         }
-
+        //evento que carga los datos del cliente seleccionado a un formulario, para que se editen
         private void lvClientes_DoubleClick(object sender, MouseEventArgs e)
         {
             FormActualizar fag = new FormActualizar();
@@ -1644,7 +1586,7 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-
+        //recarga elementos del listview de clientes
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             LlenarListView();
@@ -1678,10 +1620,12 @@ namespace MTtechapp
                 MessageBox.Show("Error \n" + ex);
             }
         }
+        // evento click para recargar los pagos registrados
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
             llenarPagos();
         }
+        //boton que busca cortes de clientes registrados
         private void materialRaisedButton5_Click(object sender, EventArgs e)
         {
             try
@@ -1715,12 +1659,13 @@ namespace MTtechapp
                 cnn.Desconectar();
             }
         }
-
+        //boton para mostrar el formulario de ingresos
         private void materialRaisedButton6_Click(object sender, EventArgs e)
         {
             FormIngresos ingresos = new FormIngresos();
             ingresos.ShowDialog();
         }
+        //evento que se ejecuta al ingresar la tecla enter en el textbox de busqueday da un click en el boton
         private void Txtbuscarid_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -1728,7 +1673,8 @@ namespace MTtechapp
                 btnBuscar11.PerformClick();
             }
         }
-        FormPagoMensualidad pago = new FormPagoMensualidad();
+        FormPagoMensualidad pago = new FormPagoMensualidad();// instancia de un formulario
+        //Se encarga de cargar un cliente de forma automatica con solo dar un click en mensualidad, basicamente carga los datos del cliente en el formulario de mensualidad
         public void llenarComboCliente()
         {
             string idCl = this.lvClientes.SelectedItems[0].SubItems[0].Text;
@@ -1774,14 +1720,14 @@ namespace MTtechapp
                 MessageBox.Show("Algo salio mal \n"+e);
             }
             }
-        public bool test = false;
-
+        public bool test = false;// pruebas
+        //llena los campos de mensualidad de un cliente
         private void MensualidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             llenarComboCliente();
             test = true;
         }
-
+        // recoloca y esconde botones cuando se cancela la accion de cancelar una actualización
         private void Btncancelar_Click(object sender, EventArgs e)
         {
             cbLugarTorre.Refresh();
@@ -1798,20 +1744,12 @@ namespace MTtechapp
             txtind.Clear();
         }
 
-       
+       //carga municipios para fromulario de torre
         private void CbLugarTorre_MouseClick(object sender, MouseEventArgs e)
         {
             cargaMuni();
         }
-        private void CbLugarGlobla_MouseClick(object sender, MouseEventArgs e)
-        {
-            cargaMuni();
-        }
-        private void CbLugarCliente_MouseClick(object sender, MouseEventArgs e)
-        {
-            cargaMuni();
-        }
-
+        //carga los datos para el reporte de mensualidades globales, cuando se selecciona el municipio y filtra en el listview los que pertenecen a esa localidad
         private void Cbmunicipios_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cnn.Conectar();
@@ -1837,6 +1775,7 @@ namespace MTtechapp
                 lvClientes.Items.Add(elementos);
             }
         }
+        //carga los clientes registrados y los muestra en el formulario de agenda en su combobox correspondiente
         private void CbClienteAgenda_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cbLugarCliente.Items.Count == 0)
@@ -1851,12 +1790,12 @@ namespace MTtechapp
                 cargafiltro();
             }
         }
-
+        //llama a cargar los registros de clientes en el combobox
         private void CbClienteAgenda_Click(object sender, EventArgs e)
         {
             cargaCliente();
         }   
-
+        //combobox principal de agenda que filtra los registros de agenda, oculta o muestra los formularios correspondientes de cada categoria
         private void ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (comboBox1.Text.Equals("Torre"))
@@ -1882,7 +1821,11 @@ namespace MTtechapp
                 gbglobal.Location = new System.Drawing.Point(25, 106);
             }
         }
-
+        /// <summary>
+        /// insertar si un item se a realizado, pero aun le falta....
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cbrealizado_CheckStateChanged(object sender, EventArgs e)
         {
             try

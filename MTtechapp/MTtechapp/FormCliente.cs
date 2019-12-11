@@ -12,7 +12,7 @@ namespace MTtechapp
     public partial class FormCliente : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-        //inicialización de componentes de d
+        //inicialización de componentes de formulario
         public FormCliente()
         {
             InitializeComponent();
@@ -22,8 +22,9 @@ namespace MTtechapp
             @class.autocompletarmunicipio(comboBox1);
         }
 
-        conexion cx = new conexion();
-        public List<Municipio> ListaMun = new List<Municipio>();
+        conexion cx = new conexion();//Conexion de bd
+        public List<Municipio> ListaMun = new List<Municipio>();//lista de municipios
+        //funcion para carga de un combobox que devuelve una lista con los resultados
         public List<Municipio> Cargamun()
         {
             try
@@ -52,12 +53,14 @@ namespace MTtechapp
             finally { cx.Desconectar(); }
             return ListaMun;
         }
+        //los datos devueltos en la funcion de Cargamun se muestran en el combo
         public void cargamun()
         { 
             comboBox1.DisplayMember = "Nombre";
             comboBox1.ValueMember = "idMunicipio";
             comboBox1.DataSource = Cargamun();
         }
+        //limpiar
         public void limpiar()
         {
             txtnombre.Clear();
@@ -66,37 +69,18 @@ namespace MTtechapp
             txtcomentario.Clear();
             cbActivo.Checked = false;
         }
-
-        private void comboBox1_Click(object sender, EventArgs e)
-        {
-            comboBox1.Refresh();
-            cargamun();
-        }
-
-        private void lvAgregar_Click(object sender, EventArgs e)
-        {
-            FormMunicipio municipio = new FormMunicipio();
-            cargamun();
-            municipio.ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            int var = Convert.ToInt32(comboBox1.ValueMember);
-
-        }
-
+        //solo muestra un formulario
         private void label1_Click(object sender, EventArgs e)
         {
             FormMunicipio mun = new FormMunicipio();
             mun.ShowDialog();
         }
-
+        //ejecuta la carga de datos para el combobox de municipios
         private void comboBox1_MouseClick(object sender, MouseEventArgs e)
         {
             cargamun();
         }
-
+        ///Guarda un cliente, basicamente esto es una instrucción para ingresar un cliente en la base de datos
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             try
@@ -148,7 +132,9 @@ namespace MTtechapp
             //    MessageBox.Show(cmd.ExecuteScalar());
             //}
         }
-
+        /// <summary>
+        /// Actualiza un cliente 
+        /// </summary>
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {            
             try
@@ -186,7 +172,7 @@ namespace MTtechapp
                 cx.Desconectar();
             }
         }
-
+        //actualiza los items de un combobox de municipios
         private void PictureBox3_Click(object sender, EventArgs e)
         {
             ListaMun.Clear();

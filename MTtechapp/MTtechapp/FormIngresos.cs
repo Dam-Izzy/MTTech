@@ -12,7 +12,7 @@ namespace MTtechapp
     public partial class FormIngresos : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-
+        //inicializador de formulario
         public FormIngresos()
         {
             materialSkinManager = MaterialSkinManager.Instance;
@@ -20,7 +20,8 @@ namespace MTtechapp
             InitializeComponent();
             CargaRegistros();
         }
-        conexion conn = new conexion();
+        conexion conn = new conexion();//conexión a base de datos
+        //poblado de listvew con una consulta de ingresos
         public void CargaRegistros()
         {
             try
@@ -51,6 +52,7 @@ namespace MTtechapp
                 conn.Desconectar();
             }
         }
+        //boton para agregar un ingreso a la base de datos
         private void btnAgregarIng_Click(object sender, EventArgs e)
         {
             try
@@ -88,11 +90,13 @@ namespace MTtechapp
                 CargaRegistros();
             }
         }
+        //carga combobox de municipios
         private void FormIngresos_Load(object sender, EventArgs e)
         {
             FormMenuPrincipal.municipios.Clear();
             cargaMuni();
         }
+        //carga la lista para mostrar en un combobox
         public List<Municipio> Cargamunicipio()
         {
             try
@@ -121,6 +125,7 @@ namespace MTtechapp
             finally { conn.Desconectar(); }
             return FormMenuPrincipal.municipios;
         }
+        //Asignación de fuente de datos para un combobox
         public void cargaMuni()
         {
                 cbLocalidad.DataSource = null;
@@ -128,7 +133,7 @@ namespace MTtechapp
                 cbLocalidad.ValueMember = "idMunicipio";
                 cbLocalidad.DataSource = Cargamunicipio();
         }
-
+        //display para formulario con datos de actualización
         private void materialListView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -178,7 +183,7 @@ namespace MTtechapp
                 MessageBox.Show("Error, " + ex.Message);
             }
         }
-
+        //Actualización de un ingreso 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -227,7 +232,7 @@ namespace MTtechapp
                 CheckEstado.Checked = false;
             }
         }
-
+        //muestra el visualizador de impresión de repote de ingresos
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
             try
@@ -248,7 +253,7 @@ namespace MTtechapp
                 conn.Desconectar();
             }            
         }
-
+        //filtra los ingresos por fecha que el usuario necesite, y muestra los registros con la fecha que se ingrese
         private void btnfiltrar_Click(object sender, EventArgs e)
         {
             try
@@ -279,24 +284,25 @@ namespace MTtechapp
                 conn.Desconectar();
             }
         }
-
+        //evento que actualiza registros de ingresos
         private void pictureBox5_Click(object sender, EventArgs e)
         {            
-            CargaRegistros();
+            CargaRegistros();//funcion de ingresos
         }
-
+        //muestra formulario para el ingreso de municipios
         private void label2_Click(object sender, EventArgs e)
         {
             FormMunicipio municipio = new FormMunicipio();
             municipio.ShowDialog();
         }
-
+        //se encarga de borrar un ingreso seleccionado
         private void Btndel_Click(object sender, EventArgs e)
         {
             var ingreso = Convert.ToInt32(materialListView1.SelectedItems[0].SubItems[0].Text.ToString());
             BorrarIngreso(ingreso);
 
         }
+        //funcion que borra un ingreso
         public void BorrarIngreso(int lb)
         {
             try
@@ -334,7 +340,7 @@ namespace MTtechapp
                 txtmonto.Clear();
             }
         }
-
+        //Cancela la actualización de un ingreso y muestra u oculta botones para el usuario
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             btnCancelar.Visible = false;

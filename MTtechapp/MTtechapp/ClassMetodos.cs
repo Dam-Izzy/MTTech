@@ -10,7 +10,7 @@ namespace MTtechapp
     {
         conexion cnn = new conexion();
         /// <summary>
-        /// Busca un usuario
+        /// Busca un usuario con un textbox y un listview
         /// </summary>
         /// <param name="cadena">cadena de busqueda</param>
         /// <param name="lv">listview de salida</param>
@@ -134,9 +134,9 @@ namespace MTtechapp
             }
         }
         /// <summary>
-        /// carga un pago
+        /// muestra los pagos registrados de clientes en un listview
         /// </summary>
-        /// <param name="lv">listview de carga de datos</param>
+        /// <param name="lv">listview para mostrar datos</param>
         public void clickpagos(ListView lv)
         {
             string item = lv.SelectedItems[0].SubItems[8].Text;

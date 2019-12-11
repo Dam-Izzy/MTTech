@@ -9,6 +9,7 @@ namespace MTtechapp
 {
     public partial class FormGraphicClientes : Form
     {
+        //inicio de formulario
         public FormGraphicClientes()
         {
             InitializeComponent();
@@ -16,8 +17,8 @@ namespace MTtechapp
             Llenarpagos();
 
         }
-        conexion con = new conexion();
-       
+        conexion con = new conexion();//conexión a db!
+       //se encarga de poblar la grafica con una consulta 
          public void Llenargrafica()
         {
             try
@@ -61,7 +62,7 @@ namespace MTtechapp
             //    s1.Label = dr.GetString(2).ToString();
             //}
         }
-
+        //se encarga de poblar la grafica con una consulta con unas fechas dadas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             foreach (var item in chart1.Series)
@@ -104,6 +105,7 @@ namespace MTtechapp
                 listView1.Items.Add(elementos);
             }
         }
+        //contabiliza los municipios y calcula los ingresos de cada uno de ellos y lo muestra
         public void Llenarpagos()
         {
             try

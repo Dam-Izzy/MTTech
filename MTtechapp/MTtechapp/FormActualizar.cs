@@ -184,7 +184,7 @@ namespace MTtechapp
             }            
         }        
         /// <summary>
-        ///  abre un formulario y llama a una funcion
+        ///  abre un formulario y llama a una funcion de autocompletado
         /// </summary>
         private void label1_MouseDoubleClick(object sender, MouseEventArgs e)
         {

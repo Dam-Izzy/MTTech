@@ -14,8 +14,10 @@ namespace MTtechapp
         {
             InitializeComponent();
         }
-        conexion cnn = new conexion();
+        conexion cnn = new conexion();// conexión a bd
+        //lista de clientes
         public List<Cliente> lista_Cliente = new List<Cliente>();
+        //Carga un combobox con los nombres de un cliente
         public void carga()
         {
             lista_Cliente.Clear();
@@ -24,6 +26,7 @@ namespace MTtechapp
             cbclientem.ValueMember = "idCliente";
             cbclientem.DataSource = CargaCombo();
         }
+        //aqui se carga la lista con una consulta la cual debuelve tuplas con datos para la iteración
         public List<Cliente> CargaCombo()
         {
             try
@@ -55,7 +58,7 @@ namespace MTtechapp
             finally { cnn.Desconectar(); }
             return lista_Cliente;
         }
-
+        //api de whatsapp, manda un mensaje de prueba para los clientes que esten registrados 
         private void materialRaisedButton1_Click_1(object sender, EventArgs e)
         {
             const string accountSid = "AC46161011010dec31c96b0d928901bb93";
@@ -76,10 +79,12 @@ namespace MTtechapp
             }
             
         }        
+        //carga combo box con clientes
         private void FormMensaje_Load(object sender, EventArgs e)
         {
             carga();
         }
+        //muestra en un campo el numero del cliente que se selecciono.
         private void cbclientem_Click(object sender, EventArgs e)
         {
             if (cbclientem.Items != null)

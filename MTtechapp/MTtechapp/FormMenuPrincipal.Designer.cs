@@ -663,7 +663,7 @@
             this.btncalc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btncalc.Depth = 0;
             this.btncalc.Icon = null;
-            this.btncalc.Location = new System.Drawing.Point(373, 26);
+            this.btncalc.Location = new System.Drawing.Point(373, 23);
             this.btncalc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btncalc.MouseState = MaterialSkin.MouseState.HOVER;
             this.btncalc.Name = "btncalc";

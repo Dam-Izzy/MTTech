@@ -12,7 +12,11 @@ namespace MTtechapp
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Esto fue una prueba de inventarios, con una con conexión a la api de mikrotik
+        /// la cual funciono, pero no se realizo mas...
+        /// </summary>
+        
         private void materialSingleLineTextField1_Leave(object sender, EventArgs e)
         {
             TextBox myText = new TextBox();
