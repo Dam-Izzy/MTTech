@@ -11,20 +11,22 @@ namespace MTtechapp
     public partial class FormMunicipio : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-
+        //inicializador de componentes
         public FormMunicipio()
         {
             InitializeComponent();
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
         }
-
+        //evento de carga de inicio de formulario, que llama a una funcion de poblado de datos
         private void FormMunicipio_Load(object sender, EventArgs e)
         {
             materialRaisedButton1.Visible = false;
             Llenar();
         }
-        conexion conn = new conexion();
+
+        conexion conn = new conexion();//instancia de base de datos 
+        //boton que agrega un municipio a la base de datos 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -55,6 +57,7 @@ namespace MTtechapp
             }
 
         }
+        //carga la lista de municipios para llenar un combobox
         public void Llenar()
         {
             try
@@ -83,7 +86,7 @@ namespace MTtechapp
                 conn.Desconectar();
             }
         }
-
+        //Actualiza el nombre de un municipio seleccionado 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -117,7 +120,7 @@ namespace MTtechapp
                 Llenar();
             }
         }
-
+        //carga el elemento al que se le dio doble click
         private void lvmun_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -147,7 +150,7 @@ namespace MTtechapp
                 MessageBox.Show("Error, " + ex.Message);
             }
         }
-
+        //boton que elimina un municipio, esta funcion falla si el munipio ya tiene asignado a algun cliente 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             try
@@ -168,7 +171,8 @@ namespace MTtechapp
                     }
                     else
                     {
-                        MessageBox.Show("El municipio no fue eliminado por alguna razón misteriosa. ;_;");
+                        MessageBox.Show("El municipio no fue eliminado por alguna razón misteriosa. ;_; \n" +
+                            "debes borrar los clientes de este municipio");
                     }
                 }
             }
@@ -178,7 +182,7 @@ namespace MTtechapp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error ;_; -" + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debes borrar los clientes de este municipio -" + ex.Message, "MTtech", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

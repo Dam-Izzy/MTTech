@@ -19,7 +19,7 @@ namespace MTtechapp
         public String prioridad { get; set; }
         public String tipo { get; set; }
         public String Tel { get; set; }
-        public float pago { get; set; }
+        public int pago { get; set; }
     }
 
 }

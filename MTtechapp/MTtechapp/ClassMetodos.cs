@@ -10,7 +10,7 @@ namespace MTtechapp
     {
         conexion cnn = new conexion();
         /// <summary>
-        /// Busca un usuario con un textbox y un listview
+        /// Busca un usuario con un textbox y lo muestra en un listview
         /// </summary>
         /// <param name="cadena">cadena de busqueda</param>
         /// <param name="lv">listview de salida</param>
@@ -61,7 +61,7 @@ namespace MTtechapp
         }
 
         /// <summary>
-        /// busca un pago
+        /// busca un pago por fecha
         /// </summary>
         /// <param name="lv">listview de salida</param>
         /// <param name="dtp">fecha de entrada</param>

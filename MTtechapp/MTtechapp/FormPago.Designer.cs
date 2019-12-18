@@ -354,7 +354,7 @@
             this.btnActualizarpago.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnActualizarpago.Depth = 0;
             this.btnActualizarpago.Icon = null;
-            this.btnActualizarpago.Location = new System.Drawing.Point(964, 82);
+            this.btnActualizarpago.Location = new System.Drawing.Point(964, 75);
             this.btnActualizarpago.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnActualizarpago.Name = "btnActualizarpago";
             this.btnActualizarpago.Primary = true;

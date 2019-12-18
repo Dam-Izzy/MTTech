@@ -990,14 +990,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13436928">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTtechapp.exe" size="13434368">
       <assemblyIdentity name="MTtechapp" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>54SDtS2s2kU7jVBSLHhK5DFsCigWE5limerAGZByw5U=</dsig:DigestValue>
+        <dsig:DigestValue>eGz+Z3wO7bzjqc6FIaOFwtO2+glkHVrwzG4M9WhyWJE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

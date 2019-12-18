@@ -13,6 +13,7 @@ namespace MTtechapp
     public partial class FormPago : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
+        //inicialización de componentes
         public FormPago()
         {
             InitializeComponent();
@@ -20,11 +21,11 @@ namespace MTtechapp
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             ClassMetodos @class = new ClassMetodos();
-            @class.autocompletarcombo(cmbCliente);
+            @class.autocompletarcombo(cmbCliente);//autocomplteta combo de clientes
         }
-        public List<Cliente> ListaCliente = new List<Cliente>();
-        conexion cone = new conexion();
-       
+        public List<Cliente> ListaCliente = new List<Cliente>();//lista publica de clientes
+        conexion cone = new conexion();// abre conexión a base de datos
+       //carga lista para items de combobox
         public List<Cliente> CargaCombo()
         {
             List<Cliente> lista_Clientes = new List<Cliente>();
@@ -57,13 +58,14 @@ namespace MTtechapp
             finally { cone.Desconectar(); }
             return lista_Clientes;
         }
+        //carga combobox de cliente
         public void carga()
         {
             cmbCliente.DisplayMember = "NombreCompleto";
             cmbCliente.ValueMember = "idCliente";
             cmbCliente.DataSource = CargaCombo();
         }
-
+        //boton que agrega un pago en la base de datos
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             try
@@ -75,6 +77,7 @@ namespace MTtechapp
                 cmd.Parameters.AddWithValue("@precio", double.Parse(txtPrecio.Text));
                 cmd.Parameters.AddWithValue("@fechaPago", theDate);
                 cmd.Parameters.AddWithValue("@cantidad", int.Parse(txtcantidad.Text));
+                cmd.Parameters.AddWithValue("@Fk_pagoCliente", cmbCliente.SelectedValue);
                 cone.Conectar();
                 cmd.CommandType = CommandType.StoredProcedure;
                 int j;
@@ -82,7 +85,7 @@ namespace MTtechapp
                 if (j>0)
                 {
                     MessageBox.Show("Guardado");
-                    LvPagos.Clear();
+                    //LvPagos.Clear();
                     llenarpago();
                     limpiar();
                     LvPagos.Refresh();
@@ -97,11 +100,12 @@ namespace MTtechapp
                 MessageBox.Show("Algo salio mal ;_;"  + ext.Message);
             }            
         }
+        //evento load de para cargar registros 
         private void FormPago_Load(object sender, EventArgs e)
         {
-            
             llenarpago();
         }
+        //llena el listview con una consulta
         public void llenarpago()
         {
             OleDbDataAdapter adaptador = new OleDbDataAdapter("SELECT P.idPago,C.NombreCompleto,P.nombreArticulo,P.fechaPago,C.comentario,P.Precio,P.cantidad,P.cantidad* P.Precio as total,C.idCliente,PS.idCliente AS cliente,PS.idPago, PS.idPagos FROM Pagos PS INNER JOIN Cliente C ON (PS.idCliente = C.idCliente)INNER JOIN pago P ON (P.idPago=PS.idPago)", cone.cn);
@@ -124,12 +128,13 @@ namespace MTtechapp
                 LvPagos.Items.Add(elementos);
             }
         }
+        //limpia formulario
         private void limpiar()
         {
             txtArticulo.Clear();
             txtPrecio.Clear();
-
         }
+        //genera un reporte con los campos 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             if (cmbCliente.SelectedIndex.Equals(-1) || String.IsNullOrEmpty(txtArticulo.Text) || String.IsNullOrEmpty(txtPrecio.Text))

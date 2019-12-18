@@ -900,9 +900,10 @@ namespace MTtechapp
                 {
                     while (dr.Read())
                 {
+
                         informeAgenda.domicilio = dr.GetString(1);
                         informeAgenda.Tel = dr.GetString(2);
-                        informeAgenda.pago = dr.GetFloat(3);
+                        informeAgenda.pago = dr.GetInt32(3);
                     }
                 }
                 informeAgenda.cliente = item.SubItems[0].Text.ToString();
@@ -1102,18 +1103,22 @@ namespace MTtechapp
                         txtdiagnostico.Text = dr[2].ToString();//diagnostico
                         chbtoo.Checked = dr.GetBoolean(9);
                         cbtorre.Text = dr.GetString(11);
+                        dr.Close();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
                         }
                         if (dataset.Tables[0].Rows.Count > 0)
                         {
+                            cbLugarTorre.DataSource = null;
                             cbLugarTorre.DataSource = dataset.Tables[0];
                             cbLugarTorre.DisplayMember = "Nombre";
                             cbLugarTorre.ValueMember = "idMunicipio";
                         }
-                        dr.Close();
-
+                        else
+                        {
+                            dr.Close();
+                        }
                     }
                     else if (dr.GetString(12).Equals("Cliente"))
                     {
@@ -1130,12 +1135,13 @@ namespace MTtechapp
                         cbEquipo.Text = dr.GetString(3);//combo tipo                   1
                         txtdescripcion1.Text = dr.GetString(5);//Descri                2
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda               3
-                        cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar  4
+                        //cbLugarCliente.SelectedValue = dr[6].ToString();//combo lugar  4
                         txtind.Text = dr[10].ToString();//indicaciones                 5
                         txtid.Text = dr.GetInt32(0).ToString();//ID ID                 6
                         txtDiag.Text = dr[2].ToString();//diagnostico                  7
                         cbrealizado.Checked = dr.GetBoolean(9);//check realizado       8
                         cbprioriC.Text = dr.GetString(11);//combo nivel                9
+                        dr.Close();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
@@ -1148,10 +1154,9 @@ namespace MTtechapp
                             cbClienteAgenda.DataSource = dataset.Tables[0];
                             cbClienteAgenda.DisplayMember = "NombreCompleto";
                             cbClienteAgenda.ValueMember = "idCliente";
-                        }
-                        dr.Close();
+                        }                       
+                            dr.Close();                       
                     }
-
                     else if (dr.GetString(12).Equals("otro")|| dr.GetString(12).Equals("fichas")|| dr.GetString(12).Equals("Socio"))
                     {
                         LimpiarTorre();
@@ -1172,17 +1177,21 @@ namespace MTtechapp
                         txtotrodiag.Text = dr[2].ToString();//diagnostico 
                         cbotro.Checked = dr.GetBoolean(9);//check realizado
                         cbprioriGlobal.Text = dr.GetString(11);//combo nivel
+                        dr.Close();
                         using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
                         {
                             da.Fill(dataset);
                         }
                         if (dataset.Tables[0].Rows.Count > 0)
-                        {                            
+                        {
+                            cbLugarGlobla.DataSource = null;
                             cbLugarGlobla.DataSource = dataset.Tables[0];
                             cbLugarGlobla.DisplayMember = "Nombre";
                             cbLugarGlobla.ValueMember = "idMunicipio";
-                        }
-                        dr.Close();
+                        }else
+                        {
+                            dr.Close();
+                        }                        
                     }
                 }
                 //using (SqlDataAdapter da = new SqlDataAdapter(sql, cnn.conn))
