@@ -284,7 +284,7 @@
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1482, 470);
+            this.materialTabControl1.Size = new System.Drawing.Size(1375, 470);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -307,7 +307,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1474, 444);
+            this.tabPage1.Size = new System.Drawing.Size(1367, 444);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             // 
@@ -343,7 +343,7 @@
             this.lvClientes.Name = "lvClientes";
             this.lvClientes.OwnerDraw = true;
             this.lvClientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lvClientes.Size = new System.Drawing.Size(1438, 373);
+            this.lvClientes.Size = new System.Drawing.Size(1331, 373);
             this.lvClientes.TabIndex = 25;
             this.lvClientes.UseCompatibleStateImageBehavior = false;
             this.lvClientes.View = System.Windows.Forms.View.Details;
@@ -424,7 +424,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(1216, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(0, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
@@ -470,7 +470,7 @@
             this.cbGrapic.FormattingEnabled = true;
             this.cbGrapic.Location = new System.Drawing.Point(830, 23);
             this.cbGrapic.Name = "cbGrapic";
-            this.cbGrapic.Size = new System.Drawing.Size(214, 21);
+            this.cbGrapic.Size = new System.Drawing.Size(107, 21);
             this.cbGrapic.TabIndex = 17;
             this.cbGrapic.SelectionChangeCommitted += new System.EventHandler(this.cbGrapic_MouseClick);
             // 
@@ -494,7 +494,7 @@
             this.txtbuscarid.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtbuscarid.Location = new System.Drawing.Point(6, 24);
             this.txtbuscarid.Name = "txtbuscarid";
-            this.txtbuscarid.Size = new System.Drawing.Size(221, 20);
+            this.txtbuscarid.Size = new System.Drawing.Size(114, 20);
             this.txtbuscarid.TabIndex = 14;
             this.txtbuscarid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtbuscarid_KeyPress_1);
             // 
@@ -540,7 +540,7 @@
             this.cbmunicipios.FormattingEnabled = true;
             this.cbmunicipios.Location = new System.Drawing.Point(465, 21);
             this.cbmunicipios.Name = "cbmunicipios";
-            this.cbmunicipios.Size = new System.Drawing.Size(193, 21);
+            this.cbmunicipios.Size = new System.Drawing.Size(86, 21);
             this.cbmunicipios.TabIndex = 11;
             this.cbmunicipios.SelectionChangeCommitted += new System.EventHandler(this.Cbmunicipios_SelectionChangeCommitted);
             this.cbmunicipios.Click += new System.EventHandler(this.cbmunicipios_Click);
@@ -1108,7 +1108,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1474, 444);
+            this.tabPage4.Size = new System.Drawing.Size(1367, 444);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Agenda";
             // 
@@ -1753,7 +1753,6 @@
             this.cbLugarTorre.Name = "cbLugarTorre";
             this.cbLugarTorre.Size = new System.Drawing.Size(348, 21);
             this.cbLugarTorre.TabIndex = 31;
-            this.cbLugarTorre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CbLugarTorre_MouseClick);
             // 
             // lblugar
             // 
@@ -1816,7 +1815,7 @@
             "Instalacion"});
             this.comboBox1.Location = new System.Drawing.Point(25, 40);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(364, 21);
+            this.comboBox1.Size = new System.Drawing.Size(257, 21);
             this.comboBox1.TabIndex = 73;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.ComboBox1_SelectionChangeCommitted);
             // 
@@ -1844,7 +1843,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1413, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(0, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
@@ -1908,7 +1907,7 @@
             this.txtagen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtagen.Location = new System.Drawing.Point(536, 22);
             this.txtagen.Name = "txtagen";
-            this.txtagen.Size = new System.Drawing.Size(304, 20);
+            this.txtagen.Size = new System.Drawing.Size(197, 20);
             this.txtagen.TabIndex = 58;
             // 
             // btnImprimir
@@ -1936,7 +1935,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpAgenda.Location = new System.Drawing.Point(25, 91);
             this.dtpAgenda.Name = "dtpAgenda";
-            this.dtpAgenda.Size = new System.Drawing.Size(344, 20);
+            this.dtpAgenda.Size = new System.Drawing.Size(237, 20);
             this.dtpAgenda.TabIndex = 55;
             // 
             // dtpBuscaragenda
@@ -1945,7 +1944,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpBuscaragenda.Location = new System.Drawing.Point(536, 48);
             this.dtpBuscaragenda.Name = "dtpBuscaragenda";
-            this.dtpBuscaragenda.Size = new System.Drawing.Size(304, 20);
+            this.dtpBuscaragenda.Size = new System.Drawing.Size(197, 20);
             this.dtpBuscaragenda.TabIndex = 54;
             this.dtpBuscaragenda.CloseUp += new System.EventHandler(this.dtpBuscaragenda_CloseUp);
             // 
@@ -2007,7 +2006,7 @@
             this.lvAgenda.MouseState = MaterialSkin.MouseState.OUT;
             this.lvAgenda.Name = "lvAgenda";
             this.lvAgenda.OwnerDraw = true;
-            this.lvAgenda.Size = new System.Drawing.Size(955, 324);
+            this.lvAgenda.Size = new System.Drawing.Size(848, 324);
             this.lvAgenda.TabIndex = 41;
             this.lvAgenda.UseCompatibleStateImageBehavior = false;
             this.lvAgenda.View = System.Windows.Forms.View.Details;
@@ -2274,7 +2273,7 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(-5, 64);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1499, 70);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1392, 70);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.DoubleClick += new System.EventHandler(this.materialTabSelector1_DoubleClick);
@@ -2283,7 +2282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1493, 641);
+            this.ClientSize = new System.Drawing.Size(1386, 641);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.MaximizeBox = false;

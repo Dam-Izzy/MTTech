@@ -625,7 +625,6 @@ namespace MTtechapp
                 cmd.Parameters.AddWithValue("@fechapago", SqlDbType.DateTime).SqlValue = dtpmensualidad.Value.ToShortDateString();                    
                 cone.Conectar();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.BeginExecuteNonQuery();
             }
                 try
             {
@@ -846,17 +845,19 @@ namespace MTtechapp
         }       
         private void cmbLugar_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cbCliente.Items.Count == 0)
+            if (cbCliente.Items.Count == 0 || cbCliente.SelectedIndex.Equals(-1) || cbCliente.SelectedIndex.Equals(""))
             {
+                cbCliente.DataSource = null;
+                lista_Clientes.Clear();
+                cbCliente.Items.Clear();
                 carga();
-            }
+            } 
             else
             {
-                lista_Clientes.Clear();
                 cbCliente.DataSource = null;
-                cbCliente.Items.Clear();                
+                lista_Clientes.Clear();
+                cbCliente.Items.Clear();
                 carga();
-                cbCliente.Refresh();
             }
         }
 

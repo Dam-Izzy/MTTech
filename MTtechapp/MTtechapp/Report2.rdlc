@@ -79,8 +79,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
         <Top>0.90977cm</Top>
-        <Left>1.76307cm</Left>
-        <Height>1.10312cm</Height>
+        <Left>2.15995cm</Left>
+        <Height>1.5091cm</Height>
         <Width>3.30063cm</Width>
         <Style>
           <Border />
@@ -222,7 +222,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>2.08345cm</Top>
-        <Left>3.96085cm</Left>
+        <Left>4.37995cm</Left>
         <Height>0.33542cm</Height>
         <Width>0.68375cm</Width>
         <ZIndex>4</ZIndex>
@@ -252,8 +252,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>0.94505cm</Top>
-        <Left>5.17321cm</Left>
+        <Top>0.90977cm</Top>
+        <Left>5.27905cm</Left>
         <Height>0.51125cm</Height>
         <Width>1.31875cm</Width>
         <ZIndex>5</ZIndex>
@@ -283,7 +283,7 @@
         </Paragraphs>
         <rd:DefaultName>fecha</rd:DefaultName>
         <Top>1.99952cm</Top>
-        <Left>4.71515cm</Left>
+        <Left>5.0637cm</Left>
         <Height>0.41935cm</Height>
         <Width>1.51466cm</Width>
         <ZIndex>6</ZIndex>
@@ -317,8 +317,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>1.49158cm</Top>
-        <Left>5.16953cm</Left>
+        <Top>1.4563cm</Top>
+        <Left>5.27537cm</Left>
         <Height>0.47266cm</Height>
         <Width>1.32243cm</Width>
         <ZIndex>7</ZIndex>
@@ -805,7 +805,7 @@
                 <Value>MT</Value>
                 <Style>
                   <FontFamily>Haettenschweiler</FontFamily>
-                  <FontSize>40pt</FontSize>
+                  <FontSize>20pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -853,7 +853,7 @@
                 <Value>technologies</Value>
                 <Style>
                   <FontFamily>haettenschweiler</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -863,7 +863,7 @@
         <rd:DefaultName>NombreCompleto</rd:DefaultName>
         <Top>1.28832cm</Top>
         <Height>0.67592cm</Height>
-        <Width>2.21286cm</Width>
+        <Width>1.98356cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border />

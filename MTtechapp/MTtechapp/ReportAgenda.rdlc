@@ -324,7 +324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cliente</Value>
+                              <Value>Cliente reparación</Value>
                               <Style>
                                 <FontSize>28pt</FontSize>
                               </Style>
@@ -704,10 +704,6 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Mensualidad: </Value>
-                              <Style />
-                            </TextRun>
-                            <TextRun>
                               <Value>=Fields!pago.Value</Value>
                               <Style />
                             </TextRun>
@@ -941,7 +937,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Reparación</Value>
+                              <Value>Socio</Value>
                               <Style>
                                 <FontSize>28pt</FontSize>
                               </Style>
@@ -1006,7 +1002,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="cliente2">
+                    <Textbox Name="cliente1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1022,7 +1018,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>cliente</rd:DefaultName>
+                      <rd:DefaultName>cliente1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1075,7 +1071,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="lugar2">
+                    <Textbox Name="lugar1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1091,7 +1087,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>lugar</rd:DefaultName>
+                      <rd:DefaultName>lugar1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1144,7 +1140,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="domicilio2">
+                    <Textbox Name="domicilio1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1160,7 +1156,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>domicilio</rd:DefaultName>
+                      <rd:DefaultName>domicilio1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1213,7 +1209,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Tel2">
+                    <Textbox Name="Tel1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1229,7 +1225,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Tel</rd:DefaultName>
+                      <rd:DefaultName>Tel1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1282,7 +1278,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="prioridad2">
+                    <Textbox Name="prioridad1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1298,7 +1294,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>prioridad</rd:DefaultName>
+                      <rd:DefaultName>prioridad1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1369,7 +1365,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descripcion1</rd:DefaultName>
+                      <rd:DefaultName>descripcion3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1422,7 +1418,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="indicaciones2">
+                    <Textbox Name="indicaciones1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1440,7 +1436,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>indicaciones</rd:DefaultName>
+                      <rd:DefaultName>indicaciones1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1486,7 +1482,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>datosagenda</DataSetName>
+        <DataSetName>Socio</DataSetName>
         <Top>3.75391cm</Top>
         <Left>9.80715cm</Left>
         <Height>6.71353cm</Height>
@@ -2791,6 +2787,67 @@
         <Field Name="pago">
           <DataField>pago</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prioridad">
+          <DataField>prioridad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tel">
+          <DataField>Tel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="tipo">
+          <DataField>tipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>MTtechapp</rd:DataSetName>
+        <rd:TableName>ClaseInformeAgenda</rd:TableName>
+        <rd:ObjectDataSourceType>MTtechapp.ClaseInformeAgenda, MTtechapp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Socio">
+      <Query>
+        <DataSourceName>MTtechapp</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="cliente">
+          <DataField>cliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="descripcion">
+          <DataField>descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="diagnostico">
+          <DataField>diagnostico</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="domicilio">
+          <DataField>domicilio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Equipo">
+          <DataField>Equipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fecha">
+          <DataField>fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="indicaciones">
+          <DataField>indicaciones</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lugar">
+          <DataField>lugar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="pago">
+          <DataField>pago</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="prioridad">
           <DataField>prioridad</DataField>

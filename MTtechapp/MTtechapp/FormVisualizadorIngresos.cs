@@ -185,7 +185,7 @@ namespace MTtechapp
                     cl.IdIngreso = Convert.ToInt32(item[0].ToString());
                     cl.Tipo = item[1].ToString();
                     cl.Descripcion = item[2].ToString();
-                    cl.Lugar = item[8].ToString();
+                    cl.Lugar = item[3].ToString();
                     cl.Monto = Convert.ToInt32(item[4].ToString());
                     cl.Fecha = Convert.ToDateTime(item[5]);
                     cl.Estado = Convert.ToBoolean(item[6].ToString());

@@ -444,6 +444,8 @@ namespace MTtechapp
 
         //lista para informe de agenda
         public static List<ClaseInformeAgenda> lista = new List<ClaseInformeAgenda>();
+        public static List<ClaseInformeAgenda> listaSocios = new List<ClaseInformeAgenda>();
+
         // funcion que agrega registros para agendar, dependiendo que tipo de agenda
         private void txtagenda_Click(object sender, EventArgs e)
         {
@@ -645,13 +647,11 @@ namespace MTtechapp
             cbLugarCliente.DataSource = Cargafiltro();
         }
         //metodo que carga municipios en un combobox
-        public void cargaMuni()
+        public void cargaMuni(ComboBox combo)
         {
-            municipios.Clear();
-            cbLugarTorre.DataSource = null;
-            cbLugarTorre.DisplayMember = "Nombre";
-            cbLugarTorre.ValueMember = "idMunicipio";
-            cbLugarTorre.DataSource = Cargamunicipio();
+            combo.DisplayMember = "Nombre";
+            combo.ValueMember = "idMunicipio";
+            combo.DataSource = Cargamunicipio();
         }
         //evento que carga municipios en un combobox
         private void cbmunicipios_Click(object sender, EventArgs e)
@@ -833,9 +833,7 @@ namespace MTtechapp
         //boton que se encarga de llamar al reporte, con los items seleccionados 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            CrearDoc();
-            lista.Clear();
-            CargarSeleccionados();
+            
             FormReporteAgenda formReporte = new FormReporteAgenda();
             formReporte.ShowDialog();
         }
@@ -882,41 +880,10 @@ namespace MTtechapp
             }
             return Instalaciones;
         }
-        //funcion que carga los elementos seleccionados de un listview y los guarda en una lista
-        public List<ClaseInformeAgenda> CargarSeleccionados()
-        {
-            foreach (var item in lvAgenda.SelectedItems.Cast<ListViewItem>())
-            {
-                ClaseInformeAgenda informeAgenda = new ClaseInformeAgenda();
-                String Consulta = "Select NombreCompleto, direccion, telefono, ClavePago from Cliente where idCliente= " + item.SubItems[6].Text.ToString() + "";
-                SqlCommand sql = new SqlCommand(Consulta, cnn.conn);
-                cnn.Conectar();
-                SqlDataReader dr = sql.ExecuteReader();
-                if (item.SubItems[0].Text.Contains("N/A"))
-                {
-                    //
-                }
-                else
-                {
-                    while (dr.Read())
-                {
+        
 
-                        informeAgenda.domicilio = dr.GetString(1);
-                        informeAgenda.Tel = dr.GetString(2);
-                        informeAgenda.pago = dr.GetInt32(3);
-                    }
-                }
-                informeAgenda.cliente = item.SubItems[0].Text.ToString();
-                informeAgenda.lugar = item.SubItems[1].Text.ToString();
-                informeAgenda.diagnostico = item.SubItems[2].Text.ToString();
-                informeAgenda.descripcion = item.SubItems[3].Text.ToString();
-                informeAgenda.Equipo = item.SubItems[4].Text.ToString();
-                informeAgenda.fecha = item.SubItems[5].Text.ToString();
-                dr.Close();
-                lista.Add(informeAgenda);
-            }
-            return lista;
-        }
+        //funcion que carga los elementos seleccionados de un listview y los guarda en una lista
+        
         //Crea un txt con los elementos seleccionados en el listview de agenda
         private void CrearDoc()
         {
@@ -1171,7 +1138,7 @@ namespace MTtechapp
                         comboBox1.Text = dr.GetString(12);//combo tipo
                         txtid.Text = dr.GetInt32(0).ToString();//ID ID
                         dtpAgenda.Text = dr[4].ToString();//Fecha agenda
-                        cbLugarGlobla.SelectedValue = dr[6].ToString();//combo lugar
+                        //cbLugarGlobla.SelectedValue = dr[6].ToString();//combo lugar
                         txtotrocoment.Text = dr[10].ToString();//indicaciones
                         txtfallo.Text = dr[5].ToString();//descipción
                         txtotrodiag.Text = dr[2].ToString();//diagnostico 
@@ -1753,11 +1720,6 @@ namespace MTtechapp
             txtind.Clear();
         }
 
-       //carga municipios para fromulario de torre
-        private void CbLugarTorre_MouseClick(object sender, MouseEventArgs e)
-        {
-            cargaMuni();
-        }
         //carga los datos para el reporte de mensualidades globales, cuando se selecciona el municipio y filtra en el listview los que pertenecen a esa localidad
         private void Cbmunicipios_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -1813,7 +1775,7 @@ namespace MTtechapp
                 gbTorre.Visible = true;
                 gbglobal.Visible = false;
                 gbTorre.Location = new System.Drawing.Point(25, 106);
-
+                cargaMuni(cbLugarTorre);
             }
             else if (comboBox1.Text.Equals("Cliente")|| comboBox1.Text.Equals("Instalacion"))
             {
@@ -1828,6 +1790,7 @@ namespace MTtechapp
                 gbTorre.Visible = false;
                 gbglobal.Visible = true;
                 gbglobal.Location = new System.Drawing.Point(25, 106);
+                cargaMuni(cbLugarGlobla);
             }
         }
         /// <summary>
